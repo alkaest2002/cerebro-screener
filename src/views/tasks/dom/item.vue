@@ -1,0 +1,94 @@
+<template>
+  <div id="presenter-wrapper">
+    <div id="title" class="mb-3">
+      <h1 class="is-size-3 has-text-weight-bold">
+        <slot name="title">
+          Quesito {{ presenter.itemIndex + 1 }} di {{ totalItems }}
+        </slot>
+      </h1>
+    </div>
+    <div id="presenter" class="is-relative is-clipped box">
+      <item-container>
+        <div
+          class="is-flex is-align-content-space-around is-justify-content-center"
+        >
+          <dom-tile
+            v-for="(tile, index) in itemData.tiles"
+            :tile="tile"
+            :is-locked="true"
+            :key="index"
+          />
+          <dom-tile
+            :tile="itemData.userTile"
+            :is-locked="false"
+            @dropped-dots="onDropDots"
+          />
+        </div>
+        <dom-tile-faces @dragstart="onDragDots" />
+        <slot name="explanation" />
+      </item-container>
+    </div>
+  </div>
+</template>
+
+<script>
+import { ref } from "vue";
+import initPresenter from "@/views/tasks/_composables/initPresenter";
+import itemContainer from "@/views/tasks/_components/item-container";
+import domTile from "./_components/dom-tile";
+import domTileFaces from "./_components/dom-tile-faces";
+
+export default {
+  // name
+  name: "task-dom-item",
+
+  // components
+  components: {
+    itemContainer,
+    domTile,
+    domTileFaces,
+  },
+
+  // props
+  props: {
+    presenter: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  // setup
+  setup(props) {
+    // init presenter
+    const { totalItems, itemData } = initPresenter(props.presenter.itemData);
+
+    // init ref
+    const draggedDots = ref(null);
+
+    // handle on drag dots
+    const onDragDots = (dots) => {
+      draggedDots.value = dots;
+    };
+
+    // handle on drop dots
+    const onDropDots = (index) => {
+      // update user tile
+      itemData.userTile[index] = draggedDots.value;
+      // increment user actions
+      itemData.actions++;
+      // check whether answer is correct
+      itemData.isCorrect =
+        JSON.stringify(itemData.userTile) ==
+        JSON.stringify(itemData.targetTile);
+    };
+
+    // return
+    return {
+      totalItems,
+      itemData,
+      onDragDots,
+      onDropDots,
+    };
+  },
+};
+</script>
