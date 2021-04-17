@@ -14,12 +14,13 @@ import { useRouter } from "vue-router";
 export default {
   // name
   name: "app",
+  
   // setup
   setup() {
-    console.log();
     // get store and router
     const store = useStore();
     const router = useRouter();
+
     // on mounted app
     onMounted(() => {
       // disable backbutton
