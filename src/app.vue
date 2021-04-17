@@ -14,7 +14,7 @@ import { useRouter } from "vue-router";
 export default {
   // name
   name: "app",
-  
+
   // setup
   setup() {
     // get store and router
