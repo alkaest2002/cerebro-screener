@@ -40,6 +40,7 @@ export default {
       type: Array,
       required: true,
     },
+
     isLocked: {
       type: Boolean,
       required: true,

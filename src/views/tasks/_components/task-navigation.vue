@@ -47,18 +47,22 @@ export default {
       type: Number,
       required: true,
     },
+
     lastIndex: {
       type: Number,
       required: true,
     },
+
     endComponentIndex: {
       type: Number,
       required: true,
     },
+
     canGoBack: {
       type: Boolean,
       default: false,
     },
+
     canGoForth: {
       type: Boolean,
       default: true,

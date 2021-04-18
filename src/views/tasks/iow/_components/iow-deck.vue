@@ -28,6 +28,7 @@ export default {
       required: true,
       validator: (value) => Array.isArray(value),
     },
+
     isLocked: {
       type: Boolean,
       default: false,

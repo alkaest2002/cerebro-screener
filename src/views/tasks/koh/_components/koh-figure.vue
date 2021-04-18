@@ -32,6 +32,7 @@ export default {
         return ["tiles-4", "tiles-9", "tiles-16"].includes(value);
       },
     },
+
     figureTiles: {
       type: Array,
       required: true,

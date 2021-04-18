@@ -28,6 +28,7 @@ export default {
       default: "full",
       validator: (value) => ["full", "letters", "numbers"].includes(value),
     },
+
     text: {
       type: String,
       default: "",

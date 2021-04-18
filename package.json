@@ -162,7 +162,14 @@
       "vue/match-component-file-name": "warn",
       "vue/v-on-function-call": "warn",
       "vue/multiline-html-element-content-newline": "warn",
-      "vue/name-property-casing": ["warn", "kebab-case"]
+      "vue/name-property-casing": [
+        "warn",
+        "kebab-case"
+      ],
+      "vue/new-line-between-multi-line-property": "warn",
+      "vue/next-tick-style": "warn",
+      "vue/no-invalid-model-keys": "warn",
+      "vue/no-lifecycle-after-await": "warn"
     }
   },
   "browserslist": [

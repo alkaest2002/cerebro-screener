@@ -99,14 +99,17 @@ export default {
       type: Object,
       required: true,
     },
+
     flippedAmounts: {
       type: Array,
       required: true,
     },
+
     runningAmount: {
       type: Number,
       required: true,
     },
+
     totalAmount: {
       type: Number,
       required: true,

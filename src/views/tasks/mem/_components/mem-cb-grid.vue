@@ -49,6 +49,7 @@ export default {
       required: true,
       validator: (value) => value.every((e) => "123456789".indexOf(e) > -1),
     },
+
     userSequence: {
       type: Array,
       required: true,

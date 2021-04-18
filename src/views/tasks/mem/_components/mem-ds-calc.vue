@@ -49,6 +49,7 @@ export default {
       type: Array,
       default: () => [],
     },
+
     sequenceHasPlayed: {
       type: Boolean,
       default: false,

@@ -61,6 +61,7 @@ export default {
   emits: {
     "update:templateBattery": (value) =>
       Array.isArray(value) && value.length > 0,
+
     "update:shouldShuffle": (value) => value == 0,
   },
 

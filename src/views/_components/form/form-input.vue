@@ -35,26 +35,32 @@ export default {
       type: String,
       default: null,
     },
+
     placeholder: {
       type: String,
       required: true,
     },
+
     inputType: {
       type: String,
       default: "text",
     },
+
     modelValue: {
       type: [String, Number, null],
       default: "",
     },
+
     cssClass: {
       type: String,
       default: "",
     },
+
     errors: {
       type: Object,
       default: () => new Map(),
     },
+
     autoFocus: {
       type: Boolean,
       default: false,

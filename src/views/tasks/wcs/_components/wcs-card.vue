@@ -33,6 +33,7 @@ export default {
         return /gray|red|green|blue|yellow/.test(value);
       },
     },
+
     figure: {
       type: String,
       required: true,
@@ -40,6 +41,7 @@ export default {
         return /none|circle|diamond|star|cross/.test(value);
       },
     },
+
     number: {
       type: String,
       required: true,

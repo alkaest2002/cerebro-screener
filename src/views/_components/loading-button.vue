@@ -22,10 +22,12 @@ export default {
       type: Boolean,
       default: false,
     },
+
     buttonCss: {
       type: String,
       default: "",
     },
+
     disabled: {
       type: Boolean,
       default: false,

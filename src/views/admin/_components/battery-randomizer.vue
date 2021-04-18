@@ -28,12 +28,14 @@ export default {
       type: Array,
       required: true,
     },
+
     shuffleSchema: {
       type: Array,
       default: () => {
         return [];
       },
     },
+
     disabled: {
       type: Boolean,
       default: true,

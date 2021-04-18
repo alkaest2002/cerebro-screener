@@ -40,10 +40,12 @@ export default {
       type: Number,
       default: -1,
     },
+
     isDraggable: {
       type: Boolean,
       default: false,
     },
+
     isLocked: {
       type: Boolean,
       required: true,

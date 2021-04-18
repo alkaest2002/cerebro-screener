@@ -18,10 +18,12 @@ export default {
       type: Number,
       default: 0,
     },
+
     lose: {
       type: Number,
       default: 0,
     },
+
     isLocked: {
       type: Boolean,
       default: false,

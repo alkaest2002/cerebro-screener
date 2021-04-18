@@ -33,10 +33,12 @@ export default {
       type: Boolean,
       default: false,
     },
+
     tileIndex: {
       type: Number,
       required: true,
     },
+
     tileType: {
       type: String,
       required: true,
@@ -44,6 +46,7 @@ export default {
         return ["reference", "figure"].includes(value);
       },
     },
+
     tileColor: {
       type: String,
       required: true,
@@ -59,6 +62,7 @@ export default {
         ].includes(value);
       },
     },
+
     tileRotation: {
       type: String,
       required: true,
@@ -76,10 +80,12 @@ export default {
       ["tileIndex", "tileType", "tileColor", "tileRotation"].every((e) =>
         Object.keys(value).includes(e)
       ),
+
     "tile-rotated": (value) =>
       Object.keys(value).every((e) =>
         ["tileIndex", "tileRotationValue"].includes(e)
       ),
+
     "tile-dropped": (value) => typeof value == "number",
   },
 

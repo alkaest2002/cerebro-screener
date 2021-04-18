@@ -25,10 +25,12 @@ export default {
       type: String,
       required: true,
     },
+
     modelValue: {
       type: [String, Number],
       default: "",
     },
+
     value: {
       type: [String, Number, null],
       required: true,

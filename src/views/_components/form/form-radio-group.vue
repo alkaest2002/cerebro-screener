@@ -43,26 +43,32 @@ export default {
       type: Array,
       required: true,
     },
+
     name: {
       type: String,
       required: true,
     },
+
     label: {
       type: String,
       default: "",
     },
+
     modelValue: {
       type: [String, Number],
       required: true,
     },
+
     vertical: {
       type: Boolean,
       default: false,
     },
+
     errors: {
       type: Object,
       default: () => new Map(),
     },
+
     disabled: {
       type: Boolean,
       default: false,

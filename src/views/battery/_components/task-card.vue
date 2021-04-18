@@ -45,10 +45,12 @@ export default {
       type: Object,
       required: true,
     },
+
     taskIndex: {
       type: Number,
       required: true,
     },
+
     currentTaskIndex: {
       type: Number,
       required: true,
