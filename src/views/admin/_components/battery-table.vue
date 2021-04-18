@@ -47,7 +47,7 @@ import { formatTime, clone } from "@/utils/utilityFns";
 
 export default {
   // name
-  name: "admin-component-battery-table",
+  name: "battery-table",
 
   // props
   props: {

@@ -22,7 +22,8 @@
 <script>
 export default {
   // name
-  name: "task-col-component-col-card",
+  name: "col-card",
+  
   // props
   props: {
     card: {

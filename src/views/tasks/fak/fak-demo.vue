@@ -14,15 +14,15 @@
 </template>
 
 <script>
-import item from "./item";
+import fakItem from "./fak-item";
 
 export default {
   // name
-  name: "task-fak-demo",
+  name: "fak-demo",
 
   // components
   components: {
-    fakItem: item,
+    fakItem,
   },
 };
 </script>

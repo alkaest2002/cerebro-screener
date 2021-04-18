@@ -41,7 +41,7 @@ import { clone } from "@/utils/utilityFns";
 
 export default {
   // name
-  name: "task-mem-component-ds-calc",
+  name: "mem-ds-calc",
 
   // props
   props: {

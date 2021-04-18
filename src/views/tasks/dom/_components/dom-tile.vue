@@ -24,7 +24,7 @@ import domTileFace from "./dom-tile-face";
 
 export default {
   // name
-  name: "task-dom-component-tile",
+  name: "dom-tile",
 
   // components
   components: {

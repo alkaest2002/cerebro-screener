@@ -37,7 +37,7 @@ import itemContainer from "@/views/tasks/_components/item-container";
 
 export default {
   // name
-  name: "task-fak-item",
+  name: "fak-item",
 
   // components
   components: {

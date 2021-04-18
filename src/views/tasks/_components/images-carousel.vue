@@ -52,7 +52,7 @@ import { ref, computed } from "vue";
 
 export default {
   // name
-  name: "task-component-carousel",
+  name: "images-carousel",
 
   // do not inherit attrs
   inheritAttrs: false,

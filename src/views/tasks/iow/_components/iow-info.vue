@@ -50,7 +50,7 @@
 <script>
 export default {
   // name
-  name: "task-iow-component-info",
+  name: "iow-info",
 
   // props
   props: {

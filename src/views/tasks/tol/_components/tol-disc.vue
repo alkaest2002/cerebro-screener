@@ -9,7 +9,7 @@
 <script>
 export default {
   // name
-  name: "task-tol-component-disc",
+  name: "tol-disc",
 
   // props
   props: {

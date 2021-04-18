@@ -35,7 +35,7 @@ import memStarter from "./mem-starter";
 
 export default {
   // name
-  name: "task-mem-component-cb-grid",
+  name: "mem-cb-grid",
 
   // components
   components: {

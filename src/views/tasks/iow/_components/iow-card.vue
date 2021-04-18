@@ -10,7 +10,7 @@ import { ref, computed } from "vue";
 
 export default {
   // name
-  name: "task-iow-component-card",
+  name: "iow-card",
 
   // props
   props: {

@@ -14,15 +14,15 @@
 </template>
 
 <script>
-import item from "./item";
+import domItem from "./dom-item";
 
 export default {
   // name
-  name: "task-dom-demo",
+  name: "dom-demo",
 
   // components
   components: {
-    domItem: item,
+    domItem,
   },
 };
 </script>

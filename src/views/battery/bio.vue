@@ -56,7 +56,7 @@ import bioKeyboard from "./_components/bio-keyboard";
 
 export default {
   // name
-  name: "battery-bio",
+  name: "bio",
 
   // components
   components: {

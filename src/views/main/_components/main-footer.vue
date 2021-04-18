@@ -19,7 +19,7 @@
 <script>
 export default {
   // name
-  name: "main-component-footer",
+  name: "main-footer",
 };
 </script>
 

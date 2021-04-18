@@ -89,7 +89,7 @@ import manageIndexDb from "@/views/_composables/manageIndexDb";
 
 export default {
   // name
-  name: "admin-battery-save",
+  name: "save",
 
   // setup
   setup() {

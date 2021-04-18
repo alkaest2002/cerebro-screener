@@ -43,7 +43,7 @@ import tolTower from "./_components/tol-tower";
 
 export default {
   // name
-  name: "task-tol-item",
+  name: "tol-item",
 
   // components
   components: {

@@ -17,7 +17,7 @@ import taskLock from "./task-lock";
 
 export default {
   // name
-  name: "tasks-component-item-container",
+  name: "item-container",
 
   // components
   components: {

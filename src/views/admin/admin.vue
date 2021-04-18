@@ -11,6 +11,6 @@
 <script>
 export default {
   // name
-  name: "admin-battery",
+  name: "admin",
 };
 </script>

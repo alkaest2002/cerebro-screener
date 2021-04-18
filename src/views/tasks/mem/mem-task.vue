@@ -15,17 +15,26 @@
 import { getTaskData } from "./setup";
 import initTask from "@/views/tasks/_composables/initTask";
 import taskPresenter from "@/views/tasks/_components/task-presenter";
-import instructions from "@/views/tasks/instructions";
-import end from "@/views/tasks/end";
-import survey from "./survey";
+import instructions from "@/views/tasks/task-instructions";
+import end from "@/views/tasks/task-end";
+import survey from "@/views/tasks/task-survey";
+import cbDemo from "./mem-cb-demo";
+import cbItem from "./mem-cb-item";
+import dsDemo from "./mem-ds-demo";
+import dsItem from "./mem-ds-item";
 
 export default {
   // name
-  name: "task-srv",
+  name: "task-mem",
 
+  // components
   components: {
     taskPresenter,
     instructions,
+    dsDemo,
+    dsItem,
+    cbDemo,
+    cbItem,
     survey,
     end,
   },

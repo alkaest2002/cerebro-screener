@@ -32,7 +32,7 @@ import cbGrid from "./_components/mem-cb-grid";
 
 export default {
   // name
-  name: "task-mem-cb-item",
+  name: "mem-cb-item",
 
   // components
   components: {

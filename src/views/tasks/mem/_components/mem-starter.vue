@@ -15,7 +15,7 @@
 <script>
 export default {
   // name
-  name: "task-mem-component-starter",
+  name: "mem-starter",
 
   // do not inherit attrs
   inheritAttrs: false,

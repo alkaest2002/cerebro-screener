@@ -10,15 +10,15 @@
 </template>
 
 <script>
-import item from "./item002";
+import memItem from "./mem-cb-item";
 
 export default {
   // name
-  name: "task-mem-cb-demo",
+  name: "mem-cb-demo",
 
   // components
   components: {
-    memItem: item,
+    memItem,
   },
 };
 </script>

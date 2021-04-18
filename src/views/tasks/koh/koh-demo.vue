@@ -1,5 +1,5 @@
 <template>
-  <dom-item>
+  <koh-item>
     <template #title> Versione demo </template>
     <template #explanation>
       <div class="mt-6">
@@ -12,19 +12,19 @@
         </p>
       </div>
     </template>
-  </dom-item>
+  </koh-item>
 </template>
 
 <script>
-import item from "./item";
+import kohItem from "./koh-item";
 
 export default {
   // name
-  name: "task-koh-demo",
+  name: "koh-demo",
 
   // components
   components: {
-    domItem: item,
+    kohItem,
   },
 };
 </script>

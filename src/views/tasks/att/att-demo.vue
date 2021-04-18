@@ -17,15 +17,15 @@
 </template>
 
 <script>
-import item from "./item";
+import attItem from "./att-item";
 
 export default {
   // name
-  name: "task-att-demo",
+  name: "att-demo",
 
   // components
   components: {
-    attItem: item,
+    attItem,
   },
 };
 </script>

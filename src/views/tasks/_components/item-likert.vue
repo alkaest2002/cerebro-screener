@@ -17,7 +17,7 @@
 <script>
 export default {
   // name
-  name: "task-component-likert",
+  name: "item-likert",
 
   // props
   props: {

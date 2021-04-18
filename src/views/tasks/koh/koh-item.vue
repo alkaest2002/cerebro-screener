@@ -70,7 +70,7 @@ import kohFigure from "./_components/koh-figure";
 
 export default {
   // name
-  name: "task-koh-item",
+  name: "koh-item",
 
   // components
   components: {

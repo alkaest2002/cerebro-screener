@@ -31,7 +31,7 @@ import wcsCard from "./wcs-card";
 
 export default {
   // name
-  name: "task-wcs-component-decks",
+  name: "wcs-decks",
 
   // componenents
   components: {

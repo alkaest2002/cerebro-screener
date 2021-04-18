@@ -22,7 +22,7 @@
 <script>
 export default {
   // name
-  name: "task-wcs-component-card",
+  name: "wcs-card",
 
   // props
   props: {

@@ -30,7 +30,7 @@
 import mainHero from "./_components/main-hero";
 
 export default {
-  name: "main-about",
+  name: "about",
 
   components: {
     mainHero,

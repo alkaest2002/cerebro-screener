@@ -47,7 +47,7 @@ import taskLock from "@/views/tasks/_components/task-lock";
 
 export default {
   // name
-  name: "task-component-items",
+  name: "task-presenter",
 
   // components
   components: {

@@ -33,77 +33,77 @@ export default [
         path: "att",
         name: "route-tasks-att",
         component: () =>
-          import(/* webpackChunkName: "task-att" */ "@/views/tasks/att/att"),
+          import(/* webpackChunkName: "att-task" */ "@/views/tasks/att/att-task"),
         beforeEnter: taskGuard,
       },
       {
         path: "col",
         name: "route-tasks-col",
         component: () =>
-          import(/* webpackChunkName: "task-col" */ "@/views/tasks/col/col"),
+          import(/* webpackChunkName: "col-task" */ "@/views/tasks/col/col-task"),
         beforeEnter: taskGuard,
       },
       {
         path: "dom",
         name: "route-tasks-dom",
         component: () =>
-          import(/* webpackChunkName: "task-dom" */ "@/views/tasks/dom/dom"),
+          import(/* webpackChunkName: "dom-task" */ "@/views/tasks/dom/dom-task"),
         beforeEnter: taskGuard,
       },
       {
         path: "fak",
         name: "route-tasks-fak",
         component: () =>
-          import(/* webpackChunkName: "task-fak" */ "@/views/tasks/fak/fak"),
+          import(/* webpackChunkName: "fak-task" */ "@/views/tasks/fak/fak-task"),
         beforeEnter: taskGuard,
       },
       {
         path: "iow",
         name: "route-tasks-iow",
         component: () =>
-          import(/* webpackChunkName: "task-iow" */ "@/views/tasks/iow/iow"),
+          import(/* webpackChunkName: "iow-task" */ "@/views/tasks/iow/iow-task"),
         beforeEnter: taskGuard,
       },
       {
         path: "koh",
         name: "route-tasks-koh",
         component: () =>
-          import(/* webpackChunkName: "task-koh" */ "@/views/tasks/koh/koh"),
+          import(/* webpackChunkName: "koh-task" */ "@/views/tasks/koh/koh-task"),
         beforeEnter: taskGuard,
       },
       {
         path: "mem",
         name: "route-tasks-mem",
         component: () =>
-          import(/* webpackChunkName: "task-mem" */ "@/views/tasks/mem/mem"),
+          import(/* webpackChunkName: "mem-task" */ "@/views/tasks/mem/mem-task"),
         beforeEnter: taskGuard,
       },
       {
         path: "srv",
         name: "route-tasks-srv",
         component: () =>
-          import(/* webpackChunkName: "task-srv" */ "@/views/tasks/srv/srv"),
+          import(/* webpackChunkName: "srv-task" */ "@/views/tasks/srv/srv-task"),
         beforeEnter: taskGuard,
       },
       {
         path: "tol",
         name: "route-tasks-tol",
         component: () =>
-          import(/* webpackChunkName: "task-tol" */ "@/views/tasks/tol/tol"),
+          import(/* webpackChunkName: "tol-task" */ "@/views/tasks/tol/tol-task"),
         beforeEnter: taskGuard,
       },
       {
         path: "wcs",
         name: "route-tasks-wcs",
         component: () =>
-          import(/* webpackChunkName: "task-wcs" */ "@/views/tasks/wcs/wcs"),
+          import(/* webpackChunkName: "wcs-task" */ "@/views/tasks/wcs/wcs-task"),
         beforeEnter: taskGuard,
       },
       {
         path: "end",
         name: "route-task-end",
         component: () =>
-          import(/* webpackChunkName: "task" */ "@/views/tasks/end"),
+          import(/* webpackChunkName: "task-en" */ "@/views/tasks/task-end"),
       },
     ],
   },

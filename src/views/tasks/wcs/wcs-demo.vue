@@ -1,23 +1,24 @@
 <template>
-  <col-item>
+  <wcs-item>
     <template #title> Versione demo </template>
     <template #explanation>
       <div class="mt-6">
-        <p class="has-text-grey">Nell'esempio proposto,...</p>
+        <p class="has-text-grey">Nell'esempio proposto qui sopra...</p>
       </div>
     </template>
-  </col-item>
+  </wcs-item>
 </template>
 
 <script>
-import item from "./item";
+import wcsItem from "./wcs-item";
 
 export default {
   // name
-  name: "task-col-demo",
+  name: "wcs-demo",
+
   // components
   components: {
-    colItem: item,
+    wcsItem,
   },
 };
 </script>

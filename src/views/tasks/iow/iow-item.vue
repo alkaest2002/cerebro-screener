@@ -53,7 +53,7 @@ import iowInfo from "./_components/iow-info";
 
 export default {
   // name
-  name: "task-iow-item",
+  name: "iow-item",
 
   // components
   components: {

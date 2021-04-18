@@ -1,24 +1,24 @@
 <template>
-  <iow-item>
+  <col-item>
     <template #title> Versione demo </template>
     <template #explanation>
       <div class="mt-6">
-        <p class="has-text-grey">Nell'esempio proposto qui sopra...</p>
+        <p class="has-text-grey">Nell'esempio proposto,...</p>
       </div>
     </template>
-  </iow-item>
+  </col-item>
 </template>
 
 <script>
-import item from "./item";
+import colItem from "./col-item";
 
 export default {
   // name
-  name: "task-iow-demo",
-
+  name: "task-col-demo",
+  
   // components
   components: {
-    iowItem: item,
+    colItem,
   },
 };
 </script>

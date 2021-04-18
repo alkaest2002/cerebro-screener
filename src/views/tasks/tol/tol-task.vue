@@ -2,7 +2,7 @@
   <task-presenter>
     <template #presenter>
       <transition name="fade" mode="out-in" appear>
-        <div :key="presenter.id" class="is-relative">
+        <div id="presenter-cointainer" :key="presenter.id" class="is-relative">
           <component :is="presenter.component" :presenter="presenter" />
         </div>
       </transition>
@@ -15,15 +15,15 @@
 import { getTaskData } from "./setup";
 import initTask from "@/views/tasks/_composables/initTask";
 import taskPresenter from "@/views/tasks/_components/task-presenter";
-import instructions from "@/views/tasks/instructions";
-import survey from "@/views/tasks/survey";
-import end from "@/views/tasks/end";
-import demo from "./demo";
-import item from "./item";
+import instructions from "@/views/tasks/task-instructions";
+import survey from "@/views/tasks/task-survey";
+import end from "@/views/tasks/task-end";
+import demo from "./tol-demo";
+import item from "./tol-item";
 
 export default {
   // name
-  name: "task-dom",
+  name: "tol-task",
 
   // components
   components: {

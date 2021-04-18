@@ -24,7 +24,7 @@ import mainHero from "./_components/main-hero";
 import mainFooter from "./_components/main-footer";
 
 export default {
-  name: "main-home",
+  name: "home",
 
   components: {
     mainHero,

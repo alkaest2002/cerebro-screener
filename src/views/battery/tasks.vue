@@ -27,7 +27,7 @@ import taskCard from "./_components/task-card";
 
 export default {
   // name
-  name: "battery-tasks",
+  name: "tasks",
 
   // components
   components: {

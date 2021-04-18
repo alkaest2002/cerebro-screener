@@ -14,7 +14,7 @@ import iowCard from "./iow-card";
 
 export default {
   // name
-  name: "task-iow-component-deck",
+  name: "iow-deck",
 
   // components
   components: {

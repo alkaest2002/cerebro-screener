@@ -88,7 +88,7 @@
 import { computed } from "vue";
 export default {
   // name
-  name: "col-component-info",
+  name: "col-table-info",
 
   // do not inherit attrs
   inheritAttrs: false,

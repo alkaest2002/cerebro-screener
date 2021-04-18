@@ -26,7 +26,7 @@ import attGrid from "./_components/att-grid";
 
 export default {
   // name
-  name: "task-att-item",
+  name: "att-item",
 
   // components
   components: {

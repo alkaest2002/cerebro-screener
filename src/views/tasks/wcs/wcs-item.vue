@@ -44,7 +44,7 @@ import wcsStimulusCards from "./_components/wcs-stimulus-cards";
 
 export default {
   // name
-  name: "task-wcs-item",
+  name: "wcs-item",
 
   // components
   components: {

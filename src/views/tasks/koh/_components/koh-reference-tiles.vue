@@ -17,7 +17,7 @@ import kohTile from "./koh-tile";
 
 export default {
   // name
-  name: "test-koh-component-reference-tiles",
+  name: "koh-reference-tiles",
 
   // components
   components: {

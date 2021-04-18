@@ -25,7 +25,7 @@ import memStarter from "./mem-starter";
 
 export default {
   // name
-  name: "task-mem-component-ds-display",
+  name: "mem-ds-display",
 
   // components
   components: {

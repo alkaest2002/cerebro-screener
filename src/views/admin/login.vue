@@ -47,7 +47,7 @@ import mainHero from "@/views/main/_components/main-hero";
 import mainFooter from "@/views/main/_components/main-footer";
 
 export default {
-  name: "admin-login",
+  name: "login",
 
   components: {
     formInput,

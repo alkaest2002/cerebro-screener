@@ -13,6 +13,6 @@
 <script>
 export default {
   // name
-  name: "main-component-logo",
+  name: "main-logo",
 };
 </script>

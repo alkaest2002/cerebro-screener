@@ -34,7 +34,7 @@ import { formatTime } from "@/utils/utilityFns";
 
 export default {
   //name
-  name: "task-component-task-card",
+  name: "task-card",
 
   // do not inherit attributes
   inheritAttrs: false,

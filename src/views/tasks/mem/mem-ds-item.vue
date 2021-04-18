@@ -37,7 +37,7 @@ import dsCalc from "./_components/mem-ds-calc";
 
 export default {
   // name
-  name: "task-mem-ds-item",
+  name: "mem-ds-item",
 
   // components
   components: {

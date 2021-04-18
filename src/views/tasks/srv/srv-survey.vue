@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import survey from "@/views/tasks/survey";
+import survey from "@/views/tasks/task-survey";
 
 export default {
   // name
-  name: "task-srv-survey",
+  name: "srv-survey",
 
   // components
   components: {

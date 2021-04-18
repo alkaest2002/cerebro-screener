@@ -55,7 +55,7 @@ import saveToLocal from "@/views/_composables/saveToLocal";
 
 export default {
   // name
-  name: "battery-end",
+  name: "end",
 
   // setup
   setup() {

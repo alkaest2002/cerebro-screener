@@ -60,7 +60,7 @@ const blocks = [
     items: [
       {
         id: "demo.001",
-        component: "demo001",
+        component: "dsDemo",
         canGoBack: true,
         canGoForth: false,
         isLocked: false,
@@ -81,7 +81,7 @@ const blocks = [
     items: digitSpanItems.map((item, index) => {
       let itemObject = {};
       itemObject.id = `item.ds.${leftPadValue(index + 1, 3, 0)}`;
-      itemObject.component = "item001";
+      itemObject.component = "dsItem";
       itemObject.canGoBack = false;
       itemObject.canGoForth = false;
       itemObject.isLocked = false;
@@ -123,7 +123,7 @@ const blocks = [
     items: [
       {
         id: "demo.001",
-        component: "demo002",
+        component: "cbDemo",
         canGoBack: true,
         canGoForth: true,
         isLocked: false,
@@ -142,7 +142,7 @@ const blocks = [
     items: corsiItems.map((item, index) => {
       let itemObject = {};
       itemObject.id = `item.cb.${leftPadValue(index + 1, 3, 0)}`;
-      itemObject.component = "item002";
+      itemObject.component = "cbItem";
       itemObject.canGoBack = false;
       itemObject.canGoForth = false;
       itemObject.isLocked = false;

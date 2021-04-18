@@ -25,7 +25,7 @@ import { ref, computed } from "vue";
 
 export default {
   // name
-  name: "task-koh-component-tile",
+  name: "koh-tile",
 
   // props
   props: {

@@ -40,7 +40,7 @@ import domTileFaces from "./_components/dom-tile-faces";
 
 export default {
   // name
-  name: "task-dom-item",
+  name: "dom-item",
 
   // components
   components: {

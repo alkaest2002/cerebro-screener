@@ -20,7 +20,7 @@ import { clone } from "@/utils/utilityFns";
 
 export default {
   // name
-  name: "admin-component-battery-randomizer",
+  name: "battery-randomizer",
 
   // props
   props: {

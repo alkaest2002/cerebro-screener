@@ -38,7 +38,7 @@ import { clone } from "@/utils/utilityFns";
 
 export default {
   // name
-  name: "task-att-component-att-grid",
+  name: "att-grid",
 
   // props
   props: {

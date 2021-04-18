@@ -12,7 +12,7 @@ import { useStore } from "vuex";
 import { formatTimerTime } from "@/utils/utilityFns";
 
 export default {
-  name: "task-component-timer",
+  name: "task-timer",
 
   emits: {
     "time-is-up": null,

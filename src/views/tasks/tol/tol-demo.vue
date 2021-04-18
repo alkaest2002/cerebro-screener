@@ -17,15 +17,15 @@
 </template>
 
 <script>
-import item from "./item";
+import tolItem from "./tol-item";
 
 export default {
   // name
-  name: "task-tol-demo",
+  name: "tol-demo",
 
   // components
   components: {
-    tolItem: item,
+    tolItem,
   },
 };
 </script>

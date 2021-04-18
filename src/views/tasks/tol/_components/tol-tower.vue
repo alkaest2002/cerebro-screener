@@ -27,7 +27,7 @@ import tolDisc from "./tol-disc";
 
 export default {
   // name
-  name: "task-tol-component-tower",
+  name: "tol-tower",
 
   // components
   components: {

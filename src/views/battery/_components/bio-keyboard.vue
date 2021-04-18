@@ -13,12 +13,13 @@
 <script>
 import { computed } from "vue";
 
+// legal keys
 const checkLegalKey = (value) =>
   "0123456789abcdefghijklmnopqrstuvwxyz".toUpperCase().indexOf(value) > -1;
 
 export default {
   // name
-  name: "task-component-bio-keyboard",
+  name: "bio-keyboard",
 
   // props
   props: {
@@ -41,6 +42,7 @@ export default {
 
   // setup
   setup(props, { emit }) {
+   
     // build keys
     let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     let letters = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
@@ -49,10 +51,10 @@ export default {
     if (props.type == "numbers") keys = numbers;
     keys = ["&#8612;", ...keys];
 
-    // computed
+    // input text
     const inputText = computed(() => props.text || "");
 
-    // handle on clickKey
+    // on handle clickKey
     const onClickKey = (key) => {
       // if key is cancel
       if (key == "&#8612;")

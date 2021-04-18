@@ -32,7 +32,7 @@ import { ref, computed } from "vue";
 
 export default {
   // name
-  name: "task-dom-component-tile-face",
+  name: "dom-tile-face",
 
   //props
   props: {

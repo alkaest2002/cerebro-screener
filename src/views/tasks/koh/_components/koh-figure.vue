@@ -13,7 +13,7 @@ import kohTile from "./koh-tile";
 
 export default {
   // name
-  name: "task-koh-component-figure",
+  name: "koh-figure",
 
   // components
   components: {

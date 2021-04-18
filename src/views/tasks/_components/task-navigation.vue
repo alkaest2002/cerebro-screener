@@ -39,7 +39,7 @@ import { computed } from "vue";
 
 export default {
   // name
-  name: "task-component-navigation",
+  name: "task-navigation",
 
   // props
   props: {
