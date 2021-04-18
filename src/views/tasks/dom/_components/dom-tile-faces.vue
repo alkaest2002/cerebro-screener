@@ -30,6 +30,11 @@ export default {
   // do not inherit attrs
   inheritAttrs: false,
 
+  // emitted event
+  emits: {
+    dragstart: null,
+  },
+
   // components
   components: {
     domTileFace,
