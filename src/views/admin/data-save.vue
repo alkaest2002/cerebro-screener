@@ -89,7 +89,7 @@ import manageIndexDb from "@/views/_composables/manageIndexDb";
 
 export default {
   // name
-  name: "save",
+  name: "data-save",
 
   // setup
   setup() {

@@ -60,7 +60,7 @@ import batteryTable from "./_components/battery-table";
 import batteryRandomizer from "./_components/battery-randomizer";
 
 export default {
-  name: "create",
+  name: "battery-create",
 
   components: {
     formRadioGroup,

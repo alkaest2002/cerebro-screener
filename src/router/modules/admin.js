@@ -17,7 +17,9 @@ export default [
         path: "create/battery",
         name: "route-admin-create-battery",
         component: () =>
-          import(/* webpackChunkName: "admin" */ "@/views/admin/battery-create"),
+          import(
+            /* webpackChunkName: "admin" */ "@/views/admin/battery-create"
+          ),
         beforeEnter: (to, from, next) => {
           // if testee is present
           if (store.state.testee.testee.id)
@@ -31,7 +33,9 @@ export default [
         path: "manage/battery",
         name: "route-admin-manage-battery",
         component: () =>
-          import(/* webpackChunkName: "admin" */ "@/views/admin/battery-manage"),
+          import(
+            /* webpackChunkName: "admin" */ "@/views/admin/battery-manage"
+          ),
         beforeEnter: (to, from, next) => {
           // if testee is not present
           if (!store.state.testee.testee.id)

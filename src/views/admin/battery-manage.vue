@@ -106,7 +106,7 @@ import { formatTimerTime } from "@/utils/utilityFns";
 
 export default {
   // name
-  name: "manage",
+  name: "battery-manage",
 
   // setup
   setup() {
