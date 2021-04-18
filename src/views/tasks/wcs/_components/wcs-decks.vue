@@ -1,7 +1,7 @@
 <template>
   <div id="feedbacks" class="is-flex is-justify-content-center mt-2 mb-2">
     <div
-      v-for="(feedback, feedbackIndex) of [0, 1, 2, 3]"
+      v-for="(feedback, feedbackIndex) in [0, 1, 2, 3]"
       :key="feedbackIndex"
       :style="{
         visibility:
@@ -17,7 +17,7 @@
   </div>
   <div id="decks" class="is-flex is-justify-content-center mb-1">
     <wcs-card
-      v-for="(card, index) of currentDecks"
+      v-for="(card, index) in currentDecks"
       :key="index"
       v-bind="{ ...card }"
       class="deck"

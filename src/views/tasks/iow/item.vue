@@ -20,7 +20,7 @@
         </div>
         <div class="is-flex is-justify-content-center">
           <div
-            v-for="(deck, deckIndex) of itemData.decks"
+            v-for="(deck, deckIndex) in itemData.decks"
             :key="deckIndex"
             class="deck"
           >

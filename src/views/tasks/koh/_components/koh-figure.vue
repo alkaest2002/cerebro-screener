@@ -1,7 +1,7 @@
 <template>
   <div :class="{ [figureType]: true }" class="figure is-flex is-flex-wrap-wrap">
     <koh-tile
-      v-for="tile of figureTiles"
+      v-for="tile in figureTiles"
       :key="tile.index"
       v-bind="{ ...tile, ...$attrs }"
     />

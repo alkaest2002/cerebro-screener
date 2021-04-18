@@ -4,7 +4,7 @@
   </p>
   <div id="reference-tiles" class="is-flex is-justify-content-center">
     <koh-tile
-      v-for="tile of referenceTiles"
+      v-for="tile in referenceTiles"
       :key="tile.index"
       v-bind="{ ...tile, ...$attrs }"
       class="mr-3"

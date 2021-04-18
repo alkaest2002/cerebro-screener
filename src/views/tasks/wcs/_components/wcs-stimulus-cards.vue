@@ -1,7 +1,7 @@
 <template>
   <div id="stimulus-cards" class="is-flex is-justify-content-center">
     <wcs-card
-      v-for="(card, index) of stimulusCards"
+      v-for="(card, index) in stimulusCards"
       :key="index"
       :class="{
         'is-clickable': itemData.droppedCards.length < itemData.cards.length,
