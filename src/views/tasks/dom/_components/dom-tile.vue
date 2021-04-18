@@ -44,7 +44,7 @@ export default {
 
   // emitted events
   emits: {
-    droppedDots: (value) => [0, 1].includes(value),
+    "dropped-dots": (value) => [0, 1].includes(value),
   },
 };
 </script>

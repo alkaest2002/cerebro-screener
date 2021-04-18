@@ -15,7 +15,7 @@ export default {
   name: "task-component-timer",
 
   emits: {
-    timeIsUp: null,
+    "time-is-up": null,
   },
 
   // setup

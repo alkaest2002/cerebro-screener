@@ -50,7 +50,7 @@ export default {
 
   // emitted events
   emits: {
-    updateNumbers: (value) =>
+    "update-numbers": (value) =>
       ["numbers", "errors"].every((e) => Object.keys(value).includes(e)),
   },
 

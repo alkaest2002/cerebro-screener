@@ -58,7 +58,7 @@ export default {
 
   // emitted events
   emits: {
-    endOfItems: null,
+    "end-of-items": null,
   },
 
   setup() {

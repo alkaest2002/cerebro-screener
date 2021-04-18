@@ -72,15 +72,15 @@ export default {
 
   // emitted events
   emits: {
-    tileDragged: (value) =>
+    "tile-dragged": (value) =>
       ["tileIndex", "tileType", "tileColor", "tileRotation"].every((e) =>
         Object.keys(value).includes(e)
       ),
-    tileRotated: (value) =>
+    "tile-rotated": (value) =>
       Object.keys(value).every((e) =>
         ["tileIndex", "tileRotationValue"].includes(e)
       ),
-    tileDropped: (value) => typeof value == "number",
+    "tile-dropped": (value) => typeof value == "number",
   },
 
   setup(props, { emit }) {

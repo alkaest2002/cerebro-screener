@@ -67,9 +67,8 @@ export default {
 
   // emitted events
   emits: {
-    navigateCurrent: (value) => typeof value === "number" && value >= 0,
-    navigateBeyondLast: null,
-    navigateBeforeFirst: null,
+    "navigate-current": (value) => typeof value === "number" && value >= 0,
+    "navigate-beyond-last": null,
   },
 
   // set up

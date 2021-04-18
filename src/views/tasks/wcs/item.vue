@@ -24,7 +24,7 @@
         <wcs-decks :item-data="itemData" />
         <wcs-stimulus-cards
           :item-data="itemData"
-          @on-click-stimulus-card="onClickStimulusCard"
+          @click-stimulus-card="onClickStimulusCard"
         />
         <slot name="explanation" :item-data="itemData" />
       </item-container>

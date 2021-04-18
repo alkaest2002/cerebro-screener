@@ -57,8 +57,8 @@ export default {
 
   // emitted events
   emits: {
-    addNumberToUserSequence: (value) => Array.isArray(value),
-    resetUserSequence: null,
+    "add-number-to-user-sequence": (value) => Array.isArray(value),
+    "reset-user-sequence": null,
   },
 
   // setup

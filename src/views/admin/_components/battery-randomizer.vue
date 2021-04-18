@@ -42,7 +42,7 @@ export default {
 
   // emitted events
   emits: {
-    shuffleSchema: (value) => Array.isArray(value),
+    "shuffle-schema": (value) => Array.isArray(value),
   },
 
   // setup object

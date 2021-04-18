@@ -48,7 +48,7 @@ export default {
 
   // emitted events
   emits: {
-    discDropped: (value) =>
+    "disc-dropped": (value) =>
       ["pegFrom", "pegTo"].every((e) => Object.keys(value).includes(e)),
   },
 

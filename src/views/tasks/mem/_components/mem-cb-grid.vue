@@ -58,8 +58,8 @@ export default {
 
   // emitted events
   emits: {
-    sequenceHasPlayed: (value) => typeof value == "boolean",
-    clickNumber: (value) => [1, 2, 3, 4, 5, 6, 7, 8, 9].includes(value),
+    "sequence-has-played": (value) => typeof value == "boolean",
+    "click-number": (value) => [1, 2, 3, 4, 5, 6, 7, 8, 9].includes(value),
   },
 
   // setup

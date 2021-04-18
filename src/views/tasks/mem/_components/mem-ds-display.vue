@@ -43,7 +43,7 @@ export default {
 
   // emitted events
   emits: {
-    sequenceHasPlayed: (value) => typeof value == "boolean",
+    "sequence-has-played": (value) => typeof value == "boolean",
   },
 
   // setup
