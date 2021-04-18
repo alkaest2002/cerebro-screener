@@ -19,10 +19,10 @@
       </router-link>
     </div>
     <div v-else>
-      <span class="is-block has-text-grey">
+      <span class="is-block has-text-grey-light">
         &rarr; riprendi task
       </span>
-      <span class="is-block has-text-grey">
+      <span class="is-block has-text-grey-light">
         &rarr; prossimo task
       </span>
     </div>
