@@ -170,7 +170,11 @@
       "vue/next-tick-style": "warn",
       "vue/no-invalid-model-keys": "warn",
       "vue/no-lifecycle-after-await": "warn",
-      "vue/component-definition-name-casing": ["warn","kebab-case"]
+      "vue/component-definition-name-casing": [
+        "warn",
+        "kebab-case"
+      ],
+      "vue/component-name-in-template-casing": ["warn","kebab-case"]
     }
   },
   "browserslist": [
