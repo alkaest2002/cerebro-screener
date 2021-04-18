@@ -15,8 +15,8 @@ require("./assets/sass/bulma.scss");
 const vueApp = createApp(app).use(store).use(router);
 
 // add global components
-vueApp.component("baseLayout", baseLayout);
-vueApp.component("loadingButton", loadingButton);
+vueApp.component("base-layout", baseLayout);
+vueApp.component("loading-button", loadingButton);
 
 // mount app
 vueApp.mount("#app");
