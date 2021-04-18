@@ -9,14 +9,23 @@
     </span>
   </div>
   <div>
-    <router-link :to="{ name: 'route-battery-tasks' }" replace>
-      &rarr; riprendi task
-    </router-link>
-    <br />
-    <router-link :to="{ name: 'route-battery-next-task' }" replace>
-      &rarr; prossimo task
-    </router-link>
-    <br />
+    <div v-if="!batteryHasEnded">
+      <router-link :to="{ name: 'route-battery-tasks' }" replace>
+        &rarr; riprendi task
+      </router-link>
+      <br />
+      <router-link :to="{ name: 'route-battery-next-task' }" replace>
+        &rarr; prossimo task
+      </router-link>
+    </div>
+    <div v-else>
+      <span class="is-block has-text-grey">
+        &rarr; riprendi task
+      </span>
+      <span class="is-block has-text-grey">
+        &rarr; prossimo task
+      </span>
+    </div>
     <router-link :to="{ name: 'route-battery-end' }" replace>
       &rarr; fine della batteria
     </router-link>
@@ -38,9 +47,13 @@ export default {
     // get current battery (no need to be reactive)
     const currentBattery = store.state.battery.battery;
 
+    // get batteryHasEnded (no need to be reactive)
+    const batteryHasEnded = store.state.battery.hasEnded;
+
     // return setup object
     return {
       currentBattery,
+      batteryHasEnded,
     };
   },
 };

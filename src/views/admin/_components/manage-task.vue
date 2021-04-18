@@ -16,7 +16,7 @@
   </div>
   <div>
     <a
-      v-if="currentBlock?.type == 'items'"
+      v-if="currentBlock?.type == 'items' && !batteryHasEnded"
       href="#"
       @click.prevent="onClickResetBlock"
     >
@@ -25,7 +25,7 @@
     <span v-else class="has-text-grey"> &rarr; reset blocco corrente </span>
     <br />
     <a
-      v-if="nextInstructionsBlock > 0"
+      v-if="nextInstructionsBlock > 0 && !batteryHasEnded"
       href="#"
       @click.prevent="onClickNextInstructionsBlock"
     >
@@ -51,6 +51,9 @@ export default {
 
     // get current battery (no need to be reactive)
     const currentBattery = store.state.battery.battery;
+
+    // get batteryHasEnded (no need to be reactive)
+    const batteryHasEnded = store.state.battery.hasEnded;
 
     // get current task
     const currentTask = computed(() => store.getters["battery/getCurrentTask"]);
@@ -105,6 +108,7 @@ export default {
 
     // return setup object
     return {
+      batteryHasEnded,
       currentTask,
       currentTaskIndex,
       currentBlock,
