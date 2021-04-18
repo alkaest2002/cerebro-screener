@@ -19,7 +19,6 @@
         <div class="block mt-3">
           <item-likert
             v-model="surveyData.q1"
-            :index="0"
             :min-value="0"
             :max-value="10"
             @click="onChangeLikert"
@@ -34,7 +33,6 @@
         <div class="block mt-3">
           <item-likert
             v-model="surveyData.q2"
-            :index="1"
             :min-value="0"
             :max-value="10"
             @click="onChangeLikert"
@@ -51,7 +49,6 @@
         <div class="block mt-3">
           <item-likert
             v-model="surveyData.q3"
-            :index="2"
             :min-value="0"
             :max-value="10"
             @click="onChangeLikert"

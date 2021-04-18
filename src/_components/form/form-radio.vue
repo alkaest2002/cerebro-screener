@@ -16,6 +16,9 @@ export default {
   // name
   name: "form-radio",
 
+  // do not inherit attrs
+  inheritAttrs: false,
+
   // emitted events
   emits: {
     "update:modelValue": (value) => ["string", "number"].includes(typeof value),

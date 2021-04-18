@@ -44,10 +44,6 @@ export default {
       required: true,
       validator: (value) => value.every((e) => "123456789".indexOf(e) > -1),
     },
-    sequenceHasPlayed: {
-      type: Boolean,
-      default: false,
-    },
   },
 
   // setup

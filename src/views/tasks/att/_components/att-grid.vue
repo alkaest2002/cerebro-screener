@@ -7,22 +7,19 @@
       :class="{ [`grid-size-${gridSize}`]: true }"
       class="is-flex is-flex-wrap-wrap"
     >
-      <div v-for="(numbers, index) in grid" :key="index">
+      <div v-for="(n, idx) in grid" :key="idx">
         <div
           :class="{
-            'has-background-danger-light':
-              numbers[0] && numbers[0] == clickedNumber,
+            'has-background-danger-light': n[0] && n[0] == clickedNumber,
           }"
           class="grid-number is-flex is-justify-content-center is-align-items-center"
-          @click="onClickNumber({ number: numbers[0] })"
+          @click="onClickNumber({ number: n[0] })"
         >
           <span
-            :class="{
-              'has-text-danger-dark': numbers[0] && numbers[0] == clickedNumber,
-            }"
+            :class="{ 'has-text-danger-dark': n[0] && n[0] == clickedNumber }"
             class="is-size-2"
           >
-            {{ numbers[0] }}
+            {{ n[0] }}
           </span>
         </div>
       </div>

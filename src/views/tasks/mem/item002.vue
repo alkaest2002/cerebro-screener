@@ -15,7 +15,6 @@
           <cb-grid
             :sequence="itemData.sequence"
             :user-sequence="itemData.userSequence"
-            :sequence-has-played="itemData.sequenceHasPlayed"
             @sequence-has-played="onSequenceHasPlayed"
             @click-number="onClickNumber"
           />

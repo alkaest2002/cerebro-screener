@@ -14,7 +14,6 @@
         >
           <ds-display
             :sequence="itemData.sequence"
-            :sequence-has-played="itemData.sequenceHasPlayed"
             @sequence-has-played="onSequenceHasPlayed"
           />
           <ds-calc

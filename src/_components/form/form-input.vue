@@ -26,6 +26,9 @@ export default {
   // name
   name: "form-input",
 
+  // do not inherit attrs
+  inheritAttrs: false,
+
   // emitted events
   emits: {
     "update:modelValue": (value) => ["number", "string"].includes(typeof value),

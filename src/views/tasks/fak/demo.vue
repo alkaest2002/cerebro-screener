@@ -1,7 +1,7 @@
 <template>
   <fak-item>
     <template #title> Versione demo </template>
-    <template>
+    <template #explanation>
       <div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer

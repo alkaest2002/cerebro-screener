@@ -55,10 +55,6 @@ export default {
       type: Array,
       required: true,
     },
-    shouldShuffle: {
-      type: Number,
-      default: 0,
-    },
   },
 
   // emitted events

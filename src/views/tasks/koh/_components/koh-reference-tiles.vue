@@ -27,14 +27,6 @@ export default {
     kohTile,
   },
 
-  // props
-  props: {
-    isLocked: {
-      type: Boolean,
-      required: true,
-    },
-  },
-
   // setup
   setup() {
     // reference tiles

@@ -26,11 +26,6 @@ export default {
 
   // props
   props: {
-    index: {
-      type: Number,
-      default: null,
-    },
-
     minValue: {
       type: Number,
       default: null,
