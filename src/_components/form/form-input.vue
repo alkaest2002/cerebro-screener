@@ -34,6 +34,7 @@ export default {
   // props
   props: {
     label: {
+      type: String,
       default: null,
     },
     placeholder: {
@@ -41,6 +42,7 @@ export default {
       required: true,
     },
     inputType: {
+      type: String,
       default: "text",
     },
     modelValue: {
@@ -48,7 +50,8 @@ export default {
       default: "",
     },
     cssClass: {
-      default: [],
+      type: String,
+      default: "",
     },
     errors: {
       type: Object,
@@ -56,6 +59,7 @@ export default {
     },
     autoFocus: {
       type: Boolean,
+      default: false,
     },
   },
 
