@@ -1,18 +1,16 @@
 <template>
-  <div class="has-text-centered mt-5">
-    <div id="footer">
-      <small class="has-text-grey">
+  <div class="has-text-centered mt-1">
+    <div id="footer" class="has-text-grey-light">
+      <small>
         vai al
         <router-link
           :to="{ name: 'route-main-about' }"
-          class="has-text-grey"
-          style="text-decoration: underline"
+          class="has-text-grey-light"
         >
-          comitato scientifico </router-link
-        ><br />
-        <span class="has-text-grey">
-          svg icons by freepik from www.flaticon.com
-        </span>
+          comitato scientifico
+        </router-link>
+        <br />
+        <span> svg icons by freepik from www.flaticon.com </span>
       </small>
     </div>
   </div>
@@ -28,5 +26,9 @@ export default {
 <style lang="scss" scoped>
 #footer {
   line-height: 1.25em;
+
+  a {
+    text-decoration: underline;
+  }
 }
 </style>
