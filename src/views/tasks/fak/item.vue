@@ -17,9 +17,9 @@
           </div>
           <div class="block">
             <button
-              @click="itemData.actions += 1"
               class="button is-primary"
               type="button"
+              @click="itemData.actions += 1"
             >
               simula azione
             </button>

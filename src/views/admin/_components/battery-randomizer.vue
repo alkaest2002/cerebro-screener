@@ -5,9 +5,9 @@
       :key="task.key"
       :class="{ 'is-link': status }"
       :disabled="disabled"
-      @click="onClickTask(task)"
       class="button"
       type="buttons"
+      @click="onClickTask(task)"
     >
       {{ task.key }}
     </button>

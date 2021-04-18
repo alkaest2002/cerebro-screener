@@ -13,8 +13,8 @@
         :dots="dots"
         :is-locked="false"
         :is-draggable="true"
-        @dragstart="$emit('dragstart', dots)"
         class="dots m-1 is-clickable"
+        @dragstart="$emit('dragstart', dots)"
       />
     </div>
   </div>

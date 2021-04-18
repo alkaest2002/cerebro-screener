@@ -3,8 +3,8 @@
     class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
   >
     <div
-      :class="cssState"
       id="circle"
+      :class="cssState"
       class="mb-2 is-size-2 is-flex is-justify-content-center is-align-items-center"
     >
       <transition name="fade" mode="out-in">
@@ -13,7 +13,7 @@
         </span>
       </transition>
     </div>
-    <mem-starter :cssState="cssState" @click="onClickPlay">
+    <mem-starter :css-state="cssState" @click="onClickPlay">
       clicca in sequenza i {{ sequence.length }} numeri
     </mem-starter>
   </div>

@@ -5,10 +5,10 @@
       'background-color': highlight && !isLocked ? 'gold' : 'transparent',
     }"
     :draggable="isDraggable"
+    class="half"
     @dragover.prevent="highlightFace(true)"
     @dragleave.prevent="highlightFace(false)"
     @drop="highlightFace(false)"
-    class="half"
   >
     <div
       v-if="dots == -1"

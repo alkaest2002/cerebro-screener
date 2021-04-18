@@ -12,9 +12,9 @@
       <p class="is-size-3 has-text-weight-bold mt-2">Tempo scaduto</p>
       <p>Premi il tasto "continua" per procedere oltre.</p>
       <button
-        @click="onNavigateCurrent(nextBlockIndex)"
         class="button is-link mt-3"
         type="button"
+        @click="onNavigateCurrent(nextBlockIndex)"
       >
         continua
       </button>

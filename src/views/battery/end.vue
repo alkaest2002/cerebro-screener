@@ -23,8 +23,8 @@
             <loading-button
               :is-loading="localOp.status == 'running'"
               :disabled="disableArchive"
-              @click="onClickArchive"
               class="is-link mt-5"
+              @click="onClickArchive"
             >
               registra le tue risposte
             </loading-button>

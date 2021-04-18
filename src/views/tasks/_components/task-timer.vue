@@ -1,5 +1,5 @@
 <template>
-  <div v-if="showTimer" :class="cssClass" id="timer">
+  <div v-if="showTimer" id="timer" :class="cssClass">
     <span id="timer-text">
       {{ timeLeftFormatted }}
     </span>

@@ -7,9 +7,9 @@
     >
       <a
         v-bind="$attrs"
-        @click.prevent="onClickFigure(index)"
         href="#"
         class="has-text-grey has-text-centered"
+        @click.prevent="onClickFigure(index)"
       >
         <img src="@/assets/images/figure.svg" alt="figure placheholder" />
         <span>fig {{ index + 1 }}</span>
@@ -27,14 +27,14 @@
             </div>
             <div class="card-content">
               <div
-                v-html="modalData.description"
                 class="content has-text-grey"
+                v-html="modalData.description"
               />
               <div class="buttons is-flex is-justify-content-center">
                 <button
-                  @click="modalOpen = false"
                   class="button is-link"
                   type="button"
+                  @click="modalOpen = false"
                 >
                   chiudi
                 </button>

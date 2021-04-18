@@ -15,8 +15,8 @@
               v-for="(card, index) in itemData.cards"
               :key="index"
               :card="card"
-              @click="onClickCard(index)"
               class="m-1"
+              @click="onClickCard(index)"
             />
           </div>
           <col-table-info

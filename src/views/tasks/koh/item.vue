@@ -8,11 +8,11 @@
       </h1>
     </div>
     <div
+      id="presenter"
+      class="is-relative is-clipped box"
       @dragenter.prevent=""
       @dragover.prevent=""
       @drop="onTileDroppedOutsideFigure"
-      id="presenter"
-      class="is-relative is-clipped box"
     >
       <item-container>
         <div class="is-flex is-flex-direction-column is-align-items-center">

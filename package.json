@@ -47,7 +47,10 @@
       "parser": "babel-eslint"
     },
     "rules": {
-      "vue/v-on-event-hyphenation": "warn"
+      "vue/v-on-event-hyphenation": "warn",
+      "vue/require-explicit-emits": "warn",
+      "vue/attribute-hyphenation": "warn",
+      "vue/attributes-order": "warn"
     }
   },
   "browserslist": [

@@ -4,8 +4,8 @@
       v-for="val in likert"
       :key="val"
       :class="{ active: val == modelValue }"
-      @click="$emit('update:modelValue', val)"
       class="is-flex is-justify-content-center is-align-items-center"
+      @click="$emit('update:modelValue', val)"
     >
       <span>
         {{ val }}

@@ -3,27 +3,27 @@
     <div class="buttons mb-0">
       <button
         :disabled="!canGoBack"
-        @click="onClickNavigation(-1)"
         class="button is-link"
         type="button"
+        @click="onClickNavigation(-1)"
       >
         <span>prec</span>
       </button>
       <button
         v-if="currentIndex != endComponentIndex - 1"
         :disabled="!canGoForth"
-        @click="onClickNavigation(+1)"
         class="button is-link"
         type="button"
+        @click="onClickNavigation(+1)"
       >
         <span>succ</span>
       </button>
       <button
         v-else
         :disabled="!canGoForth"
-        @click="onClickNavigation(+1)"
         class="button is-danger"
         type="button"
+        @click="onClickNavigation(+1)"
       >
         <span>fine</span>
       </button>

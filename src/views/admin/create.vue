@@ -18,8 +18,8 @@
           2. Randomizzazione dei task
         </p>
         <form-radio-group
-          name="shouldShuffle"
           v-model="shouldShuffle"
+          name="shouldShuffle"
           :options="shuffleOptions"
           :disabled="templateBattery.length < 2"
         />
@@ -37,14 +37,14 @@
     </div>
     <div id="navigation" class="buttons">
       <router-link
+        id="enter-click"
         :to="{ name: 'route-main-home' }"
         replace
-        id="enter-click"
         class="button is-link"
       >
         somministra batteria
       </router-link>
-      <button @click="onResetBattery" class="button is-danger" type="reset">
+      <button class="button is-danger" type="reset" @click="onResetBattery">
         reset batteria
       </button>
     </div>

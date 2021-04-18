@@ -18,10 +18,10 @@
         <small class="has-text-grey-light">0 pessima, 10 eccellente</small>
         <div class="block mt-3">
           <item-likert
+            v-model="surveyData.q1"
             :index="0"
             :min-value="0"
             :max-value="10"
-            v-model="surveyData.q1"
             @click="onChangeLikert"
           />
         </div>
@@ -33,10 +33,10 @@
         <small class="has-text-grey-light">0 per nulla, 10 completamente</small>
         <div class="block mt-3">
           <item-likert
+            v-model="surveyData.q2"
             :index="1"
             :min-value="0"
             :max-value="10"
-            v-model="surveyData.q2"
             @click="onChangeLikert"
           />
         </div>
@@ -50,10 +50,10 @@
         >
         <div class="block mt-3">
           <item-likert
+            v-model="surveyData.q3"
             :index="2"
             :min-value="0"
             :max-value="10"
-            v-model="surveyData.q3"
             @click="onChangeLikert"
           />
         </div>

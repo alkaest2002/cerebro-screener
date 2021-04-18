@@ -15,22 +15,22 @@
       </span>
     </div>
     <div id="first-row" class="is-flex">
-      <div @click="onClickNumber(1)" class="calc-number">1</div>
-      <div @click="onClickNumber(2)" class="calc-number">2</div>
-      <div @click="onClickNumber(3)" class="calc-number">3</div>
+      <div class="calc-number" @click="onClickNumber(1)">1</div>
+      <div class="calc-number" @click="onClickNumber(2)">2</div>
+      <div class="calc-number" @click="onClickNumber(3)">3</div>
     </div>
     <div id="second-row" class="is-flex">
-      <div @click="onClickNumber(4)" class="calc-number">4</div>
-      <div @click="onClickNumber(5)" class="calc-number">5</div>
-      <div @click="onClickNumber(6)" class="calc-number">6</div>
+      <div class="calc-number" @click="onClickNumber(4)">4</div>
+      <div class="calc-number" @click="onClickNumber(5)">5</div>
+      <div class="calc-number" @click="onClickNumber(6)">6</div>
     </div>
     <div id="third-row" class="is-flex">
-      <div @click="onClickNumber(7)" class="calc-number">7</div>
-      <div @click="onClickNumber(8)" class="calc-number">8</div>
-      <div @click="onClickNumber(9)" class="calc-number">9</div>
+      <div class="calc-number" @click="onClickNumber(7)">7</div>
+      <div class="calc-number" @click="onClickNumber(8)">8</div>
+      <div class="calc-number" @click="onClickNumber(9)">9</div>
     </div>
     <div id="forth-row" class="is-flex">
-      <div @click="onClickReset" id="reset" class="is-flex-grow-1">reset</div>
+      <div id="reset" class="is-flex-grow-1" @click="onClickReset">reset</div>
     </div>
   </div>
 </template>

@@ -4,16 +4,16 @@
       <dom-tile-face
         :dots="tile[0]"
         v-bind="$attrs"
-        @drop="$emit('droppedDots', 0)"
         style="border: none"
+        @drop="$emit('droppedDots', 0)"
       />
     </div>
     <div class="down is-relative">
       <dom-tile-face
         :dots="tile[1]"
         v-bind="$attrs"
-        @drop="$emit('droppedDots', 1)"
         style="border: none"
+        @drop="$emit('droppedDots', 1)"
       />
     </div>
   </div>

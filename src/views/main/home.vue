@@ -4,10 +4,10 @@
     <div class="mt-5 columns is-tablet is-centered">
       <div class="column is-one-third">
         <button
-          @click="onEnterAsParticipant"
           id="enter-click"
           class="button is-link is-fullwidth"
           type="button"
+          @click="onEnterAsParticipant"
         >
           entra
         </button>

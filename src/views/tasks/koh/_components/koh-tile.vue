@@ -8,6 +8,7 @@
         'is-clickable': !isLocked && tileColor != 'void',
         'is-hover': highlightVoid,
       }"
+      class="tile"
       @click.exact.left="onRotateTile('clockwise')"
       @click.exact.right.prevent="onRotateTile('counterClockwise')"
       @dragenter="onDrag($event, 'enter')"
@@ -15,7 +16,6 @@
       @dragleave="onDrag($event, 'leave')"
       @dragstart="onDragStart"
       @drop="onDrop"
-      class="tile"
     />
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div :class="cardClass" @click="onClickCard" class="iow-card">
+  <div :class="cardClass" class="iow-card" @click="onClickCard">
     <div>{{ win }}</div>
     <div>{{ lose }}</div>
   </div>

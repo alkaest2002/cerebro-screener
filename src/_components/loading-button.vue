@@ -2,9 +2,9 @@
   <button
     :class="buttonCSSClass"
     :disabled="disabled || buttonWasClicked"
-    @click="onClick"
     class="button"
     type="button"
+    @click="onClick"
   >
     <slot> vai </slot>
   </button>

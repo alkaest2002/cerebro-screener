@@ -37,7 +37,7 @@
       />
     </div>
     <div id="navigation" class="buttons">
-      <button @click="onClickSubmit" class="button is-link" type="submit">
+      <button class="button is-link" type="submit" @click="onClickSubmit">
         continua
       </button>
     </div>

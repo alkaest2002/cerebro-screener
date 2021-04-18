@@ -29,8 +29,8 @@
             <loading-button
               :is-loading="localOp.status == 'running'"
               :disabled="localOp.status == 'running' || indexDbCount == 0"
-              @click="onClickDownload"
               class="is-link"
+              @click="onClickDownload"
             >
               scarica dati in locale
             </loading-button>
@@ -59,8 +59,8 @@
           <loading-button
             :is-loading="serverOp.status == 'running'"
             :disabled="serverOp.status == 'running' || indexDbCount == 0"
-            @click="onClickUpload"
             class="is-link"
+            @click="onClickUpload"
           >
             carica dati sul server
           </loading-button>

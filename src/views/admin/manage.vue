@@ -63,8 +63,8 @@
         <div>
           <a
             v-if="currentBlock?.type == 'items'"
-            @click.prevent="onClickResetBlock"
             href="#"
+            @click.prevent="onClickResetBlock"
           >
             &rarr; reset blocco corrente
           </a>
@@ -73,8 +73,8 @@
           ><br />
           <a
             v-if="nextInstructionsBlock > 0"
-            @click.prevent="onClickNextInstructionsBlock"
             href="#"
+            @click.prevent="onClickNextInstructionsBlock"
           >
             &rarr; blocco successivo
           </a>
@@ -84,9 +84,9 @@
     </div>
     <div id="navigation" class="buttons">
       <router-link
+        id="enter-click"
         :to="{ name: 'route-admin-reset-battery' }"
         replace
-        id="enter-click"
         class="button is-danger"
       >
         reset sessione

@@ -1,7 +1,7 @@
 <template>
   <div
-    :class="cssState"
     id="blocks"
+    :class="cssState"
     class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
   >
     <div class="is-flex is-flex-wrap-wrap mb-5">
@@ -16,14 +16,14 @@
         <div
           v-else
           :class="{ clicked: userSequence.includes(number) }"
-          @click="$emit('clickNumber', number)"
           class="block is-size-2 is-flex is-justify-content-center is-align-items-center m-1"
+          @click="$emit('clickNumber', number)"
         >
           {{ userSequence.indexOf(number) + 1 }}
         </div>
       </div>
     </div>
-    <mem-starter :cssState="cssState" @click="onClickPlay">
+    <mem-starter :css-state="cssState" @click="onClickPlay">
       clicca in sequenza i {{ sequence.length }} circoletti
     </mem-starter>
   </div>

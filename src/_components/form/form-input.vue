@@ -3,8 +3,8 @@
     <label v-if="label" class="label">{{ label }}</label>
     <div class="control">
       <input
-        class="input"
         ref="inputRef"
+        class="input"
         :class="inputClass"
         :type="inputType"
         :placeholder="placeholder"
@@ -13,7 +13,7 @@
         @input="$emit('update:modelValue', $event.target.value)"
       />
     </div>
-    <small class="has-text-danger" v-if="localErrors.length">
+    <small v-if="localErrors.length" class="has-text-danger">
       <div v-for="(error, index) in localErrors" :key="index">{{ error }}</div>
     </small>
   </div>

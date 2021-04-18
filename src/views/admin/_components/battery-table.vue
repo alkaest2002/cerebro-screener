@@ -8,17 +8,17 @@
     >
       <div
         :draggable="tasks.length > 1"
+        class="is-flex is-align-content-center"
         @dragenter.prevent=""
         @dragover.prevent=""
         @dragstart="onDragStart(index)"
         @drop="onDragDrop(index)"
-        class="is-flex is-align-content-center"
       >
         <span class="task-cell has-text-centered">
           <span
             v-if="tasks.length > 1"
-            @click="onClickDeleteTask(index)"
             class="is-clickable has-text-danger"
+            @click="onClickDeleteTask(index)"
           >
             <img src="@/assets/images/trash.svg" />
           </span>

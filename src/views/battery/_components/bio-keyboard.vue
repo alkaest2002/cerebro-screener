@@ -3,9 +3,9 @@
     <span
       v-for="key in keys"
       :key="key"
+      class="keyboard-key is-flex is-justify-content-center is-align-items-center"
       @click="onClickKey(key)"
       v-html="key"
-      class="keyboard-key is-flex is-justify-content-center is-align-items-center"
     />
   </div>
 </template>

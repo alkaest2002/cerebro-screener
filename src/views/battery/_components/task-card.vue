@@ -15,9 +15,9 @@
       <footer class="card-footer">
         <a
           v-if="taskIndex == currentTaskIndex"
-          @click.prevent="$attrs.onClick"
           href="#"
           class="card-footer-item"
+          @click.prevent="$attrs.onClick"
         >
           continua
         </a>

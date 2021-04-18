@@ -14,9 +14,9 @@
         >
           <dom-tile
             v-for="(tile, index) in itemData.tiles"
+            :key="index"
             :tile="tile"
             :is-locked="true"
-            :key="index"
           />
           <dom-tile
             :tile="itemData.userTile"

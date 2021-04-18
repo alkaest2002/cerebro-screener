@@ -3,8 +3,8 @@
     class="is-flex is-flex-direction-column is-align-items-center is-justify-content-center"
   >
     <div
-      :class="{ [`grid-size-${gridSize}`]: true }"
       id="grid"
+      :class="{ [`grid-size-${gridSize}`]: true }"
       class="is-flex is-flex-wrap-wrap"
     >
       <div v-for="(numbers, index) in grid" :key="index">
@@ -13,8 +13,8 @@
             'has-background-danger-light':
               numbers[0] && numbers[0] == clickedNumber,
           }"
-          @click="onClickNumber({ number: numbers[0] })"
           class="grid-number is-flex is-justify-content-center is-align-items-center"
+          @click="onClickNumber({ number: numbers[0] })"
         >
           <span
             :class="{

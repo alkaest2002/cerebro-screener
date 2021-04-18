@@ -1,11 +1,11 @@
 <template>
   <div class="field">
-    <label class="label" v-if="label">{{ label }}</label>
+    <label v-if="label" class="label">{{ label }}</label>
     <div class="control">
       <component
+        :is="vertical ? 'div' : 'span'"
         v-for="option in options"
         :key="option.value"
-        :is="vertical ? 'div' : 'span'"
         :class="{ horizontal: !vertical }"
       >
         <form-radio
@@ -18,7 +18,7 @@
         />
       </component>
     </div>
-    <small class="has-text-danger" v-if="localErrors.length">
+    <small v-if="localErrors.length" class="has-text-danger">
       <div v-for="(error, index) in localErrors" :key="index">{{ error }}</div>
     </small>
   </div>
