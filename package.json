@@ -158,7 +158,9 @@
       "vue/this-in-template": "warn",
       "vue/use-v-on-exact": "warn",
       "vue/v-bind-style": "warn",
-      "vue/v-for-delimiter-style": "warn"
+      "vue/v-for-delimiter-style": "warn",
+      "vue/match-component-file-name": "warn",
+      "vue/v-on-function-call": "warn"
     }
   },
   "browserslist": [

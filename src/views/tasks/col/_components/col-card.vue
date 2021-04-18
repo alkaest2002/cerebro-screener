@@ -23,7 +23,7 @@
 export default {
   // name
   name: "col-card",
-  
+
   // props
   props: {
     card: {

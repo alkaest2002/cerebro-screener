@@ -15,7 +15,7 @@ import colItem from "./col-item";
 export default {
   // name
   name: "task-col-demo",
-  
+
   // components
   components: {
     colItem,
