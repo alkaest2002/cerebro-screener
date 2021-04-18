@@ -68,7 +68,7 @@ export default {
           // persist stopped status to vuex
           store.dispatch("timer/setStatus", "stopped");
           // emit event
-          emit("timeIsUp");
+          emit("time-is-up");
         }
         // clear timer under these conditions
         if (newTimer.status == null || newTimer.status === "stopped") {

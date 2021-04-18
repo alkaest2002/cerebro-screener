@@ -8,7 +8,7 @@
         hover: itemData.droppedCards.length < itemData.cards.length,
       }"
       v-bind="{ ...card }"
-      @click="$emit('onClickStimulusCard', { index, card })"
+      @click="$emit('on-click-stimulus-card', { index, card })"
     />
   </div>
 </template>

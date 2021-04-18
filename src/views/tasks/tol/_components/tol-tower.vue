@@ -64,7 +64,7 @@ export default {
 
     // handle on drop disc
     const onDiscDropped = (pegIndex) => {
-      emit("discDropped", {
+      emit("disc-dropped", {
         pegFrom: draggedPegIndex.value,
         pegTo: pegIndex,
       });

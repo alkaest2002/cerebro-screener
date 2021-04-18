@@ -72,14 +72,14 @@ export default {
       // add number to screen
       screen.value.push(number);
       // emit event
-      emit("addNumberToUserSequence", screen.value);
+      emit("add-number-to-user-sequence", screen.value);
     };
     // handle on reset user sequence
     const onClickReset = () => {
       // reset sequence
       screen.value = [];
       // emit event
-      emit("resetUserSequence");
+      emit("reset-user-sequence");
     };
     // return setup object
     return {

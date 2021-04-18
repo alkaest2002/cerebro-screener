@@ -5,7 +5,7 @@
         :dots="tile[0]"
         v-bind="$attrs"
         style="border: none"
-        @drop="$emit('droppedDots', 0)"
+        @drop="$emit('dropped-dots', 0)"
       />
     </div>
     <div class="down is-relative">
@@ -13,7 +13,7 @@
         :dots="tile[1]"
         v-bind="$attrs"
         style="border: none"
-        @drop="$emit('droppedDots', 1)"
+        @drop="$emit('dropped-dots', 1)"
       />
     </div>
   </div>

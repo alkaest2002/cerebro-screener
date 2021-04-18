@@ -30,6 +30,9 @@ export default {
     },
     shuffleSchema: {
       type: Array,
+      default: () => {
+        return [];
+      },
     },
     disabled: {
       type: Boolean,
@@ -84,7 +87,7 @@ export default {
       // toggle task in randomizationMap (if task parameter is defined)
       if (task) shuffledTasksMap.value = task;
       // emit event
-      emit("shuffleSchema", [...shuffledTasksMap.value.values()]);
+      emit("shuffle-schema", [...shuffledTasksMap.value.values()]);
     };
 
     // return setup object

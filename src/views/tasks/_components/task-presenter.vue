@@ -29,7 +29,7 @@
       :can-go-back="canGoBack"
       :can-go-forth="currentPresenter.canGoForth"
       @navigate-current="onNavigateCurrent"
-      @navigate-beyond-last="$emit('endOfItems')"
+      @navigate-beyond-last="$emit('end-of-items')"
     >
       <template #timer>
         <task-timer @time-is-up="onTimeIsUp" />

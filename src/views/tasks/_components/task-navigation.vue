@@ -79,10 +79,10 @@ export default {
     // handle navigation
     const onClickNavigation = (offset) => {
       // notify on reaching end
-      if (isLastIndex.value && offset == 1) return emit("navigateBeyondLast");
+      if (isLastIndex.value && offset == 1) return emit("navigate-beyond-last");
       // notify entity current
       emit(
-        "navigateCurrent",
+        "navigate-current",
         Math.min(props.lastIndex, Math.max(0, props.currentIndex + offset))
       );
     };

@@ -34,7 +34,7 @@ export default (props, emit) => {
         // update css state
         cssState.value = "finished";
         // emit event
-        emit("sequenceHasPlayed", true);
+        emit("sequence-has-played", true);
       }
     }, 2000);
   };

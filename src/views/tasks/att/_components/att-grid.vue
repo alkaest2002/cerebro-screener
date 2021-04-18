@@ -109,7 +109,7 @@ export default {
       // store clicked number
       clickedNumber.value = number;
       // emit event
-      emit("updateNumbers", {
+      emit("update-numbers", {
         numbers: gridNumbers.value,
         errors: +(number != numberToClick.value - 1),
       });

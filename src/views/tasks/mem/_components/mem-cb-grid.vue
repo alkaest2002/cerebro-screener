@@ -17,7 +17,7 @@
           v-else
           :class="{ clicked: userSequence.includes(number) }"
           class="block is-size-2 is-flex is-justify-content-center is-align-items-center m-1"
-          @click="$emit('clickNumber', number)"
+          @click="$emit('click-number', number)"
         >
           {{ userSequence.indexOf(number) + 1 }}
         </div>

@@ -126,7 +126,7 @@ export default {
           (e) => e == currentRotationValue.value
         );
         // notify tile rotated
-        emit("tileRotated", {
+        emit("tile-rotated", {
           tileIndex: props.tileIndex,
           tileRotationValue: clonedRotation[currentRotationIndex + 1],
         });
@@ -145,7 +145,7 @@ export default {
     const onDragStart = () => {
       const { isLocked, ...tile } = props; // eslint-disable-line no-unused-vars
       // notify tile dragged
-      emit("tileDragged", tile);
+      emit("tile-dragged", tile);
     };
 
     // handle on drop tile
@@ -155,7 +155,7 @@ export default {
       // reset highlight
       highlightVoid.value = false;
       // notifiy tile dropped
-      emit("tileDropped", props.tileIndex);
+      emit("tile-dropped", props.tileIndex);
     };
 
     // handle on rotate tile
