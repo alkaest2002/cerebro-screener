@@ -17,7 +17,7 @@
     </div>
     <teleport to="#modal">
       <div class="modal" :class="{ 'is-active': modalOpen }">
-        <div class="modal-background"></div>
+        <div class="modal-background" />
         <div class="modal-content">
           <div class="card">
             <div class="card-image">

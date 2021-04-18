@@ -16,8 +16,9 @@
         </div>
         <div>
           <router-link :to="{ name: 'route-battery-bio' }" replace>
-            &rarr; anagrafica </router-link
-          ><br />
+            &rarr; anagrafica
+          </router-link>
+          <br />
         </div>
       </div>
       <div class="mt-5">
@@ -32,11 +33,13 @@
         </div>
         <div>
           <router-link :to="{ name: 'route-battery-tasks' }" replace>
-            &rarr; riprendi task </router-link
-          ><br />
+            &rarr; riprendi task
+          </router-link>
+          <br />
           <router-link :to="{ name: 'route-battery-next-task' }" replace>
-            &rarr; prossimo task </router-link
-          ><br />
+            &rarr; prossimo task
+          </router-link>
+          <br />
           <router-link :to="{ name: 'route-battery-end' }" replace>
             &rarr; fine della batteria
           </router-link>
@@ -69,8 +72,9 @@
             &rarr; reset blocco corrente
           </a>
           <span v-else class="has-text-grey">
-            &rarr; reset blocco corrente </span
-          ><br />
+            &rarr; reset blocco corrente
+          </span>
+          <br />
           <a
             v-if="nextInstructionsBlock > 0"
             href="#"

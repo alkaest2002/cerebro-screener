@@ -50,7 +50,17 @@
       "vue/v-on-event-hyphenation": "warn",
       "vue/require-explicit-emits": "warn",
       "vue/attribute-hyphenation": "warn",
-      "vue/attributes-order": "warn"
+      "vue/attributes-order": "warn",
+      "vue/block-tag-newline": "warn",
+      "vue/html-button-has-type": "warn",
+      "vue/html-closing-bracket-newline": "warn",
+      "vue/html-closing-bracket-spacing": "warn",
+      "vue/html-comment-content-newline": "warn",
+      "vue/html-comment-content-spacing": "warn",
+      "vue/html-comment-indent": "warn",
+      "vue/html-end-tags": "warn",
+      "vue/html-indent": "warn",
+      "vue/html-quotes": "warn"
     }
   },
   "browserslist": [

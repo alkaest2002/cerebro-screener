@@ -14,9 +14,9 @@
       </div>
       <div>
         Vai alla
-        <router-link :to="{ name: 'route-main-home' }" replace
-          >Homepage</router-link
-        >
+        <router-link :to="{ name: 'route-main-home' }" replace>
+          Homepage
+        </router-link>
       </div>
     </div>
   </base-layout>

@@ -21,8 +21,7 @@
           Per scaricare i dati in locale non hai bisogno di alcuna connessione a
           internet. Una volta scaricati i dati, dovrai inviare il file al
           seguente indirizzo di posta elettronica
-          <em>{{ $store.state.main.email }}</em
-          >.
+          <em> {{ $store.state.main.email }} </em>.
         </p>
         <div class="mt-5 mb-0">
           <div>
@@ -50,8 +49,8 @@
         <p>
           Per caricare i dati sul sever, il computer deve disporre di una
           connessione a internet che renda possibile l'accesso a
-          <em>{{ $store.state.main.firebaseEndpoint }}</em
-          >.<br />
+          <em> {{ $store.state.main.firebaseEndpoint }} </em>.
+          <br />
           Una volta avviato l'upload, ti chiediamo di attenderne il
           completamento senza interagire con il software.
         </p>

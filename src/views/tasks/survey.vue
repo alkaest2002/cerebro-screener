@@ -45,9 +45,9 @@
         <p class="is-size-6 has-text-weight-bold" style="line-height: 1em">
           Come credi di essere andato rispetto agli altri?
         </p>
-        <small class="has-text-grey-light"
-          >0 decisamente peggio, 10 decissamente meglio</small
-        >
+        <small class="has-text-grey-light">
+          0 decisamente peggio, 10 decissamente meglio
+        </small>
         <div class="block mt-3">
           <item-likert
             v-model="surveyData.q3"
