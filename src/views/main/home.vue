@@ -7,6 +7,7 @@
           @click="onEnterAsParticipant"
           id="enter-click"
           class="button is-link is-fullwidth"
+          type="button"
         >
           entra
         </button>

@@ -14,6 +14,7 @@
       <button
         @click="onNavigateCurrent(nextBlockIndex)"
         class="button is-link mt-3"
+        type="button"
       >
         continua
       </button>

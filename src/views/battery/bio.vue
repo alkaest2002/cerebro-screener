@@ -37,7 +37,13 @@
       />
     </div>
     <div id="navigation" class="buttons">
-      <button @click="onClickSubmit" class="button is-link">continua</button>
+      <button 
+        @click="onClickSubmit" 
+        class="button is-link"
+        type="submit"
+      >
+      continua
+    </button>
     </div>
   </div>
 </template>

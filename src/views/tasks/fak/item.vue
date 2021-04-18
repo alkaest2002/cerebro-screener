@@ -16,7 +16,11 @@
             {{ presenter }}
           </div>
           <div class="block">
-            <button class="button is-primary" @click="itemData.actions += 1">
+            <button 
+              @click="itemData.actions += 1"
+              class="button is-primary" 
+              type="button"
+            >
               simula azione
             </button>
           </div>

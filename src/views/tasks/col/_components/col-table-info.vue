@@ -76,6 +76,7 @@
         :disabled="disableCollect"
         v-bind="$attrs"
         class="button is-warning is-fullwidth"
+        type="button"
       >
         blocca guadagno e scopri le carte
       </button>

@@ -17,6 +17,7 @@
               :class="{ 'is-loading': isLoading }"
               @click.prevent="onClickLogin('route-admin-create-battery')"
               class="button is-link is-fullwidth"
+              type="submit"
             >
               admin &middot; batteria
             </button>
@@ -24,6 +25,7 @@
               :class="{ 'is-loading': isLoading }"
               @click.prevent="onClickLogin('route-admin-save-battery')"
               class="button is-success is-fullwidth"
+              type="submit"
             >
               admin &middot; dati
             </button>

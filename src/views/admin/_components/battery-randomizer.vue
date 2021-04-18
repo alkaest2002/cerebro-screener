@@ -7,6 +7,7 @@
       :disabled="disabled"
       @click="onClickTask(task)"
       class="button"
+      type="buttons"
     >
       {{ task.key }}
     </button>

@@ -31,7 +31,11 @@
                 class="content has-text-grey"
               />
               <div class="buttons is-flex is-justify-content-center">
-                <button @click="modalOpen = false" class="button is-link">
+                <button 
+                  @click="modalOpen = false" 
+                  class="button is-link"
+                  type="button"
+                >
                   chiudi
                 </button>
               </div>

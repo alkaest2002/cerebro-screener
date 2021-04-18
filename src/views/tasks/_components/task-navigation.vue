@@ -5,6 +5,7 @@
         :disabled="!canGoBack"
         @click="onClickNavigation(-1)"
         class="button is-link"
+        type="button"
       >
         <span>prec</span>
       </button>
@@ -13,6 +14,7 @@
         :disabled="!canGoForth"
         @click="onClickNavigation(+1)"
         class="button is-link"
+        type="button"
       >
         <span>succ</span>
       </button>
@@ -21,6 +23,7 @@
         :disabled="!canGoForth"
         @click="onClickNavigation(+1)"
         class="button is-danger"
+        type="button"
       >
         <span>fine</span>
       </button>
