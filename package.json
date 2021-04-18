@@ -160,7 +160,9 @@
       "vue/v-bind-style": "warn",
       "vue/v-for-delimiter-style": "warn",
       "vue/match-component-file-name": "warn",
-      "vue/v-on-function-call": "warn"
+      "vue/v-on-function-call": "warn",
+      "vue/multiline-html-element-content-newline": "warn",
+      "vue/name-property-casing": ["warn", "kebab-case"]
     }
   },
   "browserslist": [

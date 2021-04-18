@@ -17,7 +17,7 @@ import { clone } from "@/utils/utilityFns";
 
 export default {
   // name
-  name: "tasks-task",
+  name: "task",
 
   // set up function
   setup() {
