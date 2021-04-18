@@ -18,11 +18,6 @@ export default {
   //name
   name: "form-checkbox",
 
-  // emitted events
-  emits: {
-    "update:modelValue": (value) => typeof value === "boolean",
-  },
-
   // props
   props: {
     modelValue: {
@@ -33,6 +28,11 @@ export default {
       type: String,
       required: true,
     },
+  },
+
+  // emitted events
+  emits: {
+    "update:modelValue": (value) => typeof value === "boolean",
   },
 };
 </script>

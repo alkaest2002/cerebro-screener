@@ -20,12 +20,6 @@ export default {
   // name
   name: "task-component-bio-keyboard",
 
-  // emitted events
-  emits: {
-    "update:modelValue": (value) =>
-      value.split("").every((e) => checkLegalKey(e)),
-  },
-
   // props
   props: {
     type: {
@@ -37,6 +31,12 @@ export default {
       type: String,
       default: "",
     },
+  },
+
+  // emitted events
+  emits: {
+    "update:modelValue": (value) =>
+      value.split("").every((e) => checkLegalKey(e)),
   },
 
   // setup

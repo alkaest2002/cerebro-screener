@@ -29,12 +29,6 @@ export default {
   // name
   name: "task-tol-component-tower",
 
-  // emitted events
-  emits: {
-    discDropped: (value) =>
-      ["pegFrom", "pegTo"].every((e) => Object.keys(value).includes(e)),
-  },
-
   // components
   components: {
     tolDisc,
@@ -50,6 +44,12 @@ export default {
       type: Boolean,
       required: true,
     },
+  },
+
+  // emitted events
+  emits: {
+    discDropped: (value) =>
+      ["pegFrom", "pegTo"].every((e) => Object.keys(value).includes(e)),
   },
 
   // setup

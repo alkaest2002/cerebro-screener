@@ -15,13 +15,13 @@ export default {
   // name
   name: "task-koh-component-figure",
 
-  // do not inherit attribs
-  inheritAttrs: false,
-
   // components
   components: {
     kohTile,
   },
+
+  // do not inherit attribs
+  inheritAttrs: false,
 
   // props
   props: {

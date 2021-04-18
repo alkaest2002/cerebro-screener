@@ -27,19 +27,6 @@ export default {
   // name
   name: "task-koh-component-tile",
 
-  // emitted events
-  emits: {
-    tileDragged: (value) =>
-      ["tileIndex", "tileType", "tileColor", "tileRotation"].every((e) =>
-        Object.keys(value).includes(e)
-      ),
-    tileRotated: (value) =>
-      Object.keys(value).every((e) =>
-        ["tileIndex", "tileRotationValue"].includes(e)
-      ),
-    tileDropped: (value) => typeof value == "number",
-  },
-
   // props
   props: {
     isLocked: {
@@ -81,6 +68,19 @@ export default {
         );
       },
     },
+  },
+
+  // emitted events
+  emits: {
+    tileDragged: (value) =>
+      ["tileIndex", "tileType", "tileColor", "tileRotation"].every((e) =>
+        Object.keys(value).includes(e)
+      ),
+    tileRotated: (value) =>
+      Object.keys(value).every((e) =>
+        ["tileIndex", "tileRotationValue"].includes(e)
+      ),
+    tileDropped: (value) => typeof value == "number",
   },
 
   setup(props, { emit }) {

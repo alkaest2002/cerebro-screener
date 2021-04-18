@@ -19,11 +19,6 @@ export default {
   // name
   name: "task-component-likert",
 
-  // emitted event
-  emits: {
-    "update:modelValue": (value) => typeof value === "number",
-  },
-
   // props
   props: {
     minValue: {
@@ -40,6 +35,11 @@ export default {
       type: Number,
       default: null,
     },
+  },
+
+  // emitted event
+  emits: {
+    "update:modelValue": (value) => typeof value === "number",
   },
 
   setup(props) {

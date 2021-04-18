@@ -20,19 +20,13 @@ export default {
   // name
   name: "task-wcs-component-stimulus-cards",
 
-  // do not inherit attributs
-  inheritAttrs: false,
-
   // components
   components: {
     wcsCard,
   },
 
-  // emitted events
-  emits: {
-    onClickStimulusCard: (value) =>
-      ["index", "card"].every((e) => Object.keys(value).includes(e)),
-  },
+  // do not inherit attributs
+  inheritAttrs: false,
 
   // props
   props: {
@@ -40,6 +34,12 @@ export default {
       type: Object,
       required: true,
     },
+  },
+
+  // emitted events
+  emits: {
+    onClickStimulusCard: (value) =>
+      ["index", "card"].every((e) => Object.keys(value).includes(e)),
   },
 
   // setup

@@ -40,18 +40,18 @@ export default {
   // name
   name: "task-att-component-att-grid",
 
-  // emitted events
-  emits: {
-    updateNumbers: (value) =>
-      ["numbers", "errors"].every((e) => Object.keys(value).includes(e)),
-  },
-
   // props
   props: {
     numbers: {
       type: Array,
       required: true,
     },
+  },
+
+  // emitted events
+  emits: {
+    updateNumbers: (value) =>
+      ["numbers", "errors"].every((e) => Object.keys(value).includes(e)),
   },
 
   // setup

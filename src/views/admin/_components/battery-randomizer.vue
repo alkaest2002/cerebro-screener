@@ -22,11 +22,6 @@ export default {
   // name
   name: "admin-component-battery-randomizer",
 
-  // emitted events
-  emits: {
-    shuffleSchema: (value) => Array.isArray(value),
-  },
-
   // props
   props: {
     templateBattery: {
@@ -40,6 +35,11 @@ export default {
       type: Boolean,
       default: true,
     },
+  },
+
+  // emitted events
+  emits: {
+    shuffleSchema: (value) => Array.isArray(value),
   },
 
   // setup object

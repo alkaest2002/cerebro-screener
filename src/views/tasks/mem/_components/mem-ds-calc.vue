@@ -43,12 +43,6 @@ export default {
   // name
   name: "task-mem-component-ds-calc",
 
-  // emitted events
-  emits: {
-    addNumberToUserSequence: (value) => Array.isArray(value),
-    resetUserSequence: null,
-  },
-
   // props
   props: {
     userSequence: {
@@ -59,6 +53,12 @@ export default {
       type: Boolean,
       default: false,
     },
+  },
+
+  // emitted events
+  emits: {
+    addNumberToUserSequence: (value) => Array.isArray(value),
+    resetUserSequence: null,
   },
 
   // setup

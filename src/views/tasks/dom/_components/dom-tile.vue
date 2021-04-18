@@ -26,18 +26,13 @@ export default {
   // name
   name: "task-dom-component-tile",
 
-  // do not inherit attrs
-  inheritAttrs: false,
-
-  // emitted events
-  emits: {
-    droppedDots: (value) => [0, 1].includes(value),
-  },
-
   // components
   components: {
     domTileFace,
   },
+
+  // do not inherit attrs
+  inheritAttrs: false,
 
   // props
   props: {
@@ -45,6 +40,11 @@ export default {
       type: Array,
       required: true,
     },
+  },
+
+  // emitted events
+  emits: {
+    droppedDots: (value) => [0, 1].includes(value),
   },
 };
 </script>

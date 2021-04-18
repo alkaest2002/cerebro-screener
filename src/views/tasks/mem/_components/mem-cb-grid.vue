@@ -42,12 +42,6 @@ export default {
     memStarter,
   },
 
-  // emitted events
-  emits: {
-    sequenceHasPlayed: (value) => typeof value == "boolean",
-    clickNumber: (value) => [1, 2, 3, 4, 5, 6, 7, 8, 9].includes(value),
-  },
-
   // props
   props: {
     sequence: {
@@ -60,6 +54,12 @@ export default {
       required: true,
       validator: (value) => value.every((e) => "123456789".indexOf(e) > -1),
     },
+  },
+
+  // emitted events
+  emits: {
+    sequenceHasPlayed: (value) => typeof value == "boolean",
+    clickNumber: (value) => [1, 2, 3, 4, 5, 6, 7, 8, 9].includes(value),
   },
 
   // setup

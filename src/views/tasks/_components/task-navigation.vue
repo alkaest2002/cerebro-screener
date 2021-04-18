@@ -41,13 +41,6 @@ export default {
   // name
   name: "task-component-navigation",
 
-  // emitted events
-  emits: {
-    navigateCurrent: (value) => typeof value === "number" && value >= 0,
-    navigateBeyondLast: null,
-    navigateBeforeFirst: null,
-  },
-
   // props
   props: {
     currentIndex: {
@@ -70,6 +63,13 @@ export default {
       type: Boolean,
       default: true,
     },
+  },
+
+  // emitted events
+  emits: {
+    navigateCurrent: (value) => typeof value === "number" && value >= 0,
+    navigateBeyondLast: null,
+    navigateBeforeFirst: null,
   },
 
   // set up

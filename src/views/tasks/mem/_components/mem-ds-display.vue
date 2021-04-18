@@ -27,11 +27,6 @@ export default {
   // name
   name: "task-mem-component-ds-display",
 
-  // emitted events
-  emits: {
-    sequenceHasPlayed: (value) => typeof value == "boolean",
-  },
-
   // components
   components: {
     memStarter,
@@ -44,6 +39,11 @@ export default {
       required: true,
       validator: (value) => value.every((e) => "123456789".indexOf(e) > -1),
     },
+  },
+
+  // emitted events
+  emits: {
+    sequenceHasPlayed: (value) => typeof value == "boolean",
   },
 
   // setup

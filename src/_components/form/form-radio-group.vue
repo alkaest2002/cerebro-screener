@@ -37,11 +37,6 @@ export default {
     formRadio,
   },
 
-  // emitted events
-  emits: {
-    "update:modelValue": (value) => ["string", "number"].includes(typeof value),
-  },
-
   // props
   props: {
     options: {
@@ -72,6 +67,11 @@ export default {
       type: Boolean,
       default: false,
     },
+  },
+
+  // emitted events
+  emits: {
+    "update:modelValue": (value) => ["string", "number"].includes(typeof value),
   },
 
   // setup

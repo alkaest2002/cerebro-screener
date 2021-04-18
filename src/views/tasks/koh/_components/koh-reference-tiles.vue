@@ -19,13 +19,13 @@ export default {
   // name
   name: "test-koh-component-reference-tiles",
 
-  // do not inherit attrs
-  inheritAttrs: false,
-
   // components
   components: {
     kohTile,
   },
+
+  // do not inherit attrs
+  inheritAttrs: false,
 
   // setup
   setup() {

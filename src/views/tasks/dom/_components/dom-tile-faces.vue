@@ -27,17 +27,17 @@ export default {
   // name
   name: "task-dom-component-tile-faces",
 
+  // components
+  components: {
+    domTileFace,
+  },
+
   // do not inherit attrs
   inheritAttrs: false,
 
   // emitted event
   emits: {
     dragstart: null,
-  },
-
-  // components
-  components: {
-    domTileFace,
   },
 };
 </script>

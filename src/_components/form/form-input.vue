@@ -29,11 +29,6 @@ export default {
   // do not inherit attrs
   inheritAttrs: false,
 
-  // emitted events
-  emits: {
-    "update:modelValue": (value) => ["number", "string"].includes(typeof value),
-  },
-
   // props
   props: {
     label: {
@@ -64,6 +59,11 @@ export default {
       type: Boolean,
       default: false,
     },
+  },
+
+  // emitted events
+  emits: {
+    "update:modelValue": (value) => ["number", "string"].includes(typeof value),
   },
 
   // setup
