@@ -55,7 +55,7 @@
 import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
 import { clone } from "@/utils/utilityFns";
-import formRadioGroup from "@/_components/form/form-radio-group";
+import formRadioGroup from "@/views/_components/form/form-radio-group";
 import batteryTable from "./_components/battery-table";
 import batteryRandomizer from "./_components/battery-randomizer";
 

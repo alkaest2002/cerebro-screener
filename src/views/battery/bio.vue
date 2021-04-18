@@ -50,8 +50,8 @@ import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import { required, numRange } from "@/utils/validators";
 import { clone } from "@/utils/utilityFns";
-import formInput from "@/_components/form/form-input";
-import formRadioGroup from "@/_components/form/form-radio-group";
+import formInput from "@/views/_components/form/form-input";
+import formRadioGroup from "@/views/_components/form/form-radio-group";
 import bioKeyboard from "./_components/bio-keyboard";
 
 export default {

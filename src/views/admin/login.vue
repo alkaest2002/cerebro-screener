@@ -42,7 +42,7 @@ import { ref, reactive } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import { authenticate } from "@/services/authenticate";
-import formInput from "@/_components/form/form-input";
+import formInput from "@/views/_components/form/form-input";
 import mainHero from "@/views/main/_components/main-hero";
 import mainFooter from "@/views/main/_components/main-footer";
 

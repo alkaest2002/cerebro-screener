@@ -5,8 +5,8 @@ import app from "./app.vue";
 import router from "@/router";
 
 // import global components
-import baseLayout from "./_components/base-layout";
-import loadingButton from "./_components/loading-button";
+import baseLayout from "@/views/_components/base-layout";
+import loadingButton from "@/views/_components/loading-button";
 
 // add bulma
 require("./assets/sass/bulma.scss");
