@@ -2,8 +2,8 @@
   <fak-item>
     <template #title> Versione demo </template>
     <template #explanation>
-      <div>
-        <p>
+      <div class="mt-5">
+        <p class="has-text-grey">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
           rutrum, tellus sed scelerisque pharetra, dolor urna bibendum purus,
           sit amet pulvinar elit sem sed urna.
