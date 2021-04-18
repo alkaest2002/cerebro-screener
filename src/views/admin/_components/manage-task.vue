@@ -12,9 +12,7 @@
       <b class="has-text-grey">item</b>
       {{ currentPresenter?.id || "n.d." }}
     </span>
-    <span>
-      <b class="has-text-grey">timer</b> {{ currentTimeLeft }}
-    </span>
+    <span> <b class="has-text-grey">timer</b> {{ currentTimeLeft }} </span>
   </div>
   <div>
     <a
@@ -24,9 +22,7 @@
     >
       &rarr; reset blocco corrente
     </a>
-    <span v-else class="has-text-grey">
-      &rarr; reset blocco corrente
-    </span>
+    <span v-else class="has-text-grey"> &rarr; reset blocco corrente </span>
     <br />
     <a
       v-if="nextInstructionsBlock > 0"
@@ -46,7 +42,7 @@ import { formatTimerTime } from "@/utils/utilityFns";
 
 export default {
   // name
-  name:"manage-task",
+  name: "manage-task",
 
   // setup
   setup() {
@@ -119,7 +115,7 @@ export default {
       onClickNextInstructionsBlock,
     };
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

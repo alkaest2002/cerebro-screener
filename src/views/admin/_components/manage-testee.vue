@@ -22,8 +22,8 @@ import { useStore } from "vuex";
 export default {
   // name
   name: "manage-testee",
- 
- setup() {
+
+  setup() {
     // get store & router
     const store = useStore();
 
@@ -32,10 +32,10 @@ export default {
 
     // return setup object
     return {
-      currentTestee
+      currentTestee,
     };
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
