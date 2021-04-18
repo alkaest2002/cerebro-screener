@@ -54,7 +54,7 @@ export default {
     },
     label: {
       type: String,
-      default: ""
+      default: "",
     },
     modelValue: {
       type: [String, Number],

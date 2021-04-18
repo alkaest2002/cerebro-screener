@@ -44,11 +44,7 @@
       >
         somministra batteria
       </router-link>
-      <button 
-        @click="onResetBattery" 
-        class="button is-danger"
-        type="reset"
-      >
+      <button @click="onResetBattery" class="button is-danger" type="reset">
         reset batteria
       </button>
     </div>
