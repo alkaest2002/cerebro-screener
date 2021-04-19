@@ -31,7 +31,7 @@ const db = firebase.firestore();
 const collection = db.collection(`cerebro-${user.collection}`);
 
 // build document to put into firestore
-const buildDocument = (data) => {
+const _buildDocument = (data) => {
   // destructure
   const { isoTime, testee, answers } = data;
   const document = {
@@ -45,7 +45,6 @@ const buildDocument = (data) => {
       return acc;
     }, {}),
   };
-  console.log(data, document);
   return document;
 };
 
@@ -54,7 +53,9 @@ const uploadData = async (documents) => {
   // try to
   try {
     // sign in to firebae
-    await firebase.auth().signInWithEmailAndPassword(user.email, user.password);
+    await firebase
+      .auth()
+      .signInWithEmailAndPassword(user.email, user.password);
     // init batch
     const batch = db.batch();
     // loop through documents
@@ -70,7 +71,7 @@ const uploadData = async (documents) => {
       // add doc
       batch.set(docRef, {
         timpestamp: Date.now(),
-        data: buildDocument(document),
+        data: _buildDocument(document),
       });
     });
     // commit batch
