@@ -46,12 +46,14 @@ export default {
   setup(props) {
     // init presenter
     const { totalItems, itemData } = initItem(props.presenter.itemData);
+    
     // handle on updateNumbers
     const onUpdateNumbers = ({ numbers, errors }) => {
       itemData.numbers = numbers;
       itemData.errors += errors;
       itemData.isCorrect = numbers.filter((e) => e).length == 0;
     };
+    
     // return setup object
     return {
       totalItems,
