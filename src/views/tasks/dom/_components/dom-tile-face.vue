@@ -54,8 +54,9 @@ export default {
 
   // setup
   setup(props) {
-    // ref
+    // highlight
     const highlight = ref(false);
+    
     // convert number to class
     const dotsCssClass = computed(() => {
       // build css
@@ -71,11 +72,13 @@ export default {
       // add highlight if it's the case
       return highlight.value && !props.isLocked ? css + " highlight" : css;
     });
+    
     // handle on drag over
     const highlightFace = (state) => {
       // update highligth
       highlight.value = state;
     };
+    
     // return object
     return {
       dotsCssClass,

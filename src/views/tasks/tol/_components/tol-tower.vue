@@ -55,7 +55,7 @@ export default {
 
   // setup
   setup(props, { emit }) {
-    // ref to dragged disc index
+    // dragged disc index
     const draggedPegIndex = ref(null);
 
     // handle on drag disc

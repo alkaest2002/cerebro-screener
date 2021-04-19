@@ -59,8 +59,10 @@ export default {
     // no need to be reactive
     const gridSizes = [36, 25, 16, 9];
 
-    // refs
+    // grid numbers
     const gridNumbers = ref(clone(props.numbers));
+    
+    // clicked number
     const clickedNumber = ref(null);
 
     // gridSize

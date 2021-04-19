@@ -67,11 +67,13 @@ export default {
 
   // setup
   setup(props) {
-    // ref
+    // modal open flag
     const modalOpen = ref(false);
+
+    // clicked image
     const clickedImg = ref(null);
 
-    // computed
+    // modal data
     const modalData = computed(() => props.images[clickedImg.value || 0]);
 
     // handle on click figure

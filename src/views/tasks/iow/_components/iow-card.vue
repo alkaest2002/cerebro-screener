@@ -32,10 +32,10 @@ export default {
 
   // setup
   setup(props) {
-    // ref
+    // should cover flag
     const shouldCover = ref(true);
 
-    // computed
+    // card css class
     const cardClass = computed(() => {
       let css = "";
       if (props.win > 0) css = "win";

@@ -37,13 +37,14 @@ export default {
 
   // setup
   setup(props) {
-    // computed
+    // card
     const card = computed(() => {
       // get first non null card
       const card = props.cards.filter((e) => e)[0];
       // return card or void one
       return card ? card : { id: -1 };
     });
+    
     // return setup object
     return {
       card,

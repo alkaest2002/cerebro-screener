@@ -70,7 +70,7 @@ export default {
     // define refs
     const draggedIndex = ref(null);
 
-    // computed
+    // battery tasks
     const tasks = computed({
       get: () => props.templateBattery,
       set: (value) => {

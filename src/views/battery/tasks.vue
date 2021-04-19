@@ -41,10 +41,10 @@ export default {
     const router = useRouter();
     const route = useRoute();
 
-    // get battery (no need to make it reactive)
+    // get battery (no need to be reactive)
     const battery = store.state.battery.battery;
 
-    // computed
+    // current task index
     const currentTaskIndex = computed(
       () => store.state.battery.currentTaskIndex || 0
     );

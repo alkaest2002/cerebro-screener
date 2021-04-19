@@ -49,10 +49,10 @@ export default {
 
   // setup object
   setup(props, { emit }) {
-    // ref
+    // randomization map
     const randomizationMap = ref(new Map());
 
-    // computed
+    // shuffled task mapper
     const shuffledTasksMap = computed({
       get: () => {
         // if randomizationMap is already populated just return it

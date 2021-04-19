@@ -64,7 +64,7 @@ export default {
     // init presenter
     const { totalItems, itemData } = initItem(props.presenter.itemData);
 
-    // computed prop
+    // tower
     const tower = computed(() => {
       if (itemData.userTower.reduce((acc, itr) => (acc += itr.length), 0) > 0)
         return itemData.userTower;

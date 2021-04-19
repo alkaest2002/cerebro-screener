@@ -81,7 +81,7 @@ export default {
     // locakDecks flag
     const lockDecks = ref(false);
 
-    // computed
+    // flipped cards
     const flippedCards = computed(() => {
       // count flipped cards
       return itemData.deckIds.length || 0;

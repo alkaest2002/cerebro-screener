@@ -82,14 +82,14 @@ export default {
 
   // setup
   setup(props) {
-    // computed
+    // local errors
     const localErrors = computed(() => {
       // filter out map entries in the form of null => null
       // such entries comes from successful validations
       return Array.from(props.errors.values()).filter((e) => e);
     });
 
-    // computed
+    // input css class
     const inputClass = computed(() => {
       // on validation error
       if (localErrors.value.length > 0) {

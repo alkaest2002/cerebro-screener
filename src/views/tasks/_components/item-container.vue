@@ -29,7 +29,7 @@ export default {
     // get store
     const store = useStore();
 
-    // computed
+    // show item lock flag
     const showItemLock = computed(() => {
       return [
         store.getters["presenters/getCurrentPresenter"].isLocked,

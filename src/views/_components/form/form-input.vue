@@ -87,7 +87,7 @@ export default {
       return Array.from(props.errors.values()).filter((e) => e);
     });
 
-    // computed
+    // input css class
     const inputClass = computed(() => {
       // on validation error
       if (localErrors.value.length > 0) {
