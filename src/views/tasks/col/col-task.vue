@@ -23,7 +23,7 @@ import item from "./col-item";
 
 export default {
   // name
-  name: "task-col",
+  name: "col-task",
 
   // components
   components: {
@@ -37,6 +37,7 @@ export default {
 
   // setup
   setup() {
+    // init task
     initTask(getTaskData());
   },
 };
