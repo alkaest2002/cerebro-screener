@@ -44,7 +44,7 @@ export default {
 
   // emitted events
   emits: {
-    "shuffle-schema": (value) => Array.isArray(value),
+    "update:shuffleSchema": (value) => Array.isArray(value),
   },
 
   // setup object
@@ -89,7 +89,7 @@ export default {
       // toggle task in randomizationMap (if task parameter is defined)
       if (task) shuffledTasksMap.value = task;
       // emit event
-      emit("shuffle-schema", [...shuffledTasksMap.value.values()]);
+      emit("update:shuffleSchema", [...shuffledTasksMap.value.values()]);
     };
 
     // return setup object

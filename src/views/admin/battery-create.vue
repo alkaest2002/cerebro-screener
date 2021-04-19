@@ -24,11 +24,9 @@
           :disabled="templateBattery.length < 2"
         />
         <battery-randomizer
-          class="mt-5"
+          v-model:shuffle-schema="shuffleSchema"
           :template-battery="templateBattery"
-          :shuffle-schema="shuffleSchema"
           :disabled="!!!shouldShuffle"
-          @shuffle-schema="onShuffleSchema"
         />
         <small class="has-text-grey is-block mt-1">
           nota: clicca sui task che vuoi mantenere in posizione
@@ -72,7 +70,7 @@ export default {
     // get store
     const store = useStore();
 
-    // shouldShuffle options
+    // shouldShuffle options (no need to be reactive)
     const shuffleOptions = [
       { label: "non randomizzare", value: 0 },
       { label: "randomizza", value: 1 },
@@ -102,9 +100,6 @@ export default {
       set: (value) => store.dispatch("battery/setTemplateBattery", value),
     });
 
-    // handle on shuffle schema
-    const onShuffleSchema = (schema) => (shuffleSchema.value = schema);
-
     // handle on reset battery
     const onResetBattery = () => {
       // reset templateBattery to available tasks
@@ -115,7 +110,7 @@ export default {
       shuffleSchema.value = [];
       // clear battery from vuex
       store.dispatch("battery/setBattery", []);
-      // clear answer from vuex
+      // clear answers from vuex
       store.dispatch("answers/wipe");
     };
 
@@ -131,7 +126,6 @@ export default {
       shouldShuffle,
       shuffleOptions,
       shuffleSchema,
-      onShuffleSchema,
       onResetBattery,
     };
   },
