@@ -61,7 +61,7 @@ export default {
 
     // grid numbers
     const gridNumbers = ref(clone(props.numbers));
-    
+
     // clicked number
     const clickedNumber = ref(null);
 

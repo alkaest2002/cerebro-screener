@@ -44,7 +44,7 @@ export default {
       // return card or void one
       return card ? card : { id: -1 };
     });
-    
+
     // return setup object
     return {
       card,

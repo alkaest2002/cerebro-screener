@@ -34,15 +34,15 @@ export default {
   setup() {
     // use store
     const store = useStore();
-    
+
     // get task key
     const taskKey = computed(() =>
       store.getters["battery/getCurrentTask"].key.toUpperCase()
     );
-    
+
     // reset any timer on mounting
     onMounted(() => store.dispatch("timer/wipe"));
-    
+
     // return setup object
     return {
       taskKey,
