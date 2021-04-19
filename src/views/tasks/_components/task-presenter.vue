@@ -20,7 +20,7 @@
       </button>
     </task-lock>
     <!-- PRESENTER -->
-    <slot name="presenter" />
+    <slot name="presenter" :presenter="currentPresenter" />
     <!-- NAVIGATION -->
     <task-navigation
       :current-index="currentIndex"

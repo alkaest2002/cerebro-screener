@@ -1,6 +1,6 @@
 <template>
   <task-presenter>
-    <template #presenter>
+    <template #presenter="{ presenter }">
       <transition name="fade" mode="out-in" appear>
         <div id="presenter-cointainer" :key="presenter.id" class="is-relative">
           <component :is="presenter.component" :presenter="presenter" />
@@ -33,12 +33,7 @@ export default {
   // setup
   setup() {
     // init task
-    const { presenter } = initTask(getTaskData);
-
-    // return setup object
-    return {
-      presenter,
-    };
+    initTask(getTaskData());
   },
 };
 </script>

@@ -1,12 +1,10 @@
-import { computed } from "vue";
 import { useStore } from "vuex";
 
-export default (getTaskData) => {
+export default ({ blocks, presenters }) => {
   // get store
   const store = useStore();
-  const { blocks, presenters } = getTaskData();
 
-  // if task setup data is already in vuex
+  // if task data is already in vuex
   if (
     [
       store.getters["blocks/getBlocksLength"],
@@ -19,20 +17,10 @@ export default (getTaskData) => {
       store.state.presenters.currentPresenterIndex
     );
   } else {
-    // persist to vuex task data
+    // persist task data
     store.dispatch("blocks/setBlocks", blocks);
     store.dispatch("blocks/setCurrentBlockIndex", 0);
     store.dispatch("presenters/setPresenters", presenters);
     store.dispatch("presenters/setCurrentPresenterIndex", 0);
-  }
-
-  // get current presenter
-  const presenter = computed(
-    () => store.getters["presenters/getCurrentPresenter"]
-  );
-
-  // return data
-  return {
-    presenter,
   };
 };
