@@ -57,7 +57,7 @@ export default {
       router.replace({ name: `route-tasks-${taskKey}` });
     };
 
-    // on mounted component, reset task related data under these conditions
+    // on mounted component, reset task data if query reset is set
     onMounted(() => {
       if (route.query.reset) {
         store.dispatch("blocks/wipe");
