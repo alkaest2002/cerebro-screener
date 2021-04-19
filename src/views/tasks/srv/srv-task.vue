@@ -16,8 +16,8 @@ import { getTaskData } from "./setup";
 import initTask from "@/views/tasks/_composables/initTask";
 import taskPresenter from "@/views/tasks/_components/task-presenter";
 import instructions from "@/views/tasks/task-instructions";
-import survey from "./srv-survey";
 import end from "@/views/tasks/task-end";
+import survey from "./srv-survey";
 
 export default {
   // name
