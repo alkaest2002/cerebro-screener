@@ -148,12 +148,8 @@ export const getTaskData = () => {
   const clonedBlocks = clone(blocks);
   // get presenters
   const presenters = makePresenters(clonedBlocks);
-  // return data
-  return {
-    blocks: clonedBlocks,
-    presenters,
-    buildAnswersFn,
-  };
+  // return blocks and presenters
+  return { blocks: clonedBlocks, presenters  };
 };
 
 export const buildAnswersFn = (answers) => {
