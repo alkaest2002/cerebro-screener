@@ -185,15 +185,15 @@ const blocks = [
         isLocked: false,
         itemData: {
           description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a neque magna. Pellentesque ut turpis finibus, placerat nisl sed, dictum sapien. Integer at turpis libero. Etiam sagittis euismod velit, eu lacinia quam rutrum pellentesque. Quisque dolor metus, egestas et placerat imperdiet, semper ac eros. Pellentesque a leo a nulla cursus accumsan at eu ante. Phasellus nec pharetra justo. Curabitur in lobortis elit. Morbi scelerisque mauris eu sagittis pellentesque. In hac habitasse platea dictumst. Quisque et scelerisque elit, eget efficitur elit. Aliquam luctus purus eu diam fermentum finibus. Sed quis ante enim. Curabitur iaculis porttitor ante, eu tempor elit vulputate ac. Aliquam vel porta leo, sed vehicula ex. Nunc felis odio, semper eget eros id, porttitor gravida ligula. Vestibulum sed nulla id risus egestas maximus. Nullam fermentum elit non nisl volutpat, vitae molestie nisl viverra. Curabitur elementum egestas pellentesque. Aliquam eget lectus varius, lacinia neque ut, auctor turpis. Sed lacinia nunc eget dolor laoreet aliquam. Nullam vitae rutrum diam.",
-          scoring: "il punteggio dipende da...",
-          items: 30,
-          duration: 15 * 60,
+            "<p>Questo compito è basato sulle tessere del gioco del domino. Ogni tessera si compone di due facce in ciascuna delle quali vi è un numero che può andare da 0 a 6. Per ogni quesito, viene presentata una serie di tessere che termina con una tessera sulle cui facce sono rappresentati dei punti interrogativi (vedi figura 1).</p><p>Le tessere della serie sono legate tra loro da un criterio di natura logico-numerica. Il tuo compito è di comprendere tale criterio e dedurre conseguentemente i numeri da mettere sulle facce dell'ultima tessera, quella mancante.</p><p>Tieni presente che il grado di difficoltà dei quesiti varia: alcuni sono facili da risolvere: per questi, troverai abbastanza rapidamente una soluzione; altri invece richiedono uno sforzo di pensiero superiore e la capacità di cogliere relazioni numeriche non scontate.</p>",
+          scoring: "il punteggio dipende dalla velocità di risoluzione dei quesiti e dalla correttezza delle risposte date.",
+          items: 15,
+          duration: "senza limiti temporali",
           images: [
             {
               src: "dom/fig1.png",
               description:
-                "In alto, è presentata una sequenza di tessere con l'ultima da indovinare; In basso, sono elencati i numeri da trascinare sulle facce della tessera mancante",
+                "In alto, è presentata una sequenza di tessere con l'ultima da indovinare; In basso, sono elencati i numeri da trascinare sulle facce della tessera mancante.",
             },
           ],
           actions: 0,
