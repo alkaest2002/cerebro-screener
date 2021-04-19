@@ -184,16 +184,30 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description:
-            "<p>Questo compito è basato sulle tessere del gioco del domino. Ogni tessera si compone di due facce in ciascuna delle quali vi è un numero che può andare da 0 a 6. Per ogni quesito, viene presentata una serie di tessere che termina con una tessera sulle cui facce sono rappresentati dei punti interrogativi (vedi figura 1).</p><p>Le tessere della serie sono legate tra loro da un criterio di natura logico-numerica. Il tuo compito è di comprendere tale criterio e dedurre conseguentemente i numeri da mettere sulle facce dell'ultima tessera, quella mancante.</p><p>Tieni presente che il grado di difficoltà dei quesiti varia: alcuni sono facili da risolvere: per questi, troverai abbastanza rapidamente una soluzione; altri invece richiedono uno sforzo di pensiero superiore e la capacità di cogliere relazioni numeriche non scontate.</p>",
-          scoring: "il punteggio dipende dalla velocità di risoluzione dei quesiti e dalla correttezza delle risposte date.",
+          description: `<p>Questo compito è basato sulle tessere del gioco del domino. 
+            Ogni tessera si compone di due facce in ciascuna delle quali vi è
+            un numero che può andare da 0 a 6. Per ogni quesito, viene 
+            presentata una serie di tessere che termina con una tessera 
+            sulle cui facce sono rappresentati dei punti interrogativi 
+            (vedi figura 1).</p><p>Le tessere della serie sono legate tra loro 
+            da un criterio di natura logico-numerica. Il tuo compito è di 
+            comprendere tale criterio e dedurre conseguentemente i numeri 
+            da mettere sulle facce dell'ultima tessera, quella mancante.</p>
+            <p>Tieni presente che il grado di difficoltà dei quesiti varia: 
+            alcuni sono facili da risolvere: per questi, troverai abbastanza 
+            rapidamente una soluzione; altri invece richiedono uno sforzo di 
+            pensiero superiore e la capacità di cogliere relazioni numeriche 
+            non scontate.</p>`,
+          scoring: `il punteggio dipende dalla velocità di risoluzione dei quesiti 
+            e dalla correttezza delle risposte date.`,
           items: 15,
           duration: "senza limiti temporali",
           images: [
             {
               src: "dom/fig1.png",
-              description:
-                "In alto, è presentata una sequenza di tessere con l'ultima da indovinare; In basso, sono elencati i numeri da trascinare sulle facce della tessera mancante.",
+              description: `In alto, è presentata una sequenza di tessere con l'ultima da 
+                indovinare; In basso, sono elencati i numeri da trascinare 
+                sulle facce della tessera mancante.`,
             },
           ],
           actions: 0,

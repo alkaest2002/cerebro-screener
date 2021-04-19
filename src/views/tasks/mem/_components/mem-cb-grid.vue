@@ -70,6 +70,7 @@ export default {
       props,
       emit
     );
+
     // return setup object
     return {
       cssState,

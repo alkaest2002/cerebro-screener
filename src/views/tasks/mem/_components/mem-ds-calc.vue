@@ -66,6 +66,7 @@ export default {
   setup(props, { emit }) {
     // calculator screen
     const screen = ref(clone(props.userSequence));
+
     // handle on click number
     const onClickNumber = (number) => {
       // do nothing if numbers are more than 9
@@ -75,6 +76,7 @@ export default {
       // emit event
       emit("add-number-to-user-sequence", screen.value);
     };
+
     // handle on reset user sequence
     const onClickReset = () => {
       // reset sequence
@@ -82,6 +84,7 @@ export default {
       // emit event
       emit("reset-user-sequence");
     };
+
     // return setup object
     return {
       screen,

@@ -2,7 +2,7 @@
   <task-presenter>
     <template #presenter="{ presenter }">
       <transition name="fade" mode="out-in" appear>
-        <div id="presenter-cointainer" class="is-relative" :key="presenter.id">
+        <div id="presenter-cointainer" :key="presenter.id" class="is-relative">
           <component :is="presenter.component" :presenter="presenter" />
         </div>
       </transition>

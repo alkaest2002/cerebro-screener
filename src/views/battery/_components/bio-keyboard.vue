@@ -3,7 +3,7 @@
     <span
       v-for="key in keys"
       :key="key"
-      class="keyboard-key is-flex is-justify-content-center is-align-items-center"
+      class="keyb-key is-flex is-justify-content-center is-align-items-center"
       @click="onClickKey(key)"
       v-html="key"
     />
@@ -83,7 +83,7 @@ $key-hover-color: #fff;
 .keyboard {
   width: 613px;
 
-  .keyboard-key {
+  .keyb-key {
     display: inline-block;
     height: 30px;
     width: 30px;

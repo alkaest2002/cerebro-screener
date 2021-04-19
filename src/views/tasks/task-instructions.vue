@@ -20,9 +20,17 @@
           <td colspan="2">
             <table id="description">
               <tr>
-                <td id="description-text" class="pl-0" :col-span="block.images.length > 0 ? 1 : 2" v-html="block.description" />
-                <td id="description-images" v-if="block.images.length > 0">
-                  <images-carousel :images="block.images" @click="onClickImages" />
+                <td
+                  id="description-text"
+                  class="pl-0"
+                  :col-span="block.images.length > 0 ? 1 : 2"
+                  v-html="block.description"
+                />
+                <td v-if="block.images.length > 0" id="description-images">
+                  <images-carousel
+                    :images="block.images"
+                    @click="onClickImages"
+                  />
                 </td>
               </tr>
             </table>
@@ -66,7 +74,7 @@ export default {
   setup(props) {
     // get store
     const store = useStore();
-    
+
     // handle on click images
     const onClickImages = () => {
       // clone itemData
@@ -80,10 +88,10 @@ export default {
         canGoForth: true,
       });
     };
-    
+
     // reset any timer on mounting
     onMounted(() => store.dispatch("timer/wipe"));
-    
+
     // return setup object
     return {
       block: props.presenter.itemData,
@@ -103,9 +111,9 @@ export default {
   }
   #description-text {
     width: 90%;
-    
+
     &::v-deep p {
-      margin-bottom: .5em;
+      margin-bottom: 0.5em;
     }
   }
 }
