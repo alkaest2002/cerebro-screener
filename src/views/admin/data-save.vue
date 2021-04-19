@@ -28,7 +28,7 @@ import { computed } from "vue";
 import { useStore } from "vuex";
 import dataSaveToServer from "./_components/data-save-to-server";
 import dataSaveToLocal from "./_components/data-save-to-local";
-import DataSaveToServer from './_components/data-save-to-server.vue';
+import DataSaveToServer from "./_components/data-save-to-server.vue";
 
 export default {
   // name
@@ -38,7 +38,7 @@ export default {
   components: {
     dataSaveToServer,
     dataSaveToLocal,
-    DataSaveToServer
+    DataSaveToServer,
   },
 
   // setup

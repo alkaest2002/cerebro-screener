@@ -5,8 +5,8 @@
     </p>
     <p>
       Per scaricare i dati in locale non hai bisogno di alcuna connessione a
-      internet. Una volta scaricati i dati, dovrai inviare il file al
-      seguente indirizzo di posta elettronica
+      internet. Una volta scaricati i dati, dovrai inviare il file al seguente
+      indirizzo di posta elettronica
       <em> {{ emailTo }} </em>.
     </p>
     <div class="mt-5 mb-0">
@@ -37,7 +37,7 @@ import manageIndexDb from "@/views/_composables/manageIndexDb";
 import saveToLocal from "@/views/_composables/saveToLocal";
 
 export default {
-   // name
+  // name
   name: "data-save-to-local",
 
   // setup
@@ -55,7 +55,7 @@ export default {
     const { localOp, onDownload: onClickDownload } = saveToLocal(
       indexDbExecute
     );
-    
+
     // index db count
     const indexDbCount = computed(() => store.state.answers.indexDbCount);
 
@@ -67,7 +67,7 @@ export default {
       onClickDownload,
     };
   },
-  }
+};
 </script>
 
 <style lang="scss" scoped>

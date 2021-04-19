@@ -149,7 +149,7 @@ export const getTaskData = () => {
   // get presenters
   const presenters = makePresenters(clonedBlocks);
   // return blocks and presenters
-  return { blocks: clonedBlocks, presenters  };
+  return { blocks: clonedBlocks, presenters };
 };
 
 export const buildAnswersFn = (answers) => {

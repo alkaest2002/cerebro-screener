@@ -22,5 +22,5 @@ export default ({ blocks, presenters }) => {
     store.dispatch("blocks/setCurrentBlockIndex", 0);
     store.dispatch("presenters/setPresenters", presenters);
     store.dispatch("presenters/setCurrentPresenterIndex", 0);
-  };
+  }
 };

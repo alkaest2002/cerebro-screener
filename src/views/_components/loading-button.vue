@@ -30,7 +30,7 @@ export default {
 
     buttonType: {
       type: String,
-      default: "button"
+      default: "button",
     },
 
     disabled: {

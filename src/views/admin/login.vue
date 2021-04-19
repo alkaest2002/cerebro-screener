@@ -16,7 +16,7 @@
             <loading-button
               :is-loading="isLoading"
               class="button is-link is-fullwidth"
-              buttonType="submit"
+              button-type="submit"
               @click.prevent="onClickLogin('route-admin-create-battery')"
             >
               admin &middot; batteria
@@ -24,7 +24,7 @@
             <loading-button
               :is-loading="isLoading"
               class="button is-success is-fullwidth"
-              buttonType="submit"
+              button-type="submit"
               @click.prevent="onClickLogin('route-admin-save-battery')"
             >
               admin &middot; dati

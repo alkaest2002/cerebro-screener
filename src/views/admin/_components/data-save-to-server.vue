@@ -8,8 +8,8 @@
       connessione a internet che renda possibile l'accesso a
       <em> {{ firebaseEndpoint }} </em>.
       <br />
-      Una volta avviato l'upload, ti chiediamo di attenderne il
-      completamento senza interagire con il software.
+      Una volta avviato l'upload, ti chiediamo di attenderne il completamento
+      senza interagire con il software.
     </p>
     <div class="mt-5 mb-0">
       <loading-button
@@ -52,7 +52,7 @@ export default {
 
     // from composables
     const { indexDbExecute } = manageIndexDb();
-    
+
     // from composables
     const { isOnline, serverOp, onUpload: onClickUpload } = saveToServer(
       indexDbExecute
@@ -62,7 +62,7 @@ export default {
     const indexDbCount = computed(() => store.state.answers.indexDbCount);
 
     // firebase endpoit (no need to be reactive)
-    const firebaseEndpoint =  store.state.main.firebaseEndpoint;
+    const firebaseEndpoint = store.state.main.firebaseEndpoint;
 
     // return setup object
     return {
@@ -73,7 +73,7 @@ export default {
       onClickUpload,
     };
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

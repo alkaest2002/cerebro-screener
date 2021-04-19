@@ -38,7 +38,7 @@ export default {
   // setup
   setup() {
     // init task
-   initTask(getTaskData());
+    initTask(getTaskData());
   },
 };
 </script>
