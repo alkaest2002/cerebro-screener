@@ -3,7 +3,7 @@
     :class="buttonCSSClass"
     :disabled="disabled || buttonWasClicked"
     class="button"
-    type="button"
+    :type="buttonType"
     @click="onClick"
   >
     <slot> vai </slot>
@@ -26,6 +26,11 @@ export default {
     buttonCss: {
       type: String,
       default: "",
+    },
+
+    buttonType: {
+      type: String,
+      default: "button"
     },
 
     disabled: {

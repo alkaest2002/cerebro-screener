@@ -13,22 +13,22 @@
             @input="errors.password.clear()"
           />
           <div class="buttons">
-            <button
-              :class="{ 'is-loading': isLoading }"
+            <loading-button
+              :is-loading="isLoading"
               class="button is-link is-fullwidth"
-              type="submit"
+              buttonType="submit"
               @click.prevent="onClickLogin('route-admin-create-battery')"
             >
               admin &middot; batteria
-            </button>
-            <button
-              :class="{ 'is-loading': isLoading }"
+            </loading-button>
+            <loading-button
+              :is-loading="isLoading"
               class="button is-success is-fullwidth"
-              type="submit"
+              buttonType="submit"
               @click.prevent="onClickLogin('route-admin-save-battery')"
             >
               admin &middot; dati
-            </button>
+            </loading-button>
           </div>
         </form>
       </div>
@@ -43,6 +43,7 @@ import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import { authenticate } from "@/services/authenticate";
 import formInput from "@/views/_components/form/form-input";
+import loadingButton from "@/views/_components/loading-button";
 import mainHero from "@/views/main/_components/main-hero";
 import mainFooter from "@/views/main/_components/main-footer";
 
@@ -51,6 +52,7 @@ export default {
 
   components: {
     formInput,
+    loadingButton,
     mainHero,
     mainFooter,
   },
@@ -73,11 +75,11 @@ export default {
       if (password.value == "") return;
       // set is loading to true
       isLoading.value = true;
-      // try to authentucate
+      // try to authenticate
       try {
-        // check password
+        // check credentials
         await authenticate({ userId: null, password: password.value });
-        // go to admin dashboard
+        // go to specified route
         router.replace({ name: routeName });
       } catch (err) {
         // set password error value
