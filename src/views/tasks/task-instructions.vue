@@ -11,7 +11,7 @@
         </tr>
         <tr>
           <td>{{ block.items }} quesiti</td>
-          <td>{{ formatTime(block.duration) }} minuti</td>
+          <td>{{ formatTime(block.duration) }}</td>
         </tr>
         <tr class="has-text-weight-bold">
           <td colspan="2">Descrizione</td>
@@ -20,17 +20,9 @@
           <td colspan="2">
             <table id="description">
               <tr>
-                <td class="pl-0">
-                  <div
-                    :col-span="block.images.length > 0 ? 1 : 2"
-                    v-html="block.description"
-                  />
-                </td>
-                <td v-if="block.images.length > 0">
-                  <images-carousel
-                    :images="block.images"
-                    @click="onClickImages"
-                  />
+                <td id="description-text" class="pl-0" :col-span="block.images.length > 0 ? 1 : 2" v-html="block.description" />
+                <td id="description-images" v-if="block.images.length > 0">
+                  <images-carousel :images="block.images" @click="onClickImages" />
                 </td>
               </tr>
             </table>
@@ -104,12 +96,16 @@ export default {
 
 <style lang="scss" scoped>
 #description {
-  height: 320px;
+  height: 370px;
+
   td {
     border: none;
-
-    &:first-child {
-      width: 90%;
+  }
+  #description-text {
+    width: 90%;
+    
+    &::v-deep p {
+      margin-bottom: .5em;
     }
   }
 }
