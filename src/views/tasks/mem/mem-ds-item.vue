@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import initPresenter from "@/views/tasks/_composables/initPresenter";
+import initItem from "@/views/tasks/_composables/initItem";
 import itemContainer from "../_components/item-container.vue";
 import dsDisplay from "./_components/mem-ds-display";
 import dsCalc from "./_components/mem-ds-calc";
@@ -57,7 +57,7 @@ export default {
   // setup
   setup(props) {
     // init presenter
-    const { totalItems, itemData } = initPresenter(props.presenter.itemData);
+    const { totalItems, itemData } = initItem(props.presenter.itemData);
 
     // handle on sequnce has played
     const onSequenceHasPlayed = () => {

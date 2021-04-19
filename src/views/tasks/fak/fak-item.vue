@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import initPresenter from "@/views/tasks/_composables/initPresenter";
+import initItem from "@/views/tasks/_composables/initItem";
 import itemContainer from "@/views/tasks/_components/item-container";
 
 export default {
@@ -55,7 +55,7 @@ export default {
   // setup
   setup(props) {
     // init presenter
-    const { totalItems, itemData } = initPresenter(props.presenter.itemData);
+    const { totalItems, itemData } = initItem(props.presenter.itemData);
 
     // return
     return {

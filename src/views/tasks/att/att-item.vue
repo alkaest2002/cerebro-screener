@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import initPresenter from "@/views/tasks/_composables/initPresenter";
+import initItem from "@/views/tasks/_composables/initItem";
 import itemContainer from "@/views/tasks/_components/item-container";
 import attGrid from "./_components/att-grid";
 
@@ -45,7 +45,7 @@ export default {
   // setup
   setup(props) {
     // init presenter
-    const { totalItems, itemData } = initPresenter(props.presenter.itemData);
+    const { totalItems, itemData } = initItem(props.presenter.itemData);
     // handle on updateNumbers
     const onUpdateNumbers = ({ numbers, errors }) => {
       itemData.numbers = numbers;

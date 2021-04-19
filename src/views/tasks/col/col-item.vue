@@ -36,7 +36,7 @@
 <script>
 import { computed } from "vue";
 import { shuffle, clone } from "@/utils/utilityFns";
-import initPresenter from "@/views/tasks/_composables/initPresenter";
+import initItem from "@/views/tasks/_composables/initItem";
 import itemContainer from "@/views/tasks/_components/item-container";
 import colCard from "./_components/col-card";
 import colTableInfo from "./_components/col-table-info";
@@ -63,7 +63,7 @@ export default {
   // setup
   setup(props) {
     // init presenter
-    const { totalItems, itemData, previousItemsItemData } = initPresenter(
+    const { totalItems, itemData, previousItemsItemData } = initItem(
       props.presenter.itemData
     );
 

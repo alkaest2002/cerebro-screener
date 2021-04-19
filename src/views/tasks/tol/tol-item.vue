@@ -37,7 +37,7 @@
 <script>
 import { computed } from "vue";
 import { clone } from "@/utils/utilityFns";
-import initPresenter from "@/views/tasks/_composables/initPresenter";
+import initItem from "@/views/tasks/_composables/initItem";
 import ItemContainer from "../_components/item-container.vue";
 import tolTower from "./_components/tol-tower";
 
@@ -62,7 +62,7 @@ export default {
   // setup
   setup(props) {
     // init presenter
-    const { totalItems, itemData } = initPresenter(props.presenter.itemData);
+    const { totalItems, itemData } = initItem(props.presenter.itemData);
 
     // computed prop
     const tower = computed(() => {

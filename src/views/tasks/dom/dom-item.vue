@@ -33,7 +33,7 @@
 
 <script>
 import { ref } from "vue";
-import initPresenter from "@/views/tasks/_composables/initPresenter";
+import initItem from "@/views/tasks/_composables/initItem";
 import itemContainer from "@/views/tasks/_components/item-container";
 import domTile from "./_components/dom-tile";
 import domTileFaces from "./_components/dom-tile-faces";
@@ -60,7 +60,7 @@ export default {
   // setup
   setup(props) {
     // init presenter
-    const { totalItems, itemData } = initPresenter(props.presenter.itemData);
+    const { totalItems, itemData } = initItem(props.presenter.itemData);
 
     // init ref
     const draggedDots = ref(null);

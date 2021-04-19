@@ -46,7 +46,7 @@
 import { ref, computed, watch } from "vue";
 import { useStore } from "vuex";
 import { clone } from "@/utils/utilityFns";
-import initPresenter from "@/views/tasks/_composables/initPresenter";
+import initItem from "@/views/tasks/_composables/initItem";
 import itemContainer from "@/views/tasks/_components/item-container";
 import iowDeck from "./_components/iow-deck";
 import iowInfo from "./_components/iow-info";
@@ -76,7 +76,7 @@ export default {
     const store = useStore();
 
     // init presenter
-    const { totalItems, itemData } = initPresenter(props.presenter.itemData);
+    const { totalItems, itemData } = initItem(props.presenter.itemData);
 
     // locakDecks flag
     const lockDecks = ref(false);

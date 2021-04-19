@@ -63,7 +63,7 @@
 <script>
 import { ref, computed } from "vue";
 import { clone } from "@/utils/utilityFns";
-import initPresenter from "@/views/tasks/_composables/initPresenter";
+import initItem from "@/views/tasks/_composables/initItem";
 import itemContainer from "@/views/tasks/_components/item-container";
 import kohReferenceTiles from "./_components/koh-reference-tiles";
 import kohFigure from "./_components/koh-figure";
@@ -90,7 +90,7 @@ export default {
   // setup
   setup(props) {
     // init presenter
-    const { totalItems, itemData } = initPresenter(props.presenter.itemData);
+    const { totalItems, itemData } = initItem(props.presenter.itemData);
 
     // void tile
     const voidTile = {

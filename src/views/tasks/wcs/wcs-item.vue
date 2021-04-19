@@ -36,7 +36,7 @@
 import { computed, watch } from "vue";
 import { useStore } from "vuex";
 import { clone } from "@/utils/utilityFns";
-import initPresenter from "@/views/tasks/_composables/initPresenter";
+import initItem from "@/views/tasks/_composables/initItem";
 import ItemContainer from "../_components/item-container.vue";
 import wcsCard from "./_components/wcs-card";
 import wcsDecks from "./_components/wcs-decks";
@@ -65,7 +65,7 @@ export default {
   // setup
   setup(props) {
     // init presenter
-    const { totalItems, itemData } = initPresenter(props.presenter.itemData);
+    const { totalItems, itemData } = initItem(props.presenter.itemData);
 
     // get store
     const store = useStore();

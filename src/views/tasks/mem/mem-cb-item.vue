@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import initPresenter from "@/views/tasks/_composables/initPresenter";
+import initItem from "@/views/tasks/_composables/initItem";
 import ItemContainer from "../_components/item-container.vue";
 import cbGrid from "./_components/mem-cb-grid";
 
@@ -51,7 +51,7 @@ export default {
   // setup
   setup(props) {
     // init presenter
-    const { totalItems, itemData } = initPresenter(props.presenter.itemData);
+    const { totalItems, itemData } = initItem(props.presenter.itemData);
 
     // handle on sequence has played
     const onSequenceHasPlayed = () => {
