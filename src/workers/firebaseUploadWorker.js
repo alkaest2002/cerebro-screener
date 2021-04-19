@@ -53,9 +53,7 @@ const uploadData = async (documents) => {
   // try to
   try {
     // sign in to firebae
-    await firebase
-      .auth()
-      .signInWithEmailAndPassword(user.email, user.password);
+    await firebase.auth().signInWithEmailAndPassword(user.email, user.password);
     // init batch
     const batch = db.batch();
     // loop through documents
