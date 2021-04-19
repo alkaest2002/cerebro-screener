@@ -74,6 +74,7 @@ export default {
   setup(props) {
     // get store
     const store = useStore();
+    
     // handle on click images
     const onClickImages = () => {
       // clone itemData
@@ -87,8 +88,10 @@ export default {
         canGoForth: true,
       });
     };
+    
     // reset any timer on mounting
     onMounted(() => store.dispatch("timer/wipe"));
+    
     // return setup object
     return {
       block: props.presenter.itemData,

@@ -35,7 +35,7 @@ export default {
     // use store
     const store = useStore();
 
-    // get task key
+    // get task key and make it uppercase
     const taskKey = computed(() =>
       store.getters["battery/getCurrentTask"].key.toUpperCase()
     );
