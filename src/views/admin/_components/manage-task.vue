@@ -22,9 +22,7 @@
     >
       &rarr; reset blocco corrente
     </a>
-    <span v-else class="has-text-grey">
-      &rarr; reset blocco corrente
-    </span>
+    <span v-else class="has-text-grey"> &rarr; reset blocco corrente </span>
     <br />
     <a
       v-if="nextInstructionsBlock > 0 && !batteryHasEnded"
