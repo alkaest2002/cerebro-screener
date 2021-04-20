@@ -7,17 +7,6 @@ const initState = {
     gender: -1,
     edu: -1,
   },
-  genderOptions: [
-    { label: "maschio", value: "maschio" },
-    { label: "femmina", value: "femmina" },
-  ],
-  eduOptions: [
-    { label: "scuola obbligo", value: "scuola obbligo" },
-    { label: "diploma", value: "diploma" },
-    { label: "laurea breve", value: "laurea breve" },
-    { label: "laurea magistrale", value: "laurea magistrale" },
-    { label: "post laurea", value: "post laurea" },
-  ],
 };
 
 const mutations = {

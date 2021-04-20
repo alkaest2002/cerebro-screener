@@ -71,9 +71,20 @@ export default {
     const store = useStore();
     const router = useRouter();
 
-    // get data from store (no need to be reactive)
-    const genderOptions = store.state.testee.genderOptions;
-    const eduOptions = store.state.testee.eduOptions;
+    // gender options (no need to be reactive)
+    const genderOptions = [
+      { label: "maschio", value: "m" },
+      { label: "femmina", value: "f" },
+    ];
+    
+    // gender options (no need to be reactive)
+    const eduOptions = [
+      { label: "scuola obbligo", value: 1 },
+      { label: "diploma", value: 2 },
+      { label: "laurea breve", value: 3 },
+      { label: "laurea magistrale", value: 4 },
+      { label: "post laurea", value: 5 },
+    ];
 
     // init testee data
     const testee = reactive(clone(store.state.testee.testee));
