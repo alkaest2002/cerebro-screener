@@ -11,7 +11,6 @@
 </template>
 
 <script>
-/* eslint-disable vue/no-unused-components */
 import { getTaskData } from "@/setup/tasks/wcs-setup";
 import initTask from "@/views/tasks/_composables/initTask";
 import taskPresenter from "@/views/tasks/_components/task-presenter";
