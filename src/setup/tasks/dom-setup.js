@@ -198,9 +198,8 @@ const blocks = [
             rapidamente una soluzione; altri invece richiedono uno sforzo di 
             pensiero superiore e la capacità di cogliere relazioni numeriche 
             non scontate.</p>`,
-          scoring: `Il punteggio dipende dalla correttezza
-            della risposta, dal numero di mosse e dal tempo impiegato per 
-            giungere alla soluzione.`,
+          scoring: `correttezza della risposta, numero di mosse compiute, 
+            tempo impiegato.`,
           items: 15,
           duration: "nessun limite di tempo.",
           images: [
