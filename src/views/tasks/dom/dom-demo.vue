@@ -1,15 +1,9 @@
 <template>
   <dom-item>
     <template #title> Versione demo </template>
-    <template #explanation>
+    <template #explanation="{ itemData }">
       <div class="mt-6">
-        <p class="has-text-grey">
-          <b>Come devi procedere</b>: individua il criterio che lega tra loro le
-          tessere in alto e completa la tessera mancante. Trascina e rilascia
-          sulle facce dell'ultima tessera (quella con i punti interrogativi), i
-          numeri che ritieni completino la serie. Se sbagli, puoi trascinare
-          nuovi numeri su quelli che intendi cambiare.
-        </p>
+        <p class="has-text-grey" v-html="itemData.hint" />
       </div>
     </template>
   </dom-item>

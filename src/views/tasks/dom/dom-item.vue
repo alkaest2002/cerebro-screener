@@ -25,7 +25,7 @@
           />
         </div>
         <dom-tile-faces @dragstart="onDragDots" />
-        <slot name="explanation" />
+        <slot name="explanation" :item-data="itemData" />
       </item-container>
     </div>
   </div>

@@ -189,7 +189,7 @@ const blocks = [
             un numero che può andare da 0 a 6. Per ogni quesito, viene 
             presentata una serie di tessere che termina con una tessera 
             sulle cui facce sono rappresentati dei punti interrogativi 
-            (vedi figura 1).</p><p>Le tessere della serie sono legate tra loro 
+            (vedi fig 1).</p><p>Le tessere della serie sono legate tra loro 
             da un criterio di natura logico-numerica. Il tuo compito è di 
             comprendere tale criterio e dedurre conseguentemente i numeri 
             da mettere sulle facce dell'ultima tessera, quella mancante.</p>
@@ -198,10 +198,11 @@ const blocks = [
             rapidamente una soluzione; altri invece richiedono uno sforzo di 
             pensiero superiore e la capacità di cogliere relazioni numeriche 
             non scontate.</p>`,
-          scoring: `il punteggio dipende dalla velocità di risoluzione dei quesiti 
-            e dalla correttezza delle risposte date.`,
+          scoring: `Il punteggio dipende dalla correttezza
+            della risposta, dal numero di mosse e dal tempo impiegato per 
+            giungere alla soluzione.`,
           items: 15,
-          duration: "senza limiti temporali",
+          duration: "nessun limite di tempo.",
           images: [
             {
               src: "dom/fig1.png",
@@ -239,6 +240,11 @@ const blocks = [
           targetTile: [2, 1],
           isCorrect: false,
           actions: 0,
+          hint: `<b>Come devi procedere</b>: individua il criterio che lega tra loro le
+            tessere in alto e completa la tessera mancante. Trascina e rilascia
+            sulle facce dell'ultima tessera (quella con i punti interrogativi), i
+            numeri che ritieni completino la serie. Se sbagli, puoi trascinare
+            nuovi numeri su quelli che intendi cambiare`,
         },
         timer: {},
       },
