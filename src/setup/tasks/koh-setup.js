@@ -204,9 +204,10 @@ const blocks = [
           images: [
             {
               src: "koh/fig1.png",
-              description: `In alto, è presentata una sequenza di tessere con l'ultima da 
-                indovinare; In basso, sono elencati i numeri da trascinare 
-                sulle facce della tessera mancante.`,
+              description: `A sinistra, il riquadro A è riempito di tessere  
+                colorate. Il riquadro B (inizialmente vuoto) deve essere
+                riempito con le tessere a disposizione, eventualmente ruotate,
+                per riprodurre fedelmente la figura del riquadro A.`,
             },
           ],
           actions: 0,

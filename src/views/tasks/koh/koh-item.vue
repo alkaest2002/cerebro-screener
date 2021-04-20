@@ -33,7 +33,7 @@
                   :figure-tiles="itemData.endFigure.figureTiles"
                 />
               </div>
-              <p class="mt-3 has-text-grey has-text-centered">Riquadro A</p>
+              <p class="mt-3 has-text-grey has-text-weight-bold has-text-centered">riquadro A</p>
             </div>
             <div class="figure-wrapper ml-5">
               <div class="figure-container is-flex">
@@ -46,13 +46,15 @@
                   @tile-rotated="onTileRotated"
                 />
               </div>
-              <p class="mt-3 has-text-grey has-text-centered">Riquadro B</p>
+              <p class="mt-3 has-text-grey has-text-weight-bold has-text-centered">riquadro B</p>
             </div>
           </div>
-          <koh-reference-tiles
-            :is-locked="userFigureIsCorrect"
-            @tile-dragged="onTileDragged"
-          />
+          <div class="mt-5">
+            <koh-reference-tiles
+              :is-locked="userFigureIsCorrect"
+              @tile-dragged="onTileDragged"
+            />
+          </div>
         </div>
         <slot name="explanation" :item-data="itemData" />
       </item-container>
