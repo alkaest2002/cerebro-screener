@@ -85,7 +85,7 @@ $global-border-radius: 6px;
   #presenter {
     height: 650px;
     position: relative;
-    overflow: hidden;
+    overflow: scroll;
   }
 
   #navigation {
