@@ -20,14 +20,17 @@ export default (data) => {
     () => itemData,
     (value) => {
       // determine canGoForth
-      let canGoForth = typeof value.isCorrect == "boolean" 
-        ? value.isCorrect 
-        : value.canGoForth;
-      if (!canGoForth && value.enableNext) canGoForth = true; 
+      let canGoForth =
+        typeof value.isCorrect == "boolean"
+          ? value.isCorrect
+          : value.canGoForth;
+      if (!canGoForth && value.enableNext) canGoForth = true;
       // update itemData
       store.dispatch("presenters/updatePresenterByKey", {
-        key: "itemData", value, canGoForth }
-      );
+        key: "itemData",
+        value,
+        canGoForth,
+      });
     },
     { deep: true }
   );

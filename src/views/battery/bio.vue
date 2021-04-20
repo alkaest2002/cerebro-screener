@@ -76,7 +76,7 @@ export default {
       { label: "maschio", value: "m" },
       { label: "femmina", value: "f" },
     ];
-    
+
     // gender options (no need to be reactive)
     const eduOptions = [
       { label: "scuola obbligo", value: 1 },

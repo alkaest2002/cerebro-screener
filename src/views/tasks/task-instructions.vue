@@ -10,7 +10,7 @@
           <td>Tempo a disposizione</td>
         </tr>
         <tr>
-          <td>{{ block.items }} quesiti</td>
+          <td>{{ block.items }}</td>
           <td>{{ formatTime(block.duration) }}</td>
         </tr>
         <tr class="has-text-weight-bold">
@@ -26,7 +26,11 @@
                   :col-span="block.images.length > 0 ? 1 : 2"
                   v-html="block.description"
                 />
-                <td v-if="block.images.length > 0" id="description-images">
+                <td
+                  v-if="block.images.length > 0"
+                  id="description-images"
+                  class="pr-0"
+                >
                   <images-carousel
                     :images="block.images"
                     @click="onClickImages"
@@ -115,6 +119,10 @@ export default {
     &::v-deep p {
       margin-bottom: 0.5em;
     }
+  }
+
+  #description-images {
+    background-color: #f9f9f9;
   }
 }
 </style>
