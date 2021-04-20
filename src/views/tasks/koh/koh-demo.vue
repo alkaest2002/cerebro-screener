@@ -1,15 +1,9 @@
 <template>
   <koh-item>
     <template #title> Versione demo </template>
-    <template #explanation>
+    <template #explanation="{ itemData }">
       <div class="mt-6">
-        <p class="has-text-grey">
-          Nell'esempio proposto qui sopra, La figura B deve esser uguale alla
-          figura A. Per ottenere questo risultato, trascina una tessera
-          giallo-blu nella figura B, in alto a sinistra. Una volta collocata la
-          tessera in posizione, ruotala in modo opportuno. Completa la figura
-          aggiungendo le tre tessere mancanti.
-        </p>
+        <p class="has-text-grey" v-html="itemData.hint" />
       </div>
     </template>
   </koh-item>

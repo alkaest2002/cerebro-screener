@@ -1,6 +1,6 @@
 <template>
   <p class="has-text-centered has-text-grey mb-3">
-    usa queste tessere per ricopiare la figura A
+    usa queste tessere per riprodurre il riquadro A
   </p>
   <div id="reference-tiles" class="is-flex is-justify-content-center">
     <koh-tile

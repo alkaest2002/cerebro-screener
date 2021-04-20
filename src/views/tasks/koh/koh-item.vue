@@ -16,11 +16,15 @@
     >
       <item-container>
         <div class="is-flex is-flex-direction-column is-align-items-center">
-          <koh-reference-tiles
-            :is-locked="userFigureIsCorrect"
-            @tile-dragged="onTileDragged"
-          />
-          <div class="mt-5 is-flex is-justify-content-center">
+          <div class="mb-5 has-text-grey has-text-centered is-size-7">
+            <em>click sinistro mouse</em>
+            &rarr; ruota tessera in senso orario<br />
+            <em>click destro mouse</em>
+            &rarr; ruota tessera in senso anti-orario<br />
+            <em>trascina tessera fuori dal riquadro</em>
+            &rarr; rimuovi tessera
+          </div>
+          <div class="is-flex is-justify-content-center mb-5">
             <div class="figure-wrapper mr-5">
               <div class="figure-container is-flex">
                 <koh-figure
@@ -29,12 +33,12 @@
                   :figure-tiles="itemData.endFigure.figureTiles"
                 />
               </div>
-              <p class="mt-3 has-text-grey has-text-centered">Figura A</p>
+              <p class="mt-3 has-text-grey has-text-centered">Riquadro A</p>
             </div>
             <div class="figure-wrapper ml-5">
               <div class="figure-container is-flex">
                 <koh-figure
-                  :is-locked="userFigureIsCorrect"
+                  :is-locked="false"
                   :figure-type="itemData.userFigure.figureType"
                   :figure-tiles="itemData.userFigure.figureTiles"
                   @tile-dragged="onTileDragged"
@@ -42,17 +46,13 @@
                   @tile-rotated="onTileRotated"
                 />
               </div>
-              <p class="mt-3 has-text-grey has-text-centered">Figura B</p>
+              <p class="mt-3 has-text-grey has-text-centered">Riquadro B</p>
             </div>
           </div>
-          <div class="mt-5 mb-3 has-text-grey has-text-centered is-size-7">
-            <em>click sx</em>
-            &rarr; ruota tessera in senso orario<br />
-            <em>click dx</em>
-            &rarr; ruota tessera in senso anti-orario<br />
-            <em>trascina tessera fuori dalla figura</em>
-            &rarr; rimuovi tessera
-          </div>
+          <koh-reference-tiles
+            :is-locked="userFigureIsCorrect"
+            @tile-dragged="onTileDragged"
+          />
         </div>
         <slot name="explanation" :item-data="itemData" />
       </item-container>
