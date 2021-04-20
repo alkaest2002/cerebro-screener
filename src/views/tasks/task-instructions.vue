@@ -29,7 +29,7 @@
                 <td
                   v-if="block.images.length > 0"
                   id="description-images"
-                  class="pr-0"
+                  class="pt-3"
                 >
                   <images-carousel
                     :images="block.images"
@@ -41,7 +41,7 @@
           </td>
         </tr>
         <tr class="has-text-weight-bold">
-          <td colspan="2">Calcolo del punteggio</td>
+          <td colspan="2">Variabili considerate nel calcolo del punteggio</td>
         </tr>
         <tr>
           <td colspan="2">{{ block.scoring }}</td>
