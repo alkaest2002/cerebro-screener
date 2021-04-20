@@ -184,7 +184,7 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description: `<p>Questo compito è basato sulle tessere del gioco del domino. 
+          description: `<p>Questa prova è basata sulle tessere del gioco del domino. 
             Ogni tessera si compone di due facce in ciascuna delle quali vi è
             un numero che può andare da 0 a 6. Per ogni quesito, viene 
             presentata una serie di tessere che termina con una tessera 

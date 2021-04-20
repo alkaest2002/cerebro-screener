@@ -186,11 +186,30 @@ const blocks = [
         isLocked: false,
         itemData: {
           description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-          scoring: "il punteggio dipende da...",
+            `In questo compito, vengono presentati due riquadri, A e B. 
+            Il primo è riempito di tessere colorate che 
+            insieme compongono una figura. Il secondo è inizialmente vuoto 
+            (vedi fig 1).</p><p>Il tuo compito è di utilizzare le tessere 
+            disponibili per riprodure nel riquadro B la medesima configurazione 
+            del riquadro A.</p><p>Usa il mouse per 
+            trascinare le tessere nel riquadro B. Una volta inserite nel riquadro, 
+            le tessere possono essere ruotate in senso orario 
+            (click sinistro del mouse) o anti-orario (click destro del mouse).
+            In caso di errore, è possibile rimuovere una tessera trascinandola
+            fuori dal riquadro.</p><p>Cerca di ottenere il risultato finale 
+            compiendo il minor numero di mosse.</p>`,
+          scoring:  `correttezza della risposta, numero di mosse compiute, 
+          tempo impiegato.`,
           items: 30,
           duration: 15 * 60,
-          images: [],
+          images: [
+            {
+              src: "koh/fig1.png",
+              description: `In alto, è presentata una sequenza di tessere con l'ultima da 
+                indovinare; In basso, sono elencati i numeri da trascinare 
+                sulle facce della tessera mancante.`,
+            },
+          ],
           actions: 0,
         },
         timer: {},
@@ -271,6 +290,9 @@ const blocks = [
           },
           isCorrect: false,
           actions: 0,
+          hint: `<b>Come devi procedere</b>: il riquadro B deve esser uguale al
+          riquadro A. Per ottenere questo risultato, trascina nel riquadro B 
+          le tessere che hai a disposizione e ruotale in modo opportuno.`,
         },
         timer: {},
       },
