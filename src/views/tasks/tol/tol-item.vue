@@ -13,7 +13,7 @@
           <div>
             <tol-tower :tower="itemData.endTower" :is-locked="true" />
             <div class="mt-3 ml-3 has-text-grey has-text-centered">
-              <span class="has-text-weight-bold">Figura A</span>
+              <span class="has-text-weight-bold">Forma bersaglio A</span>
             </div>
           </div>
           <div>
@@ -23,7 +23,7 @@
               @disc-dropped="onDiscDropped"
             />
             <div class="mt-3 ml-3 has-text-grey has-text-centered">
-              <span class="has-text-weight-bold">Figura B</span>
+              <span class="has-text-weight-bold">Forma B</span>
               <br />sposta i dischi per ottenere la figura A
             </div>
           </div>

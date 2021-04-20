@@ -131,12 +131,29 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          scoring: "il punteggio dipende da...",
-          items: 30,
-          duration: 15 * 60,
-          images: [],
+          description: `<p>In questo compito, vengono presentate due forme, A e B, 
+              ciascuna delle quali è composta da tre torri di diversa altezza, 
+              tra loro accostate; in ogni torre si trovano dei dischi 
+              colorati (vedi fig 1).</p><p>Il tuo compito è di spostare i 
+              dischi colorati tra le torri della forma B, per ottenere la 
+              stessa configurazione della forma A.</p><p>Usa il mouse per 
+              trascinare i dischi della forma B da una torre all'altra. Tieni 
+              presente che puoi spostare solo i dischi che si trovano in cima 
+              a ogni torre.</p><p>Cerca di ottenere il risultato finale 
+              compiendo il minor numero di mosse.</p>`,
+          scoring: `Il punteggio dipende dalla correttezza
+            della risposta, dal numero di mosse e dal tempo impiegato per 
+            giungere alla soluzione.`,
+          items: 16,
+          duration: "nessun limite di tempo.",
+          images: [
+            {
+              src: "tol/fig1.png",
+              description: `A sinistra, è presentata la forma bersaglio A. 
+                A destra, la forma B i cui dischi devono essere spostati 
+                per ottenere la figura bersaglio A.`,
+            },
+          ],
           actions: 0,
         },
         timer: {},
@@ -160,6 +177,11 @@ const blocks = [
           userTower: [[], [], []],
           actions: 0,
           isCorrect: false,
+          hint: `<b>Come devi procedere</b>: sposta i dischi tra le torri della 
+            forma B per ottenere la forma bersaglio A. Tieni presente che puoi 
+            spostare solo i dischi che si trovano in cima a ogni torre. 
+            Cerca di ottenere la forma bersaglio A compiendo il minor 
+            numero di mosse.`,
         },
         timer: {},
       },

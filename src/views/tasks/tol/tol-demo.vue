@@ -1,16 +1,9 @@
 <template>
   <tol-item>
     <template #title> Versione demo </template>
-    <template #explanation>
+    <template #explanation="{ itemData }">
       <div class="mt-6">
-        <p class="has-text-grey">
-          Nell'esempio proposto qui sopra, il tuo compito è quello di spostare i
-          dischi colorati della figura B, in modo da ottenere la stessa
-          configurazione della figura A. Tieni presente che puoi spostare solo i
-          dischi che si trovano in cima a ogni pila. Nella configurazione
-          iniziale della figura B, ad esempio, non puoi spostare il disco rosso.
-          Cerca di ottenere la figura A compiendo il minor numero di mosse.
-        </p>
+        <p class="has-text-grey" v-html="itemData.hint" />
       </div>
     </template>
   </tol-item>
