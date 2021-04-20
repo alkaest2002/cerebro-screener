@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "key": "dom",
+    "description": "Dominoes",
+    "type": "intelligenza (logica deduttiva)",
+    "items": 18,
+    "duration": 810,
+    "isAvailable": true
+  },
+  {
+    "id": 2,
+    "key": "tol",
+    "description": "London Tower",
+    "type": "intelligenza (pianificazione)",
+    "items": 16,
+    "duration": 720,
+    "isAvailable": true
+  },
+  {
+    "id": 3,
+    "key": "koh",
+    "description": "Kohs Patterns",
+    "type": "intelligenza (visuo-spaziale)",
+    "items": 10,
+    "duration": 600,
+    "isAvailable": true
+  },
+  {
+    "id": 4,
+    "key": "wcs",
+    "description": "Cards Sorting",
+    "type": "intelligenza (flessibilità)",
+    "items": 60,
+    "duration": 600,
+    "isAvailable": true
+  },
+  {
+    "id": 5,
+    "key": "col",
+    "description": "Cards Flipping",
+    "type": "propensione al rischio",
+    "items": 12,
+    "duration": 720,
+    "isAvailable": true
+  },
+  {
+    "id": 6,
+    "key": "mem",
+    "description": "Memory",
+    "type": "memoria",
+    "items": 14,
+    "duration": 280,
+    "isAvailable": true
+  },
+  {
+    "id": 7,
+    "key": "iow",
+    "description": "Decks Searching",
+    "type": "apprendimento",
+    "items": 100,
+    "duration": 1000,
+    "isAvailable": true
+  },
+  {
+    "id": 8,
+    "key": "att",
+    "description": "Numbers Tracking",
+    "type": "attenzione",
+    "items": 3,
+    "duration": 180,
+    "isAvailable": true
+  },
+  {
+    "id": 9,
+    "key": "srv",
+    "description": "Questionario fine batteria",
+    "type": "insight",
+    "items": 3,
+    "duration": 60,
+    "isAvailable": true
+  },
+  {
+    "id": 10,
+    "key": "fak",
+    "description": "Questionario fake",
+    "type": "task app",
+    "items": 9,
+    "duration": 1500,
+    "isAvailable": true
+  }
+]

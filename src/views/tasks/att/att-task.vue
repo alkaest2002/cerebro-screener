@@ -12,7 +12,7 @@
 
 <script>
 /* eslint-disable vue/no-unused-components */
-import { getTaskData } from "./setup";
+import { getTaskData } from "@/setup/tasks/att-setup";
 import initTask from "@/views/tasks/_composables/initTask";
 import taskPresenter from "@/views/tasks/_components/task-presenter";
 import instructions from "@/views/tasks/task-instructions";
