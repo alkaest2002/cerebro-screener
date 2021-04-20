@@ -64,12 +64,13 @@ export default {
 $global-bacground-color: #e2e1e1;
 $global-border-radius: 6px;
 
-html, body {
-    background-color: $global-bacground-color !important;
+html,
+body {
+  background-color: $global-bacground-color !important;
 }
 
-::-webkit-scrollbar { 
-  width: 0px; 
+::-webkit-scrollbar {
+  width: 0px;
 }
 
 #app {
