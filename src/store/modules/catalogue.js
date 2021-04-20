@@ -1,4 +1,4 @@
-import jsonCatalogue from "@/setup/catalogue/catalogue.json";
+const jsonCatalogue = require("@/setup/catalogue/catalogue.json");
 
 const getters = {
   getAvailableTasks: (state) => {
