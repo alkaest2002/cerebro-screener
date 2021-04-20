@@ -151,9 +151,9 @@ export default {
       });
       // put tile in new place
       clonedUserFigure.figureTiles.splice(dropIndex, 1, tile);
-      // if dragged tile comes from figure, put a void tile where
-      // the dragged tile once was
+      // if dragged tile comes from figure, 
       if (draggedTile.value.tileType === "figure")
+        // put a void tile where the dragged tile once was
         clonedUserFigure.figureTiles.splice(
           draggedTile.value.tileIndex,
           1,
