@@ -32,7 +32,9 @@
         <span class="task-cell">
           {{ task.description }}
         </span>
-        <span class="task-cell"> {{ formatTime(task.duration) }} min </span>
+        <span class="task-cell">
+          durata: {{ formatTime(task.duration) }}
+        </span>
         <span class="task-cell">
           {{ task.type }}
         </span>
