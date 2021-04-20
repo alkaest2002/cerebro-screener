@@ -16,13 +16,13 @@
     >
       <item-container>
         <div id="outer-drop" class="is-flex is-flex-direction-column is-align-items-center">
-          <div class="mb-5 has-text-grey has-text-centered is-size-7">
-            <em>click sinistro mouse</em>
-            &rarr; ruota tessera in senso orario<br />
-            <em>click destro mouse</em>
-            &rarr; ruota tessera in senso anti-orario<br />
-            <em>trascina tessera a destra, fuori dal riquadro</em>
-            &rarr; rimuovi tessera
+          <div id="legend" class="mb-5 has-text-grey has-text-centered">
+            <em>ruota in senso orario</em>
+            &rarr; click sinistro su tessera<br />
+            <em>ruota in senso anti-orario</em>
+            &rarr; click destro su tessera<br />
+            <em>rimuovi</em>
+            &rarr; trascina tessera a destra, appena fuori dal riquadro
           </div>
           <div class="is-flex is-justify-content-center mb-5">
             <div class="figure-wrapper mr-5">
@@ -138,18 +138,19 @@ export default {
     };
 
     // handle on drop event
-    const onTileDropped = (tile) => {
+    const onTileDropped = (dropzoneIndex) => {
       // clone user figure
       const clonedUserFigure = clone(itemData.userFigure);
       // do nothing if destination place is not void
-      if (clonedUserFigure.figureTiles[tile.tileIndex].tileColor != "void") return;
-      // update tile
-      tile = Object.assign({}, draggedTile.value, {
-        tileIndex: tile.tileIndex,
+      if (clonedUserFigure.figureTiles[dropzoneIndex].tileColor != "void") return;
+      // create tile
+      const tile = Object.assign(
+        {}, draggedTile.value, {
+        tileIndex: dropzoneIndex,
         tileType: "figure",
       });
-      // put tile in new place of figure
-      clonedUserFigure.figureTiles.splice(tile.tileIndex, 1, tile);
+      // put tile in new place
+      clonedUserFigure.figureTiles.splice(dropzoneIndex, 1, tile);
       // if dragged tile comes from figure, put a void tile where
       // the dragged tile once was
       if (draggedTile.value.tileType === "figure")
@@ -209,6 +210,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#legend {
+  font-size: .8em;
+}
+
 .figure-wrapper {
   border: 3px solid #ddd;
   padding: 5px;
