@@ -1,6 +1,6 @@
 import { clone } from "@/utils/utilityFns";
-import makePresenters from "@/views/tasks/_composables/makePresenters";
-import processAnswers from "@/views/tasks/_composables/processAnswers";
+import makePresenters from "./_composables/makePresenters";
+import processAnswers from "./_composables/processAnswers";
 
 const blocks = [
   {

@@ -1,5 +1,5 @@
 import { clone } from "@/utils/utilityFns";
-import makePresenters from "@/views/tasks/_composables/makePresenters";
+import makePresenters from "@/setup/tasks/_composables/makePresenters";
 
 const initState = {
   presenters: [],
