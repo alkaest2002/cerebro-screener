@@ -22,7 +22,7 @@
             <em>ruota in senso anti-orario</em>
             &rarr; click destro su tessera<br />
             <em>rimuovi</em>
-            &rarr; trascina tessera a destra, appena fuori dal riquadro
+            &rarr; trascina tessera fuori dal riquadro
           </div>
           <div class="is-flex is-justify-content-center mb-5">
             <div class="figure-wrapper mr-5">
@@ -138,19 +138,19 @@ export default {
     };
 
     // handle on drop event
-    const onTileDropped = (dropzoneIndex) => {
+    const onTileDropped = (dropIndex) => {
       // clone user figure
       const clonedUserFigure = clone(itemData.userFigure);
       // do nothing if destination place is not void
-      if (clonedUserFigure.figureTiles[dropzoneIndex].tileColor != "void") return;
+      if (clonedUserFigure.figureTiles[dropIndex].tileColor != "void") return;
       // create tile
       const tile = Object.assign(
         {}, draggedTile.value, {
-        tileIndex: dropzoneIndex,
+        tileIndex: dropIndex,
         tileType: "figure",
       });
       // put tile in new place
-      clonedUserFigure.figureTiles.splice(dropzoneIndex, 1, tile);
+      clonedUserFigure.figureTiles.splice(dropIndex, 1, tile);
       // if dragged tile comes from figure, put a void tile where
       // the dragged tile once was
       if (draggedTile.value.tileType === "figure")
@@ -176,12 +176,9 @@ export default {
     };
 
     // handle on drop tile outside figure
-    const onTileDroppedOutsideFigure = ($event) => {
-      // do nothing under these conditions
-      if (![
-        draggedTile.value.tileType == "figure",
-        $event.target.getAttribute("id") == "outer-drop"
-      ].every(e => e)) 
+    const onTileDroppedOutsideFigure = () => {
+      // do nothing if dragged tile is of type reference
+      if (draggedTile.value.tileType == "reference") 
         return;
       // clone user figure
       const clonedUserFigure = clone(itemData.userFigure);

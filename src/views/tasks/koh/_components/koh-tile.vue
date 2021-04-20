@@ -15,7 +15,7 @@
       @dragover="onDrag($event, 'over')"
       @dragleave="onDrag($event, 'leave')"
       @dragstart="onDragStart"
-      @drop="onDrop"
+      @drop="onDrop($event)"
     />
   </div>
 </template>
@@ -80,13 +80,13 @@ export default {
       ["tileIndex", "tileType", "tileColor", "tileRotation"].every((e) =>
         Object.keys(value).includes(e)
       ),
+    
+    "tile-dropped": (value) => typeof value == "number",
 
     "tile-rotated": (value) =>
       Object.keys(value).every((e) =>
         ["tileIndex", "tileRotationValue"].includes(e)
       ),
-
-    "tile-dropped": (value) => typeof value == "number",
   },
 
   setup(props, { emit }) {
@@ -158,7 +158,9 @@ export default {
     };
 
     // handle on drop tile
-    const onDrop = () => {
+    const onDrop = ($event) => {
+      // stop propagation
+      $event.stopPropagation();
       // do nothing if it is not droppable
       if (!isDroppable.value) return;
       // reset highlight
