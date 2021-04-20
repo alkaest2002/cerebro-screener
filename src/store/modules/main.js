@@ -1,7 +1,7 @@
 export const main = {
   namespaced: true,
   state: {
-    version: "1.0",
+    version: "ITA",
     isOnline: null,
     firebaseEndpoint:
       "https://firestore.googleapis.com/$discovery/rest?version=v1",

@@ -2,7 +2,6 @@
   <div class="has-text-centered mt-1">
     <div id="footer" class="has-text-grey-light">
       <small>
-        go to
         <router-link
           :to="{ name: 'route-main-about' }"
           class="has-text-grey-light"
