@@ -86,7 +86,10 @@ export default {
         ["tileIndex", "tileRotationValue"].includes(e)
       ),
 
-    "tile-dropped": (value) => typeof value == "number",
+    "tile-dropped": (value) => 
+       ["tileIndex", "tileType", "tileColor", "tileRotation"].every((e) =>
+        Object.keys(value).includes(e)
+      ),
   },
 
   setup(props, { emit }) {
@@ -143,12 +146,15 @@ export default {
     const onDrag = ($event, dragOp) => {
       // let drag be
       if (!isDroppable.value) return;
+      // upedate highlightVoid
       highlightVoid.value = dragOp != "leave";
+      // prevent
       $event.preventDefault();
     };
 
     // handle on drag start
     const onDragStart = () => {
+      // get tile props, omit isLocked
       const { isLocked, ...tile } = props; // eslint-disable-line no-unused-vars
       // notify tile dragged
       emit("tile-dragged", tile);
@@ -156,12 +162,14 @@ export default {
 
     // handle on drop tile
     const onDrop = () => {
+      // get tile props, omit isLocked
+      const { isLocked, ...tile } = props; // eslint-disable-line no-unused-vars
       // do nothing if it is not droppable
       if (!isDroppable.value) return;
       // reset highlight
       highlightVoid.value = false;
       // notifiy tile dropped
-      emit("tile-dropped", props.tileIndex);
+      emit("tile-dropped", tile);
     };
 
     // handle on rotate tile

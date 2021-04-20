@@ -15,13 +15,13 @@
       @drop="onTileDroppedOutsideFigure"
     >
       <item-container>
-        <div class="is-flex is-flex-direction-column is-align-items-center">
+        <div id="outer-drop" class="is-flex is-flex-direction-column is-align-items-center">
           <div class="mb-5 has-text-grey has-text-centered is-size-7">
             <em>click sinistro mouse</em>
             &rarr; ruota tessera in senso orario<br />
             <em>click destro mouse</em>
             &rarr; ruota tessera in senso anti-orario<br />
-            <em>trascina tessera fuori dal riquadro</em>
+            <em>trascina tessera a destra, fuori dal riquadro</em>
             &rarr; rimuovi tessera
           </div>
           <div class="is-flex is-justify-content-center mb-5">
@@ -92,7 +92,7 @@ export default {
     // init presenter
     const { totalItems, itemData } = initItem(props.presenter.itemData);
 
-    // void tile
+    // void tile (no need to be reactive)
     const voidTile = {
       tileIndex: null,
       tileType: "figure",
@@ -114,7 +114,7 @@ export default {
       return JSON.stringify(data);
     };
 
-    // determine whether user figure is correct
+    // determine whether userFigure is correct (equal to endFigure)
     const userFigureIsCorrect = computed(
       () =>
         stringifyFigure(itemData.userFigure.figureTiles) ==
@@ -131,28 +131,28 @@ export default {
       itemData.isCorrect = userFigureIsCorrect.value;
     };
 
-    // handle on drag tile
+    // handle on drag event
     const onTileDragged = (tile) => {
       // store  dragged tile
       draggedTile.value = clone(tile);
     };
 
-    // handle on drop tile
-    const onTileDropped = (tileIndex) => {
+    // handle on drop event
+    const onTileDropped = (tile) => {
       // clone user figure
       const clonedUserFigure = clone(itemData.userFigure);
-      // do nothing if destination place for dropped tile is not void
-      if (clonedUserFigure.figureTiles[tileIndex].tileColor != "void") return;
-      // update dropped tile
-      const droppedTile = Object.assign({}, draggedTile.value, {
-        tileIndex,
+      // do nothing if destination place is not void
+      if (clonedUserFigure.figureTiles[tile.tileIndex].tileColor != "void") return;
+      // update tile
+      tile = Object.assign({}, draggedTile.value, {
+        tileIndex: tile.tileIndex,
         tileType: "figure",
       });
-      // put dropped tile in new place of figure
-      clonedUserFigure.figureTiles.splice(tileIndex, 1, droppedTile);
-      // if dropped tile comes from figure, put a void tile where
-      // the dropped tile once was
-      if (draggedTile.value.type === "figure")
+      // put tile in new place of figure
+      clonedUserFigure.figureTiles.splice(tile.tileIndex, 1, tile);
+      // if dragged tile comes from figure, put a void tile where
+      // the dragged tile once was
+      if (draggedTile.value.tileType === "figure")
         clonedUserFigure.figureTiles.splice(
           draggedTile.value.tileIndex,
           1,
@@ -175,9 +175,13 @@ export default {
     };
 
     // handle on drop tile outside figure
-    const onTileDroppedOutsideFigure = () => {
-      // do nothing if tile type is reference
-      if (draggedTile.value.tileType == "reference") return;
+    const onTileDroppedOutsideFigure = ($event) => {
+      // do nothing under these conditions
+      if (![
+        draggedTile.value.tileType == "figure",
+        $event.target.getAttribute("id") == "outer-drop"
+      ].every(e => e)) 
+        return;
       // clone user figure
       const clonedUserFigure = clone(itemData.userFigure);
       // delete tile (actually replace it with a void one)
