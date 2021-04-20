@@ -152,7 +152,7 @@ const blocks = [
         id: "demo.001",
         component: "demo",
         canGoBack: true,
-        canGoForth: true,
+        canGoForth: false,
         isLocked: false,
         itemData: {
           startTower: [["blue", "red"], [], ["green"]],
