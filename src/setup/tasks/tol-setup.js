@@ -141,17 +141,16 @@ const blocks = [
               presente che puoi spostare solo i dischi che si trovano in cima 
               a ogni torre.</p><p>Cerca di ottenere il risultato finale 
               compiendo il minor numero di mosse.</p>`,
-          scoring: `Il punteggio dipende dalla correttezza
-            della risposta, dal numero di mosse e dal tempo impiegato per 
-            giungere alla soluzione.`,
+          scoring: `correttezza della risposta, numero di mosse compiute, 
+            tempo impiegato.`,
           items: 16,
           duration: "nessun limite di tempo.",
           images: [
             {
               src: "tol/fig1.png",
-              description: `A sinistra, è presentata la forma bersaglio A. 
-                A destra, la forma B i cui dischi devono essere spostati 
-                per ottenere la figura bersaglio A.`,
+              description: `A sinistra, si vede la forma bersaglio A, mentre 
+                a destra si vede la forma B, i cui dischi devono essere spostati 
+                tra le sue torri per ottenere la forma bersaglio A.`,
             },
           ],
           actions: 0,
