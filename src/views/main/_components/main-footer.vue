@@ -2,12 +2,12 @@
   <div class="has-text-centered mt-1">
     <div id="footer" class="has-text-grey-light">
       <small>
-        vai al
+        go to
         <router-link
           :to="{ name: 'route-main-about' }"
           class="has-text-grey-light"
         >
-          comitato scientifico
+          scientific commitee
         </router-link>
         <br />
         <span> svg icons by freepik from www.flaticon.com </span>

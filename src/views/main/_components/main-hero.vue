@@ -4,7 +4,7 @@
     <div class="block">
       <h1 class="is-size-3 has-text-weight-bold">Cerebro Screener</h1>
       <slot>
-        <p>valutazione delle funzioni cognitive</p>
+        <p>Assessment of mental health through cognitive tasks</p>
       </slot>
     </div>
   </div>

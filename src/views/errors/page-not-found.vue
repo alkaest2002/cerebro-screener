@@ -9,11 +9,11 @@
         style="height: 256px"
       />
       <div class="has-text-centered block">
-        <p class="is-size-2 has-text-weight-bold">Errore 404</p>
-        <span>Oops! La pagina richiesta non è disponibile</span>
+        <p class="is-size-2 has-text-weight-bold">Error 404</p>
+        <span>Oops! The page you requested is not available</span>
       </div>
       <div>
-        Vai alla
+        Go back to
         <router-link :to="{ name: 'route-main-home' }" replace>
           Homepage
         </router-link>
