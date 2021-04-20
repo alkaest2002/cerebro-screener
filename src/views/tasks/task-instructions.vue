@@ -120,9 +120,5 @@ export default {
       margin-bottom: 0.5em;
     }
   }
-
-  #description-images {
-    background-color: #f9f9f9;
-  }
 }
 </style>
