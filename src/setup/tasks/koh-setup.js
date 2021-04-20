@@ -187,9 +187,9 @@ const blocks = [
         itemData: {
           description: `In questo compito, vengono presentati due riquadri, A e B. 
             Il primo è riempito di tessere colorate che 
-            insieme compongono una figura. Il secondo è inizialmente vuoto 
+            nel loro insieme compongono una figura. Il secondo è inizialmente vuoto 
             (vedi fig 1).</p><p>Il tuo compito è di utilizzare le tessere 
-            disponibili per riprodure nel riquadro B la medesima configurazione 
+            messe a tua disposizione per riprodure nel riquadro B la medesima configurazione 
             del riquadro A.</p><p>Usa il mouse per 
             trascinare le tessere nel riquadro B. Una volta inserite nel riquadro, 
             le tessere possono essere ruotate in senso orario 
@@ -204,10 +204,10 @@ const blocks = [
           images: [
             {
               src: "koh/fig1.png",
-              description: `A sinistra, il riquadro A è riempito di tessere  
-                colorate. Il riquadro B (inizialmente vuoto) deve essere
-                riempito con le tessere a disposizione, eventualmente ruotate,
-                per riprodurre fedelmente la figura del riquadro A.`,
+              description: `A sinistra, le tessere colorate del riquadro A
+                compongono una figura che deve essere riprodotta fedelmente
+                nel riquadro B, usando le tessere che si trovano sotto i due
+                riquadri.`,
             },
           ],
           actions: 0,
