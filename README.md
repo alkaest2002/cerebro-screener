@@ -1,17 +1,17 @@
 # cerebro-screener
 
-Electron-Vue app for the administration of cognitive tasks for the screening of mental health.
+Vue app for the administration of cognitive tasks for the screening of mental health.
 
-This is the list of tasks currenly implemented:
+This is the list of decision-making tasks currenly implemented:
 
-- Dominoes Task
-- London Tower Task
-- Card Sorting Task
-- Card Flipping Task
-- Kohs Patterns Task
-- Card Gambiling Task
-- Digit Span Task
-- Circle Tapping Task
-- Attention Task
+- Dominoes
+- Towers
+- Cards Sorting
+- Cards Flipping
+- Kohs Patterns
+- Decks Searching
+- Digit Span
+- Circles Tapping
+- Numbers Tracking
 
 Each task will be followed by a three-items questionnaire to assess self-reflection.
