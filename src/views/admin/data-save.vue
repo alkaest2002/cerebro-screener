@@ -10,7 +10,7 @@
         </p>
         <p>
           <span>Numero di protocolli in archivio:</span>
-          <span class="has-text-weight-bold">{{ indexDbCount }}</span>
+          <span class="has-text-weight-bold"> {{ indexDbCount }}</span>
         </p>
       </div>
       <div class="mt-5">
