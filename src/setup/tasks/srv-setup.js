@@ -1,4 +1,5 @@
 import { clone } from "@/utils/utilityFns";
+import { srvLang } from "@/lang/it/tasks";
 import makePresenters from "./_composables/makePresenters";
 import processAnswers from "./_composables/processAnswers";
 
@@ -15,11 +16,10 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-          scoring: "il punteggio dipende da...",
-          items: 30,
-          duration: 15 * 60,
+          description: srvLang["instruction.001"].itemData.description,
+          scoring: srvLang["instruction.001"].itemData.scoring,
+          duration: srvLang["instruction.001"].itemData.duration,
+          items: 3,
           images: [],
           actions: 0,
         },

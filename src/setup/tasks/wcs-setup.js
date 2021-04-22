@@ -1,4 +1,5 @@
 import { leftPadValue, shuffle, clone } from "@/utils/utilityFns";
+import { wcsLang } from "@/lang/it/tasks";
 import makePresenters from "./_composables/makePresenters";
 import processAnswers from "./_composables/processAnswers";
 
@@ -49,12 +50,16 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-          scoring: "il punteggio dipende da...",
-          items: 30,
-          duration: 15 * 60,
-          images: [],
+          description: wcsLang["instruction.001"].itemData.description,
+          scoring: wcsLang["instruction.001"].itemData.scoring,
+          duration: wcsLang["instruction.001"].itemData.duration,
+          items: 60,
+          images: [
+            {
+              src: "wcs/fig1.png",
+              description: wcsLang["instruction.001"].itemData.images[0].description
+            }
+          ],
           actions: 0,
         },
         timer: {},
@@ -89,6 +94,7 @@ const blocks = [
             index: null,
             message: null,
           },
+          hint: wcsLang["demo.001"].itemData.hint
         },
         timer: {},
       },

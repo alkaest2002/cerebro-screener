@@ -18,11 +18,10 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-          scoring: "il punteggio dipende da...",
-          items: 30,
-          duration: 15 * 60,
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          scoring: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          duration: 60,
+          items: 3,
           images: [],
           actions: 0,
         },
@@ -43,6 +42,7 @@ const blocks = [
         isLocked: false,
         itemData: {
           actions: 0,
+          hint: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         },
         timer: {},
       },
@@ -83,11 +83,10 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-          scoring: "il punteggio dipende da...",
-          items: 30,
-          duration: 15 * 60,
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          scoring: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          duration: 30,
+          items: 3,
           images: [],
           actions: 0,
         },
@@ -108,6 +107,7 @@ const blocks = [
         isLocked: false,
         itemData: {
           actions: 0,
+          hint: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         },
         timer: {},
       },
@@ -148,11 +148,10 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-          scoring: "il punteggio dipende da...",
-          items: 30,
-          duration: 15 * 60,
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          scoring: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          duration: 15,
+          items: 3,
           images: [],
           actions: 0,
         },
@@ -173,6 +172,7 @@ const blocks = [
         isLocked: false,
         itemData: {
           actions: 0,
+          hint: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         },
         timer: {},
       },

@@ -188,8 +188,8 @@ const blocks = [
         itemData: {
           description: kohLang["instruction.001"].itemData.description,
           scoring: kohLang["instruction.001"].itemData.scoring,
-          items: 10,
           duration: kohLang["instruction.001"].duration,
+          items: 10,
           images: [
             {
               src: "koh/fig1.png",

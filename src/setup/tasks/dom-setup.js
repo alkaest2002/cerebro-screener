@@ -187,8 +187,8 @@ const blocks = [
         itemData: {
           description: domLang["instruction.001"].itemData.description,
           scoring: domLang["instruction.001"].itemData.scoring,
-          items: 15,
           duration: domLang["instruction.001"].itemData.duration,
+          items: 15,
           images: [
             {
               src: "dom/fig1.png",

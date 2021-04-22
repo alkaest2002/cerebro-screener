@@ -1,4 +1,5 @@
 import { leftPadValue, shuffle, clone } from "@/utils/utilityFns";
+import { attLang } from "@/lang/it/tasks";
 import makePresenters from "./_composables/makePresenters";
 import processAnswers from "./_composables/processAnswers";
 
@@ -36,12 +37,16 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-          scoring: "il punteggio dipende da...",
-          items: 30,
-          duration: 15 * 60,
-          images: [],
+          description: attLang["instruction.001"].itemData.description,
+          scoring: attLang["instruction.001"].itemData.scoring,
+          duration: attLang["instruction.001"].itemData.duration,
+          items: 3,
+          images: [
+            {
+              src: "att/fig1.png",
+              description: attLang["instruction.001"].itemData.images[0].description
+            }
+          ],
           actions: 0,
         },
         timer: {},
@@ -82,6 +87,7 @@ const blocks = [
           ],
           errors: 0,
           isCorrect: false,
+          hint: attLang["demo.001"].itemData.hint
         },
         timer: {},
       },

@@ -1,4 +1,5 @@
 import { leftPadValue, clone } from "@/utils/utilityFns";
+import { memLang } from "@/lang/it/tasks";
 import makePresenters from "./_composables/makePresenters";
 import processAnswers from "./_composables/processAnswers";
 
@@ -41,12 +42,16 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-          scoring: "il punteggio dipende da...",
-          items: 30,
-          duration: 15 * 60,
-          images: [],
+          description: memLang["ds"]["instruction.001"].itemData.description,
+          scoring: memLang["ds"]["instruction.001"].itemData.scoring,
+          duration: memLang["ds"]["instruction.001"].itemData.duration,
+          items: 7,
+          images: [
+            {
+              src: "mem/ds/fig1.png",
+              description: memLang["ds"]["instruction.001"].itemData.images[0].description
+            }
+          ],
           actions: 0,
         },
         timer: {},
@@ -69,6 +74,7 @@ const blocks = [
           userSequence: [],
           sequenceHasPlayed: false,
           actions: 0,
+          hint: memLang["ds"]["demo.001"].itemData.hint
         },
         timer: {},
       },
@@ -104,12 +110,16 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-          scoring: "il punteggio dipende da...",
-          items: 30,
-          duration: 15 * 60,
-          images: [],
+          description: memLang["cb"]["instruction.001"].itemData.description,
+          scoring: memLang["cb"]["instruction.001"].itemData.scoring,
+          duration: memLang["cb"]["instruction.001"].itemData.duration,
+          items: 7,
+          images: [
+            {
+              src: "mem/cb/fig1.png",
+              description: memLang["cb"]["instruction.001"].itemData.images[0].description
+            }
+          ],
           actions: 0,
         },
         timer: {},
@@ -130,6 +140,7 @@ const blocks = [
         itemData: {
           sequence: [6, 9, 4],
           userSequence: [],
+          hint: memLang["cb"]["demo.001"].itemData.hint
         },
         timer: {},
       },

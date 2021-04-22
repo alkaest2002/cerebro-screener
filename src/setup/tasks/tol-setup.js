@@ -134,8 +134,8 @@ const blocks = [
         itemData: {
           description: tolLang["instruction.001"].itemData.description,
           scoring: tolLang["instruction.001"].itemData.scoring,
-          items: 16,
           duration: tolLang["instruction.001"].itemData.duration,
+          items: 16,
           images: [
             {
               src: "tol/fig1.png",
