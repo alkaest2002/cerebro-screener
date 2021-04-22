@@ -1,6 +1,6 @@
 import { leftPadValue, clone } from "@/utils/utilityFns";
-import makePresenters from "./_composables/makePresenters";
-import processAnswers from "./_composables/processAnswers";
+import makePresenters from "../_composables/makePresenters";
+import processAnswers from "../_composables/processAnswers";
 
 // items
 const items = [[1], [2], [3]];

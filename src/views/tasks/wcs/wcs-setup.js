@@ -1,7 +1,7 @@
 import { leftPadValue, shuffle, clone } from "@/utils/utilityFns";
 import { wcsLang } from "@/lang/it/tasks";
-import makePresenters from "./_composables/makePresenters";
-import processAnswers from "./_composables/processAnswers";
+import makePresenters from "../_composables/makePresenters";
+import processAnswers from "../_composables/processAnswers";
 
 // cards specs
 const colors = ["red", "green", "blue", "yellow"];

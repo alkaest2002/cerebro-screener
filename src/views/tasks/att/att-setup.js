@@ -1,7 +1,7 @@
 import { leftPadValue, shuffle, clone } from "@/utils/utilityFns";
 import { attLang } from "@/lang/it/tasks";
-import makePresenters from "./_composables/makePresenters";
-import processAnswers from "./_composables/processAnswers";
+import makePresenters from "../_composables/makePresenters";
+import processAnswers from "../_composables/processAnswers";
 
 // init vars
 const gridSizes = [16 * 3, 25 * 2, 36 * 2];

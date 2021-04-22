@@ -2,6 +2,8 @@ export const attLang = {
   "instruction.001": {
     itemData: {
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+      scoring:
+      "correttezza della risposta, numero di mosse compiute, tempo impiegato.",
       duration: "nessun limite di tempo",
       images: [
         {
@@ -21,6 +23,8 @@ export const colLang = {
   "instruction.001": {
     itemData: {
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+      scoring:
+      "correttezza della risposta, numero di mosse compiute, tempo impiegato.",
       duration: "nessun limite di tempo",
       images: [
         {
@@ -64,6 +68,8 @@ export const iowLang = {
   "instruction.001": {
     itemData: {
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+      scoring:
+      "correttezza della risposta, numero di mosse compiute, tempo impiegato.",
       duration: "nessun limite di tempo",
       images: [
         {
@@ -108,6 +114,8 @@ export const memLang = {
     "instruction.001": {
       itemData: {
         description: "Lorem...",
+        scoring:
+        "correttezza della risposta, numero di mosse compiute, tempo impiegato.",
         duration: "nessun limite di tempo",
         images: [
           {
@@ -126,6 +134,8 @@ export const memLang = {
     "instruction.001": {
       itemData: {
         description: "Lorem...",
+        scoring:
+        "correttezza della risposta, numero di mosse compiute, tempo impiegato.",
         duration: "nessun limite di tempo",
         images: [
           {
@@ -158,6 +168,8 @@ export const tolLang = {
     itemData: {
       description:
         "<p>In questa prova, vengono presentate due forme, A e B. Ogni forma è composta da tre torri di altezza decrescente, una accanto all'altra. In ogni torre si trovano dei dischi colorati (vedi fig 1).</p><p>Il tuo compito è di spostare i dischi colorati tra le torri della forma B, per ottenere la stessa configurazione della forma A.</p><p>Usa il mouse per trascinare i dischi da una torre all'altra della forma B. Tieni presente che puoi spostare solo i dischi che si trovano in cima a ogni torre.</p><p>Cerca di ottenere il risultato finale compiendo il minor numero di mosse.</p>",
+      scoring:
+        "correttezza della risposta, numero di mosse compiute, tempo impiegato.",
       duration: "nessun limite di tempo",
       images: [
         {

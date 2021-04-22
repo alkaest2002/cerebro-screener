@@ -1,7 +1,7 @@
 import { leftPadValue, clone } from "@/utils/utilityFns";
 import { kohLang } from "@/lang/it/tasks";
-import makePresenters from "./_composables/makePresenters";
-import processAnswers from "./_composables/processAnswers";
+import makePresenters from "../_composables/makePresenters";
+import processAnswers from "../_composables/processAnswers";
 
 // items
 let items = [

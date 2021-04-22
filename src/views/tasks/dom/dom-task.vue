@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { getTaskData } from "@/setup/tasks/dom-setup";
+import { getTaskData } from "./dom-setup";
 import initTask from "@/views/tasks/_composables/initTask";
 import taskPresenter from "@/views/tasks/_components/task-presenter";
 import instructions from "@/views/tasks/task-instructions";

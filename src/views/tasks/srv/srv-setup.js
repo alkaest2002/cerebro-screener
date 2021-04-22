@@ -1,7 +1,7 @@
 import { clone } from "@/utils/utilityFns";
 import { srvLang } from "@/lang/it/tasks";
-import makePresenters from "./_composables/makePresenters";
-import processAnswers from "./_composables/processAnswers";
+import makePresenters from "../_composables/makePresenters";
+import processAnswers from "../_composables/processAnswers";
 
 const blocks = [
   {
