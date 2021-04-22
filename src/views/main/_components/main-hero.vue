@@ -6,15 +6,25 @@
         Cerebro Screener - {{ $store.state.main.version }}
       </h1>
       <slot>
-        <p>Assessment of mental health through cognitive tasks</p>
+        <p>{{ i18n.hero.title }}</p>
       </slot>
     </div>
   </div>
 </template>
 
 <script>
+import { main as i18n } from "@/lang/it/views/main";
+
 export default {
   // name
   name: "main-logo",
+
+  // setup
+  setup() {
+    // return setup object
+    return {
+      i18n
+    }
+  }
 };
 </script>

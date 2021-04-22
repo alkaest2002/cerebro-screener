@@ -1,7 +1,7 @@
 <template>
   <base-layout>
     <main-hero>
-      <p class="is-size-5 has-text-weight-bold">Comitato Scientifico</p>
+      <p class="is-size-5 has-text-weight-bold">{{ i18n.about.commitee }}</p>
     </main-hero>
     <div
       class="mt-5 is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
@@ -27,6 +27,8 @@
 </template>
 
 <script>
+import { main as i18n } from "@/lang/it/views/main";
+
 import mainHero from "./_components/main-hero";
 
 export default {
@@ -56,6 +58,7 @@ export default {
 
     // return setup object
     return {
+      i18n,
       sortedCommitee,
     };
   },

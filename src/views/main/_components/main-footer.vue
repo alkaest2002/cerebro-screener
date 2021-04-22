@@ -6,19 +6,29 @@
           :to="{ name: 'route-main-about' }"
           class="has-text-grey-light"
         >
-          scientific commitee
+          {{ i18n.footer.commitee }}
         </router-link>
         <br />
-        <span> svg icons by freepik from www.flaticon.com </span>
+        <span>{{ i18n.footer.freepik}}</span>
       </small>
     </div>
   </div>
 </template>
 
 <script>
+import { main as i18n } from "@/lang/it/views/main";
+
 export default {
   // name
   name: "main-footer",
+
+  // setup
+  setup() {
+    // return setup object
+    return {
+      i18n
+    }
+  }
 };
 </script>
 

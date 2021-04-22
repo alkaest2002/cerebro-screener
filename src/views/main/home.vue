@@ -9,7 +9,7 @@
           type="button"
           @click="onEnterAsParticipant"
         >
-          entra
+          {{ i18n.home.enter }}
         </button>
       </div>
     </div>
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { main as i18n } from "@/lang/it/views/main";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 import mainHero from "./_components/main-hero";
@@ -33,8 +34,10 @@ export default {
 
   // setup
   setup() {
-    // get store and router
+    // use store
     const store = useStore();
+
+    // use router
     const router = useRouter();
 
     // handle on enter as participant
@@ -49,6 +52,7 @@ export default {
 
     // return setup object
     return {
+      i18n,
       onEnterAsParticipant,
     };
   },
