@@ -1,4 +1,4 @@
-[
+export const jsonCatalogue = [
   {
     "id": 1,
     "key": "dom",

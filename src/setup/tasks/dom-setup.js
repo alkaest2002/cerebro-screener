@@ -1,4 +1,5 @@
 import { leftPadValue, clone } from "@/utils/utilityFns";
+import { domLang } from "@/lang/it/tasks";
 import makePresenters from "./_composables/makePresenters";
 import processAnswers from "./_composables/processAnswers";
 
@@ -184,30 +185,14 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description: `<p>Questa prova è basata sulle tessere del gioco del domino. 
-            Ogni tessera si compone di due facce in ciascuna delle quali vi è
-            un numero che può andare da 0 a 6. Per ogni quesito, viene 
-            presentata una serie di tessere che termina con una tessera 
-            sulle cui facce sono rappresentati dei punti interrogativi 
-            (vedi fig 1).</p><p>Le tessere della serie sono legate tra loro 
-            da un criterio di natura logico-numerica. Il tuo compito è di 
-            comprendere tale criterio e dedurre conseguentemente i numeri 
-            da mettere sulle facce dell'ultima tessera, quella mancante.</p>
-            <p>Tieni presente che il grado di difficoltà dei quesiti varia: 
-            alcuni sono facili da risolvere: per questi, troverai abbastanza 
-            rapidamente una soluzione; altri invece richiedono uno sforzo di 
-            pensiero superiore e la capacità di cogliere relazioni numeriche 
-            non scontate.</p>`,
-          scoring: `correttezza della risposta, numero di mosse compiute, 
-            tempo impiegato.`,
+          description: domLang["instruction.001"].itemData.description,
+          scoring: domLang["instruction.001"].itemData.scoring,
           items: 15,
-          duration: "nessun limite di tempo.",
+          duration: domLang["instruction.001"].itemData.duration,
           images: [
             {
               src: "dom/fig1.png",
-              description: `In alto, è presentata una sequenza di tessere con l'ultima da 
-                indovinare; In basso, sono elencati i numeri da trascinare 
-                sulle facce della tessera mancante.`,
+              description: domLang["instruction.001"].itemData.images[0].description,
             },
           ],
           actions: 0,
@@ -239,11 +224,7 @@ const blocks = [
           targetTile: [2, 1],
           isCorrect: false,
           actions: 0,
-          hint: `<b>Come devi procedere</b>: individua il criterio che lega tra loro le
-            tessere in alto e completa la tessera mancante. Trascina e rilascia
-            sulle facce dell'ultima tessera (quella con i punti interrogativi), i
-            numeri che ritieni completino la serie. Se sbagli, puoi trascinare
-            nuovi numeri su quelli che intendi cambiare`,
+          hint: domLang["demo.001"].itemData.hint,
         },
         timer: {},
       },

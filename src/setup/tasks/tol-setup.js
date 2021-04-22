@@ -1,4 +1,5 @@
 import { leftPadValue, clone } from "@/utils/utilityFns";
+import { tolLang } from "@/lang/it/tasks";
 import makePresenters from "./_composables/makePresenters";
 import processAnswers from "./_composables/processAnswers";
 
@@ -131,26 +132,14 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description: `<p>In questa prova, vengono presentate due forme, A e B. 
-              Ogni forma è composta da tre torri di altezza decrescente, 
-              una accanto all'altra. In ogni torre si trovano dei dischi 
-              colorati (vedi fig 1).</p><p>Il tuo compito è di spostare i 
-              dischi colorati tra le torri della forma B, per ottenere la 
-              stessa configurazione della forma A.</p><p>Usa il mouse per 
-              trascinare i dischi da una torre all'altra della forma B. Tieni 
-              presente che puoi spostare solo i dischi che si trovano in cima 
-              a ogni torre.</p><p>Cerca di ottenere il risultato finale 
-              compiendo il minor numero di mosse.</p>`,
-          scoring: `correttezza della risposta, numero di mosse compiute, 
-            tempo impiegato.`,
+          description: tolLang["instruction.001"].itemData.description,
+          scoring: tolLang["instruction.001"].itemData.scoring,
           items: 16,
-          duration: "nessun limite di tempo.",
+          duration: tolLang["instruction.001"].itemData.duration,
           images: [
             {
               src: "tol/fig1.png",
-              description: `A sinistra, si vede la forma bersaglio A, mentre 
-                a destra si vede la forma B, i cui dischi devono essere spostati 
-                tra le sue torri per ottenere la forma bersaglio A.`,
+              description: tolLang["instruction.001"].itemData.images[0].description,
             },
           ],
           actions: 0,
@@ -176,11 +165,7 @@ const blocks = [
           userTower: [[], [], []],
           actions: 0,
           isCorrect: false,
-          hint: `<b>Come devi procedere</b>: sposta i dischi tra le torri della 
-            forma B per ottenere la forma bersaglio A. Tieni presente che puoi 
-            spostare solo i dischi che si trovano in cima a ogni torre. 
-            Cerca di ottenere la forma bersaglio A compiendo il minor 
-            numero di mosse.`,
+          hint: tolLang["demo.001"].itemData.hint,
         },
         timer: {},
       },

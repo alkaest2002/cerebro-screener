@@ -1,4 +1,5 @@
 import { leftPadValue, clone } from "@/utils/utilityFns";
+import { kohLang } from "@/lang/it/tasks";
 import makePresenters from "./_composables/makePresenters";
 import processAnswers from "./_composables/processAnswers";
 
@@ -185,29 +186,14 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description: `In questo compito, vengono presentati due riquadri, A e B. 
-            Il primo è riempito di tessere colorate che 
-            nel loro insieme compongono una figura. Il secondo è inizialmente vuoto 
-            (vedi fig 1).</p><p>Il tuo compito è di utilizzare le tessere 
-            messe a tua disposizione per riprodure nel riquadro B la medesima configurazione 
-            del riquadro A.</p><p>Usa il mouse per 
-            trascinare le tessere nel riquadro B. Una volta inserite nel riquadro, 
-            le tessere possono essere ruotate in senso orario 
-            (click sinistro del mouse) o anti-orario (click destro del mouse).
-            In caso di errore, è possibile rimuovere una tessera trascinandola
-            fuori dal riquadro.</p><p>Cerca di ottenere il risultato finale 
-            compiendo il minor numero di mosse.</p>`,
-          scoring: `correttezza della risposta, numero di mosse compiute, 
-          tempo impiegato.`,
+          description: kohLang["instruction.001"].itemData.description,
+          scoring: kohLang["instruction.001"].itemData.scoring,
           items: 10,
-          duration: "nessun limite di tempo.",
+          duration: kohLang["instruction.001"].duration,
           images: [
             {
               src: "koh/fig1.png",
-              description: `A sinistra, le tessere colorate del riquadro A
-                compongono una figura che deve essere riprodotta fedelmente
-                nel riquadro B, usando le tessere che si trovano sotto i due
-                riquadri.`,
+              description: kohLang["instruction.001"].itemData.images[0].description,
             },
           ],
           actions: 0,
@@ -290,9 +276,7 @@ const blocks = [
           },
           isCorrect: false,
           actions: 0,
-          hint: `<b>Come devi procedere</b>: il riquadro B deve esser uguale al
-          riquadro A. Per ottenere questo risultato, trascina nel riquadro B 
-          le tessere che hai a disposizione e ruotale in modo opportuno.`,
+          hint: kohLang["demo.001"].itemData.hint,
         },
         timer: {},
       },
