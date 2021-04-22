@@ -44,8 +44,9 @@ const blocks = [
           images: [
             {
               src: "att/fig1.png",
-              description: attLang["instruction.001"].itemData.images[0].description
-            }
+              description:
+                attLang["instruction.001"].itemData.images[0].description,
+            },
           ],
           actions: 0,
         },
@@ -87,7 +88,7 @@ const blocks = [
           ],
           errors: 0,
           isCorrect: false,
-          hint: attLang["demo.001"].itemData.hint
+          hint: attLang["demo.001"].itemData.hint,
         },
         timer: {},
       },

@@ -192,7 +192,8 @@ const blocks = [
           images: [
             {
               src: "dom/fig1.png",
-              description: domLang["instruction.001"].itemData.images[0].description,
+              description:
+                domLang["instruction.001"].itemData.images[0].description,
             },
           ],
           actions: 0,

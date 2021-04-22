@@ -80,7 +80,7 @@ export default {
       ["tileIndex", "tileType", "tileColor", "tileRotation"].every((e) =>
         Object.keys(value).includes(e)
       ),
-    
+
     "tile-dropped": (value) => typeof value == "number",
 
     "tile-rotated": (value) =>

@@ -49,8 +49,9 @@ const blocks = [
           images: [
             {
               src: "mem/ds/fig1.png",
-              description: memLang["ds"]["instruction.001"].itemData.images[0].description
-            }
+              description:
+                memLang["ds"]["instruction.001"].itemData.images[0].description,
+            },
           ],
           actions: 0,
         },
@@ -74,7 +75,7 @@ const blocks = [
           userSequence: [],
           sequenceHasPlayed: false,
           actions: 0,
-          hint: memLang["ds"]["demo.001"].itemData.hint
+          hint: memLang["ds"]["demo.001"].itemData.hint,
         },
         timer: {},
       },
@@ -117,8 +118,9 @@ const blocks = [
           images: [
             {
               src: "mem/cb/fig1.png",
-              description: memLang["cb"]["instruction.001"].itemData.images[0].description
-            }
+              description:
+                memLang["cb"]["instruction.001"].itemData.images[0].description,
+            },
           ],
           actions: 0,
         },
@@ -140,7 +142,7 @@ const blocks = [
         itemData: {
           sequence: [6, 9, 4],
           userSequence: [],
-          hint: memLang["cb"]["demo.001"].itemData.hint
+          hint: memLang["cb"]["demo.001"].itemData.hint,
         },
         timer: {},
       },

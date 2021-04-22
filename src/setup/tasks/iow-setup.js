@@ -246,14 +246,15 @@ const blocks = [
         isLocked: false,
         itemData: {
           description: iowLang["instruction.001"].itemData.description,
-          scoring:  iowLang["instruction.001"].itemData.scoring,
-          duration:  iowLang["instruction.001"].itemData.duration,
+          scoring: iowLang["instruction.001"].itemData.scoring,
+          duration: iowLang["instruction.001"].itemData.duration,
           items: 100,
           images: [
             {
               src: "iow/fig1.png",
-              description: iowLang["instruction.001"].itemData.iamges[0].description
-            }
+              description:
+                iowLang["instruction.001"].itemData.iamges[0].description,
+            },
           ],
           actions: 0,
         },
@@ -274,7 +275,7 @@ const blocks = [
         isLocked: false,
         itemData: {
           ...demoItems[0],
-          hint:  iowLang["demo.001"].itemData.hint
+          hint: iowLang["demo.001"].itemData.hint,
         },
         timer: {},
       },

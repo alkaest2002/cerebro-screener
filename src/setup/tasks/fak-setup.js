@@ -18,7 +18,8 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           scoring: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           duration: 60,
           items: 3,
@@ -42,7 +43,7 @@ const blocks = [
         isLocked: false,
         itemData: {
           actions: 0,
-          hint: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          hint: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         },
         timer: {},
       },
@@ -83,7 +84,8 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           scoring: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           duration: 30,
           items: 3,
@@ -107,7 +109,7 @@ const blocks = [
         isLocked: false,
         itemData: {
           actions: 0,
-          hint: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          hint: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         },
         timer: {},
       },
@@ -148,7 +150,8 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           scoring: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           duration: 15,
           items: 3,
@@ -172,7 +175,7 @@ const blocks = [
         isLocked: false,
         itemData: {
           actions: 0,
-          hint: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          hint: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         },
         timer: {},
       },

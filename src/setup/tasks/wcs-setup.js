@@ -57,8 +57,9 @@ const blocks = [
           images: [
             {
               src: "wcs/fig1.png",
-              description: wcsLang["instruction.001"].itemData.images[0].description
-            }
+              description:
+                wcsLang["instruction.001"].itemData.images[0].description,
+            },
           ],
           actions: 0,
         },
@@ -94,7 +95,7 @@ const blocks = [
             index: null,
             message: null,
           },
-          hint: wcsLang["demo.001"].itemData.hint
+          hint: wcsLang["demo.001"].itemData.hint,
         },
         timer: {},
       },

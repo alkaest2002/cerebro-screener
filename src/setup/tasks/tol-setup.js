@@ -139,7 +139,8 @@ const blocks = [
           images: [
             {
               src: "tol/fig1.png",
-              description: tolLang["instruction.001"].itemData.images[0].description,
+              description:
+                tolLang["instruction.001"].itemData.images[0].description,
             },
           ],
           actions: 0,

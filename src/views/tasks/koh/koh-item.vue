@@ -15,7 +15,10 @@
       @drop="onTileDroppedOutsideFigure"
     >
       <item-container>
-        <div id="outer-drop" class="is-flex is-flex-direction-column is-align-items-center">
+        <div
+          id="outer-drop"
+          class="is-flex is-flex-direction-column is-align-items-center"
+        >
           <div id="legend" class="mb-5 has-text-grey has-text-centered">
             <em>ruota in senso orario</em>
             &rarr; click sinistro su tessera<br />
@@ -33,7 +36,11 @@
                   :figure-tiles="itemData.endFigure.figureTiles"
                 />
               </div>
-              <p class="mt-3 has-text-grey has-text-weight-bold has-text-centered">riquadro A</p>
+              <p
+                class="mt-3 has-text-grey has-text-weight-bold has-text-centered"
+              >
+                riquadro A
+              </p>
             </div>
             <div class="figure-wrapper ml-5">
               <div class="figure-container is-flex">
@@ -46,7 +53,11 @@
                   @tile-rotated="onTileRotated"
                 />
               </div>
-              <p class="mt-3 has-text-grey has-text-weight-bold has-text-centered">riquadro B</p>
+              <p
+                class="mt-3 has-text-grey has-text-weight-bold has-text-centered"
+              >
+                riquadro B
+              </p>
             </div>
           </div>
           <div class="mt-5">
@@ -146,14 +157,13 @@ export default {
       // do nothing if destination place is not void
       if (clonedUserFigure.figureTiles[dropIndex].tileColor != "void") return;
       // create tile
-      const tile = Object.assign(
-        {}, draggedTile.value, {
+      const tile = Object.assign({}, draggedTile.value, {
         tileIndex: dropIndex,
         tileType: "figure",
       });
       // put tile in new place
       clonedUserFigure.figureTiles.splice(dropIndex, 1, tile);
-      // if dragged tile comes from figure, 
+      // if dragged tile comes from figure,
       if (draggedTile.value.tileType === "figure")
         // put a void tile where the dragged tile once was
         clonedUserFigure.figureTiles.splice(
@@ -180,8 +190,7 @@ export default {
     // handle on drop tile outside figure
     const onTileDroppedOutsideFigure = () => {
       // do nothing if dragged tile is of type reference
-      if (draggedTile.value.tileType == "reference") 
-        return;
+      if (draggedTile.value.tileType == "reference") return;
       // clone user figure
       const clonedUserFigure = clone(itemData.userFigure);
       // delete tile (actually replace it with a void one)
@@ -210,7 +219,7 @@ export default {
 
 <style lang="scss" scoped>
 #legend {
-  font-size: .8em;
+  font-size: 0.8em;
 }
 
 .figure-wrapper {

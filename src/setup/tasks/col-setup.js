@@ -117,8 +117,9 @@ const blocks = [
           images: [
             {
               src: "col/fig1.png",
-              description: colLang["instruction.001"].itemData.images[0].description
-            }
+              description:
+                colLang["instruction.001"].itemData.images[0].description,
+            },
           ],
           actions: 0,
         },
@@ -146,7 +147,7 @@ const blocks = [
           totalAmount: 0,
           flippedAmounts: [],
           outcome: null,
-          hint: colLang["demo.001"].itemData.hint
+          hint: colLang["demo.001"].itemData.hint,
         },
         timer: {},
       },
