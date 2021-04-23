@@ -62,7 +62,7 @@ const uploadData = async (documents) => {
       postMessage({
         isOk: true,
         status: "running",
-        message: `upload dati ${index + 1} di ${documents.length}`,
+        message: `upload dati ${index + 1}/${documents.length}`,
       });
       // generate id
       const docRef = collection.doc();

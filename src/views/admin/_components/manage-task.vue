@@ -23,10 +23,10 @@
       href="#"
       @click.prevent="onClickResetBlock"
     >
-      &rarr; {{ i18n.manageTask.links.reset }}
+      {{ i18n.manageTask.links.reset }}
     </a>
     <span v-else class="has-text-grey">
-      &rarr; {{ i18n.manageTask.links.reset }}
+      {{ i18n.manageTask.links.reset }}
     </span>
     <br />
     <a
@@ -34,10 +34,10 @@
       href="#"
       @click.prevent="onClickNextInstructionsBlock"
     >
-      &rarr; {{ i18n.manageTask.links.next }}
+      {{ i18n.manageTask.links.next }}
     </a>
     <span v-else class="has-text-grey">
-      &rarr; {{ i18n.manageTask.links.next }}
+      {{ i18n.manageTask.links.next }}
     </span>
   </div>
 </template>

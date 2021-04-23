@@ -37,18 +37,29 @@ export const tasks = {
     iow: {
       netAmount: "Bilancio",
       lastWin: "Guadagno ultima carta",
-      lastLoss: "Perdita ultima carta"
+      lastLoss: "Perdita ultima carta",
     },
     koh: {
       legend:
-        "<em>ruota in senso orario</em> &rarr; click sinistro su tessera<br /><em>ruota in senso anti-orario</em> &rarr; click destro su tessera<br /><em>rimuovi</em> &rarr; trascina tessera fuori dal riquadro",
+        "<em>ruota in senso orario</em> click sinistro su tessera<br /><em>ruota in senso anti-orario</em> click destro su tessera<br /><em>rimuovi</em> trascina tessera fuori dal riquadro",
       boxA: "riquadro A",
       boxB: "riquadro B",
       tiles: "tessere trascinabili nel riquadro B",
     },
     mem: {
-      ds: {},
-      cb: {},
+      startAnimation: "clicca per avviare l'animazione",
+      animationStarted: "animazione avviata",
+      ds: {
+        clickNumbersOne: "clicca in sequenza i",
+        clickNumberTwo: "numeri",
+        buttons: {
+          reset: "reset",
+        }
+      },
+      cb: {
+        clickCirclesOne: "clicca in sequenza i",
+        clickCirclesTwo: "circoletti",
+      },
     },
     srv: {},
     tol: {

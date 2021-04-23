@@ -3,7 +3,7 @@
     <div id="title" class="mb-3">
       <h1 class="is-size-3 has-text-weight-bold">
         <slot name="title">
-          {{ i18n.tasks.task }} {{ Math.min(100, flippedCards + 1) }} di
+          {{ i18n.tasks.task }} {{ Math.min(100, flippedCards + 1) }}/
           {{ itemData.decks[0].cards.length }}
         </slot>
       </h1>

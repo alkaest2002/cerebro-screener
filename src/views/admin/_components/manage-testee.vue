@@ -12,7 +12,7 @@
   </div>
   <div>
     <router-link :to="{ name: 'route-battery-bio' }" replace>
-      &rarr; {{ i18n.manageTestee.links.bio }}
+      {{ i18n.manageTestee.links.bio }}
     </router-link>
     <br />
   </div>

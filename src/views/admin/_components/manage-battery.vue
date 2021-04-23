@@ -13,23 +13,23 @@
   <div>
     <div v-if="!batteryHasEnded">
       <router-link :to="{ name: 'route-battery-tasks' }" replace>
-        &rarr; {{ i18n.manageBattery.links.current }}
+        {{ i18n.manageBattery.links.current }}
       </router-link>
       <br />
       <router-link :to="{ name: 'route-battery-next-task' }" replace>
-        &rarr; {{ i18n.manageBattery.links.next }}
+        {{ i18n.manageBattery.links.next }}
       </router-link>
     </div>
     <div v-else>
       <span class="is-block has-text-grey">
-        &rarr; {{ i18n.manageBattery.links.current }}
+        {{ i18n.manageBattery.links.current }}
       </span>
       <span class="is-block has-text-grey">
-        &rarr; {{ i18n.manageBattery.links.next }}
+        {{ i18n.manageBattery.links.next }}
       </span>
     </div>
     <router-link :to="{ name: 'route-battery-end' }" replace>
-      &rarr; {{ i18n.manageBattery.links.end }}
+      {{ i18n.manageBattery.links.end }}
     </router-link>
   </div>
 </template>
