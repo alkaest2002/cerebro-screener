@@ -1,6 +1,6 @@
 <template>
   <att-item>
-    <template #title>{{ iq8n.tasks.demo.title }}</template>
+    <template #title>{{ i18n.tasks.demo.title }}</template>
     <template #explanation="{ itemData }">
       <div class="mt-6">
         <p class="has-text-grey" v-html="itemData.hint" />
