@@ -2,8 +2,8 @@ export const admin = {
   // views
   login: {
     buttons: {
-      battery: "batteria",
-      data: "dati",
+      battery: "admin &middot; batteria",
+      data: "admin &middot; dati",
     },
     fields: {
       password: {
