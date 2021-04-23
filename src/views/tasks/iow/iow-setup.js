@@ -253,7 +253,7 @@ const blocks = [
             {
               src: i18n["instruction.001"].itemData.images[0].src,
               description:
-                i18n["instruction.001"].itemData.iamges[0].description,
+                i18n["instruction.001"].itemData.images[0].description,
             },
           ],
           actions: 0,

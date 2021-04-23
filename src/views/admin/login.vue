@@ -19,7 +19,7 @@
               button-type="submit"
               @click.prevent="onClickLogin('route-admin-create-battery')"
             >
-              <span v-html=" i18n.login.buttons.battery " />
+              <span v-html="i18n.login.buttons.battery" />
             </loading-button>
             <loading-button
               :is-loading="isLoading"
@@ -27,7 +27,7 @@
               button-type="submit"
               @click.prevent="onClickLogin('route-admin-save-battery')"
             >
-              <span v-html=" i18n.login.buttons.data " />
+              <span v-html="i18n.login.buttons.data" />
             </loading-button>
           </div>
         </form>

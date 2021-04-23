@@ -13,7 +13,7 @@
         <div
           class="mb-4 has-text-grey is-size-5 is-flex is-align-items-center is-justify-content-center"
         >
-          <span class="mr-3">carte rimanenti:</span>
+          <span class="mr-3">{{ i18n.tasks.iow.remainingCards }}</span>
           <span class="has-text-weight-bold number">{{
             itemData.decks[0].cards.length - flippedCards
           }}</span>

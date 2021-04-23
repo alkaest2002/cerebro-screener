@@ -38,6 +38,7 @@ export const tasks = {
       netAmount: "Bilancio",
       lastWin: "Guadagno ultima carta",
       lastLoss: "Perdita ultima carta",
+      remainingCards: "carte rimamanenti",
     },
     koh: {
       legend:
