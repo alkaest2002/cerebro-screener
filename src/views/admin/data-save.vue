@@ -1,7 +1,9 @@
 <template>
   <div id="presenter-wrapper">
     <div id="title" class="mb-3">
-      <h1 class="is-size-3 has-text-weight-bold">{{ i18n.dataSave.title }}</h1>
+      <h1 class="is-size-3 has-text-weight-bold">
+        {{ i18n.dataSave.title }}
+      </h1>
     </div>
     <div id="presenter" class="box">
       <div id="stats" class="mt-3">
