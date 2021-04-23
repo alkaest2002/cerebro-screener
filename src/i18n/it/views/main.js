@@ -8,8 +8,8 @@ export const main = {
   about: {
     commitee: "Comitato Scientifico",
     buttons: {
-      back: "&larr;"
-    }
+      back: "&larr;",
+    },
   },
   // components
   hero: {
