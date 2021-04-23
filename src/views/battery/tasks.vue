@@ -39,10 +39,10 @@ export default {
   setup() {
     // use store
     const store = useStore();
-    
+
     // use router
     const router = useRouter();
-    
+
     /// use route
     const route = useRoute();
 

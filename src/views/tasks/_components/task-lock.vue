@@ -12,7 +12,9 @@
           draggable="false"
           style="height: 100px"
         />
-        <p class="is-size-3 has-text-weight-bold mt-3">{{ i18n.lock.item.title }}</p>
+        <p class="is-size-3 has-text-weight-bold mt-3">
+          {{ i18n.lock.item.title }}
+        </p>
         <p>{{ i18n.lock.item.message }}</p>
       </slot>
     </div>

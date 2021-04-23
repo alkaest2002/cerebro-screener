@@ -9,7 +9,9 @@
         draggable="false"
         style="height: 100px"
       />
-      <p class="is-size-3 has-text-weight-bold mt-2">{{ i18n.lock.block.title }}</p>
+      <p class="is-size-3 has-text-weight-bold mt-2">
+        {{ i18n.lock.block.title }}
+      </p>
       <p>{{ i18n.lock.block.message }}</p>
       <button
         class="button is-link mt-3"

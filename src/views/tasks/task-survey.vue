@@ -6,7 +6,7 @@
     <div id="presenter" class="box">
       <slot>
         <div class="block mt-3">
-         {{ i18n.survey.message }}
+          {{ i18n.survey.message }}
         </div>
       </slot>
       <div class="block mt-6">
@@ -89,13 +89,13 @@ export default {
   setup(props) {
     // use store
     const store = useStore();
-    
+
     // init surveyData
     const surveyData = reactive(clone(props.presenter.itemData));
-    
+
     // get task key
     const taskKey = store.getters["battery/getCurrentTask"].key.toUpperCase();
-    
+
     // handle change slider
     const onChangeLikert = () => {
       // persist survey data to vuex
@@ -106,7 +106,7 @@ export default {
           Object.values(surveyData).filter((e) => e != null).length == 3,
       });
     };
-    
+
     // return setup object
     return {
       i18n,

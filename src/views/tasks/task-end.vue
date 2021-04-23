@@ -1,7 +1,9 @@
 <template>
   <div id="presenter-wrapper">
     <div id="title" class="mb-3">
-      <h1 class="is-size-3 has-text-weight-bold">{{ i18n.end.title }} #{{ taskKey }}</h1>
+      <h1 class="is-size-3 has-text-weight-bold">
+        {{ i18n.end.title }} #{{ taskKey }}
+      </h1>
     </div>
     <div
       id="presenter"
