@@ -168,12 +168,6 @@ export const srv = {
       duration: "nessun limite di tempo",
     },
   },
-  "survey.001": {
-    itemData: {
-      text:
-        " Rifletti con calma su <b>Tutte le prove che hai svolto</b> e suoi tuoi stati d'animo. Ti chiediamo di rispondere alle seguenti domande, trascinando con il mouse il circoletto centrale nella direzione voluta.",
-    },
-  },
 };
 
 export const tol = {

@@ -39,7 +39,6 @@ const blocks = [
         canGoForth: false,
         isLocked: false,
         itemData: {
-          text: i18n["survey.001"].itemData.text,
           q1: null,
           q2: null,
           q3: null,
