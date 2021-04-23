@@ -14,11 +14,7 @@
           {{ i18n.end.title }}
         </p>
         <div class="has-text-centered">
-          <p>
-            <span>{{ i18n.end.messageOne }}</span>
-            <br />
-            <span>{{ i18n.end.messageTwo }}</span>
-          </p>
+          <p v-html="i18n.end.message" />
           <div>
             <loading-button
               :is-loading="localOp.status == 'running'"

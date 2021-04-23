@@ -48,9 +48,7 @@ export const battery = {
   },
   end: {
     title: "Fine della batteria",
-    messageOne: "Clicca sul pulsante qui sotto per registrare i tuoi dati.",
-    messageTwo:
-      "Conclusa la registrazione, il sistema si riavverà automaticamente.",
+    message: "Clicca sul pulsante qui sotto per registrare i tuoi dati.<br />Conclusa la registrazione, il sistema si riavverà automaticamente.",
     waitingStatus: "in attesa",
     buttons: {
       save: "registra le tue risposte",

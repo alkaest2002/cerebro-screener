@@ -47,8 +47,7 @@ export const tasks = {
   },
   end: {
     title: "Fine del task",
-    messageOne: "Complimenti! Hai ultimato la prova.",
-    messagTwo: "Rilassati per qualche secondo e poi vai avanti.",
+    message: "Complimenti! Hai ultimato la prova.<br />Rilassati per qualche secondo e poi vai avanti.",
   },
   // components
   navigation: {

@@ -16,11 +16,7 @@
           style="height: 128px"
         />
         <p class="is-size-3 has-text-weight-bold mt-3">{{ i18n.end.title }}</p>
-        <p>
-          <span>{{ i18n.end.messageOne }}</span>
-          <br />
-          <span>{{ i18n.end.messageTwo }}</span>
-        </p>
+        <p v-html="i18n.end.message" />
       </div>
     </div>
   </div>
