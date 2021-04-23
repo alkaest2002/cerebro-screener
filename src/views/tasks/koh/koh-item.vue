@@ -3,7 +3,7 @@
     <div id="title" class="mb-3">
       <h1 class="is-size-3 has-text-weight-bold">
         <slot name="title">
-          Quesito {{ presenter.itemIndex + 1 }}/{{ totalItems }}
+          {{ i18n.tasks.task }} {{ presenter.itemIndex + 1 }}/{{ totalItems }}
         </slot>
       </h1>
     </div>
@@ -19,14 +19,11 @@
           id="outer-drop"
           class="is-flex is-flex-direction-column is-align-items-center"
         >
-          <div id="legend" class="mb-5 has-text-grey has-text-centered">
-            <em>ruota in senso orario</em>
-            &rarr; click sinistro su tessera<br />
-            <em>ruota in senso anti-orario</em>
-            &rarr; click destro su tessera<br />
-            <em>rimuovi</em>
-            &rarr; trascina tessera fuori dal riquadro
-          </div>
+          <div 
+            id="legend" 
+            class="mb-5 has-text-grey has-text-centered"
+            v-html="i18n.tasks.koh.legend"
+          />
           <div class="is-flex is-justify-content-center mb-5">
             <div class="figure-wrapper mr-5">
               <div class="figure-container is-flex">
@@ -39,7 +36,7 @@
               <p
                 class="mt-3 has-text-grey has-text-weight-bold has-text-centered"
               >
-                riquadro A
+                {{ i18n.tasks.koh.boxA }}
               </p>
             </div>
             <div class="figure-wrapper ml-5">
@@ -56,7 +53,7 @@
               <p
                 class="mt-3 has-text-grey has-text-weight-bold has-text-centered"
               >
-                riquadro B
+                {{ i18n.tasks.koh.boxB }}
               </p>
             </div>
           </div>
@@ -74,6 +71,7 @@
 </template>
 
 <script>
+import { tasks as i18n } from "@/i18n/it/views/tasks";
 import { ref, computed } from "vue";
 import { clone } from "@/utils/utilityFns";
 import initItem from "@/views/tasks/_composables/initItem";
@@ -205,6 +203,7 @@ export default {
 
     // return
     return {
+      i18n,
       itemData,
       totalItems,
       userFigureIsCorrect,

@@ -8,11 +8,12 @@
     />
   </div>
   <p class="has-text-centered has-text-grey mt-3">
-    tessere trascinabili nel riquadro B
+    {{ i18n.tasks.koh.tiles }}
   </p>
 </template>
 
 <script>
+import { tasks as i18n } from "@/i18n/it/views/tasks";
 import kohTile from "./koh-tile";
 
 export default {
@@ -48,6 +49,7 @@ export default {
 
     // return setup object
     return {
+      i18n,
       referenceTiles,
     };
   },

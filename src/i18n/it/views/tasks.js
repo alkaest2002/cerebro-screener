@@ -37,7 +37,12 @@ export const tasks = {
       useTheseNumbers: "trascina questi numeri per<br />completare la tessera mancante"
     },
     iow: {},
-    koh: {},
+    koh: {
+      legend: "<em>ruota in senso orario</em> &rarr; click sinistro su tessera<br /><em>ruota in senso anti-orario</em> &rarr; click destro su tessera<br /><em>rimuovi</em> &rarr; trascina tessera fuori dal riquadro",
+      boxA: "riquadro A",
+      boxB: "riquadro B",
+      tiles: "tessere trascinabili nel riquadro B"
+    },
     mem: {
       ds: {},
       cb: {},  
