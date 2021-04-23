@@ -21,7 +21,7 @@
               type="button"
               @click="itemData.actions += 1"
             >
-              simula azione
+              {{ i18n.tasks.fak.simulateAction }}
             </button>
           </div>
         </div>

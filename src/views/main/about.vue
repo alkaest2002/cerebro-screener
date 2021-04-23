@@ -19,7 +19,7 @@
       </div>
       <div class="buttons mt-5">
         <router-link :to="{ name: 'route-main-home' }" class="button is-link">
-          &larr;
+          {{ () => "&larr" }}
         </router-link>
       </div>
     </div>

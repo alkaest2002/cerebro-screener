@@ -10,9 +10,9 @@ export const tasks = {
     carousel: {
       fig: "fig",
       buttons: {
-        close: "chiudi"
-      }
-    }
+        close: "chiudi",
+      },
+    },
   },
   demo: {
     title: "Versione demo",
@@ -40,6 +40,11 @@ export const tasks = {
     dom: {
       useTheseNumbers:
         "trascina questi numeri per<br />completare la tessera mancante",
+    },
+    fak: {
+      buttons: {
+        simulateAction: "simula azione",
+      },
     },
     iow: {
       netAmount: "Bilancio",
