@@ -6,7 +6,9 @@
           <p class="is-size-4 has-text-weight-bold mb-2">
             {{ i18n.taskCard.task }} {{ hashedTaskKey }}
           </p>
-          <p class="mb-0 has-text-grey"><b>Quesiti:</b> {{ task.items }}</p>
+          <p class="mb-0 has-text-grey">
+            <b>{{ i18n.taskCard.items }}:</b> {{ task.items }}
+          </p>
           <p class="mb-0 has-text-grey">
             <b>{{ i18n.taskCard.duration }}: </b>
             <span v-if="task.duration > 0">

@@ -6,7 +6,7 @@
     :type="buttonType"
     @click="onClick"
   >
-    <slot> vai </slot>
+    <slot />
   </button>
 </template>
 
