@@ -26,13 +26,15 @@
     </div>
     <div id="next-number" class="mt-2 has-text-centered">
       <span class="has-text-grey">
-        Prossimo numero: {{ numberToClick || "-" }}
+        <span>{{ i18n.tasks.att.nextNumberToClick }}: </span>
+        <span>{{ numberToClick || "-" }}</span>
       </span>
     </div>
   </div>
 </template>
 
 <script>
+import { tasks as i18n } from "@/i18n/it/views/tasks";
 import { computed, ref } from "vue";
 import { clone } from "@/utils/utilityFns";
 
@@ -119,6 +121,7 @@ export default {
 
     // return setup object
     return {
+      i18n,
       grid,
       gridSize,
       clickedNumber,

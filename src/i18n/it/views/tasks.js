@@ -27,6 +27,24 @@ export const tasks = {
       },
     ],
   },
+  tasks: {
+    att: {
+      nextNumberToClick: "Prossimo numero"
+    },
+    col: {},
+    dom: {
+      useTheseNumbers: "trascina questi numeri per<br />completare la tessera mancante"
+    },
+    iow: {},
+    koh: {},
+    mem: {
+      ds: {},
+      cb: {},  
+    },
+    srv: {},
+    tol: {},
+    wcs: {},
+  },
   end: {
     title: "Fine del task",
     messageOne: "Complimenti! Hai ultimato la prova.",

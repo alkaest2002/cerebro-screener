@@ -1,8 +1,9 @@
 <template>
   <div>
-    <small class="is-block mt-6 mb-2 has-text-grey has-text-centered">
-      trascina questi numeri per<br />completare la tessera mancante
-    </small>
+    <small 
+      class="is-block mt-6 mb-2 has-text-grey has-text-centered" 
+      v-html="i18n.tasks.dom.useTheseNumbers"
+    />
     <div
       style="width: 200px; margin: auto"
       class="is-flex is-align-content-space-around is-justify-content-center is-flex-wrap-wrap"
@@ -21,6 +22,7 @@
 </template>
 
 <script>
+import { tasks as i18n } from "@/i18n/it/views/tasks";
 import domTileFace from "./dom-tile-face";
 
 export default {
@@ -37,7 +39,16 @@ export default {
 
   // emitted event
   emits: {
+    i18n,
     dragstart: null,
+  },
+
+  // setup
+  setup() {
+    // return setup object
+    return {
+      i18n
+    };
   },
 };
 </script>
