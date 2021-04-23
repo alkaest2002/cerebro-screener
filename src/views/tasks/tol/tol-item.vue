@@ -3,7 +3,7 @@
     <div id="title" class="mb-3">
       <h1 class="is-size-3 has-text-weight-bold">
         <slot name="title">
-          Quesito {{ presenter.itemIndex + 1 }}/{{ totalItems }}
+          {{ i18n.tasks.task }} {{ presenter.itemIndex + 1 }}/{{ totalItems }}
         </slot>
       </h1>
     </div>
@@ -13,7 +13,9 @@
           <div>
             <tol-tower :tower="itemData.endTower" :is-locked="true" />
             <div class="mt-3 ml-3 has-text-grey has-text-centered">
-              <span class="has-text-weight-bold">Forma bersaglio A</span>
+              <span class="has-text-weight-bold">
+                {{ i18n.tasks.tol.figureA }}
+              </span>
             </div>
           </div>
           <div>
@@ -23,8 +25,13 @@
               @disc-dropped="onDiscDropped"
             />
             <div class="mt-3 ml-3 has-text-grey has-text-centered">
-              <span class="has-text-weight-bold">Forma B</span>
-              <br />sposta i dischi per ottenere la figura A
+              <span class="has-text-weight-bold">
+                {{ i18n.tasks.tol.figureB }}
+              </span>
+              <br />
+              <span>
+                {{ i18n.tasks.tol.figureHint }}
+              </span>
             </div>
           </div>
         </div>
@@ -35,6 +42,7 @@
 </template>
 
 <script>
+import { tasks as i18n } from "@/i18n/it/views/tasks";
 import { computed } from "vue";
 import { clone } from "@/utils/utilityFns";
 import initItem from "@/views/tasks/_composables/initItem";
@@ -92,6 +100,7 @@ export default {
 
     // return
     return {
+      i18n,
       totalItems,
       itemData,
       tower,

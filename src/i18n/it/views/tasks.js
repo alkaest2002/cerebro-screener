@@ -28,6 +28,7 @@ export const tasks = {
     ],
   },
   tasks: {
+    task: "Quesito",
     att: {
       nextNumberToClick: "Prossimo numero"
     },
@@ -42,7 +43,11 @@ export const tasks = {
       cb: {},  
     },
     srv: {},
-    tol: {},
+    tol: {
+      figureA: "Forma bersaglio A",
+      figureB: "Forma B",
+      figureHint: "sposta i dischi per ottenere la figura A"
+    },
     wcs: {},
   },
   end: {
