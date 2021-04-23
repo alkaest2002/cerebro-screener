@@ -12,8 +12,9 @@
       </div>
       <div>
         <span>{{ i18n.pageNotFound.link }}</span>
+        &nbsp;
         <router-link :to="{ name: 'route-main-home' }" replace>
-          Homepage
+          {{ i18n.pageNotFound.homepage }}
         </router-link>
       </div>
     </div>
