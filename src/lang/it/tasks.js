@@ -200,3 +200,26 @@ export const tol = {
     },
   },
 };
+
+export const wcs = {
+  "instruction.001": {
+    itemData: {
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+      scoring:
+        "correttezza della risposta, numero di mosse compiute, tempo impiegato.",
+      duration: "nessun limite di tempo",
+      images: [
+        {
+          src: "it/wcs/fig1.png",
+          description: "Descrizione immagine",
+        },
+      ],
+    },
+  },
+  "demo.001": {
+    itemData: {
+      hint: "<b>Come devi procedere</b>: ",
+    },
+  },
+};
+
