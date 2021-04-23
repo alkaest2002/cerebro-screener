@@ -1,5 +1,5 @@
 import { clone } from "@/utils/utilityFns";
-import { srvLang } from "@/lang/it/tasks";
+import { srv as i18n } from "@/lang/it/tasks";
 import makePresenters from "../_composables/makePresenters";
 import processAnswers from "../_composables/processAnswers";
 
@@ -16,9 +16,9 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description: srvLang["instruction.001"].itemData.description,
-          scoring: srvLang["instruction.001"].itemData.scoring,
-          duration: srvLang["instruction.001"].itemData.duration,
+          description: i18n["instruction.001"].itemData.description,
+          scoring: i18n["instruction.001"].itemData.scoring,
+          duration: i18n["instruction.001"].itemData.duration,
           items: 3,
           images: [],
           actions: 0,
@@ -39,6 +39,7 @@ const blocks = [
         canGoForth: false,
         isLocked: false,
         itemData: {
+          text: i18n["survey.001"].itemData.text,
           q1: null,
           q2: null,
           q3: null,

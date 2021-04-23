@@ -1,5 +1,5 @@
 import { leftPadValue, shuffle, clone } from "@/utils/utilityFns";
-import { wcsLang } from "@/lang/it/tasks";
+import { wcs as i18n } from "@/lang/it/tasks";
 import makePresenters from "../_composables/makePresenters";
 import processAnswers from "../_composables/processAnswers";
 
@@ -50,15 +50,15 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description: wcsLang["instruction.001"].itemData.description,
-          scoring: wcsLang["instruction.001"].itemData.scoring,
-          duration: wcsLang["instruction.001"].itemData.duration,
+          description: i18n["instruction.001"].itemData.description,
+          scoring: i18n["instruction.001"].itemData.scoring,
+          duration: i18n["instruction.001"].itemData.duration,
           items: 60,
           images: [
             {
               src: "wcs/fig1.png",
               description:
-                wcsLang["instruction.001"].itemData.images[0].description,
+                i18n["instruction.001"].itemData.images[0].description,
             },
           ],
           actions: 0,
@@ -95,7 +95,7 @@ const blocks = [
             index: null,
             message: null,
           },
-          hint: wcsLang["demo.001"].itemData.hint,
+          hint: i18n["demo.001"].itemData.hint,
         },
         timer: {},
       },

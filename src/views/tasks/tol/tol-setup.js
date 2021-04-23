@@ -1,5 +1,5 @@
 import { leftPadValue, clone } from "@/utils/utilityFns";
-import { tolLang } from "@/lang/it/tasks";
+import { tol as i18n } from "@/lang/it/tasks";
 import makePresenters from "../_composables/makePresenters";
 import processAnswers from "../_composables/processAnswers";
 
@@ -132,15 +132,15 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description: tolLang["instruction.001"].itemData.description,
-          scoring: tolLang["instruction.001"].itemData.scoring,
-          duration: tolLang["instruction.001"].itemData.duration,
+          description: i18n["instruction.001"].itemData.description,
+          scoring: i18n["instruction.001"].itemData.scoring,
+          duration: i18n["instruction.001"].itemData.duration,
           items: 16,
           images: [
             {
               src: "tol/fig1.png",
               description:
-                tolLang["instruction.001"].itemData.images[0].description,
+                i18n["instruction.001"].itemData.images[0].description,
             },
           ],
           actions: 0,
@@ -166,7 +166,7 @@ const blocks = [
           userTower: [[], [], []],
           actions: 0,
           isCorrect: false,
-          hint: tolLang["demo.001"].itemData.hint,
+          hint: i18n["demo.001"].itemData.hint,
         },
         timer: {},
       },

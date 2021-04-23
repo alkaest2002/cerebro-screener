@@ -1,5 +1,5 @@
 import { leftPadValue, clone } from "@/utils/utilityFns";
-import { colLang } from "@/lang/it/tasks";
+import { col as i18n } from "@/lang/it/tasks";
 import makePresenters from "../_composables/makePresenters";
 import processAnswers from "../_composables/processAnswers";
 
@@ -110,15 +110,15 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description: colLang["instruction.001"].itemData.description,
-          scoring: colLang["instruction.001"].itemData.scoring,
-          duration: colLang["instruction.001"].itemData.duration,
+          description: i18n["instruction.001"].itemData.description,
+          scoring: i18n["instruction.001"].itemData.scoring,
+          duration: i18n["instruction.001"].itemData.duration,
           items: 12,
           images: [
             {
               src: "col/fig1.png",
               description:
-                colLang["instruction.001"].itemData.images[0].description,
+                i18n["instruction.001"].itemData.images[0].description,
             },
           ],
           actions: 0,
@@ -147,7 +147,7 @@ const blocks = [
           totalAmount: 0,
           flippedAmounts: [],
           outcome: null,
-          hint: colLang["demo.001"].itemData.hint,
+          hint: i18n["demo.001"].itemData.hint,
         },
         timer: {},
       },

@@ -1,5 +1,5 @@
 import { leftPadValue, shuffle, clone } from "@/utils/utilityFns";
-import { iowLang } from "@/lang/it/tasks";
+import { iow as i18n } from "@/lang/it/tasks";
 import makePresenters from "../_composables/makePresenters";
 import processAnswers from "../_composables/processAnswers";
 
@@ -245,15 +245,15 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description: iowLang["instruction.001"].itemData.description,
-          scoring: iowLang["instruction.001"].itemData.scoring,
-          duration: iowLang["instruction.001"].itemData.duration,
+          description: i18n["instruction.001"].itemData.description,
+          scoring: i18n["instruction.001"].itemData.scoring,
+          duration: i18n["instruction.001"].itemData.duration,
           items: 100,
           images: [
             {
               src: "iow/fig1.png",
               description:
-                iowLang["instruction.001"].itemData.iamges[0].description,
+                i18n["instruction.001"].itemData.iamges[0].description,
             },
           ],
           actions: 0,
@@ -275,7 +275,7 @@ const blocks = [
         isLocked: false,
         itemData: {
           ...demoItems[0],
-          hint: iowLang["demo.001"].itemData.hint,
+          hint: i18n["demo.001"].itemData.hint,
         },
         timer: {},
       },

@@ -1,4 +1,4 @@
-export const attLang = {
+export const att = {
   "instruction.001": {
     itemData: {
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
@@ -20,7 +20,7 @@ export const attLang = {
   },
 };
 
-export const colLang = {
+export const col = {
   "instruction.001": {
     itemData: {
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
@@ -42,7 +42,7 @@ export const colLang = {
   },
 };
 
-export const domLang = {
+export const dom = {
   "instruction.001": {
     itemData: {
       description:
@@ -67,7 +67,7 @@ export const domLang = {
   },
 };
 
-export const iowLang = {
+export const iow = {
   "instruction.001": {
     itemData: {
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
@@ -89,7 +89,7 @@ export const iowLang = {
   },
 };
 
-export const kohLang = {
+export const koh = {
   "instruction.001": {
     itemData: {
       description:
@@ -114,7 +114,7 @@ export const kohLang = {
   },
 };
 
-export const memLang = {
+export const mem = {
   ds: {
     "instruction.001": {
       itemData: {
@@ -159,7 +159,7 @@ export const memLang = {
   },
 };
 
-export const srvLang = {
+export const srv = {
   "instruction.001": {
     itemData: {
       description: "Lorem...",
@@ -168,9 +168,14 @@ export const srvLang = {
       duration: "nessun limite di tempo",
     },
   },
+  "survey.001": {
+    itemData: {
+      text: " Rifletti con calma su <b>Tutte le prove che hai svolto</b> e suoi tuoi stati d'animo. Ti chiediamo di rispondere alle seguenti domande, trascinando con il mouse il circoletto centrale nella direzione voluta."
+    }
+  }
 };
 
-export const tolLang = {
+export const tol = {
   "instruction.001": {
     itemData: {
       description:

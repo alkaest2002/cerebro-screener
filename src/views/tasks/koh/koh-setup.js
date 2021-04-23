@@ -1,5 +1,5 @@
 import { leftPadValue, clone } from "@/utils/utilityFns";
-import { kohLang } from "@/lang/it/tasks";
+import { koh as i18n } from "@/lang/it/tasks";
 import makePresenters from "../_composables/makePresenters";
 import processAnswers from "../_composables/processAnswers";
 
@@ -186,15 +186,15 @@ const blocks = [
         canGoForth: true,
         isLocked: false,
         itemData: {
-          description: kohLang["instruction.001"].itemData.description,
-          scoring: kohLang["instruction.001"].itemData.scoring,
-          duration: kohLang["instruction.001"].duration,
+          description: i18n["instruction.001"].itemData.description,
+          scoring: i18n["instruction.001"].itemData.scoring,
+          duration: i18n["instruction.001"].duration,
           items: 10,
           images: [
             {
               src: "koh/fig1.png",
               description:
-                kohLang["instruction.001"].itemData.images[0].description,
+                i18n["instruction.001"].itemData.images[0].description,
             },
           ],
           actions: 0,
@@ -277,7 +277,7 @@ const blocks = [
           },
           isCorrect: false,
           actions: 0,
-          hint: kohLang["demo.001"].itemData.hint,
+          hint: i18n["demo.001"].itemData.hint,
         },
         timer: {},
       },
