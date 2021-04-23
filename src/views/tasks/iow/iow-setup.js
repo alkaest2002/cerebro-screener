@@ -251,7 +251,7 @@ const blocks = [
           items: 100,
           images: [
             {
-              src: "iow/fig1.png",
+              src: i18n["instruction.001"].itemData.images[0].src,
               description:
                 i18n["instruction.001"].itemData.iamges[0].description,
             },

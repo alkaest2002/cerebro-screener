@@ -43,7 +43,7 @@ const blocks = [
           items: 3,
           images: [
             {
-              src: "att/fig1.png",
+              src: i18n["instruction.001"].itemData.images[0].src,
               description:
                 i18n["instruction.001"].itemData.images[0].description,
             },

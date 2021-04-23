@@ -48,7 +48,7 @@ const blocks = [
           items: 7,
           images: [
             {
-              src: "mem/ds/fig1.png",
+              src: i18n["ds"]["instruction.001"].itemData.images[0].src,
               description:
                 i18n["ds"]["instruction.001"].itemData.images[0].description,
             },
@@ -117,7 +117,7 @@ const blocks = [
           items: 7,
           images: [
             {
-              src: "mem/cb/fig1.png",
+              src: i18n["cb"]["instruction.001"].itemData.images[0].src,
               description:
                 i18n["cb"]["instruction.001"].itemData.images[0].description,
             },

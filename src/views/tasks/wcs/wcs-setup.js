@@ -56,7 +56,7 @@ const blocks = [
           items: 60,
           images: [
             {
-              src: "wcs/fig1.png",
+              src: i18n["instruction.001"].itemData.images[0].src,
               description:
                 i18n["instruction.001"].itemData.images[0].description,
             },
