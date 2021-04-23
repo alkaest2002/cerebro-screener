@@ -1,18 +1,20 @@
 <template>
   <p class="is-size-5 has-text-weight-bold mb-0">
-    task {{ currentTaskIndex }}:
-    {{ currentTask?.description || "n.d." }}
+    {{ i18n.manageTask.task }} {{ currentTaskIndex }}:
+    {{ currentTask?.description || "-" }}
   </p>
   <div id="task">
     <span>
-      <b class="has-text-grey">block</b>
-      {{ currentBlock?.id || "n.d." }} {{ currentBlock?.type }}
+      <b class="has-text-grey">{{ i18n.manageTask.block }}</b>
+      {{ currentBlock?.id || "-" }} {{ currentBlock?.type }}
     </span>
     <span>
-      <b class="has-text-grey">item</b>
-      {{ currentPresenter?.id || "n.d." }}
+      <b class="has-text-grey">{{ i18n.manageTask.item }}</b>
+      {{ currentPresenter?.id || "-" }}
     </span>
-    <span> <b class="has-text-grey">timer</b> {{ currentTimeLeft }} </span>
+    <span> <b class="has-text-grey">{{ i18n.manageTask.timer }}</b> 
+    {{ currentTimeLeft }}
+    </span>
   </div>
   <div>
     <a
@@ -20,22 +22,23 @@
       href="#"
       @click.prevent="onClickResetBlock"
     >
-      &rarr; reset blocco corrente
+      &rarr; {{ i18n.manageTask.links.reset }}
     </a>
-    <span v-else class="has-text-grey"> &rarr; reset blocco corrente </span>
+    <span v-else class="has-text-grey"> &rarr; {{ i18n.manageTask.links.reset }}</span>
     <br />
     <a
       v-if="nextInstructionsBlock > 0 && !batteryHasEnded"
       href="#"
       @click.prevent="onClickNextInstructionsBlock"
     >
-      &rarr; blocco successivo
+      &rarr; {{ i18n.manageTask.links.next }}
     </a>
-    <span v-else class="has-text-grey"> &rarr; blocco successivo </span>
+    <span v-else class="has-text-grey"> &rarr; {{ i18n.manageTask.links.next }}</span>
   </div>
 </template>
 
 <script>
+import { admin as i18n } from "@/lang/it/views/admin";
 import { computed } from "vue";
 import { useStore } from "vuex";
 import { formatTimerTime } from "@/utils/utilityFns";
@@ -76,7 +79,7 @@ export default {
     // get current timer
     const currentTimeLeft = computed(() =>
       store.state.timer.id == null
-        ? "n.d."
+        ? "-"
         : formatTimerTime(
             store.state.timer.timeLimit - store.state.timer.timeElapsed
           )
@@ -108,6 +111,7 @@ export default {
 
     // return setup object
     return {
+      i18n,
       batteryHasEnded,
       currentTask,
       currentTaskIndex,

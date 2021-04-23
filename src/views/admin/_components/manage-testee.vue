@@ -1,22 +1,23 @@
 <template>
-  <p class="is-size-5 has-text-weight-bold mb-0 mt-2">Dati anagrafici</p>
+  <p class="is-size-5 has-text-weight-bold mb-0 mt-2">{{ i18n.manageTestee.testee }}</p>
   <div id="testee">
     <span v-for="(value, key) in currentTestee" :key="key">
       <b class="has-text-grey">
-        {{ key }}
+        {{ i18n.manageTestee.data[key] }}
       </b>
       {{ value }}
     </span>
   </div>
   <div>
     <router-link :to="{ name: 'route-battery-bio' }" replace>
-      &rarr; anagrafica
+      &rarr; {{ i18n.manageTestee.links.bio }}
     </router-link>
     <br />
   </div>
 </template>
 
 <script>
+import { admin as i18n } from "@/lang/it/views/admin";
 import { useStore } from "vuex";
 
 export default {
@@ -32,6 +33,7 @@ export default {
 
     // return setup object
     return {
+      i18n,
       currentTestee,
     };
   },

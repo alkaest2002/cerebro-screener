@@ -1,5 +1,5 @@
 <template>
-  <p class="is-size-5 has-text-weight-bold mb-0">Batteria</p>
+  <p class="is-size-5 has-text-weight-bold mb-0">{{ i18n.manageBattery.battery }}</p>
   <div id="battery">
     <span v-for="(task, index) in currentBattery" :key="task.id">
       <b class="has-text-grey">
@@ -11,24 +11,25 @@
   <div>
     <div v-if="!batteryHasEnded">
       <router-link :to="{ name: 'route-battery-tasks' }" replace>
-        &rarr; riprendi task
+        &rarr; {{ i18n.manageBattery.links.current }}
       </router-link>
       <br />
       <router-link :to="{ name: 'route-battery-next-task' }" replace>
-        &rarr; prossimo task
+        &rarr; {{ i18n.manageBattery.links.next }}
       </router-link>
     </div>
     <div v-else>
-      <span class="is-block has-text-grey"> &rarr; riprendi task </span>
-      <span class="is-block has-text-grey"> &rarr; prossimo task </span>
+      <span class="is-block has-text-grey"> &rarr; {{ i18n.manageBattery.links.current }}</span>
+      <span class="is-block has-text-grey"> &rarr; {{ i18n.manageBattery.links.next }} </span>
     </div>
     <router-link :to="{ name: 'route-battery-end' }" replace>
-      &rarr; fine della batteria
+      &rarr; {{ i18n.manageBattery.links.end }}
     </router-link>
   </div>
 </template>
 
 <script>
+import { admin as i18n } from "@/lang/it/views/admin";
 import { useStore } from "vuex";
 
 export default {
@@ -48,6 +49,7 @@ export default {
 
     // return setup object
     return {
+      i18n,
       currentBattery,
       batteryHasEnded,
     };

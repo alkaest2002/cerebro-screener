@@ -29,8 +29,44 @@ export const admin = {
       },
     },
   },
+  batteryManage: {
+    title: "Sessione in corso",
+    buttons: {
+      reset: "reset sessione"
+    }
+  },
   // components
   batteryTable: {
     duration: "durata",
+  },
+  manageTask: {
+    task: "task",
+    block: "blocco",
+    item: "quesito",
+    timer: "timer",
+    links: {
+      reset: "reset blocco corrente",
+      next: "blocco successivo"
+    }
+  },
+  manageBattery: {
+    battery: "Batteria",
+    links: {
+      current: "riprendi task",
+      next: "prossimo task",
+      end: "fine della batteria"
+    }
+  },
+  manageTestee: {
+    testee: "Dati anagrafici",
+    data: {
+      id: "id",
+      gender: "genere",
+      age: "età",
+      edu: "titolo di studio",
+    },
+    links: {
+      bio: "anagrafica",
+    }
   },
 };
