@@ -13,7 +13,7 @@
           :numbers="itemData.numbers"
           @update-numbers="onUpdateNumbers"
         />
-        <slot name="explanation" />
+        <slot name="explanation" :item-data="itemData" />
       </item-container>
     </div>
   </div>
