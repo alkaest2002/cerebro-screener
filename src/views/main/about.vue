@@ -19,7 +19,7 @@
       </div>
       <div class="buttons mt-5">
         <router-link :to="{ name: 'route-main-home' }" class="button is-link">
-          {{ () => "&larr" }}
+          <span v-html="i18n.about.buttons.back" />
         </router-link>
       </div>
     </div>
@@ -28,7 +28,6 @@
 
 <script>
 import { main as i18n } from "@/i18n/it/views/main";
-
 import mainHero from "./_components/main-hero";
 
 export default {
