@@ -15,7 +15,11 @@
       :style="{ 'background-color': highlight && !isLocked ? 'gold' : '#ddd' }"
       class="question"
     />
-    <span v-for="(e, idx) of Array.from({ length: 9 }, () => '&#11044;')" :key="idx" v-html="e" />
+    <span
+      v-for="(e, idx) in Array.from({ length: 9 }, () => '&#11044;')"
+      :key="idx"
+      v-html="e"
+    />
   </div>
 </template>
 

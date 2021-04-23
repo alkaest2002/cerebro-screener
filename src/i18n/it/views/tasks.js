@@ -6,6 +6,13 @@ export const tasks = {
     duration: "Tempo a disposizione",
     description: "Descrizione",
     scoring: "Variabili considerate nel calcolo del punteggio",
+    // components
+    carousel: {
+      fig: "fig",
+      buttons: {
+        close: "chiudi"
+      }
+    }
   },
   demo: {
     title: "Versione demo",

@@ -12,7 +12,7 @@
         @click.prevent="onClickFigure(index)"
       >
         <img src="@/assets/images/figure.svg" />
-        <span>fig {{ index + 1 }}</span>
+        <span>{{ i18n.instructions.carousel.fig }} {{ index + 1 }}</span>
       </a>
     </div>
     <teleport to="#modal">
@@ -36,7 +36,7 @@
                   type="button"
                   @click="modalOpen = false"
                 >
-                  chiudi
+                  {{ i18n.instructions.carousel.buttons.close }}
                 </button>
               </div>
             </div>
@@ -48,6 +48,7 @@
 </template>
 
 <script>
+import { tasks as i18n } from "@/i18n/it/views/tasks";
 import { ref, computed } from "vue";
 
 export default {
@@ -86,6 +87,7 @@ export default {
 
     // return setup object
     return {
+      i18n,
       modalOpen,
       modalData,
       onClickFigure,
