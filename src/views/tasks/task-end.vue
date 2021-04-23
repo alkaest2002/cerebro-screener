@@ -10,11 +10,7 @@
       class="is-flex is-align-items-center is-justify-content-center box"
     >
       <div class="has-text-centered">
-        <img
-          src="@/assets/images/trophy.svg"
-          alt="trophy"
-          style="height: 128px"
-        />
+        <img src="@/assets/images/trophy.svg" style="height: 128px" />
         <p class="is-size-3 has-text-weight-bold mt-3">{{ i18n.end.title }}</p>
         <p v-html="i18n.end.message" />
       </div>

@@ -8,7 +8,6 @@
         <img
           id="lock-img"
           src="@/assets/images/lock.svg"
-          alt="lock"
           draggable="false"
           style="height: 100px"
         />

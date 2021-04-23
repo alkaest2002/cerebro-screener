@@ -4,7 +4,7 @@
       v-if="!sequenceHasPlayed"
       class="cover is-overlay is-flex is-justify-content-center is-align-items-center"
     >
-      <img src="@/assets/images/lock.svg" alt="lock" style="height: 60px" />
+      <img src="@/assets/images/lock.svg" style="height: 60px" />
     </div>
     <div
       id="calc-screen"

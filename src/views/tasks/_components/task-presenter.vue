@@ -5,7 +5,6 @@
       <img
         id="lock-img"
         src="@/assets/images/timer.svg"
-        alt="lock"
         draggable="false"
         style="height: 100px"
       />

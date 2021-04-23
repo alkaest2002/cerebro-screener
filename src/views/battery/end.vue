@@ -5,11 +5,7 @@
         class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
         style="height: 100%"
       >
-        <img
-          src="@/assets/images/fireworks.svg"
-          alt="trophy"
-          style="height: 150px"
-        />
+        <img src="@/assets/images/fireworks.svg" style="height: 150px" />
         <p class="is-size-2 has-text-weight-bold has-text-centerd mt-3">
           {{ i18n.end.title }}
         </p>

@@ -11,7 +11,7 @@
         class="has-text-grey has-text-centered"
         @click.prevent="onClickFigure(index)"
       >
-        <img src="@/assets/images/figure.svg" alt="figure placheholder" />
+        <img src="@/assets/images/figure.svg" />
         <span>fig {{ index + 1 }}</span>
       </a>
     </div>
@@ -22,7 +22,7 @@
           <div class="card">
             <div class="card-image">
               <figure class="image">
-                <img :src="`/img/tasks/${modalData.src}`" alt="immagine" />
+                <img :src="`/img/tasks/${modalData.src}`" />
               </figure>
             </div>
             <div class="card-content">

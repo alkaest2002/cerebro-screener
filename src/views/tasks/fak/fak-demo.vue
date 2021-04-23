@@ -1,6 +1,6 @@
 <template>
   <fak-item>
-    <template #title>{{ i18n.tasks.demo.title }}</template>
+    <template #title>{{ i18n.demo.title }}</template>
     <template #explanation="{ itemData }">
       <div class="mt-6">
         <p class="has-text-grey" v-html="itemData.hint" />

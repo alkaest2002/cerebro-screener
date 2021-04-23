@@ -3,11 +3,7 @@
     <div
       class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
     >
-      <img
-        src="@/assets/images/404-error.svg"
-        alt="404 error"
-        style="height: 256px"
-      />
+      <img src="@/assets/images/404-error.svg" style="height: 256px" />
       <div class="has-text-centered block">
         <p class="is-size-2 has-text-weight-bold">
           {{ i18n.pageNotFound.title }}
