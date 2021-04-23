@@ -22,6 +22,7 @@ export default {
   // name
   name: "srv-task",
 
+  // components
   components: {
     taskPresenter,
     instructions,
