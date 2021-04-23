@@ -1,5 +1,7 @@
 <template>
-  <p class="is-size-5 has-text-weight-bold mb-0">{{ i18n.manageBattery.battery }}</p>
+  <p class="is-size-5 has-text-weight-bold mb-0">
+    {{ i18n.manageBattery.battery }}
+  </p>
   <div id="battery">
     <span v-for="(task, index) in currentBattery" :key="task.id">
       <b class="has-text-grey">
@@ -19,8 +21,12 @@
       </router-link>
     </div>
     <div v-else>
-      <span class="is-block has-text-grey"> &rarr; {{ i18n.manageBattery.links.current }}</span>
-      <span class="is-block has-text-grey"> &rarr; {{ i18n.manageBattery.links.next }} </span>
+      <span class="is-block has-text-grey">
+        &rarr; {{ i18n.manageBattery.links.current }}
+      </span>
+      <span class="is-block has-text-grey">
+        &rarr; {{ i18n.manageBattery.links.next }}
+      </span>
     </div>
     <router-link :to="{ name: 'route-battery-end' }" replace>
       &rarr; {{ i18n.manageBattery.links.end }}

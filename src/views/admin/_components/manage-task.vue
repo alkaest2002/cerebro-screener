@@ -12,8 +12,9 @@
       <b class="has-text-grey">{{ i18n.manageTask.item }}</b>
       {{ currentPresenter?.id || "-" }}
     </span>
-    <span> <b class="has-text-grey">{{ i18n.manageTask.timer }}</b> 
-    {{ currentTimeLeft }}
+    <span>
+      <b class="has-text-grey">{{ i18n.manageTask.timer }}</b>
+      {{ currentTimeLeft }}
     </span>
   </div>
   <div>
@@ -24,7 +25,9 @@
     >
       &rarr; {{ i18n.manageTask.links.reset }}
     </a>
-    <span v-else class="has-text-grey"> &rarr; {{ i18n.manageTask.links.reset }}</span>
+    <span v-else class="has-text-grey">
+      &rarr; {{ i18n.manageTask.links.reset }}
+    </span>
     <br />
     <a
       v-if="nextInstructionsBlock > 0 && !batteryHasEnded"
@@ -33,7 +36,9 @@
     >
       &rarr; {{ i18n.manageTask.links.next }}
     </a>
-    <span v-else class="has-text-grey"> &rarr; {{ i18n.manageTask.links.next }}</span>
+    <span v-else class="has-text-grey">
+      &rarr; {{ i18n.manageTask.links.next }}
+    </span>
   </div>
 </template>
 

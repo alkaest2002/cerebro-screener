@@ -9,8 +9,10 @@
           <p class="mb-0 has-text-grey"><b>Quesiti:</b> {{ task.items }}</p>
           <p class="mb-0 has-text-grey">
             <b>{{ i18n.taskCard.duration }}: </b>
-              <span v-if="task.duration > 0">{{ formatTime(task.duration) }} {{ i18n.taskCard.minutes }}</span>
-              <span v-else>{{ i18n.taskCard.noTimeLimit }}</span>
+            <span v-if="task.duration > 0">
+              {{ formatTime(task.duration) }} {{ i18n.taskCard.minutes }}
+            </span>
+            <span v-else>{{ i18n.taskCard.noTimeLimit }}</span>
           </p>
         </div>
       </div>
@@ -24,9 +26,10 @@
           {{ i18n.taskCard.buttons.continue }}
         </a>
         <span v-else class="card-footer-item has-text-grey-light">
-          {{ taskIndex > currentTaskIndex 
-            ? i18n.taskCard.buttons.waiting 
-            : i18n.taskCard.buttons.completed
+          {{
+            taskIndex > currentTaskIndex
+              ? i18n.taskCard.buttons.waiting
+              : i18n.taskCard.buttons.completed
           }}
         </span>
       </footer>

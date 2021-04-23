@@ -73,18 +73,16 @@ export default {
     const router = useRouter();
 
     // gender options (no need to be reactive)
-    const genderOptions = i18n.bio.fields.gender.options
-      .reduce((acc, itr) => {
-        acc.push({ label: itr, value: itr });
-        return acc;
-      }, []); 
+    const genderOptions = i18n.bio.fields.gender.options.reduce((acc, itr) => {
+      acc.push({ label: itr, value: itr });
+      return acc;
+    }, []);
 
     // gender options (no need to be reactive)
-    const eduOptions = i18n.bio.fields.edu.options
-      .reduce((acc, itr) => {
-        acc.push({ label: itr, value: itr });
-        return acc;
-      }, []); 
+    const eduOptions = i18n.bio.fields.edu.options.reduce((acc, itr) => {
+      acc.push({ label: itr, value: itr });
+      return acc;
+    }, []);
 
     // init testee data
     const testee = reactive(clone(store.state.testee.testee));
@@ -126,8 +124,7 @@ export default {
       );
       // validate age (num range)
       errors.age.set(
-        ...numRange(
-          testee.age, 12, 100, i18n.bio.fields.age.errors.range)
+        ...numRange(testee.age, 12, 100, i18n.bio.fields.age.errors.range)
       );
       // validate gender (required)
       errors.gender.set(
@@ -141,7 +138,8 @@ export default {
       if (
         Object.keys(errors).reduce(
           (acc, itr) =>
-            acc + Array.from(errors[itr].values()).filter((e) => e).length, 0
+            acc + Array.from(errors[itr].values()).filter((e) => e).length,
+          0
         ) == 0
       ) {
         // persist testee to vuex

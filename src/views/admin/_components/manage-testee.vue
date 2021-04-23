@@ -1,5 +1,7 @@
 <template>
-  <p class="is-size-5 has-text-weight-bold mb-0 mt-2">{{ i18n.manageTestee.testee }}</p>
+  <p class="is-size-5 has-text-weight-bold mb-0 mt-2">
+    {{ i18n.manageTestee.testee }}
+  </p>
   <div id="testee">
     <span v-for="(value, key) in currentTestee" :key="key">
       <b class="has-text-grey">

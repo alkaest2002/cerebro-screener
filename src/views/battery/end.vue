@@ -36,7 +36,9 @@
               >
                 {{ localOp.message }}
               </small>
-              <small v-else class="has-text-grey"> {{ i18n.end.waitingStatus }}</small>
+              <small v-else class="has-text-grey">
+                {{ i18n.end.waitingStatus }}
+              </small>
             </p>
           </div>
         </div>
