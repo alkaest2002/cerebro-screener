@@ -68,8 +68,10 @@ export default {
 
   // setup
   setup() {
-    // get store & router
+    // use store
     const store = useStore();
+    
+    // use router
     const router = useRouter();
 
     // gender options (no need to be reactive)

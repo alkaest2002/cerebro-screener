@@ -37,9 +37,13 @@ export default {
 
   // setup
   setup() {
-    // get store, router and route
+    // use store
     const store = useStore();
+    
+    // use router
     const router = useRouter();
+    
+    /// use route
     const route = useRoute();
 
     // get battery (no need to be reactive)

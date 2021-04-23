@@ -62,8 +62,10 @@ export default {
 
   // setup
   setup() {
-    // get store and router
+    // use store
     const store = useStore();
+    
+    // use router
     const router = useRouter();
 
     // from composables

@@ -62,7 +62,7 @@ export default {
   },
 
   setup() {
-    // get store
+    // use store
     const store = useStore();
 
     // current presenter

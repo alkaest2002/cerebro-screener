@@ -40,7 +40,7 @@ export default {
 
   // setup
   setup() {
-    // get store
+    // use store
     const store = useStore();
 
     // determine whether to show lock

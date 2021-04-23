@@ -54,7 +54,7 @@ export default {
 
   // setup
   setup() {
-    // get store & router
+    // use store
     const store = useStore();
 
     // get current battery (no need to be reactive)

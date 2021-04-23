@@ -27,7 +27,7 @@ export default {
   name: "manage-testee",
 
   setup() {
-    // get store & router
+    // use store
     const store = useStore();
 
     // get current testee (no need to be reactive)

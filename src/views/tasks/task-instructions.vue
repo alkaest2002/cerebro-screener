@@ -76,7 +76,7 @@ export default {
 
   // setup
   setup(props) {
-    // get store
+    // use store
     const store = useStore();
 
     // handle on click images

@@ -21,8 +21,10 @@ export default {
 
   // set up function
   setup() {
-    // get store and router
+    // use store
     const store = useStore();
+    
+    // use router
     const router = useRouter();
 
     // handle end of items event

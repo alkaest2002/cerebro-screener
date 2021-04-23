@@ -3,7 +3,7 @@ import { useStore } from "vuex";
 import Worker from "worker-loader!@/workers/firebaseUploadWorker.js";
 
 export default (indexDbExecute) => {
-  // get store
+  // use store
   const store = useStore();
 
   // isOnline

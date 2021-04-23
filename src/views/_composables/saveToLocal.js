@@ -2,7 +2,7 @@ import { computed } from "vue";
 import { useStore } from "vuex";
 
 export default (indexDbExecute) => {
-  // get store
+  // use store
   const store = useStore();
 
   // localOp

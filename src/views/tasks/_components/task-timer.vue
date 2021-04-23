@@ -20,7 +20,7 @@ export default {
 
   // setup
   setup(props, { emit }) {
-    // get store
+    // use store
     const store = useStore();
 
     // define refs

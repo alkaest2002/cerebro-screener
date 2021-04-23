@@ -1,7 +1,7 @@
 import { useStore } from "vuex";
 
 export default ({ blocks, presenters }) => {
-  // get store
+  // use store
   const store = useStore();
 
   // if task data is already in vuex

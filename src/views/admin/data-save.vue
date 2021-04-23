@@ -44,7 +44,7 @@ export default {
 
   // setup
   setup() {
-    // get store
+    // use store
     const store = useStore();
 
     // index db count

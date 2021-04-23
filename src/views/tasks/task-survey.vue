@@ -84,12 +84,15 @@ export default {
 
   // setup
   setup(props) {
-    // get store
+    // use store
     const store = useStore();
+    
     // init surveyData
     const surveyData = reactive(clone(props.presenter.itemData));
+    
     // get task key
     const taskKey = store.getters["battery/getCurrentTask"].key.toUpperCase();
+    
     // handle change slider
     const onChangeLikert = () => {
       // persist survey data to vuex
@@ -100,6 +103,7 @@ export default {
           Object.values(surveyData).filter((e) => e != null).length == 3,
       });
     };
+    
     // return setup object
     return {
       taskKey,

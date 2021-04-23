@@ -67,7 +67,7 @@ export default {
     // init presenter
     const { totalItems, itemData } = initItem(props.presenter.itemData);
 
-    // get store
+    // use store
     const store = useStore();
 
     // rule sequence (no need to be reactive)

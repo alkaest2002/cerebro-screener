@@ -70,7 +70,7 @@ export default {
   },
 
   setup() {
-    // get store
+    // use store
     const store = useStore();
 
     // shouldShuffle options (no need to be reactive)

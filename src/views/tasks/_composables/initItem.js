@@ -2,7 +2,7 @@ import { reactive, watch } from "vue";
 import { useStore } from "vuex";
 
 export default (data) => {
-  // get store
+  // use store
   const store = useStore();
 
   // get items length
