@@ -1,50 +1,51 @@
 <template>
   <div id="presenter-wrapper">
     <div class="mb-3">
-      <h1 class="is-size-3 has-text-weight-bold">Sezione anagrafica</h1>
+      <h1 class="is-size-3 has-text-weight-bold">{{ i18n.bio.title }}</h1>
     </div>
     <div id="presenter" class="box">
       <form-input
         v-model.trim="testee.id"
         :errors="errors.id"
-        label="Codice identificativo"
-        placeholder="Inserisci codice identificativo"
+        :label="i18n.bio.fields.id.label"
+        :placeholder="i18n.bio.fields.id.placeholder"
       />
       <bio-keyboard v-model="testee.id" :text="testee.id" type="full" />
       <form-input
         v-model="testee.age"
         :errors="errors.age"
-        label="Età"
+        :label="i18n.bio.fields.age.label"
+        :placeholder="i18n.bio.fields.age.placeholder"
         type="number"
-        placeholder="Inserisci età in cifre"
       />
       <bio-keyboard v-model="testee.age" :text="testee.age" type="numbers" />
       <form-radio-group
         v-model="testee.gender"
         :options="genderOptions"
         :errors="errors.gender"
+        :label="i18n.bio.fields.gender.label"
         class="mt-4"
-        label="Genere"
         name="gender"
       />
       <form-radio-group
         v-model="testee.edu"
         :options="eduOptions"
         :errors="errors.edu"
+        :label="i18n.bio.fields.edu.label"
         class="mt-4"
-        label="Titolo di studio"
         name="edu"
       />
     </div>
     <div id="navigation" class="buttons">
       <button class="button is-link" type="submit" @click="onClickSubmit">
-        continua
+        {{ i18n.bio.buttons.continue }}
       </button>
     </div>
   </div>
 </template>
 
 <script>
+import { battery as i18n } from "@/lang/it/views/battery";
 import { reactive, watch, toRefs } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
@@ -72,19 +73,18 @@ export default {
     const router = useRouter();
 
     // gender options (no need to be reactive)
-    const genderOptions = [
-      { label: "maschio", value: "m" },
-      { label: "femmina", value: "f" },
-    ];
+    const genderOptions = i18n.bio.fields.gender.options
+      .reduce((acc, itr) => {
+        acc.push({ label: itr, value: itr });
+        return acc;
+      }, []); 
 
     // gender options (no need to be reactive)
-    const eduOptions = [
-      { label: "scuola obbligo", value: 1 },
-      { label: "diploma", value: 2 },
-      { label: "laurea breve", value: 3 },
-      { label: "laurea magistrale", value: 4 },
-      { label: "post laurea", value: 5 },
-    ];
+    const eduOptions = i18n.bio.fields.edu.options
+      .reduce((acc, itr) => {
+        acc.push({ label: itr, value: itr });
+        return acc;
+      }, []); 
 
     // init testee data
     const testee = reactive(clone(store.state.testee.testee));
@@ -116,32 +116,32 @@ export default {
 
     // handle submit click
     const onClickSubmit = () => {
-      // validate id
+      // validate id (required)
       errors.id.set(
-        ...required(testee.id, null, "Codice identificativo obbligatorio")
+        ...required(testee.id, null, i18n.bio.fields.id.errors.required)
       );
-      // validate age
-      errors.age.set(...required(testee.age, null, "Età obbligatoria"));
+      // validate age (required)
+      errors.age.set(
+        ...required(testee.age, null, i18n.bio.fields.age.errors.required)
+      );
+      // validate age (num range)
       errors.age.set(
         ...numRange(
-          testee.age,
-          12,
-          100,
-          "L'età deve essere compresa nell'intervallo 13-99"
-        )
+          testee.age, 12, 100, i18n.bio.fields.age.errors.range)
       );
-      // validate gender
-      errors.gender.set(...required(testee.gender, -1, "Genere obbligatorio"));
-      // validate edu
+      // validate gender (required)
+      errors.gender.set(
+        ...required(testee.gender, -1, i18n.bio.fields.gender.errors.required)
+      );
+      // validate edu (required)
       errors.edu.set(
-        ...required(testee.edu, -1, "Titolo di studio obbligatorio")
+        ...required(testee.edu, -1, i18n.bio.fields.edu.errors.required)
       );
       // if there are no validation errors
       if (
         Object.keys(errors).reduce(
           (acc, itr) =>
-            acc + Array.from(errors[itr].values()).filter((e) => e).length,
-          0
+            acc + Array.from(errors[itr].values()).filter((e) => e).length, 0
         ) == 0
       ) {
         // persist testee to vuex
@@ -153,6 +153,7 @@ export default {
 
     // return setup object
     return {
+      i18n,
       testee,
       genderOptions,
       eduOptions,

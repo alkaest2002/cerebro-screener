@@ -5,7 +5,7 @@ export const jsonCatalogue = [
     description: "Dominoes",
     type: "intelligenza (logica deduttiva)",
     items: 15,
-    duration: "n.d.",
+    duration: 0,
     isAvailable: true,
   },
   {
@@ -14,7 +14,7 @@ export const jsonCatalogue = [
     description: "London Tower",
     type: "intelligenza (pianificazione)",
     items: 16,
-    duration: "n.d.",
+    duration: 0,
     isAvailable: true,
   },
   {
@@ -23,7 +23,7 @@ export const jsonCatalogue = [
     description: "Kohs Patterns",
     type: "intelligenza (visuo-spaziale)",
     items: 10,
-    duration: "n.d.",
+    duration: 0,
     isAvailable: true,
   },
   {
@@ -32,7 +32,7 @@ export const jsonCatalogue = [
     description: "Cards Sorting",
     type: "intelligenza (flessibilità)",
     items: 60,
-    duration: "n.d.",
+    duration: 0,
     isAvailable: true,
   },
   {
@@ -41,7 +41,7 @@ export const jsonCatalogue = [
     description: "Cards Flipping",
     type: "propensione al rischio",
     items: 12,
-    duration: "n.d.",
+    duration: 0,
     isAvailable: true,
   },
   {
@@ -50,7 +50,7 @@ export const jsonCatalogue = [
     description: "Memory",
     type: "memoria",
     items: 14,
-    duration: "n.d.",
+    duration: 0,
     isAvailable: true,
   },
   {
@@ -59,7 +59,7 @@ export const jsonCatalogue = [
     description: "Decks Searching",
     type: "apprendimento",
     items: 100,
-    duration: "n.d.",
+    duration: 0,
     isAvailable: true,
   },
   {
@@ -68,7 +68,7 @@ export const jsonCatalogue = [
     description: "Numbers Tracking",
     type: "attenzione",
     items: 3,
-    duration: "n.d.",
+    duration: 0,
     isAvailable: true,
   },
   {
@@ -77,7 +77,7 @@ export const jsonCatalogue = [
     description: "Questionario fine batteria",
     type: "insight",
     items: 3,
-    duration: "n.d.",
+    duration: 0,
     isAvailable: true,
   },
   {
@@ -86,7 +86,7 @@ export const jsonCatalogue = [
     description: "Questionario fake",
     type: "task app",
     items: 9,
-    duration: "n.d.",
+    duration: 0,
     isAvailable: true,
   },
 ];

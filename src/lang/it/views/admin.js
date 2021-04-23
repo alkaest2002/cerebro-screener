@@ -7,8 +7,10 @@ export const admin = {
     },
     fields: {
       password: {
-        placeHolder: "inserisci password",
-        errorMessage: "password non corretta",
+        placeholder: "inserisci password",
+        errors: {
+          mismatch: "password non corretta" 
+        },
       },
     },
   },

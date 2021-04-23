@@ -9,7 +9,7 @@
             :errors="errors.password"
             auto-focus
             type="password"
-            :placeholder="i18n.login.fields.password.placeHolder"
+            :placeholder="i18n.login.fields.password.placeholder"
             @input="errors.password.clear()"
           />
           <div class="buttons">
@@ -86,7 +86,7 @@ export default {
         // set password error value
         errors.password.set(
           "mismatch",
-          i18n.login.fields.password.errorMessage
+          i18n.login.fields.password.errors.mismatch
         );
       } finally {
         // set is loading to false

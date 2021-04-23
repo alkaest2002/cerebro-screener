@@ -11,13 +11,13 @@
           style="height: 150px"
         />
         <p class="is-size-2 has-text-weight-bold has-text-centerd mt-3">
-          fine della batteria
+          {{ i18n.end.title }}
         </p>
         <div class="has-text-centered">
           <p>
-            Clicca sul pulsante qui sotto per registrare i tuoi dati.
+            <span>{{ i18n.end.messageOne }}</span>
             <br />
-            Conclusa la registrazione, il sistema si riavverà automaticamente.
+            <span>{{ i18n.end.messageTwo }}</span>
           </p>
           <div>
             <loading-button
@@ -26,7 +26,7 @@
               class="is-link mt-5"
               @click="onClickArchive"
             >
-              registra le tue risposte
+              {{ i18n.end.butttons.save }}
             </loading-button>
             <p class="mt-2">
               <small
@@ -36,7 +36,7 @@
               >
                 {{ localOp.message }}
               </small>
-              <small v-else class="has-text-grey"> in attesa </small>
+              <small v-else class="has-text-grey"> {{ i18n.end.waitingStatus }}</small>
             </p>
           </div>
         </div>
@@ -46,6 +46,7 @@
 </template>
 
 <script>
+import { battery as i18n } from "@/lang/it/views/battery";
 import { computed, watch } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
@@ -103,6 +104,7 @@ export default {
 
     // return setup object
     return {
+      i18n,
       localOp,
       disableArchive,
       onClickArchive,
