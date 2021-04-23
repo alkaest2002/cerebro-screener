@@ -1,14 +1,13 @@
 <template>
   <base-survey>
     <div class="block">
-      Rifletti con calma su <b>Tutte le prove che hai svolto</b> e suoi tuoi
-      stati d'animo. Ti chiediamo di rispondere alle seguenti domande,
-      trascinando con il mouse il circoletto centrale nella direzione voluta.
+      <p v-html="i18n.tasks.srv.message" />
     </div>
   </base-survey>
 </template>
 
 <script>
+import { tasks as i18n } from "@/i18n/it/views/tasks";
 import survey from "@/views/tasks/task-survey";
 
 export default {
@@ -18,6 +17,14 @@ export default {
   // components
   components: {
     baseSurvey: survey,
+  },
+
+  //setup
+  setup() {
+    // return setuo object
+    return {
+      i18n,
+    };
   },
 };
 </script>

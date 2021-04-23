@@ -74,7 +74,10 @@ export const tasks = {
         clickCirclesTwo: "circoletti",
       },
     },
-    srv: {},
+    srv: {
+      message:
+        " Rifletti con calma su <b>Tutte le prove che hai svolto</b> e suoi tuoi stati d'animo. Ti chiediamo di rispondere alle seguenti domande, trascinando con il mouse il circoletto centrale nella direzione voluta.",
+    },
     tol: {
       figureA: "Forma bersaglio A",
       figureB: "Forma B",
