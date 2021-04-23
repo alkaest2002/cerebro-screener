@@ -1,6 +1,6 @@
 <template>
   <att-item>
-    <template #title> Versione demo </template>
+    <template #title>{{ iq8n.tasks.demo.title }}</template>
     <template #explanation="{ itemData }">
       <div class="mt-6">
         <p class="has-text-grey" v-html="itemData.hint" />
@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { tasks as i18n } from "@/i18n/it/views/tasks";
 import attItem from "./att-item";
 
 export default {
@@ -19,6 +20,14 @@ export default {
   // components
   components: {
     attItem,
+  },
+
+  // setup
+  setup() {
+    // return setup object
+    return {
+      i18n,
+    }
   },
 };
 </script>

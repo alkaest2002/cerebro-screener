@@ -7,25 +7,8 @@ export const tasks = {
     description: "Descrizione",
     scoring: "Variabili considerate nel calcolo del punteggio",
   },
-  survey: {
-    title: "Questionario",
-    message:
-      " Rifletti con calma sulla prova appena conclusa e sugli stati d'animo che provi in questo momento. Ti chiediamo di rispondere alle seguenti tre domande.",
-    questions: [
-      {
-        question: "Come valuti la tua prestazione?",
-        likert: "0 pessima, 10 eccellente",
-      },
-      {
-        question: " In che misura ti senti soddisfatto della tua prestazione?",
-        likert: "0 per nulla, 10 completamente",
-      },
-      {
-        question:
-          " Come credi di essere andato rispetto alle altre persone del tuo stesso genere, età e titolo di studio?",
-        likert: " 0 decisamente peggio, 10 decisamente meglio",
-      },
-    ],
+  demo: {
+    title: "Versione demo"
   },
   tasks: {
     task: "Quesito",
@@ -74,6 +57,26 @@ export const tasks = {
         wrong: "sbagliato!"
       }
     },
+  },
+  survey: {
+    title: "Questionario",
+    message:
+      " Rifletti con calma sulla prova appena conclusa e sugli stati d'animo che provi in questo momento. Ti chiediamo di rispondere alle seguenti tre domande.",
+    questions: [
+      {
+        question: "Come valuti la tua prestazione?",
+        likert: "0 pessima, 10 eccellente",
+      },
+      {
+        question: " In che misura ti senti soddisfatto della tua prestazione?",
+        likert: "0 per nulla, 10 completamente",
+      },
+      {
+        question:
+          " Come credi di essere andato rispetto alle altre persone del tuo stesso genere, età e titolo di studio?",
+        likert: " 0 decisamente peggio, 10 decisamente meglio",
+      },
+    ],
   },
   end: {
     title: "Fine del task",
