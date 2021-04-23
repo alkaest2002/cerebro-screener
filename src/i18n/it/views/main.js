@@ -10,7 +10,8 @@ export const main = {
   },
   // components
   hero: {
-    title: "Valutazione della salute mentale tramite prove cognitive",
+    title: "Cerebro Screener",
+    subTitle: "Valutazione della salute mentale tramite prove cognitive",
   },
   footer: {
     commitee: "comitato scientifico",

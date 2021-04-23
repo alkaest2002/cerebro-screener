@@ -3,6 +3,6 @@ export const errors = {
     title: "Errore 404",
     message: "Oops! La pagina che hai richiesto non è disponibile",
     link: "torna alla",
-    homepage: "Homepage"
+    homepage: "Homepage",
   },
 };
