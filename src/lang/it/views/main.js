@@ -2,18 +2,18 @@ export const main = {
   // views
   home: {
     buttons: {
-      enter: "entra"
-    }
+      enter: "entra",
+    },
   },
   about: {
-    commitee: "Comitato Scientifico"
+    commitee: "Comitato Scientifico",
   },
   // components
   hero: {
-    title: "Valutazione della salute mentale tramite prove cognitive"
+    title: "Valutazione della salute mentale tramite prove cognitive",
   },
   footer: {
     commitee: "comitato scientifico",
-    freepik: "icone svg realizzate da freepik @ www.flaticon.com"
+    freepik: "icone svg realizzate da freepik @ www.flaticon.com",
   },
-}
+};

@@ -32,7 +32,9 @@
         <span class="task-cell">
           {{ task.description }}
         </span>
-        <span class="task-cell"> {{ i18n.batteryTable.duration }}: {{ formatTime(task.duration) }} </span>
+        <span class="task-cell">
+          {{ i18n.batteryTable.duration }}: {{ formatTime(task.duration) }}
+        </span>
         <span class="task-cell">
           {{ task.type }}
         </span>

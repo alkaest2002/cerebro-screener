@@ -19,7 +19,7 @@
               button-type="submit"
               @click.prevent="onClickLogin('route-admin-create-battery')"
             >
-              admin &middot; {{  i18n.login.buttons.battery }}
+              admin &middot; {{ i18n.login.buttons.battery }}
             </loading-button>
             <loading-button
               :is-loading="isLoading"
@@ -84,7 +84,10 @@ export default {
         router.replace({ name: routeName });
       } catch (err) {
         // set password error value
-        errors.password.set("mismatch", i18n.login.fields.password.errorMessage);
+        errors.password.set(
+          "mismatch",
+          i18n.login.fields.password.errorMessage
+        );
       } finally {
         // set is loading to false
         isLoading.value = false;

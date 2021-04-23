@@ -3,10 +3,11 @@ export const attLang = {
     itemData: {
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
       scoring:
-      "correttezza della risposta, numero di mosse compiute, tempo impiegato.",
+        "correttezza della risposta, numero di mosse compiute, tempo impiegato.",
       duration: "nessun limite di tempo",
       images: [
         {
+          src: "it/att/fig1.png",
           description: "Descrizione immagine",
         },
       ],
@@ -24,10 +25,11 @@ export const colLang = {
     itemData: {
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
       scoring:
-      "correttezza della risposta, numero di mosse compiute, tempo impiegato.",
+        "correttezza della risposta, numero di mosse compiute, tempo impiegato.",
       duration: "nessun limite di tempo",
       images: [
         {
+          src: "it/col/fig1.png",
           description: "Descrizione immagine",
         },
       ],
@@ -50,6 +52,7 @@ export const domLang = {
       duration: "nessun limite di tempo",
       images: [
         {
+          src: "it/dom/fig1.png",
           description:
             "In alto, è presentata una sequenza di tessere con l'ultima da indovinare; In basso, sono elencati i numeri da trascinare sulle facce della tessera mancante.",
         },
@@ -69,10 +72,11 @@ export const iowLang = {
     itemData: {
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
       scoring:
-      "correttezza della risposta, numero di mosse compiute, tempo impiegato.",
+        "correttezza della risposta, numero di mosse compiute, tempo impiegato.",
       duration: "nessun limite di tempo",
       images: [
         {
+          src: "it/iow/fig1.png",
           description: "Descrizione immagine",
         },
       ],
@@ -95,6 +99,7 @@ export const kohLang = {
       duration: "nessun limite di tempo",
       images: [
         {
+          src: "it/koh/fig1.png",
           description:
             "A sinistra, le tessere colorate del riquadro A compongono una figura che deve essere riprodotta fedelmente nel riquadro B, usando le tessere che si trovano sotto i due riquadri.",
         },
@@ -115,10 +120,11 @@ export const memLang = {
       itemData: {
         description: "Lorem...",
         scoring:
-        "correttezza della risposta, numero di mosse compiute, tempo impiegato.",
+          "correttezza della risposta, numero di mosse compiute, tempo impiegato.",
         duration: "nessun limite di tempo",
         images: [
           {
+            src: "it/mem/ds/fig1.png",
             description: "Descrizione immagine",
           },
         ],
@@ -135,10 +141,11 @@ export const memLang = {
       itemData: {
         description: "Lorem...",
         scoring:
-        "correttezza della risposta, numero di mosse compiute, tempo impiegato.",
+          "correttezza della risposta, numero di mosse compiute, tempo impiegato.",
         duration: "nessun limite di tempo",
         images: [
           {
+            src: "it/mem/cb/fig1.png",
             description: "Descrizione immagine",
           },
         ],
@@ -173,6 +180,7 @@ export const tolLang = {
       duration: "nessun limite di tempo",
       images: [
         {
+          src: "it/tol/fig1.png",
           description:
             "A sinistra, si vede la forma bersaglio A, mentre a destra si vede la forma B, i cui dischi devono essere spostati tra le sue torri per ottenere la forma bersaglio A.",
         },

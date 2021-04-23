@@ -23,8 +23,8 @@ export default {
   setup() {
     // return setup object
     return {
-      i18n
-    }
-  }
+      i18n,
+    };
+  },
 };
 </script>

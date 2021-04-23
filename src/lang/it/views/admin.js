@@ -1,16 +1,16 @@
-export const admin  = {
+export const admin = {
   // views
   login: {
     buttons: {
       battery: "batteria",
-      data: "dti"
+      data: "dti",
     },
     fields: {
       password: {
         placeHolder: "inserisci password",
-        errorMessage: "password non corretta"
-      }
-    }
+        errorMessage: "password non corretta",
+      },
+    },
   },
   batteryCreate: {
     title: "Batteria",
@@ -19,19 +19,16 @@ export const admin  = {
     randomizeNote: "nota: clicca sui task che vuoi mantenere in posizione",
     buttons: {
       reset: "reset",
-      administer: "somministra"
+      administer: "somministra",
     },
     fields: {
       randomize: {
-        optionLabel: [
-          "non randomizzare",
-          "randomizza"
-        ]
-      }
-    }
+        optionLabel: ["non randomizzare", "randomizza"],
+      },
+    },
   },
   // components
   batteryTable: {
-    duration: "durata"
+    duration: "durata",
   },
-}
+};

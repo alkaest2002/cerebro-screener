@@ -9,11 +9,13 @@
         style="height: 256px"
       />
       <div class="has-text-centered block">
-        <p class="is-size-2 has-text-weight-bold">{{ i18n. pageNotFound.title }}</p>
-        <span>{{ i18n. pageNotFound.message }}</span>
+        <p class="is-size-2 has-text-weight-bold">
+          {{ i18n.pageNotFound.title }}
+        </p>
+        <span>{{ i18n.pageNotFound.message }}</span>
       </div>
       <div>
-        <span>{{ i18n. pageNotFound.link }}</span>
+        <span>{{ i18n.pageNotFound.link }}</span>
         <router-link :to="{ name: 'route-main-home' }" replace>
           Homepage
         </router-link>
@@ -23,7 +25,7 @@
 </template>
 
 <script>
-import { errors as i18n } from "@/lang/it/views/errors"
+import { errors as i18n } from "@/lang/it/views/errors";
 
 export default {
   // name
@@ -33,8 +35,8 @@ export default {
   setup() {
     // return setup object
     return {
-      i18n
-    }
-  }
+      i18n,
+    };
+  },
 };
 </script>

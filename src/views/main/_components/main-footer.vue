@@ -9,7 +9,7 @@
           {{ i18n.footer.commitee }}
         </router-link>
         <br />
-        <span>{{ i18n.footer.freepik}}</span>
+        <span>{{ i18n.footer.freepik }}</span>
       </small>
     </div>
   </div>
@@ -26,9 +26,9 @@ export default {
   setup() {
     // return setup object
     return {
-      i18n
-    }
-  }
+      i18n,
+    };
+  },
 };
 </script>
 
