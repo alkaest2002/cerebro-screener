@@ -35,18 +35,15 @@ export const leftPadValue = (value, padLength = 3, padValue = 0) => {
 
 // format time
 export const formatTime = (value) => {
-  if (typeof value != "number")
-    return value;
-  return new Date(parseInt(value) * 1000)
-    .toISOString()
-    .substr(11, 8)
+  if (typeof value != "number") return value;
+  return new Date(parseInt(value) * 1000).toISOString().substr(11, 8);
 };
 
 // format timer time
 export const formatTimerTime = (value) =>
-  `${String(Math.floor(value / 60))
-    .padStart(2, "0")}:${String(value % 60)
-    .padStart(2, "0")}`;
+  `${String(Math.floor(value / 60)).padStart(2, "0")}:${String(
+    value % 60
+  ).padStart(2, "0")}`;
 
 // deep clone objects
 export const clone = (o) => {
