@@ -1,9 +1,9 @@
 <template>
   <wcs-item>
     <template #title> Versione demo </template>
-    <template #explanation>
+    <template #explanation="{ itemData }">
       <div class="mt-6">
-        <p class="has-text-grey">Nell'esempio proposto qui sopra...</p>
+        <p class="has-text-grey" v-html="itemData.hint" />
       </div>
     </template>
   </wcs-item>

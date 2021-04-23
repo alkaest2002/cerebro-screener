@@ -1,16 +1,9 @@
 <template>
   <att-item>
     <template #title> Versione demo </template>
-    <template #explanation>
+    <template #explanation="{ itemData }">
       <div class="mt-6">
-        <p class="has-text-grey">
-          Nell'esempio proposto qui sopra, è presente un griglia 3x3 con dei
-          numeri all'interno. Partendo dal numero 1, clicca tutti i numeri in
-          sequenza, facendo attenzione a non saltarne nessuno. In caso di
-          errore, sotto la griglia è presente l'indicazione del numero
-          successivo da cliccare. Procedi fino al completo esaurimento della
-          griglia.
-        </p>
+        <p class="has-text-grey" v-html="itemData.hint" />
       </div>
     </template>
   </att-item>
