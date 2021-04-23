@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { admin as i18n } from "@/lang/it/views/admin";
+import { admin as i18n } from "@/i18n/it/views/admin";
 import { useStore } from "vuex";
 
 export default {

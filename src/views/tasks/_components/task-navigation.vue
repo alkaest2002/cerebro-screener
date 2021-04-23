@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { tasks as i18n } from "@/lang/it/views/tasks";
+import { tasks as i18n } from "@/i18n/it/views/tasks";
 import { computed } from "vue";
 
 export default {

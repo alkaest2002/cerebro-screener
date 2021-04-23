@@ -1,5 +1,5 @@
 import { clone } from "@/utils/utilityFns";
-import { srv as i18n } from "@/lang/it/tasks";
+import { srv as i18n } from "@/i18n/it/tasks";
 import makePresenters from "../_composables/makePresenters";
 import processAnswers from "../_composables/processAnswers";
 

@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { main as i18n } from "@/lang/it/views/main";
+import { main as i18n } from "@/i18n/it/views/main";
 
 import mainHero from "./_components/main-hero";
 

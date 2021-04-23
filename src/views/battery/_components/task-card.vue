@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { battery as i18n } from "@/lang/it/views/battery";
+import { battery as i18n } from "@/i18n/it/views/battery";
 import { formatTime } from "@/utils/utilityFns";
 
 export default {

@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { admin as i18n } from "@/lang/it/views/admin";
+import { admin as i18n } from "@/i18n/it/views/admin";
 import { computed } from "vue";
 import { useStore } from "vuex";
 import dataSaveToServer from "./_components/data-save-to-server";

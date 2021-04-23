@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { battery as i18n } from "@/lang/it/views/battery";
+import { battery as i18n } from "@/i18n/it/views/battery";
 import { computed, watch } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";

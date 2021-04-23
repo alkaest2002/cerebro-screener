@@ -1,4 +1,4 @@
-import { jsonCatalogue } from "@/lang/it/catalogue";
+import { jsonCatalogue } from "@/i18n/it/catalogue";
 
 const getters = {
   getAvailableTasks: (state) => {

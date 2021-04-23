@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { errors as i18n } from "@/lang/it/views/errors";
+import { errors as i18n } from "@/i18n/it/views/errors";
 
 export default {
   // name
