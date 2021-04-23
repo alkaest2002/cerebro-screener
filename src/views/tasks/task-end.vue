@@ -1,7 +1,7 @@
 <template>
   <div id="presenter-wrapper">
     <div id="title" class="mb-3">
-      <h1 class="is-size-3 has-text-weight-bold">Fine task #{{ taskKey }}</h1>
+      <h1 class="is-size-3 has-text-weight-bold">{{ i18n.end.title }} #{{ taskKey }}</h1>
     </div>
     <div
       id="presenter"
@@ -13,10 +13,11 @@
           alt="trophy"
           style="height: 128px"
         />
-        <p class="is-size-3 has-text-weight-bold mt-3">Fine del task</p>
+        <p class="is-size-3 has-text-weight-bold mt-3">{{ i18n.end.title }}</p>
         <p>
-          Complimenti! Hai ultimato la prova.<br />Rilassati per qualche secondo
-          e poi vai avanti.
+          <span>{{ i18n.end.messageOne }}</span>
+          <br />
+          <span>{{ i18n.end.messageTwo }}</span>
         </p>
       </div>
     </div>
@@ -24,6 +25,7 @@
 </template>
 
 <script>
+import { tasks as i18n } from "@/lang/it/views/tasks";
 import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
 export default {
@@ -45,6 +47,7 @@ export default {
 
     // return setup object
     return {
+      i18n,
       taskKey,
     };
   },

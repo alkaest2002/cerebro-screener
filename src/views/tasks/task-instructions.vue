@@ -1,20 +1,20 @@
 <template>
   <div id="presenter-wrapper">
     <div id="title" class="mb-3">
-      <h1 class="is-size-3 has-text-weight-bold">Istruzioni</h1>
+      <h1 class="is-size-3 has-text-weight-bold">{{ i18n.instructions.title }}</h1>
     </div>
     <div id="presenter" class="box">
       <table class="table is-fullwidth">
         <tr class="has-text-weight-bold">
-          <td>Numero di quesiti</td>
-          <td>Tempo a disposizione</td>
+          <td>{{ i18n.instructions.items }}</td>
+          <td>{{ i18n.instructions.duration }}</td>
         </tr>
         <tr>
           <td>{{ block.items }}</td>
           <td>{{ formatTime(block.duration) }}</td>
         </tr>
         <tr class="has-text-weight-bold">
-          <td colspan="2">Descrizione</td>
+          <td colspan="2">{{ i18n.instructions.description }}</td>
         </tr>
         <tr>
           <td colspan="2">
@@ -41,7 +41,7 @@
           </td>
         </tr>
         <tr class="has-text-weight-bold">
-          <td colspan="2">Variabili considerate nel calcolo del punteggio</td>
+          <td colspan="2">{{ i18n.instructions.scoring }}</td>
         </tr>
         <tr>
           <td colspan="2">{{ block.scoring }}</td>
@@ -52,6 +52,7 @@
 </template>
 
 <script>
+import { tasks as i18n } from "@/lang/it/views/tasks";
 import { useStore } from "vuex";
 import { onMounted } from "vue";
 import { formatTime, clone } from "@/utils/utilityFns";
@@ -98,6 +99,7 @@ export default {
 
     // return setup object
     return {
+      i18n,
       block: props.presenter.itemData,
       onClickImages,
       formatTime,

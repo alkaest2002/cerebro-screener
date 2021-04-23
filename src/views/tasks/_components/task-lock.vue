@@ -12,14 +12,15 @@
           draggable="false"
           style="height: 100px"
         />
-        <p class="is-size-3 has-text-weight-bold mt-3">Item bloccato</p>
-        <p>Non puoi modificare quest'item.</p>
+        <p class="is-size-3 has-text-weight-bold mt-3">{{ i18n.lock.item.title }}</p>
+        <p>{{ i18n.lock.item.message }}</p>
       </slot>
     </div>
   </div>
 </template>
 
 <script>
+import { tasks as i18n } from "@/lang/it/views/tasks";
 import { computed } from "vue";
 import { useStore } from "vuex";
 
@@ -54,6 +55,7 @@ export default {
 
     // retun setup object
     return {
+      i18n,
       showLockBasedOnCondition,
     };
   },

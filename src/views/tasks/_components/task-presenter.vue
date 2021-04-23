@@ -9,14 +9,14 @@
         draggable="false"
         style="height: 100px"
       />
-      <p class="is-size-3 has-text-weight-bold mt-2">Tempo scaduto</p>
-      <p>Premi il tasto "continua" per procedere oltre.</p>
+      <p class="is-size-3 has-text-weight-bold mt-2">{{ i18n.lock.block.title }}</p>
+      <p>{{ i18n.lock.block.message }}</p>
       <button
         class="button is-link mt-3"
         type="button"
         @click="onNavigateCurrent(nextBlockIndex)"
       >
-        continua
+        {{ i18n.lock.block.buttons.continue }}
       </button>
     </task-lock>
     <!-- PRESENTER -->
@@ -39,6 +39,7 @@
 </template>
 
 <script>
+import { tasks as i18n } from "@/lang/it/views/tasks";
 import { computed } from "vue";
 import { useStore } from "vuex";
 import taskNavigation from "@/views/tasks/_components/task-navigation";
@@ -132,6 +133,7 @@ export default {
 
     // return setup object
     return {
+      i18n,
       currentPresenter,
       currentIndex,
       lastIndex,

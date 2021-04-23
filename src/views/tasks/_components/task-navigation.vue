@@ -7,7 +7,7 @@
         type="button"
         @click="onClickNavigation(-1)"
       >
-        <span>prec</span>
+        <span>{{ i18n.navigation.buttons.prev }}</span>
       </button>
       <button
         v-if="currentIndex != endComponentIndex - 1"
@@ -16,7 +16,7 @@
         type="button"
         @click="onClickNavigation(+1)"
       >
-        <span>succ</span>
+        <span>{{ i18n.navigation.buttons.next }}</span>
       </button>
       <button
         v-else
@@ -25,7 +25,7 @@
         type="button"
         @click="onClickNavigation(+1)"
       >
-        <span>fine</span>
+        <span>{{ i18n.navigation.buttons.end }}</span>
       </button>
     </div>
     <div>
@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import { tasks as i18n } from "@/lang/it/views/tasks";
 import { computed } from "vue";
 
 export default {
@@ -91,6 +92,7 @@ export default {
     };
     // return setup object
     return {
+      i18n,
       onClickNavigation,
     };
   },

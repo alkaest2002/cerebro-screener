@@ -1,21 +1,21 @@
 <template>
   <div id="presenter-wrapper">
     <div id="title" class="mb-3">
-      <h1 class="is-size-3 has-text-weight-bold">Questionario</h1>
+      <h1 class="is-size-3 has-text-weight-bold">{{ i18n.survey.title }}</h1>
     </div>
     <div id="presenter" class="box">
       <slot>
         <div class="block mt-3">
-          Rifletti con calma sulla prova appena conclusa e sugli stati d'animo
-          che provi in questo momento. Ti chiediamo di rispondere alle seguenti
-          tre domande.
+         {{ i18n.survey.message }}
         </div>
       </slot>
       <div class="block mt-6">
         <p class="is-size-6 has-text-weight-bold" style="line-height: 1em">
-          Come valuti la tua prestazione?
+          {{ i18n.survey.questions[0].question }}
         </p>
-        <small class="has-text-grey-light">0 pessima, 10 eccellente</small>
+        <small class="has-text-grey-light">
+          {{ i18n.survey.questions[0].likert }}
+        </small>
         <div class="block mt-3">
           <item-likert
             v-model="surveyData.q1"
@@ -27,9 +27,11 @@
       </div>
       <div class="block mt-6">
         <p class="is-size-6 has-text-weight-bold" style="line-height: 1em">
-          In che misura ti senti soddisfatto della tua prestazione?
+          {{ i18n.survey.questions[1].question }}
         </p>
-        <small class="has-text-grey-light">0 per nulla, 10 completamente</small>
+        <small class="has-text-grey-light">
+          {{ i18n.survey.questions[0].likert }}
+        </small>
         <div class="block mt-3">
           <item-likert
             v-model="surveyData.q2"
@@ -41,10 +43,10 @@
       </div>
       <div class="block mt-6">
         <p class="is-size-6 has-text-weight-bold" style="line-height: 1em">
-          Come credi di essere andato rispetto agli altri?
+          {{ i18n.survey.questions[2].question }}
         </p>
         <small class="has-text-grey-light">
-          0 decisamente peggio, 10 decissamente meglio
+          {{ i18n.survey.questions[2].likert }}
         </small>
         <div class="block mt-3">
           <item-likert
@@ -60,6 +62,7 @@
 </template>
 
 <script>
+import { tasks as i18n } from "@/lang/it/views/tasks";
 import { reactive } from "vue";
 import { useStore } from "vuex";
 import { clone } from "@/utils/utilityFns";
@@ -106,6 +109,7 @@ export default {
     
     // return setup object
     return {
+      i18n,
       taskKey,
       surveyData,
       onChangeLikert,
