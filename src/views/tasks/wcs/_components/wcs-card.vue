@@ -11,11 +11,7 @@
     <div
       class="card-row upper is-flex is-justify-content-center is-align-items-center"
     >
-      <div 
-        class="card-number" 
-        v-for="n of [1, 2, 3, 4]" 
-        :key="n"
-      >
+      <div v-for="n in [1, 2, 3, 4]" :key="n" class="card-number">
         {{ n }}
       </div>
     </div>
