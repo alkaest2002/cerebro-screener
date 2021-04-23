@@ -4,7 +4,7 @@
       {{ i18n.tasks.mem.startAnimation }}
     </div>
     <div v-show="['started', 'playing'].includes(cssState)">
-       {{ i18n.tasks.mem.animationStarted }}
+      {{ i18n.tasks.mem.animationStarted }}
     </div>
     <div v-show="cssState == 'finished'">
       <slot />
@@ -35,7 +35,7 @@ export default {
     // return setup object
     return {
       i18n,
-    }
+    };
   },
 };
 </script>

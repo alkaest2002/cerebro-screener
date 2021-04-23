@@ -24,7 +24,8 @@
       </div>
     </div>
     <mem-starter :css-state="cssState" @click="onClickPlay">
-      {{ i18n.tasks.mem.ds.clickCirclesOne }} {{ sequence.length }} {{ i18n.tasks.mem.ds.clickCirclesTwo }}
+      {{ i18n.tasks.mem.ds.clickCirclesOne }} {{ sequence.length }}
+      {{ i18n.tasks.mem.ds.clickCirclesTwo }}
     </mem-starter>
   </div>
 </template>

@@ -54,7 +54,7 @@ export const tasks = {
         clickNumberTwo: "numeri",
         buttons: {
           reset: "reset",
-        }
+        },
       },
       cb: {
         clickCirclesOne: "clicca in sequenza i",
