@@ -32,7 +32,21 @@ export const tasks = {
     att: {
       nextNumberToClick: "Prossimo numero"
     },
-    col: {},
+    col: {
+      tableInfo: {
+        headerOne: "Informazioni mano corrente",
+        headerTwo: "Informazioni da inizio task",
+        runningAmount: "Totale generale",
+        winAmount: "Valore carte vincenti",
+        loseAmount: "Valore carte perdenti",
+        loseCards: "Numero carte perdenti",
+        flippedCards: "Carte girate",
+        totalAmount: "Totale in questa mano",
+        buttons: {
+          collect: "blocca guadagno e scopri le carte"
+        }
+      }
+    },
     dom: {
       useTheseNumbers: "trascina questi numeri per<br />completare la tessera mancante"
     },
