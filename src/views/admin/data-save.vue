@@ -1,16 +1,16 @@
 <template>
   <div id="presenter-wrapper">
     <div id="title" class="mb-3">
-      <h1 class="is-size-3 has-text-weight-bold">Salva dati memorizzati</h1>
+      <h1 class="is-size-3 has-text-weight-bold">{{ i18n.dataSave.title }}</h1>
     </div>
     <div id="presenter" class="box">
       <div id="stats" class="mt-3">
         <p class="is-size-5 has-text-weight-bold mt-5 mb-3">
-          Protocolli in archivio
+          {{ i18n.dataSave.protocolsHeader }}
         </p>
         <p>
-          <span>Numero di protocolli in archivio:</span>
-          <span class="has-text-weight-bold"> {{ indexDbCount }}</span>
+          <span>{{ i18n.dataSave.protocolsQuantity }}: </span>
+          <span class="has-text-weight-bold">{{ indexDbCount }}</span>
         </p>
       </div>
       <div class="mt-5">
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { admin as i18n } from "@/lang/it/views/admin";
 import { computed } from "vue";
 import { useStore } from "vuex";
 import dataSaveToServer from "./_components/data-save-to-server";
@@ -51,6 +52,7 @@ export default {
 
     // return setup object
     return {
+      i18n,
       indexDbCount,
     };
   },
