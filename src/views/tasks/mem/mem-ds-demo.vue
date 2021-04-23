@@ -27,7 +27,7 @@ export default {
     // return setup object
     return {
       i18n,
-    }
+    };
   },
 };
 </script>

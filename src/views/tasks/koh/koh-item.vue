@@ -19,8 +19,8 @@
           id="outer-drop"
           class="is-flex is-flex-direction-column is-align-items-center"
         >
-          <div 
-            id="legend" 
+          <div
+            id="legend"
             class="mb-5 has-text-grey has-text-centered"
             v-html="i18n.tasks.koh.legend"
           />

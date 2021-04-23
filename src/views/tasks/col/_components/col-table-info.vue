@@ -1,7 +1,9 @@
 <template>
   <div id="cards-info">
     <div class="block mt-1">
-      <p class="is-size-5 has-text-weight-bold">{{ i18n.tasks.col.tableInfo.headerOne }}</p>
+      <p class="is-size-5 has-text-weight-bold">
+        {{ i18n.tasks.col.tableInfo.headerOne }}
+      </p>
       <table class="table is-narrow is-fullwidth is-bordered mt-3">
         <tr>
           <td>{{ i18n.tasks.col.tableInfo.runningAmount }}</td>
@@ -20,7 +22,9 @@
       </table>
     </div>
     <div class="block">
-      <p class="is-size-5 has-text-weight-bold">{{ i18n.tasks.col.tableInfo.headerTwo }}</p>
+      <p class="is-size-5 has-text-weight-bold">
+        {{ i18n.tasks.col.tableInfo.headerTwo }}
+      </p>
       <table class="table is-narrow is-fullwidth is-bordered mt-3">
         <tr>
           <td>{{ i18n.tasks.col.tableInfo.winAmount }}</td>

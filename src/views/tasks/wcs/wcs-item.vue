@@ -3,7 +3,8 @@
     <div id="title" class="mb-3">
       <h1 class="is-size-3 has-text-weight-bold">
         <slot name="title">
-          {{ i18n.tasks.task }} {{ Math.min(60, itemData.droppedCards.length + 1) }} di
+          {{ i18n.tasks.task }}
+          {{ Math.min(60, itemData.droppedCards.length + 1) }} di
           {{ itemData.cards.length }}
         </slot>
       </h1>
@@ -136,8 +137,8 @@ export default {
       // update feedback
       itemData.feedback = {
         index: cardIndex,
-        message: answerIsCorrect 
-          ? i18n.tasks.wcs.feedback.right 
+        message: answerIsCorrect
+          ? i18n.tasks.wcs.feedback.right
           : i18n.tasks.wcs.feedback.wrong,
       };
       // update rules

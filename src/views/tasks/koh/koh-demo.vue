@@ -21,13 +21,13 @@ export default {
   components: {
     kohItem,
   },
-  
+
   // setup
   setup() {
     // return setup object
     return {
       i18n,
-    }
+    };
   },
 };
 </script>

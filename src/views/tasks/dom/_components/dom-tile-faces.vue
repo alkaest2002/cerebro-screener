@@ -1,7 +1,7 @@
 <template>
   <div>
-    <small 
-      class="is-block mt-6 mb-2 has-text-grey has-text-centered" 
+    <small
+      class="is-block mt-6 mb-2 has-text-grey has-text-centered"
       v-html="i18n.tasks.dom.useTheseNumbers"
     />
     <div
@@ -47,7 +47,7 @@ export default {
   setup() {
     // return setup object
     return {
-      i18n
+      i18n,
     };
   },
 };

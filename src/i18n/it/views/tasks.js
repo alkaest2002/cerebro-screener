@@ -8,12 +8,12 @@ export const tasks = {
     scoring: "Variabili considerate nel calcolo del punteggio",
   },
   demo: {
-    title: "Versione demo"
+    title: "Versione demo",
   },
   tasks: {
     task: "Quesito",
     att: {
-      nextNumberToClick: "Prossimo numero"
+      nextNumberToClick: "Prossimo numero",
     },
     col: {
       tableInfo: {
@@ -26,36 +26,38 @@ export const tasks = {
         flippedCards: "Carte girate",
         totalAmount: "Totale in questa mano",
         buttons: {
-          collect: "blocca guadagno e scopri le carte"
-        }
-      }
+          collect: "blocca guadagno e scopri le carte",
+        },
+      },
     },
     dom: {
-      useTheseNumbers: "trascina questi numeri per<br />completare la tessera mancante"
+      useTheseNumbers:
+        "trascina questi numeri per<br />completare la tessera mancante",
     },
     iow: {},
     koh: {
-      legend: "<em>ruota in senso orario</em> &rarr; click sinistro su tessera<br /><em>ruota in senso anti-orario</em> &rarr; click destro su tessera<br /><em>rimuovi</em> &rarr; trascina tessera fuori dal riquadro",
+      legend:
+        "<em>ruota in senso orario</em> &rarr; click sinistro su tessera<br /><em>ruota in senso anti-orario</em> &rarr; click destro su tessera<br /><em>rimuovi</em> &rarr; trascina tessera fuori dal riquadro",
       boxA: "riquadro A",
       boxB: "riquadro B",
-      tiles: "tessere trascinabili nel riquadro B"
+      tiles: "tessere trascinabili nel riquadro B",
     },
     mem: {
       ds: {},
-      cb: {},  
+      cb: {},
     },
     srv: {},
     tol: {
       figureA: "Forma bersaglio A",
       figureB: "Forma B",
-      figureHint: "sposta i dischi per ottenere la figura A"
+      figureHint: "sposta i dischi per ottenere la figura A",
     },
     wcs: {
       cards: "carte",
       feedback: {
         right: "corretto",
-        wrong: "sbagliato!"
-      }
+        wrong: "sbagliato!",
+      },
     },
   },
   survey: {
@@ -80,7 +82,8 @@ export const tasks = {
   },
   end: {
     title: "Fine del task",
-    message: "Complimenti! Hai ultimato la prova.<br />Rilassati per qualche secondo e poi vai avanti.",
+    message:
+      "Complimenti! Hai ultimato la prova.<br />Rilassati per qualche secondo e poi vai avanti.",
   },
   // components
   navigation: {

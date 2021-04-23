@@ -21,13 +21,13 @@ export default {
   components: {
     domItem,
   },
-  
+
   // setup
   setup() {
     // return setup object
     return {
       i18n,
-    }
+    };
   },
 };
 </script>
