@@ -61,7 +61,7 @@ export const battery = {
     task: "task",
     items: "Quesiti",
     duration: "Durata",
-    noTimeLimit: "senza limiti temporali",
+    noTimeLimit: "senza limiti di tempo",
     minutes: "minuti",
     buttons: {
       completed: "completato",
