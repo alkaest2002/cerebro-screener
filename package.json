@@ -181,7 +181,8 @@
       "vue/no-parsing-error": "warn",
       "vue/no-ref-as-operand": "warn",
       "vue/no-template-target-blank": "warn",
-      "vue/valid-template-root": "warn"
+      "vue/valid-template-root": "warn",
+      "vue/no-bare-strings-in-template": "warn"
     }
   },
   "browserslist": [
