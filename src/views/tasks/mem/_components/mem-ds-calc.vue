@@ -15,19 +15,34 @@
       </span>
     </div>
     <div id="first-row" class="is-flex">
-      <div class="calc-number" @click="onClickNumber(1)">1</div>
-      <div class="calc-number" @click="onClickNumber(2)">2</div>
-      <div class="calc-number" @click="onClickNumber(3)">3</div>
+      <div
+        v-for="n in [1, 2, 3]"
+        :key="n"
+        class="calc-number"
+        @click="onClickNumber(n)"
+      >
+        {{ n }}
+      </div>
     </div>
     <div id="second-row" class="is-flex">
-      <div class="calc-number" @click="onClickNumber(4)">4</div>
-      <div class="calc-number" @click="onClickNumber(5)">5</div>
-      <div class="calc-number" @click="onClickNumber(6)">6</div>
+      <div
+        v-for="n in [4, 5, 6]"
+        :key="n"
+        class="calc-number"
+        @click="onClickNumber(n)"
+      >
+        {{ n }}
+      </div>
     </div>
     <div id="third-row" class="is-flex">
-      <div class="calc-number" @click="onClickNumber(7)">7</div>
-      <div class="calc-number" @click="onClickNumber(8)">8</div>
-      <div class="calc-number" @click="onClickNumber(9)">9</div>
+      <div
+        v-for="n in [7, 8, 9]"
+        :key="n"
+        class="calc-number"
+        @click="onClickNumber(n)"
+      >
+        {{ n }}
+      </div>
     </div>
     <div id="forth-row" class="is-flex">
       <div id="reset" class="is-flex-grow-1" @click="onClickReset">
