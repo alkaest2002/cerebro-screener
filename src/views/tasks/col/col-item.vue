@@ -3,7 +3,7 @@
     <div id="title" class="mb-3">
       <h1 class="is-size-3 has-text-weight-bold">
         <slot name="title">
-          Quesito {{ presenter.itemIndex + 1 }}/{{ totalItems }}
+          {{ i18n.tasks.task }} {{ presenter.itemIndex + 1 }}/{{ totalItems }}
         </slot>
       </h1>
     </div>
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import { tasks as i18n } from "@/i18n/it/views/tasks";
 import { computed } from "vue";
 import { shuffle, clone } from "@/utils/utilityFns";
 import initItem from "@/views/tasks/_composables/initItem";
@@ -148,6 +149,7 @@ export default {
 
     // return
     return {
+      i18n,
       totalItems,
       itemData,
       flippedAmounts,

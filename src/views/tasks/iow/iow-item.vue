@@ -3,7 +3,7 @@
     <div id="title" class="mb-3">
       <h1 class="is-size-3 has-text-weight-bold">
         <slot name="title">
-          Quesito {{ Math.min(100, flippedCards + 1) }} di
+          {{ i18n.tasks.task }} {{ Math.min(100, flippedCards + 1) }} di
           {{ itemData.decks[0].cards.length }}
         </slot>
       </h1>
@@ -43,6 +43,7 @@
 </template>
 
 <script>
+import { tasks as i18n } from "@/i18n/it/views/tasks";
 import { ref, computed, watch } from "vue";
 import { useStore } from "vuex";
 import { clone } from "@/utils/utilityFns";
@@ -145,6 +146,7 @@ export default {
 
     // return
     return {
+      i18n,
       totalItems,
       lockDecks,
       itemData,
