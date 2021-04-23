@@ -42,10 +42,12 @@ export const formatTime = (value) => {
 };
 
 // format timer time
-export const formatTimerTime = (value) =>
-  `${String(Math.floor(value / 60)).padStart(2, "0")}:${String(
-    value % 60
-  ).padStart(2, "0")}`;
+export const formatTimerTime = (value) => {
+  if (typeof value != "number")
+    return value;
+  return new Date(parseInt(value) * 1000).toISOString().substr(11, 8)
+};
+  
 
 // deep clone objects
 export const clone = (o) => {
