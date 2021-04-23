@@ -3,7 +3,7 @@
     <div id="title" class="mb-3">
       <h1 class="is-size-3 has-text-weight-bold">
         <slot name="title">
-          Quesito {{ presenter.itemIndex + 1 }} di {{ totalItems }}
+          Quesito {{ presenter.itemIndex + 1 }}/{{ totalItems }}
         </slot>
       </h1>
     </div>
