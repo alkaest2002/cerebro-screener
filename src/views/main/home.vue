@@ -9,7 +9,7 @@
           type="button"
           @click="onEnterAsParticipant"
         >
-          {{ i18n.home.enter }}
+          {{ i18n.home.buttons.enter }}
         </button>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div id="presenter-wrapper">
     <div id="title" class="mb-3">
-      <h1 class="is-size-3 has-text-weight-bold">Gestisci sessione in corso</h1>
+      <h1 class="is-size-3 has-text-weight-bold">Sessione in corso</h1>
     </div>
     <div id="presenter" class="box">
       <div class="mt-3">

@@ -1,12 +1,12 @@
 <template>
   <div id="presenter-wrapper">
     <div id="title" class="mb-3">
-      <h1 class="is-size-3 has-text-weight-bold">Somministra batteria</h1>
+      <h1 class="is-size-3 has-text-weight-bold">{{ i18n.batteryCreate.title }}</h1>
     </div>
     <div id="presenter" class="box">
       <div class="mt-3">
         <p class="is-size-5 has-text-weight-bold mb-3">
-          1. task da somministrare
+          {{ i18n.batteryCreate.administerHeader }}
         </p>
         <battery-table
           v-model:template-battery="templateBattery"
@@ -15,7 +15,7 @@
       </div>
       <div class="mt-5">
         <p class="is-size-5 has-text-weight-bold mb-3">
-          2. Randomizzazione dei task
+          {{ i18n.batteryCreate.randomizeHeader }}
         </p>
         <form-radio-group
           v-model="shouldShuffle"
@@ -29,7 +29,7 @@
           :disabled="!!!shouldShuffle"
         />
         <small class="has-text-grey is-block mt-1">
-          nota: clicca sui task che vuoi mantenere in posizione
+          {{ i18n.batteryCreate.randomizeNote }}
         </small>
       </div>
     </div>
@@ -40,16 +40,17 @@
         replace
         class="button is-link"
       >
-        somministra batteria
+        {{ i18n.batteryCreate.buttons.administer }}
       </router-link>
       <button class="button is-danger" type="reset" @click="onResetBattery">
-        reset batteria
+        {{ i18n.batteryCreate.buttons.reset }}
       </button>
     </div>
   </div>
 </template>
 
 <script>
+import { admin as i18n } from "@/lang/it/views/admin";
 import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
 import { clone } from "@/utils/utilityFns";
@@ -72,8 +73,8 @@ export default {
 
     // shouldShuffle options (no need to be reactive)
     const shuffleOptions = [
-      { label: "non randomizzare", value: 0 },
-      { label: "randomizza", value: 1 },
+      { label: i18n.batteryCreate.fields.randomize.optionLabel[0], value: 0 },
+      { label: i18n.batteryCreate.fields.randomize.optionLabel[1], value: 1 },
     ];
 
     // shouldShuffle
@@ -122,6 +123,7 @@ export default {
 
     // return setup object
     return {
+      i18n,
       templateBattery,
       shouldShuffle,
       shuffleOptions,

@@ -1,10 +1,14 @@
 export const main = {
+  // views
   home: {
-    "enter": "entra"
+    buttons: {
+      enter: "entra"
+    }
   },
   about: {
     commitee: "Comitato Scientifico"
   },
+  // components
   hero: {
     title: "Valutazione della salute mentale tramite prove cognitive"
   },

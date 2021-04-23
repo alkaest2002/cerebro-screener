@@ -32,7 +32,7 @@
         <span class="task-cell">
           {{ task.description }}
         </span>
-        <span class="task-cell"> durata: {{ formatTime(task.duration) }} </span>
+        <span class="task-cell"> {{ i18n.batteryTable.duration }}: {{ formatTime(task.duration) }} </span>
         <span class="task-cell">
           {{ task.type }}
         </span>
@@ -42,6 +42,7 @@
 </template>
 
 <script>
+import { admin as i18n } from "@/lang/it/views/admin";
 import { ref, computed } from "vue";
 import { formatTime, clone } from "@/utils/utilityFns";
 
@@ -109,6 +110,7 @@ export default {
 
     // return setup object
     return {
+      i18n,
       tasks,
       onDragStart,
       onDragDrop,
