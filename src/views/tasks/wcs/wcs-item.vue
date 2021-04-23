@@ -3,7 +3,7 @@
     <div id="title" class="mb-3">
       <h1 class="is-size-3 has-text-weight-bold">
         <slot name="title">
-          Quesito {{ Math.min(60, itemData.droppedCards.length + 1) }} di
+          {{ i18n.tasks.task }} {{ Math.min(60, itemData.droppedCards.length + 1) }} di
           {{ itemData.cards.length }}
         </slot>
       </h1>
@@ -14,7 +14,7 @@
           class="is-flex is-flex-direction-column is-align-items-center mb-4"
         >
           <div class="mb-1">
-            <span>carte:</span>&nbsp;
+            <span>{{ i18n.tasks.wcs.cards }}:</span>&nbsp;
             <span class="mr-0 has-text-grey has-text-weight-bold">{{
               itemData.cards.length - itemData.droppedCards.length
             }}</span>
@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import { tasks as i18n } from "@/i18n/it/views/tasks";
 import { computed, watch } from "vue";
 import { useStore } from "vuex";
 import { clone } from "@/utils/utilityFns";
@@ -135,7 +136,9 @@ export default {
       // update feedback
       itemData.feedback = {
         index: cardIndex,
-        message: answerIsCorrect ? "corretto" : "sbagliato!",
+        message: answerIsCorrect 
+          ? i18n.tasks.wcs.feedback.right 
+          : i18n.tasks.wcs.feedback.wrong,
       };
       // update rules
       itemData.rules = itemData.rules.concat(
@@ -158,6 +161,7 @@ export default {
 
     // return setup object
     return {
+      i18n,
       totalItems,
       itemData,
       currentCard,

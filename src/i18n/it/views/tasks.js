@@ -53,7 +53,13 @@ export const tasks = {
       figureB: "Forma B",
       figureHint: "sposta i dischi per ottenere la figura A"
     },
-    wcs: {},
+    wcs: {
+      cards: "carte",
+      feedback: {
+        right: "corretto",
+        wrong: "sbagliato!"
+      }
+    },
   },
   end: {
     title: "Fine del task",
