@@ -6,15 +6,15 @@
       <img src="@/assets/images/404-error.svg" style="height: 256px" />
       <div class="has-text-centered block">
         <p class="is-size-2 has-text-weight-bold">
-          {{ i18n.pageNotFound.title }}
+          {{ i18n.title }}
         </p>
-        <span>{{ i18n.pageNotFound.message }}</span>
+        <span>{{ i18n.message }}</span>
       </div>
       <div>
-        <span>{{ i18n.pageNotFound.link }}</span>
+        <span>{{ i18n.link }}</span>
         &nbsp;
         <router-link :to="{ name: 'route-main-home' }" replace>
-          {{ i18n.pageNotFound.homepage }}
+          {{ i18n.homepage }}
         </router-link>
       </div>
     </div>
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { errors as i18n } from "@/i18n/it/views/errors";
+import { pageNotFound as i18n } from "@/i18n/it/views/errors";
 
 export default {
   // name
