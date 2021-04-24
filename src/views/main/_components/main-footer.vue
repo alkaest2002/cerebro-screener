@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { footer as i18n } from "@/i18n/it/views/main";
+import { mainFooter as i18n } from "@/i18n/it/views/main";
 
 export default {
   // name

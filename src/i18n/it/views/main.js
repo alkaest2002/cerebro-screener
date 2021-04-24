@@ -20,7 +20,7 @@ export const about = {
 // -------------------------------------------------------
 // hero
 // -------------------------------------------------------
-export const hero = {
+export const mainHero = {
   title: "Cerebro Screener",
   subTitle: "Valutazione della salute mentale tramite prove cognitive",
 };
@@ -28,7 +28,7 @@ export const hero = {
 // -------------------------------------------------------
 // footer
 // -------------------------------------------------------
-export const footer = {
+export const mainFooter = {
   commitee: "comitato scientifico",
   freepik: "icone svg realizzate da freepik @ www.flaticon.com",
 };

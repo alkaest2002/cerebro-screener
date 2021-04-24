@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { hero as i18n } from "@/i18n/it/views/main";
+import { mainHero as i18n } from "@/i18n/it/views/main";
 
 export default {
   // name
