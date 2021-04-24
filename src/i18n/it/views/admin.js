@@ -37,6 +37,7 @@ export const batteryCreate = {
 
 export const batteryTable = {
   duration: "durata",
+  noTimeLimit: "nessun limite di tempo",
 };
 
 // -------------------------------------------------

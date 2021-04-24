@@ -32,8 +32,13 @@
         <span class="task-cell">
           {{ task.description }}
         </span>
-        <span class="task-cell">
-          {{ i18n.duration }}: {{ formatTime(task.duration) }}
+        <span class="task-cell"> 
+          <span v-if="task.duration > 0">
+            {{ i18n.duration }}: {{ formatTime(task.duration) }}
+          </span>
+          <span v-else>
+            {{ i18n.noTimeLimit }}
+          </span>
         </span>
         <span class="task-cell">
           {{ task.type }}
@@ -161,11 +166,11 @@ $background-color: #eee;
       }
 
       &:nth-child(3) {
-        width: 35%;
+        width: 30%;
       }
 
       &:nth-child(4) {
-        width: 20%;
+        width: 25%;
       }
 
       &:nth-child(5) {
