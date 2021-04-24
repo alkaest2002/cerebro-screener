@@ -84,10 +84,7 @@ export default {
         router.replace({ name: routeName });
       } catch (err) {
         // set password error value
-        errors.password.set(
-          "mismatch",
-          i18n.fields.password.errors.mismatch
-        );
+        errors.password.set("mismatch", i18n.fields.password.errors.mismatch);
       } finally {
         // set is loading to false
         isLoading.value = false;

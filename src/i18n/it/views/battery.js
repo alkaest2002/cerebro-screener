@@ -1,7 +1,7 @@
 // -------------------------------------------------
 // bio
 // -------------------------------------------------
-export const  bio = {
+export const bio = {
   title: "Sezione anagrafica",
   buttons: {
     continue: "continua",
