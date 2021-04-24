@@ -6,17 +6,17 @@
           :to="{ name: 'route-main-about' }"
           class="has-text-grey-light"
         >
-          {{ i18n.footer.commitee }}
+          {{ i18n.commitee }}
         </router-link>
         <br />
-        <span>{{ i18n.footer.freepik }}</span>
+        <span>{{ i18n.freepik }}</span>
       </small>
     </div>
   </div>
 </template>
 
 <script>
-import { main as i18n } from "@/i18n/it/views/main";
+import { footer as i18n } from "@/i18n/it/views/main";
 
 export default {
   // name

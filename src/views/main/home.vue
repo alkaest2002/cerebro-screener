@@ -9,7 +9,7 @@
           type="button"
           @click="onEnterAsParticipant"
         >
-          {{ i18n.home.buttons.enter }}
+          {{ i18n.buttons.enter }}
         </button>
       </div>
     </div>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { main as i18n } from "@/i18n/it/views/main";
+import { home as i18n } from "@/i18n/it/views/main";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 import mainHero from "./_components/main-hero";

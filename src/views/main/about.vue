@@ -1,7 +1,7 @@
 <template>
   <base-layout>
     <main-hero>
-      <p class="is-size-5 has-text-weight-bold">{{ i18n.about.commitee }}</p>
+      <p class="is-size-5 has-text-weight-bold">{{ i18n.commitee }}</p>
     </main-hero>
     <div
       class="mt-5 is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
@@ -19,7 +19,7 @@
       </div>
       <div class="buttons mt-5">
         <router-link :to="{ name: 'route-main-home' }" class="button is-link">
-          <span v-html="i18n.about.buttons.back" />
+          <span v-html="i18n.buttons.back" />
         </router-link>
       </div>
     </div>
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { main as i18n } from "@/i18n/it/views/main";
+import { about as i18n } from "@/i18n/it/views/main";
 import mainHero from "./_components/main-hero";
 
 export default {
