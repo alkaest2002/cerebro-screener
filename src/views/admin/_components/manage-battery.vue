@@ -12,18 +12,11 @@
   </div>
   <div>
     <div v-if="!batteryHasEnded">
-      <router-link :to="{ name: 'route-battery-tasks' }" replace>
-        {{ i18n.links.current }}
-      </router-link>
-      <br />
       <router-link :to="{ name: 'route-battery-next-task' }" replace>
         {{ i18n.links.next }}
       </router-link>
     </div>
     <div v-else>
-      <span class="is-block has-text-grey">
-        {{ i18n.links.current }}
-      </span>
       <span class="is-block has-text-grey">
         {{ i18n.links.next }}
       </span>

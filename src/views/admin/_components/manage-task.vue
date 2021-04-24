@@ -17,27 +17,44 @@
       {{ currentTimeLeft }}
     </span>
   </div>
-  <div>
+  <div v-if="!batteryHasEnded">
     <a
-      v-if="currentBlock?.type == 'items' && !batteryHasEnded"
+      v-if="currentBlock?.type == 'items'"
       href="#"
       @click.prevent="onClickResetBlock"
     >
-      {{ i18n.links.reset }}
+      {{ i18n.links.resetBlock }}
     </a>
     <span v-else class="has-text-grey">
-      {{ i18n.links.reset }}
+      {{ i18n.links.resetBlock }}
     </span>
     <br />
     <a
-      v-if="nextInstructionsBlock > 0 && !batteryHasEnded"
+      v-if="nextInstructionsBlock > 0"
       href="#"
       @click.prevent="onClickNextInstructionsBlock"
     >
       {{ i18n.links.next }}
     </a>
     <span v-else class="has-text-grey">
-      {{ i18n.links.next }}
+      {{ i18n.links.nextBlock }}
+    </span>
+    <br />
+    <router-link :to="{ name: 'route-battery-tasks' }" replace>
+      {{ i18n.links.currentTask }}
+    </router-link>
+  </div>
+  <div v-else >
+    <span class="has-text-grey">
+      {{ i18n.links.resetBlock }}
+    </span>
+    <br />
+    <span class="has-text-grey">
+      {{ i18n.links.nextBlock }}
+    </span>
+    <br />
+     <span class="has-text-grey">
+      {{ i18n.links.currentTask }}
     </span>
   </div>
 </template>

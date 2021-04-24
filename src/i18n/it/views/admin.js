@@ -55,15 +55,15 @@ export const manageTask = {
   item: "quesito",
   timer: "timer",
   links: {
-    reset: "reset blocco corrente",
-    next: "blocco successivo",
+    resetBlock: "reset blocco corrente",
+    nextBlock: "blocco successivo",
+    currentTask: "riprendi task",
   },
 };
 
 export const manageBattery = {
   battery: "Batteria",
   links: {
-    current: "riprendi task",
     next: "prossimo task",
     end: "fine della batteria",
   },
