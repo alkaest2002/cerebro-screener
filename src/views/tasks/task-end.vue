@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { end as i18n } from "@/i18n/it/views/tasks";
+import { taskEnd as i18n } from "@/i18n/it/views/tasks";
 import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
 export default {

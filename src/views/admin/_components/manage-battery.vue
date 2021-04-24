@@ -11,7 +11,7 @@
     </span>
   </div>
   <div>
-    <div v-if="!batteryHasEnded">
+    <div v-if="!(batteryHasEnded || isLastTask)">
       <router-link :to="{ name: 'route-battery-next-task' }" replace>
         {{ i18n.links.next }}
       </router-link>
@@ -42,7 +42,11 @@ export default {
 
     // get current battery (no need to be reactive)
     const currentBattery = store.state.battery.battery;
-
+    
+    // is last task (no need to be reactive)
+    const isLastTask = 
+      store.getters["battery/getCurrentTask"].key == store.getters["battery/getLastTask"].key;
+  
     // get batteryHasEnded (no need to be reactive)
     const batteryHasEnded = store.state.battery.hasEnded;
 
@@ -50,6 +54,7 @@ export default {
     return {
       i18n,
       currentBattery,
+      isLastTask,
       batteryHasEnded,
     };
   },

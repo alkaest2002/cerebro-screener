@@ -114,13 +114,13 @@ export const fak = {
 // -------------------------------------------------
 export const iow = {
   task: "Quesito",
+  remainingCards: "carte rimamanenti",
 };
 
 export const iowInfo = {
   netAmount: "Bilancio",
   lastWin: "Guadagno ultima carta",
   lastLoss: "Perdita ultima carta",
-  remainingCards: "carte rimamanenti",
 }
 
 // -------------------------------------------------
@@ -222,7 +222,7 @@ export const survey = {
 // -------------------------------------------------
 // end
 // -------------------------------------------------
-export const end = {
+export const taskEnd = {
   task: "Quesito",
   title: "Fine del task",
   message:

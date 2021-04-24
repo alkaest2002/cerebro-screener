@@ -18,7 +18,7 @@
               class="is-link mt-5"
               @click="onClickArchive"
             >
-              {{ i18n.butttons.save }}
+              {{ i18n.buttons.save }}
             </loading-button>
             <p class="mt-2">
               <small
