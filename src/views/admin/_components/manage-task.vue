@@ -1,19 +1,19 @@
 <template>
   <p class="is-size-5 has-text-weight-bold mb-0">
-    {{ i18n.manageTask.task }} {{ currentTaskIndex }}:
+    {{ i18n.task }} {{ currentTaskIndex }}:
     {{ currentTask?.description || "-" }}
   </p>
   <div id="task">
     <span>
-      <b class="has-text-grey">{{ i18n.manageTask.block }}</b>
+      <b class="has-text-grey">{{ i18n.block }}</b>
       {{ currentBlock?.id || "-" }} {{ currentBlock?.type }}
     </span>
     <span>
-      <b class="has-text-grey">{{ i18n.manageTask.item }}</b>
+      <b class="has-text-grey">{{ i18n.item }}</b>
       {{ currentPresenter?.id || "-" }}
     </span>
     <span>
-      <b class="has-text-grey">{{ i18n.manageTask.timer }}</b>
+      <b class="has-text-grey">{{ i18n.timer }}</b>
       {{ currentTimeLeft }}
     </span>
   </div>
@@ -23,10 +23,10 @@
       href="#"
       @click.prevent="onClickResetBlock"
     >
-      {{ i18n.manageTask.links.reset }}
+      {{ i18n.links.reset }}
     </a>
     <span v-else class="has-text-grey">
-      {{ i18n.manageTask.links.reset }}
+      {{ i18n.links.reset }}
     </span>
     <br />
     <a
@@ -34,16 +34,16 @@
       href="#"
       @click.prevent="onClickNextInstructionsBlock"
     >
-      {{ i18n.manageTask.links.next }}
+      {{ i18n.links.next }}
     </a>
     <span v-else class="has-text-grey">
-      {{ i18n.manageTask.links.next }}
+      {{ i18n.links.next }}
     </span>
   </div>
 </template>
 
 <script>
-import { admin as i18n } from "@/i18n/it/views/admin";
+import { manageTask as i18n } from "@/i18n/it/views/admin";
 import { computed } from "vue";
 import { useStore } from "vuex";
 import { formatTimerTime } from "@/utils/utilityFns";

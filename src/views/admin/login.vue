@@ -9,7 +9,7 @@
             :errors="errors.password"
             auto-focus
             type="password"
-            :placeholder="i18n.login.fields.password.placeholder"
+            :placeholder="i18n.fields.password.placeholder"
             @input="errors.password.clear()"
           />
           <div class="buttons">
@@ -19,7 +19,7 @@
               button-type="submit"
               @click.prevent="onClickLogin('route-admin-create-battery')"
             >
-              <span v-html="i18n.login.buttons.battery" />
+              <span v-html="i18n.buttons.battery" />
             </loading-button>
             <loading-button
               :is-loading="isLoading"
@@ -27,7 +27,7 @@
               button-type="submit"
               @click.prevent="onClickLogin('route-admin-save-battery')"
             >
-              <span v-html="i18n.login.buttons.data" />
+              <span v-html="i18n.buttons.data" />
             </loading-button>
           </div>
         </form>
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { admin as i18n } from "@/i18n/it/views/admin";
+import { login as i18n } from "@/i18n/it/views/admin";
 import { ref, reactive } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
@@ -86,7 +86,7 @@ export default {
         // set password error value
         errors.password.set(
           "mismatch",
-          i18n.login.fields.password.errors.mismatch
+          i18n.fields.password.errors.mismatch
         );
       } finally {
         // set is loading to false

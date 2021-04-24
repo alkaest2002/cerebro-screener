@@ -2,7 +2,7 @@
   <div id="presenter-wrapper">
     <div id="title" class="mb-3">
       <h1 class="is-size-3 has-text-weight-bold">
-        {{ i18n.batteryManage.title }}
+        {{ i18n.title }}
       </h1>
     </div>
     <div id="presenter" class="box">
@@ -23,14 +23,14 @@
         replace
         class="button is-danger"
       >
-        {{ i18n.batteryManage.buttons.reset }}
+        {{ i18n.buttons.reset }}
       </router-link>
     </div>
   </div>
 </template>
 
 <script>
-import { admin as i18n } from "@/i18n/it/views/admin";
+import { batteryManage as i18n } from "@/i18n/it/views/admin";
 import manageTask from "./_components/manage-task";
 import manageTestee from "./_components/manage-testee";
 import manageBattery from "./_components/manage-battery";

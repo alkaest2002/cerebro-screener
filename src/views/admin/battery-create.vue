@@ -2,13 +2,13 @@
   <div id="presenter-wrapper">
     <div id="title" class="mb-3">
       <h1 class="is-size-3 has-text-weight-bold">
-        {{ i18n.batteryCreate.title }}
+        {{ i18n.title }}
       </h1>
     </div>
     <div id="presenter" class="box">
       <div class="mt-3">
         <p class="is-size-5 has-text-weight-bold mb-3">
-          {{ i18n.batteryCreate.administerHeader }}
+          {{ i18n.administerHeader }}
         </p>
         <battery-table
           v-model:template-battery="templateBattery"
@@ -17,7 +17,7 @@
       </div>
       <div class="mt-5">
         <p class="is-size-5 has-text-weight-bold mb-3">
-          {{ i18n.batteryCreate.randomizeHeader }}
+          {{ i18n.randomizeHeader }}
         </p>
         <form-radio-group
           v-model="shouldShuffle"
@@ -31,7 +31,7 @@
           :disabled="!!!shouldShuffle"
         />
         <small class="has-text-grey is-block mt-1">
-          {{ i18n.batteryCreate.randomizeNote }}
+          {{ i18n.randomizeNote }}
         </small>
       </div>
     </div>
@@ -42,17 +42,17 @@
         replace
         class="button is-link"
       >
-        {{ i18n.batteryCreate.buttons.administer }}
+        {{ i18n.buttons.administer }}
       </router-link>
       <button class="button is-danger" type="reset" @click="onResetBattery">
-        {{ i18n.batteryCreate.buttons.reset }}
+        {{ i18n.buttons.reset }}
       </button>
     </div>
   </div>
 </template>
 
 <script>
-import { admin as i18n } from "@/i18n/it/views/admin";
+import { batteryCreate as i18n } from "@/i18n/it/views/admin";
 import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
 import { clone } from "@/utils/utilityFns";
@@ -75,8 +75,8 @@ export default {
 
     // shouldShuffle options (no need to be reactive)
     const shuffleOptions = [
-      { label: i18n.batteryCreate.fields.randomize.optionLabel[0], value: 0 },
-      { label: i18n.batteryCreate.fields.randomize.optionLabel[1], value: 1 },
+      { label: i18n.fields.randomize.optionLabel[0], value: 0 },
+      { label: i18n.fields.randomize.optionLabel[1], value: 1 },
     ];
 
     // shouldShuffle

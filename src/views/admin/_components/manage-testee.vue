@@ -1,25 +1,25 @@
 <template>
   <p class="is-size-5 has-text-weight-bold mb-0 mt-2">
-    {{ i18n.manageTestee.testee }}
+    {{ i18n.testee }}
   </p>
   <div id="testee">
     <span v-for="(value, key) in currentTestee" :key="key">
       <b class="has-text-grey">
-        {{ i18n.manageTestee.data[key] }}
+        {{ i18n.data[key] }}
       </b>
       {{ value }}
     </span>
   </div>
   <div>
     <router-link :to="{ name: 'route-battery-bio' }" replace>
-      {{ i18n.manageTestee.links.bio }}
+      {{ i18n.links.bio }}
     </router-link>
     <br />
   </div>
 </template>
 
 <script>
-import { admin as i18n } from "@/i18n/it/views/admin";
+import { manageTestee as i18n } from "@/i18n/it/views/admin";
 import { useStore } from "vuex";
 
 export default {

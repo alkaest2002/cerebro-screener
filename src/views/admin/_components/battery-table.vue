@@ -33,7 +33,7 @@
           {{ task.description }}
         </span>
         <span class="task-cell">
-          {{ i18n.batteryTable.duration }}: {{ formatTime(task.duration) }}
+          {{ i18n.duration }}: {{ formatTime(task.duration) }}
         </span>
         <span class="task-cell">
           {{ task.type }}
@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import { admin as i18n } from "@/i18n/it/views/admin";
+import { batteryTable as i18n } from "@/i18n/it/views/admin";
 import { ref, computed } from "vue";
 import { formatTime, clone } from "@/utils/utilityFns";
 

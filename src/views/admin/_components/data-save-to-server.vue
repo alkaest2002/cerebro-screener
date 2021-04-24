@@ -1,13 +1,13 @@
 <template>
   <div id="upload-to-server">
     <p class="is-size-5 has-text-weight-bold mt-2 mb-3">
-      {{ i18n.saveToServer.title }}
+      {{ i18n.title }}
     </p>
     <p>
-      <span>{{ i18n.saveToServer.messageOne }}: </span>
+      <span>{{ i18n.messageOne }}: </span>
       <em> {{ firebaseEndpoint }} </em>.
       <br />
-      <span>{{ i18n.saveToServer.messagetwo }}</span>
+      <span>{{ i18n.messagetwo }}</span>
     </p>
     <div class="mt-5 mb-0">
       <loading-button
@@ -16,7 +16,7 @@
         class="is-link"
         @click="onClickUpload"
       >
-        {{ i18n.saveToServer.buttons.save }}
+        {{ i18n.buttons.save }}
       </loading-button>
     </div>
     <div class="mt-3 has-text-grey">
@@ -24,17 +24,17 @@
         <small v-if="serverOp.status != null">
           {{ serverOp.message }}
         </small>
-        <small v-else>{{ i18n.saveToServer.status.notUploaded }}</small>
+        <small v-else>{{ i18n.status.notUploaded }}</small>
       </span>
       <span v-else>
-        <small>{{ i18n.saveToServer.status.noConnection }}</small>
+        <small>{{ i18n.status.noConnection }}</small>
       </span>
     </div>
   </div>
 </template>
 
 <script>
-import { admin as i18n } from "@/i18n/it/views/admin";
+import { saveToServer as i18n } from "@/i18n/it/views/admin";
 import { computed } from "vue";
 import { useStore } from "vuex";
 import manageIndexDb from "@/views/_composables/manageIndexDb";
