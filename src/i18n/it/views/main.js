@@ -1,5 +1,5 @@
 // -------------------------------------------------------
-// views
+// home
 // -------------------------------------------------------
 export const home = {
   buttons: {
@@ -7,6 +7,9 @@ export const home = {
   },
 };
 
+// -------------------------------------------------
+// about
+// -------------------------------------------------
 export const about = {
   commitee: "Comitato Scientifico",
   buttons: {
@@ -15,13 +18,16 @@ export const about = {
 };
 
 // -------------------------------------------------------
-// components
+// hero
 // -------------------------------------------------------
 export const hero = {
   title: "Cerebro Screener",
   subTitle: "Valutazione della salute mentale tramite prove cognitive",
 };
 
+// -------------------------------------------------------
+// footer
+// -------------------------------------------------------
 export const footer = {
   commitee: "comitato scientifico",
   freepik: "icone svg realizzate da freepik @ www.flaticon.com",
