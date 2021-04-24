@@ -34,7 +34,7 @@
       href="#"
       @click.prevent="onClickNextInstructionsBlock"
     >
-      {{ i18n.links.next }}
+      {{ i18n.links.nextBlock }}
     </a>
     <span v-else class="has-text-grey">
       {{ i18n.links.nextBlock }}
@@ -108,7 +108,7 @@ export default {
     );
 
     // get next instructions block (no need to be reactive)
-    const nextInstructionsBlock = computed(() =>
+    const nextInstructionsBlock = computed(() => 
       store.state.blocks.currentBlockIndex == null
         ? 0
         : store.state.presenters.presenters.findIndex(
