@@ -3,7 +3,7 @@
     <div id="title" class="mb-3">
       <h1 class="is-size-3 has-text-weight-bold">
         <slot name="title">
-          {{ i18n.tasks.task }} {{ presenter.itemIndex + 1 }}/{{ totalItems }}
+          {{ i18n.task }} {{ presenter.itemIndex + 1 }}/{{ totalItems }}
         </slot>
       </h1>
     </div>
@@ -22,7 +22,7 @@
           <div
             id="legend"
             class="mb-5 has-text-grey has-text-centered"
-            v-html="i18n.tasks.koh.legend"
+            v-html="i18n.legend"
           />
           <div class="is-flex is-justify-content-center mb-5">
             <div class="figure-wrapper mr-5">
@@ -36,7 +36,7 @@
               <p
                 class="mt-3 has-text-grey has-text-weight-bold has-text-centered"
               >
-                {{ i18n.tasks.koh.boxA }}
+                {{ i18n.boxA }}
               </p>
             </div>
             <div class="figure-wrapper ml-5">
@@ -53,7 +53,7 @@
               <p
                 class="mt-3 has-text-grey has-text-weight-bold has-text-centered"
               >
-                {{ i18n.tasks.koh.boxB }}
+                {{ i18n.boxB }}
               </p>
             </div>
           </div>
@@ -71,7 +71,7 @@
 </template>
 
 <script>
-import { tasks as i18n } from "@/i18n/it/views/tasks";
+import { koh as i18n } from "@/i18n/it/views/tasks";
 import { ref, computed } from "vue";
 import { clone } from "@/utils/utilityFns";
 import initItem from "@/views/tasks/_composables/initItem";

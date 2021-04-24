@@ -24,14 +24,14 @@
       </div>
     </div>
     <mem-starter :css-state="cssState" @click="onClickPlay">
-      {{ i18n.tasks.mem.ds.clickCirclesOne }} {{ sequence.length }}
-      {{ i18n.tasks.mem.ds.clickCirclesTwo }}
+      {{ i18n.ds.clickCirclesOne }} {{ sequence.length }}
+      {{ i18n.ds.clickCirclesTwo }}
     </mem-starter>
   </div>
 </template>
 
 <script>
-import { tasks as i18n } from "@/i18n/it/views/tasks";
+import { mem as i18n } from "@/i18n/it/views/tasks";
 import setupShowSequenceAnimation from "./_composables/setupSequenceAnimation";
 import memStarter from "./mem-starter";
 

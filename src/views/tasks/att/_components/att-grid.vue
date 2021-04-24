@@ -26,7 +26,7 @@
     </div>
     <div id="next-number" class="mt-2 has-text-centered">
       <span class="has-text-grey">
-        <span>{{ i18n.tasks.att.nextNumberToClick }}: </span>
+        <span>{{ i18n.nextNumberToClick }}: </span>
         <span>{{ numberToClick || "-" }}</span>
       </span>
     </div>
@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { tasks as i18n } from "@/i18n/it/views/tasks";
+import { att as i18n } from "@/i18n/it/views/tasks";
 import { computed, ref } from "vue";
 import { clone } from "@/utils/utilityFns";
 

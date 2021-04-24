@@ -1,10 +1,10 @@
 <template>
   <div id="starter" class="has-text-grey">
     <div v-show="cssState == 'idle'" v-bind="$attrs">
-      {{ i18n.tasks.mem.startAnimation }}
+      {{ i18n.startAnimation }}
     </div>
     <div v-show="['started', 'playing'].includes(cssState)">
-      {{ i18n.tasks.mem.animationStarted }}
+      {{ i18n.animationStarted }}
     </div>
     <div v-show="cssState == 'finished'">
       <slot />
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { tasks as i18n } from "@/i18n/it/views/tasks";
+import { mem as i18n } from "@/i18n/it/views/tasks";
 
 export default {
   // name

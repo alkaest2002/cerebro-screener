@@ -12,16 +12,16 @@
           style="height: 100px"
         />
         <p class="is-size-3 has-text-weight-bold mt-3">
-          {{ i18n.lock.item.title }}
+          {{ i18n.title }}
         </p>
-        <p>{{ i18n.lock.item.message }}</p>
+        <p>{{ i18n.message }}</p>
       </slot>
     </div>
   </div>
 </template>
 
 <script>
-import { tasks as i18n } from "@/i18n/it/views/tasks";
+import { lockItem as i18n } from "@/i18n/it/views/tasks";
 import { computed } from "vue";
 import { useStore } from "vuex";
 

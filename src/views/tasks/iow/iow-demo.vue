@@ -1,6 +1,6 @@
 <template>
   <iow-item>
-    <template #title>{{ i18n.demo.title }}</template>
+    <template #title>{{ i18n.title }}</template>
     <template #explanation="{ itemData }">
       <div class="mt-6">
         <p class="has-text-grey" v-html="itemData.hint" />
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { tasks as i18n } from "@/i18n/it/views/tasks";
+import { demo as i18n } from "@/i18n/it/views/tasks";
 import iowItem from "./iow-item";
 
 export default {

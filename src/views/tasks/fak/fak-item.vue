@@ -3,7 +3,7 @@
     <div id="title" class="mb-3">
       <h1 class="is-size-3 has-text-weight-bold">
         <slot name="title">
-          {{ i18n.tasks.task }} {{ presenter.itemIndex + 1 }}/{{ totalItems }}
+          {{ i18n.task }} {{ presenter.itemIndex + 1 }}/{{ totalItems }}
         </slot>
       </h1>
     </div>
@@ -21,7 +21,7 @@
               type="button"
               @click="itemData.actions += 1"
             >
-              {{ i18n.tasks.fak.simulateAction }}
+              {{ i18n.simulateAction }}
             </button>
           </div>
         </div>
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import { tasks as i18n } from "@/i18n/it/views/tasks";
+import { fak as i18n } from "@/i18n/it/views/tasks";
 import initItem from "@/views/tasks/_composables/initItem";
 import itemContainer from "@/views/tasks/_components/item-container";
 

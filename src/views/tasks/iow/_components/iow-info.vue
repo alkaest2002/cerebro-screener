@@ -12,14 +12,14 @@
         }"
         class="is-flex is-flex-direction-column is-align-items-center is-justify-content-center"
       >
-        <span>{{ i18n.tasks.iow.netAmount }}</span>
+        <span>{{ i18n.netAmount }}</span>
         <span class="has-text-weight-bold">{{
           formatAmount(2000 + itemData.netAmount)
         }}</span>
       </div>
       <table class="table">
         <tr>
-          <td class="has-text-grey">{{ i18n.tasks.iow.lastWin }}</td>
+          <td class="has-text-grey">{{ i18n.lastWin }}</td>
           <td
             class="has-text-centered has-text-weight-bold has-text-success-dark"
           >
@@ -31,7 +31,7 @@
           </td>
         </tr>
         <tr>
-          <td class="has-text-grey">{{ i18n.tasks.iow.lastLoss }}</td>
+          <td class="has-text-grey">{{ i18n.lastLoss }}</td>
           <td
             class="has-text-centered has-text-weight-bold has-text-danger-dark"
           >
@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { tasks as i18n } from "@/i18n/it/views/tasks";
+import { iow as i18n } from "@/i18n/it/views/tasks";
 
 export default {
   // name

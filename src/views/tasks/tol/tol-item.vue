@@ -3,7 +3,7 @@
     <div id="title" class="mb-3">
       <h1 class="is-size-3 has-text-weight-bold">
         <slot name="title">
-          {{ i18n.tasks.task }} {{ presenter.itemIndex + 1 }}/{{ totalItems }}
+          {{ i18n.task }} {{ presenter.itemIndex + 1 }}/{{ totalItems }}
         </slot>
       </h1>
     </div>
@@ -14,7 +14,7 @@
             <tol-tower :tower="itemData.endTower" :is-locked="true" />
             <div class="mt-3 ml-3 has-text-grey has-text-centered">
               <span class="has-text-weight-bold">
-                {{ i18n.tasks.tol.figureA }}
+                {{ i18n.figureA }}
               </span>
             </div>
           </div>
@@ -26,11 +26,11 @@
             />
             <div class="mt-3 ml-3 has-text-grey has-text-centered">
               <span class="has-text-weight-bold">
-                {{ i18n.tasks.tol.figureB }}
+                {{ i18n.figureB }}
               </span>
               <br />
               <span>
-                {{ i18n.tasks.tol.figureHint }}
+                {{ i18n.figureHint }}
               </span>
             </div>
           </div>
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { tasks as i18n } from "@/i18n/it/views/tasks";
+import { tol as i18n } from "@/i18n/it/views/tasks";
 import { computed } from "vue";
 import { clone } from "@/utils/utilityFns";
 import initItem from "@/views/tasks/_composables/initItem";

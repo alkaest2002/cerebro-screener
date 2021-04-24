@@ -12,7 +12,7 @@
         @click.prevent="onClickFigure(index)"
       >
         <img src="@/assets/images/figure.svg" />
-        <span>{{ i18n.instructions.carousel.fig }} {{ index + 1 }}</span>
+        <span>{{ i18n.fig }} {{ index + 1 }}</span>
       </a>
     </div>
     <teleport to="#modal">
@@ -36,7 +36,7 @@
                   type="button"
                   @click="modalOpen = false"
                 >
-                  {{ i18n.instructions.carousel.buttons.close }}
+                  {{ i18n.buttons.close }}
                 </button>
               </div>
             </div>
@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { tasks as i18n } from "@/i18n/it/views/tasks";
+import { carousel as i18n } from "@/i18n/it/views/tasks";
 import { ref, computed } from "vue";
 
 export default {

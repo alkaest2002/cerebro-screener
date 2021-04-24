@@ -9,15 +9,15 @@
         style="height: 100px"
       />
       <p class="is-size-3 has-text-weight-bold mt-2">
-        {{ i18n.lock.block.title }}
+        {{ i18n.title }}
       </p>
-      <p>{{ i18n.lock.block.message }}</p>
+      <p>{{ i18n.message }}</p>
       <button
         class="button is-link mt-3"
         type="button"
         @click="onNavigateCurrent(nextBlockIndex)"
       >
-        {{ i18n.lock.block.buttons.continue }}
+        {{ i18n.buttons.continue }}
       </button>
     </task-lock>
     <!-- PRESENTER -->
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { tasks as i18n } from "@/i18n/it/views/tasks";
+import { lockBlock as i18n } from "@/i18n/it/views/tasks";
 import { computed } from "vue";
 import { useStore } from "vuex";
 import taskNavigation from "@/views/tasks/_components/task-navigation";

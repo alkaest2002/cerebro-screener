@@ -1,13 +1,13 @@
 <template>
   <base-survey>
     <div class="block">
-      <p v-html="i18n.tasks.srv.message" />
+      <p v-html="i18n.message" />
     </div>
   </base-survey>
 </template>
 
 <script>
-import { tasks as i18n } from "@/i18n/it/views/tasks";
+import { srv as i18n } from "@/i18n/it/views/tasks";
 import survey from "@/views/tasks/task-survey";
 
 export default {

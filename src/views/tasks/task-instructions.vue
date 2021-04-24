@@ -2,21 +2,21 @@
   <div id="presenter-wrapper">
     <div id="title" class="mb-3">
       <h1 class="is-size-3 has-text-weight-bold">
-        {{ i18n.instructions.title }}
+        {{ i18n.title }}
       </h1>
     </div>
     <div id="presenter" class="box">
       <table class="table is-fullwidth">
         <tr class="has-text-weight-bold">
-          <td>{{ i18n.instructions.items }}</td>
-          <td>{{ i18n.instructions.duration }}</td>
+          <td>{{ i18n.items }}</td>
+          <td>{{ i18n.duration }}</td>
         </tr>
         <tr>
           <td>{{ block.items }}</td>
           <td>{{ formatTime(block.duration) }}</td>
         </tr>
         <tr class="has-text-weight-bold">
-          <td colspan="2">{{ i18n.instructions.description }}</td>
+          <td colspan="2">{{ i18n.description }}</td>
         </tr>
         <tr>
           <td colspan="2">
@@ -43,7 +43,7 @@
           </td>
         </tr>
         <tr class="has-text-weight-bold">
-          <td colspan="2">{{ i18n.instructions.scoring }}</td>
+          <td colspan="2">{{ i18n.scoring }}</td>
         </tr>
         <tr>
           <td colspan="2">{{ block.scoring }}</td>
@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { tasks as i18n } from "@/i18n/it/views/tasks";
+import { instructions as i18n } from "@/i18n/it/views/tasks";
 import { useStore } from "vuex";
 import { onMounted } from "vue";
 import { formatTime, clone } from "@/utils/utilityFns";

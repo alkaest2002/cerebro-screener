@@ -1,20 +1,20 @@
 <template>
   <div id="presenter-wrapper">
     <div id="title" class="mb-3">
-      <h1 class="is-size-3 has-text-weight-bold">{{ i18n.survey.title }}</h1>
+      <h1 class="is-size-3 has-text-weight-bold">{{ i18n.title }}</h1>
     </div>
     <div id="presenter" class="box">
       <slot>
         <div class="block mt-3">
-          {{ i18n.survey.message }}
+          {{ i18n.message }}
         </div>
       </slot>
       <div class="block mt-6">
         <p class="is-size-6 has-text-weight-bold" style="line-height: 1em">
-          {{ i18n.survey.questions[0].question }}
+          {{ i18n.questions[0].question }}
         </p>
         <small class="has-text-grey-light">
-          {{ i18n.survey.questions[0].likert }}
+          {{ i18n.questions[0].likert }}
         </small>
         <div class="block mt-3">
           <item-likert
@@ -27,10 +27,10 @@
       </div>
       <div class="block mt-6">
         <p class="is-size-6 has-text-weight-bold" style="line-height: 1em">
-          {{ i18n.survey.questions[1].question }}
+          {{ i18n.questions[1].question }}
         </p>
         <small class="has-text-grey-light">
-          {{ i18n.survey.questions[0].likert }}
+          {{ i18n.questions[0].likert }}
         </small>
         <div class="block mt-3">
           <item-likert
@@ -43,10 +43,10 @@
       </div>
       <div class="block mt-6">
         <p class="is-size-6 has-text-weight-bold" style="line-height: 1em">
-          {{ i18n.survey.questions[2].question }}
+          {{ i18n.questions[2].question }}
         </p>
         <small class="has-text-grey-light">
-          {{ i18n.survey.questions[2].likert }}
+          {{ i18n.questions[2].likert }}
         </small>
         <div class="block mt-3">
           <item-likert
@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import { tasks as i18n } from "@/i18n/it/views/tasks";
+import { survey as i18n } from "@/i18n/it/views/tasks";
 import { reactive } from "vue";
 import { useStore } from "vuex";
 import { clone } from "@/utils/utilityFns";

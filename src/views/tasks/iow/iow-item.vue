@@ -3,7 +3,7 @@
     <div id="title" class="mb-3">
       <h1 class="is-size-3 has-text-weight-bold">
         <slot name="title">
-          {{ i18n.tasks.task }} {{ Math.min(100, flippedCards + 1) }}/
+          {{ i18n.task }} {{ Math.min(100, flippedCards + 1) }}/
           {{ itemData.decks[0].cards.length }}
         </slot>
       </h1>
@@ -13,7 +13,7 @@
         <div
           class="mb-4 has-text-grey is-size-5 is-flex is-align-items-center is-justify-content-center"
         >
-          <span class="mr-3">{{ i18n.tasks.iow.remainingCards }}</span>
+          <span class="mr-3">{{ i18n.remainingCards }}</span>
           <span class="has-text-weight-bold number">{{
             itemData.decks[0].cards.length - flippedCards
           }}</span>
@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { tasks as i18n } from "@/i18n/it/views/tasks";
+import { iow as i18n } from "@/i18n/it/views/tasks";
 import { ref, computed, watch } from "vue";
 import { useStore } from "vuex";
 import { clone } from "@/utils/utilityFns";

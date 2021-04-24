@@ -8,12 +8,12 @@
     />
   </div>
   <p class="has-text-centered has-text-grey mt-3">
-    {{ i18n.tasks.koh.tiles }}
+    {{ i18n.tiles }}
   </p>
 </template>
 
 <script>
-import { tasks as i18n } from "@/i18n/it/views/tasks";
+import { koh as i18n } from "@/i18n/it/views/tasks";
 import kohTile from "./koh-tile";
 
 export default {

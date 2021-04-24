@@ -2,7 +2,7 @@
   <div id="presenter-wrapper">
     <div id="title" class="mb-3">
       <h1 class="is-size-3 has-text-weight-bold">
-        {{ i18n.end.title }} #{{ taskKey }}
+        {{ i18n.title }} #{{ taskKey }}
       </h1>
     </div>
     <div
@@ -11,15 +11,15 @@
     >
       <div class="has-text-centered">
         <img src="@/assets/images/trophy.svg" style="height: 128px" />
-        <p class="is-size-3 has-text-weight-bold mt-3">{{ i18n.end.title }}</p>
-        <p v-html="i18n.end.message" />
+        <p class="is-size-3 has-text-weight-bold mt-3">{{ i18n.title }}</p>
+        <p v-html="i18n.message" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { tasks as i18n } from "@/i18n/it/views/tasks";
+import { end as i18n } from "@/i18n/it/views/tasks";
 import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
 export default {
