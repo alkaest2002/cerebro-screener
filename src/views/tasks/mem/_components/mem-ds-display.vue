@@ -14,14 +14,14 @@
       </transition>
     </div>
     <mem-starter :css-state="cssState" @click="onClickPlay">
-      {{ i18n.ds.clickNumbersOne }} {{ sequence.length }}
-      {{ i18n.ds.clickNumbersTwo }}
+      {{ i18n.clickNumbersOne }} {{ sequence.length }}
+      {{ i18n.clickNumbersTwo }}
     </mem-starter>
   </div>
 </template>
 
 <script>
-import { mem as i18n } from "@/i18n/it/views/tasks";
+import { memDs as i18n } from "@/i18n/it/views/tasks";
 import setupShowSequenceAnimation from "./_composables/setupSequenceAnimation";
 import memStarter from "./mem-starter";
 

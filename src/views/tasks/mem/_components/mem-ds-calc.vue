@@ -46,14 +46,14 @@
     </div>
     <div id="forth-row" class="is-flex">
       <div id="reset" class="is-flex-grow-1" @click="onClickReset">
-        {{ i18n.ds.buttons.reset }}
+        {{ i18n.buttons.reset }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mem as i18n } from "@/i18n/it/views/tasks";
+import { memDs as i18n } from "@/i18n/it/views/tasks";
 import { ref } from "vue";
 import { clone } from "@/utils/utilityFns";
 

@@ -2,11 +2,11 @@
   <div id="cards-info">
     <div class="block mt-1">
       <p class="is-size-5 has-text-weight-bold">
-        {{ i18n.tableInfo.headerOne }}
+        {{ i18n.headerOne }}
       </p>
       <table class="table is-narrow is-fullwidth is-bordered mt-3">
         <tr>
-          <td>{{ i18n.tableInfo.runningAmount }}</td>
+          <td>{{ i18n.runningAmount }}</td>
           <td
             :class="{
               'has-text-danger-dark has-background-danger-light':
@@ -23,11 +23,11 @@
     </div>
     <div class="block">
       <p class="is-size-5 has-text-weight-bold">
-        {{ i18n.tableInfo.headerTwo }}
+        {{ i18n.headerTwo }}
       </p>
       <table class="table is-narrow is-fullwidth is-bordered mt-3">
         <tr>
-          <td>{{ i18n.tableInfo.winAmount }}</td>
+          <td>{{ i18n.winAmount }}</td>
           <td
             class="has-text-centered has-text-success-dark has-background-success-light"
           >
@@ -35,7 +35,7 @@
           </td>
         </tr>
         <tr>
-          <td>{{ i18n.tableInfo.loseAmount }}</td>
+          <td>{{ i18n.loseAmount }}</td>
           <td
             class="has-text-centered has-text-danger-dark has-background-danger-light"
           >
@@ -43,7 +43,7 @@
           </td>
         </tr>
         <tr>
-          <td>{{ i18n.tableInfo.loseCards }}</td>
+          <td>{{ i18n.loseCards }}</td>
           <td
             class="has-text-centered has-text-danger-dark has-background-danger-light"
           >
@@ -54,13 +54,13 @@
 
       <table class="table is-narrow is-fullwidth is-bordered mt-4">
         <tr>
-          <td>{{ i18n.tableInfo.flippedCards }}</td>
+          <td>{{ i18n.flippedCards }}</td>
           <td class="has-text-centered">
             {{ flippedAmounts.length }}
           </td>
         </tr>
         <tr>
-          <td>{{ i18n.tableInfo.totalAmount }}</td>
+          <td>{{ i18n.totalAmount }}</td>
           <td
             :class="{
               'has-text-danger-dark has-background-danger-light':
@@ -82,14 +82,14 @@
         class="button is-warning is-fullwidth"
         type="button"
       >
-        {{ i18n.tableInfo.buttons.collect }}
+        {{ i18n.buttons.collect }}
       </button>
     </div>
   </div>
 </template>
 
 <script>
-import { col as i18n } from "@/i18n/it/views/tasks";
+import { colTableInfo as i18n } from "@/i18n/it/views/tasks";
 import { computed } from "vue";
 export default {
   // name

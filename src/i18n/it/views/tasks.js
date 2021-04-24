@@ -36,7 +36,6 @@ export const carousel = {
   },
 };
 
-
 // -------------------------------------------------
 // instructions
 // -------------------------------------------------
@@ -55,18 +54,15 @@ export const  demo = {
   title: "Versione demo",
 };
 
-// -------------------------------------------------
-// tasks
-// -------------------------------------------------
-export const  tasks = {
-    task: "Quesito",
-};
 
 // -------------------------------------------------
 // att
 // -------------------------------------------------
 export const att = {
   task: "Quesito",
+};
+
+export const attGrid = {
   nextNumberToClick: "Prossimo numero",
 };
 
@@ -75,18 +71,19 @@ export const att = {
 // -------------------------------------------------
 export const col = {
   task: "Quesito",
-  tableInfo: {
-    headerOne: "Informazioni mano corrente",
-    headerTwo: "Informazioni da inizio task",
-    runningAmount: "Totale generale",
-    winAmount: "Valore carte vincenti",
-    loseAmount: "Valore carte perdenti",
-    loseCards: "Numero carte perdenti",
-    flippedCards: "Carte girate",
-    totalAmount: "Totale in questa mano",
-    buttons: {
-      collect: "blocca guadagno e scopri le carte",
-    },
+};
+
+export const colTableInfo = {
+  headerOne: "Informazioni mano corrente",
+  headerTwo: "Informazioni da inizio task",
+  runningAmount: "Totale generale",
+  winAmount: "Valore carte vincenti",
+  loseAmount: "Valore carte perdenti",
+  loseCards: "Numero carte perdenti",
+  flippedCards: "Carte girate",
+  totalAmount: "Totale in questa mano",
+  buttons: {
+    collect: "blocca guadagno e scopri le carte",
   },
 };
 
@@ -95,6 +92,9 @@ export const col = {
 // -------------------------------------------------
 export const dom = {
   task: "Quesito",
+};
+
+export const domTileFaces = {
   useTheseNumbers:
     "trascina questi numeri per<br />completare la tessera mancante",
 };
@@ -114,11 +114,14 @@ export const fak = {
 // -------------------------------------------------
 export const iow = {
   task: "Quesito",
+};
+
+export const iowInfo = {
   netAmount: "Bilancio",
   lastWin: "Guadagno ultima carta",
   lastLoss: "Perdita ultima carta",
   remainingCards: "carte rimamanenti",
-};
+}
 
 // -------------------------------------------------
 // koh
@@ -129,6 +132,9 @@ export const koh = {
     "<em>ruota in senso orario</em> click sinistro su tessera<br /><em>ruota in senso anti-orario</em> click destro su tessera<br /><em>rimuovi</em> trascina tessera fuori dal riquadro",
   boxA: "riquadro A",
   boxB: "riquadro B",
+};
+
+export const kohReferenceTiles = {
   tiles: "tessere trascinabili nel riquadro B",
 };
 
@@ -137,19 +143,24 @@ export const koh = {
 // -------------------------------------------------
 export const mem = {
   task: "Quesito",
+};
+
+export const memStarter = {
   startAnimation: "clicca per avviare l'animazione",
   animationStarted: "animazione avviata",
-  ds: {
-    clickNumbersOne: "clicca in sequenza i",
-    clickNumberTwo: "numeri",
-    buttons: {
-      reset: "reset",
-    },
+};
+
+export const memDs = {
+  clickNumbersOne: "clicca in sequenza i",
+  clickNumberTwo: "numeri",
+  buttons: {
+    reset: "reset",
   },
-  cb: {
-    clickCirclesOne: "clicca in sequenza i",
-    clickCirclesTwo: "circoletti",
-  },
+};
+
+export const memCb = {
+  clickCirclesOne: "clicca in sequenza i",
+  clickCirclesTwo: "circoletti",
 };
 
 // -------------------------------------------------

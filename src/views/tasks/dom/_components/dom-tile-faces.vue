@@ -2,7 +2,7 @@
   <div>
     <small
       class="is-block mt-6 mb-2 has-text-grey has-text-centered"
-      v-html="i18n.dom.useTheseNumbers"
+      v-html="i18n.useTheseNumbers"
     />
     <div
       style="width: 200px; margin: auto"
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { dom as i18n } from "@/i18n/it/views/tasks";
+import { domTileFaces as i18n } from "@/i18n/it/views/tasks";
 import domTileFace from "./dom-tile-face";
 
 export default {

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { mem as i18n } from "@/i18n/it/views/tasks";
+import { memStarter as i18n } from "@/i18n/it/views/tasks";
 
 export default {
   // name

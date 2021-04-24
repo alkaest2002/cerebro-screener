@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { koh as i18n } from "@/i18n/it/views/tasks";
+import { kohReferenceTiles as i18n } from "@/i18n/it/views/tasks";
 import kohTile from "./koh-tile";
 
 export default {

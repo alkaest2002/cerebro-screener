@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { att as i18n } from "@/i18n/it/views/tasks";
+import { attGrid as i18n } from "@/i18n/it/views/tasks";
 import { computed, ref } from "vue";
 import { clone } from "@/utils/utilityFns";
 
