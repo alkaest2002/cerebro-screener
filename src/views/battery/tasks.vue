@@ -1,7 +1,7 @@
 <template>
   <div id="presenter-wrapper">
     <div id="title" class="mb3">
-      <h1 class="is-size-3 has-text-weight-bold">{{ i18n.tasks.title }}</h1>
+      <h1 class="is-size-3 has-text-weight-bold">{{ i18n.title }}</h1>
     </div>
     <div id="presenter" class="mt-3">
       <div class="columns is-tablet is-multiline">
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { battery as i18n } from "@/i18n/it/views/battery";
+import { tasks as i18n } from "@/i18n/it/views/battery";
 import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
 import { useRouter, useRoute } from "vue-router";

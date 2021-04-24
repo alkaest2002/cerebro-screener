@@ -1,21 +1,21 @@
 <template>
   <div id="presenter-wrapper">
     <div class="mb-3">
-      <h1 class="is-size-3 has-text-weight-bold">{{ i18n.bio.title }}</h1>
+      <h1 class="is-size-3 has-text-weight-bold">{{ i18n.title }}</h1>
     </div>
     <div id="presenter" class="box">
       <form-input
         v-model.trim="testee.id"
         :errors="errors.id"
-        :label="i18n.bio.fields.id.label"
-        :placeholder="i18n.bio.fields.id.placeholder"
+        :label="i18n.fields.id.label"
+        :placeholder="i18n.fields.id.placeholder"
       />
       <bio-keyboard v-model="testee.id" :text="testee.id" type="full" />
       <form-input
         v-model="testee.age"
         :errors="errors.age"
-        :label="i18n.bio.fields.age.label"
-        :placeholder="i18n.bio.fields.age.placeholder"
+        :label="i18n.fields.age.label"
+        :placeholder="i18n.fields.age.placeholder"
         type="number"
       />
       <bio-keyboard v-model="testee.age" :text="testee.age" type="numbers" />
@@ -23,7 +23,7 @@
         v-model="testee.gender"
         :options="genderOptions"
         :errors="errors.gender"
-        :label="i18n.bio.fields.gender.label"
+        :label="i18n.fields.gender.label"
         class="mt-4"
         name="gender"
       />
@@ -31,21 +31,21 @@
         v-model="testee.edu"
         :options="eduOptions"
         :errors="errors.edu"
-        :label="i18n.bio.fields.edu.label"
+        :label="i18n.fields.edu.label"
         class="mt-4"
         name="edu"
       />
     </div>
     <div id="navigation" class="buttons">
       <button class="button is-link" type="submit" @click="onClickSubmit">
-        {{ i18n.bio.buttons.continue }}
+        {{ i18n.buttons.continue }}
       </button>
     </div>
   </div>
 </template>
 
 <script>
-import { battery as i18n } from "@/i18n/it/views/battery";
+import { bio as i18n } from "@/i18n/it/views/battery";
 import { reactive, watch, toRefs } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
@@ -75,13 +75,13 @@ export default {
     const router = useRouter();
 
     // gender options (no need to be reactive)
-    const genderOptions = i18n.bio.fields.gender.options.reduce((acc, itr) => {
+    const genderOptions = i18n.fields.gender.options.reduce((acc, itr) => {
       acc.push({ label: itr, value: itr });
       return acc;
     }, []);
 
     // gender options (no need to be reactive)
-    const eduOptions = i18n.bio.fields.edu.options.reduce((acc, itr) => {
+    const eduOptions = i18n.fields.edu.options.reduce((acc, itr) => {
       acc.push({ label: itr, value: itr });
       return acc;
     }, []);
@@ -118,23 +118,23 @@ export default {
     const onClickSubmit = () => {
       // validate id (required)
       errors.id.set(
-        ...required(testee.id, null, i18n.bio.fields.id.errors.required)
+        ...required(testee.id, null, i18n.fields.id.errors.required)
       );
       // validate age (required)
       errors.age.set(
-        ...required(testee.age, null, i18n.bio.fields.age.errors.required)
+        ...required(testee.age, null, i18n.fields.age.errors.required)
       );
       // validate age (num range)
       errors.age.set(
-        ...numRange(testee.age, 12, 100, i18n.bio.fields.age.errors.range)
+        ...numRange(testee.age, 12, 100, i18n.fields.age.errors.range)
       );
       // validate gender (required)
       errors.gender.set(
-        ...required(testee.gender, -1, i18n.bio.fields.gender.errors.required)
+        ...required(testee.gender, -1, i18n.fields.gender.errors.required)
       );
       // validate edu (required)
       errors.edu.set(
-        ...required(testee.edu, -1, i18n.bio.fields.edu.errors.required)
+        ...required(testee.edu, -1, i18n.fields.edu.errors.required)
       );
       // if there are no validation errors
       if (

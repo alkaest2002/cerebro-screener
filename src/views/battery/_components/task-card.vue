@@ -4,17 +4,17 @@
       <div class="card-content">
         <div class="content">
           <p class="is-size-4 has-text-weight-bold mb-2">
-            {{ i18n.taskCard.task }} {{ hashedTaskKey }}
+            {{ i18n.task }} {{ hashedTaskKey }}
           </p>
           <p class="mb-0 has-text-grey">
-            <b>{{ i18n.taskCard.items }}:</b> {{ task.items }}
+            <b>{{ i18n.items }}:</b> {{ task.items }}
           </p>
           <p class="mb-0 has-text-grey">
-            <b>{{ i18n.taskCard.duration }}: </b>
+            <b>{{ i18n.duration }}: </b>
             <span v-if="task.duration > 0">
-              {{ formatTime(task.duration) }} {{ i18n.taskCard.minutes }}
+              {{ formatTime(task.duration) }} {{ i18n.minutes }}
             </span>
-            <span v-else>{{ i18n.taskCard.noTimeLimit }}</span>
+            <span v-else>{{ i18n.noTimeLimit }}</span>
           </p>
         </div>
       </div>
@@ -25,13 +25,13 @@
           class="card-footer-item"
           @click.prevent="$attrs.onClick"
         >
-          {{ i18n.taskCard.buttons.continue }}
+          {{ i18n.buttons.continue }}
         </a>
         <span v-else class="card-footer-item has-text-grey-light">
           {{
             taskIndex > currentTaskIndex
-              ? i18n.taskCard.buttons.waiting
-              : i18n.taskCard.buttons.completed
+              ? i18n.buttons.waiting
+              : i18n.buttons.completed
           }}
         </span>
       </footer>
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { battery as i18n } from "@/i18n/it/views/battery";
+import { taskCard as i18n } from "@/i18n/it/views/battery";
 import { computed } from "vue";
 import { formatTime } from "@/utils/utilityFns";
 

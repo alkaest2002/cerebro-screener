@@ -7,10 +7,10 @@
       >
         <img src="@/assets/images/fireworks.svg" style="height: 150px" />
         <p class="is-size-2 has-text-weight-bold has-text-centerd mt-3">
-          {{ i18n.end.title }}
+          {{ i18n.title }}
         </p>
         <div class="has-text-centered">
-          <p v-html="i18n.end.message" />
+          <p v-html="i18n.message" />
           <div>
             <loading-button
               :is-loading="localOp.status == 'running'"
@@ -18,7 +18,7 @@
               class="is-link mt-5"
               @click="onClickArchive"
             >
-              {{ i18n.end.butttons.save }}
+              {{ i18n.butttons.save }}
             </loading-button>
             <p class="mt-2">
               <small
@@ -29,7 +29,7 @@
                 {{ localOp.message }}
               </small>
               <small v-else class="has-text-grey">
-                {{ i18n.end.waitingStatus }}
+                {{ i18n.waitingStatus }}
               </small>
             </p>
           </div>
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { battery as i18n } from "@/i18n/it/views/battery";
+import { end as i18n } from "@/i18n/it/views/battery";
 import { computed, watch } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
