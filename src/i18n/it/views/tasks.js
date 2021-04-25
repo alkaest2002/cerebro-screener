@@ -28,8 +28,10 @@ export const lockItem = {
   message: "Non puoi modifiare questo quesito",
 };
 
-// carousel
-export const carousel = {
+// -------------------------------------------------
+// images carousel
+// -------------------------------------------------
+export const imagesCarousel = {
   fig: "fig",
   buttons: {
     close: "chiudi",

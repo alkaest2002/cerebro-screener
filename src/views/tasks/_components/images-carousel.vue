@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { carousel as i18n } from "@/i18n/it/views/tasks";
+import { imagesCarousel as i18n } from "@/i18n/it/views/tasks";
 import { ref, computed } from "vue";
 
 export default {
