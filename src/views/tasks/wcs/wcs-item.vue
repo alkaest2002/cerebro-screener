@@ -4,8 +4,7 @@
       <h1 class="is-size-3 has-text-weight-bold">
         <slot name="title">
           {{ i18n.task }}
-          {{ Math.min(60, itemData.droppedCards.length + 1) }}/
-          {{ itemData.cards.length }}
+          {{ Math.min(60, itemData.droppedCards.length + 1) }}|{{ itemData.cards.length }}
         </slot>
       </h1>
     </div>
