@@ -1,7 +1,7 @@
 <template>
   <div class="is-clipped is-relative p-3">
-    <!-- LOCK -->
-    <task-lock :show="showBlockLock">
+    <!-- BLOCK LEVEL LOCK -->
+    <item-lock :show="showBlockLock">
       <img
         id="lock-img"
         src="@/assets/images/timer.svg"
@@ -19,7 +19,7 @@
       >
         {{ i18n.buttons.continue }}
       </button>
-    </task-lock>
+    </item-lock>
     <!-- PRESENTER -->
     <slot name="presenter" :presenter="currentPresenter" />
     <!-- NAVIGATION -->
@@ -45,7 +45,7 @@ import { computed } from "vue";
 import { useStore } from "vuex";
 import taskNavigation from "@/views/tasks/_components/task-navigation";
 import taskTimer from "@/views/tasks/_components/task-timer";
-import taskLock from "@/views/tasks/_components/task-lock";
+import itemLock from "@/views/tasks/_components/item-lock";
 
 export default {
   // name
@@ -55,7 +55,7 @@ export default {
   components: {
     taskNavigation,
     taskTimer,
-    taskLock,
+    itemLock,
   },
 
   // emitted events

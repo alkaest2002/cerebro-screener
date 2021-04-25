@@ -27,7 +27,7 @@ import { useStore } from "vuex";
 
 export default {
   // name
-  name: "task-lock",
+  name: "item-lock",
 
   // do not inherit attribs
   inheritAttrs: false,

@@ -1,5 +1,5 @@
 <template>
-  <task-lock :show="showItemLock" />
+  <item-lock :show="showItemLock" />
   <div
     class="is-flex is-flex-direction-column is-justify-content-center"
     style="height: 100%"
@@ -13,7 +13,7 @@
 <script>
 import { computed } from "vue";
 import { useStore } from "vuex";
-import taskLock from "./task-lock";
+import itemLock from "./item-lock";
 
 export default {
   // name
@@ -21,7 +21,7 @@ export default {
 
   // components
   components: {
-    taskLock,
+    itemLock,
   },
 
   // setup
