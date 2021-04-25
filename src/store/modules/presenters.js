@@ -71,7 +71,7 @@ const mutations = {
 
   mutatePresenterByKey(state, { key, value, canGoForth }) {
     state.presenters[state.currentPresenterIndex][key] = value;
-    // enable canGoForth if it's set
+    console.log(canGoForth)
     if (canGoForth != undefined)
       state.presenters[state.currentPresenterIndex].canGoForth = canGoForth;
   },
@@ -146,22 +146,31 @@ const actions = {
     commit("mutatePresenterEpoch", { type, itemId, epoch: Date.now() });
   },
 
-  updatePresenterByKey({ commit, dispatch, state }, payload) {
+  updatePresenterByKey({ commit, dispatch, state, getters }, payload) {
     // do nothing under these conditions
     if (
       [
         state.currentPresenterIndex == null,
-        state.presenters[state.currentPresenterIndex]?.isLocked,
+        getters.getCurrentPresenter?.isLocked,
       ].some((e) => e)
     )
       return;
+    // extract canGoForth from current presenter
+    const { canGoForth: defaultCanGoForth } = getters.getCurrentPresenter;
+    // set initial value of canGoForth to defaultCanGoForth
+    let canGoForth = defaultCanGoForth;
+    // if defaultCanGoForth is set to false
+    if (!defaultCanGoForth) {
+      // update canGoForth
+      canGoForth = payload.value.isCorrect || payload.value.enableNext || false;
+    }
     // if itemData is being changed
     if (payload.key == "itemData") {
       // update timeFirstReaction
       dispatch("updatePresenterEpoch", { type: "timeFirstReaction" });
     }
     // update presenter key with payload
-    commit("mutatePresenterByKey", payload);
+    commit("mutatePresenterByKey", Object.assign({}, payload, { canGoForth } ));
   },
 
   resetBlockPresenters({ commit, dispatch, state, rootState }) {
