@@ -32,7 +32,7 @@
         <span class="task-cell">
           {{ task.description }}
         </span>
-        <span class="task-cell"> 
+        <span class="task-cell">
           <span v-if="task.duration > 0">
             {{ i18n.duration }}: {{ formatTime(task.duration) }}
           </span>

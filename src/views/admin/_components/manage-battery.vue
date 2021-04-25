@@ -42,11 +42,12 @@ export default {
 
     // get current battery (no need to be reactive)
     const currentBattery = store.state.battery.battery;
-    
+
     // is last task (no need to be reactive)
-    const isLastTask = 
-      store.getters["battery/getCurrentTask"].key == store.getters["battery/getLastTask"].key;
-  
+    const isLastTask =
+      store.getters["battery/getCurrentTask"].key ==
+      store.getters["battery/getLastTask"].key;
+
     // get batteryHasEnded (no need to be reactive)
     const batteryHasEnded = store.state.battery.hasEnded;
 

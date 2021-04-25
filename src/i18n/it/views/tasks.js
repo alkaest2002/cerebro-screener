@@ -17,7 +17,7 @@ export const lockBlock = {
   message: "Premi continua per procedere oltre.",
   buttons: {
     continue: "continua",
-  }, 
+  },
 };
 
 // -------------------------------------------------
@@ -25,7 +25,7 @@ export const lockBlock = {
 // -------------------------------------------------
 export const lockItem = {
   title: "Quesito bloccato",
-  message: "Non puoi modifiare questo quesito",  
+  message: "Non puoi modifiare questo quesito",
 };
 
 // carousel
@@ -50,10 +50,9 @@ export const instructions = {
 // -------------------------------------------------
 // demo
 // -------------------------------------------------
-export const  demo = {
+export const demo = {
   title: "Versione demo",
 };
-
 
 // -------------------------------------------------
 // att
@@ -121,7 +120,7 @@ export const iowInfo = {
   netAmount: "Bilancio",
   lastWin: "Guadagno ultima carta",
   lastLoss: "Perdita ultima carta",
-}
+};
 
 // -------------------------------------------------
 // koh

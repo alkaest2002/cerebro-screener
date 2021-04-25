@@ -137,9 +137,7 @@ export default {
       // update feedback
       itemData.feedback = {
         index: cardIndex,
-        message: answerIsCorrect
-          ? i18n.feedback.right
-          : i18n.feedback.wrong,
+        message: answerIsCorrect ? i18n.feedback.right : i18n.feedback.wrong,
       };
       // update rules
       itemData.rules = itemData.rules.concat(

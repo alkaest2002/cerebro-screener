@@ -71,7 +71,6 @@ const mutations = {
 
   mutatePresenterByKey(state, { key, value, canGoForth }) {
     state.presenters[state.currentPresenterIndex][key] = value;
-    console.log(canGoForth)
     if (canGoForth != undefined)
       state.presenters[state.currentPresenterIndex].canGoForth = canGoForth;
   },
@@ -170,7 +169,7 @@ const actions = {
       dispatch("updatePresenterEpoch", { type: "timeFirstReaction" });
     }
     // update presenter key with payload
-    commit("mutatePresenterByKey", Object.assign({}, payload, { canGoForth } ));
+    commit("mutatePresenterByKey", Object.assign({}, payload, { canGoForth }));
   },
 
   resetBlockPresenters({ commit, dispatch, state, rootState }) {

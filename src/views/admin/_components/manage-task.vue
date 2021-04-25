@@ -44,7 +44,7 @@
       {{ i18n.links.currentTask }}
     </router-link>
   </div>
-  <div v-else >
+  <div v-else>
     <span class="has-text-grey">
       {{ i18n.links.resetBlock }}
     </span>
@@ -53,7 +53,7 @@
       {{ i18n.links.nextBlock }}
     </span>
     <br />
-     <span class="has-text-grey">
+    <span class="has-text-grey">
       {{ i18n.links.currentTask }}
     </span>
   </div>
@@ -108,7 +108,7 @@ export default {
     );
 
     // get next instructions block (no need to be reactive)
-    const nextInstructionsBlock = computed(() => 
+    const nextInstructionsBlock = computed(() =>
       store.state.blocks.currentBlockIndex == null
         ? 0
         : store.state.presenters.presenters.findIndex(
