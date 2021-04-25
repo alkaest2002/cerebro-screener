@@ -162,7 +162,7 @@ const actions = {
     // if defaultCanGoForth is set to false
     if (!defaultCanGoForth) {
       // update canGoForth
-      canGoForth = payload.value.isCorrect || payload.value.enableNext || false;
+      canGoForth = payload.value.isCorrect || payload.value.enableNext;
     }
     // if itemData is being changed
     if (payload.key == "itemData") {
