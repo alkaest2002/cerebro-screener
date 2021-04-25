@@ -36,7 +36,7 @@ export default {
       // clone presenters
       const presenters = clone(store.state.presenters.presenters);
       // import function to process presenters
-      const { buildAnswersFn } = await import(`./${taskKey}/setup`);
+      const { buildAnswersFn } = await import(`./${taskKey}/${taskKey}-setup`);
       // process presenters and get answers
       const answers = buildAnswersFn(presenters);
       // persist answers to vuex
