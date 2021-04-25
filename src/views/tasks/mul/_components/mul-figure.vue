@@ -1,5 +1,5 @@
 <template>
-  <div 
+  <div
     class="card is-relative is-flex is-align-items-center is-justify-content-center"
     :class="cardClass"
   />
@@ -14,10 +14,10 @@ export default {
   props: {
     cardClass: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -27,70 +27,70 @@ $dim: 100px;
   height: $dim;
   width: $dim;
   color: #fff;
-  font-size: $dim*.85;
-  
+  font-size: $dim * 0.85;
+
   &.circle {
     border-radius: 50%;
   }
-  
+
   &.rhombus {
     transform: rotate(45deg);
-    
-    &::after{
+
+    &::after {
       transform: rotate(-45deg);
     }
   }
-  
+
   &.a::after {
     content: "A";
   }
-  
+
   &.b::after {
     content: "B";
   }
-  
-   &.c::after {
+
+  &.c::after {
     content: "C";
   }
-  
-   &.d::after {
+
+  &.d::after {
     content: "D";
   }
-  
-   &.e::after {
+
+  &.e::after {
     content: "E";
   }
-  
-   &.f::after {
+
+  &.f::after {
     content: "F";
   }
-  
+
   &.g::after {
     content: "G";
   }
-  
+
   &.h::after {
     content: "H";
   }
-    
+
   &.j::after {
     content: "J";
   }
-  
+
   &.k::after {
     content: "K";
   }
-  
+
   &.blue {
     background-color: navy;
   }
 
   &.orange {
-     background-color: orange;
+    background-color: orange;
   }
 
   &.fuchsia {
-     background-color: fuchsia;
+    background-color: fuchsia;
   }
 }
 </style>
