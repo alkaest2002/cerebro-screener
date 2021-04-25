@@ -97,8 +97,14 @@ const uploadData = async (documents) => {
 
 // event handler
 onmessage = async function (e) {
-  // init var
-  let opStatus;
+  // init opStatus
+  let opStatus = {
+    isOk: true,
+    status: "running",
+    message: i18n.running,
+  };
+  // send message
+  postMessage(opStatus);
   // try to
   try {
     // upload data to firebase

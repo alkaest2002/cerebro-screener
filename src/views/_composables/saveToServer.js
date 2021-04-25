@@ -1,4 +1,3 @@
-import { serverOpMessages as i18n } from "@/i18n/it/workers";
 import { computed } from "vue";
 import { useStore } from "vuex";
 import Worker from "worker-loader!@/workers/firebaseUploadWorker.js";
@@ -21,12 +20,6 @@ export default (indexDbExecute) => {
   const onUpload = async () => {
     // do nothing under these condistions
     if (!serverOp.value.hasFinished && serverOp.value.isOk) return;
-    // update serverOp
-    serverOp.value = {
-      isOk: true,
-      status: "running",
-      message: i18n.running,
-    };
     // try
     try {
       // get indexDbData records
