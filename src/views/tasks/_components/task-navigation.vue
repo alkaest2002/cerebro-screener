@@ -80,6 +80,7 @@ export default {
   setup(props, { emit }) {
     // define computed props
     const isLastIndex = computed(() => props.currentIndex == props.lastIndex);
+
     // handle navigation
     const onClickNavigation = (offset) => {
       // notify on reaching end
