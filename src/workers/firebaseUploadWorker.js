@@ -1,5 +1,7 @@
 /*global importScripts, firebase*/
 
+import { serverOpMessages as i18n } from "@/i18n/it/workers";
+
 importScripts("https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js");
 importScripts("https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js");
 importScripts("https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js");
@@ -62,7 +64,7 @@ const uploadData = async (documents) => {
       postMessage({
         isOk: true,
         status: "running",
-        message: `upload dati ${index + 1}/${documents.length}`,
+        message: `${i18n.running} ${index + 1}/${documents.length}`,
       });
       // generate id
       const docRef = collection.doc();
@@ -80,7 +82,7 @@ const uploadData = async (documents) => {
     return Promise.resolve({
       isOk: true,
       status: "finished",
-      message: "upload concluso con successo",
+      message: i18n.finished,
     });
   } catch (error) {
     // on error

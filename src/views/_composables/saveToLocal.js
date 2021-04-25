@@ -1,3 +1,4 @@
+import { localOpMessages as i18n } from "@/i18n/it/workers";
 import { computed } from "vue";
 import { useStore } from "vuex";
 
@@ -44,7 +45,7 @@ export default (indexDbExecute) => {
       localOp.value = {
         isOk: true,
         status: "running",
-        message: "dati in via di scaricamento",
+        message: i18n.download.running,
       };
       // get indexDB documents
       const { result: jsonToWrite } = await indexDbExecute({
@@ -60,7 +61,7 @@ export default (indexDbExecute) => {
       localOp.value = {
         isOk: true,
         status: "finished",
-        message: "dati correttamente scaricati",
+        message:  i18n.download.finihsed,
       };
       // on error
     } catch (err) {
@@ -85,7 +86,7 @@ export default (indexDbExecute) => {
       localOp.value = {
         isOk: true,
         status: "finished",
-        message: "dati correttamente registrati",
+        message:  i18n.archive.finished,
       };
       // on error
     } catch (err) {
