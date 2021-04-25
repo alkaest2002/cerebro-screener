@@ -81,16 +81,16 @@ $dim: 100px;
     content: "K";
   }
   
-  &.red {
-    background-color: red;
-  }
-
-  &.green {
-     background-color: green;
-  }
-
   &.blue {
-     background-color: blue;
+    background-color: navy;
+  }
+
+  &.orange {
+     background-color: orange;
+  }
+
+  &.fuchsia {
+     background-color: fuchsia;
   }
 }
 </style>
