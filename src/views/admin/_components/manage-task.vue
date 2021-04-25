@@ -25,7 +25,7 @@
     >
       {{ i18n.links.resetBlock }}
     </a>
-    <span v-else class="has-text-grey">
+    <span v-else class="has-text-grey-light">
       {{ i18n.links.resetBlock }}
     </span>
     <br />
@@ -36,7 +36,7 @@
     >
       {{ i18n.links.nextBlock }}
     </a>
-    <span v-else class="has-text-grey">
+    <span v-else class="has-text-grey-light">
       {{ i18n.links.nextBlock }}
     </span>
     <br />
@@ -45,15 +45,15 @@
     </router-link>
   </div>
   <div v-else>
-    <span class="has-text-grey">
+    <span class="has-text-grey-light">
       {{ i18n.links.resetBlock }}
     </span>
     <br />
-    <span class="has-text-grey">
+    <span class="has-text-grey-light">
       {{ i18n.links.nextBlock }}
     </span>
     <br />
-    <span class="has-text-grey">
+    <span class="has-text-grey-light">
       {{ i18n.links.currentTask }}
     </span>
   </div>

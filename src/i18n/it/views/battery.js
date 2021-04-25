@@ -56,7 +56,7 @@ export const taskCard = {
   task: "task",
   items: "Quesiti",
   duration: "Durata",
-  noTimeLimit: "senza limiti di tempo",
+  noTimeLimit: "illimitata",
   minutes: "minuti",
   buttons: {
     completed: "completato",

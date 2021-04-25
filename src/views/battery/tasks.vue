@@ -11,7 +11,7 @@
           :task="task"
           :task-index="index"
           :current-task-index="currentTaskIndex"
-          class="column is-one-third"
+          class="column is-one-quarter"
           @click.prevent="onClickGo({ taskIndex: index, taskKey: task.key })"
         />
       </div>
