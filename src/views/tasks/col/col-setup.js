@@ -36,7 +36,7 @@ const items = [
     win: 25,
     lose: -300,
     loseCards: 1,
-    loseAt: 6,
+    loseAt: 8,
     cards: generateCards(15),
   },
   {
@@ -142,7 +142,7 @@ const blocks = [
           win: 25,
           lose: -350,
           loseCards: 1,
-          loseAt: 6,
+          loseAt: 8,
           cards: generateCards(15),
           totalAmount: 0,
           flippedAmounts: [],
