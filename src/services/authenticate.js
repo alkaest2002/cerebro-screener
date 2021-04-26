@@ -1,7 +1,7 @@
 import { store } from "@/store";
 
 export const authenticate = async ({ userId, password }) => {
-  //get type of authentication
+  // get type of authentication
   const currentAurhentication = store.state.admin.currentAurhentication;
   // if current authentication is local
   if (currentAurhentication == "local") {
