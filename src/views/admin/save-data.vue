@@ -16,22 +16,21 @@
         </p>
       </div>
       <div class="mt-5">
-        <data-save-to-local />
+        <save-data-to-local />
       </div>
       <div class="mt-5">
-        <data-save-to-server />
+        <save-data-to-server />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { dataSave as i18n } from "@/i18n/it/views/admin";
+import { saveData as i18n } from "@/i18n/it/views/admin";
 import { computed } from "vue";
 import { useStore } from "vuex";
-import dataSaveToServer from "./_components/data-save-to-server";
-import dataSaveToLocal from "./_components/data-save-to-local";
-import DataSaveToServer from "./_components/data-save-to-server.vue";
+import saveDataToLocal from "./_components/save-data-to-local";
+import saveDataToServer from "./_components/save-data-to-server";
 
 export default {
   // name
@@ -39,9 +38,8 @@ export default {
 
   // components
   components: {
-    dataSaveToServer,
-    dataSaveToLocal,
-    DataSaveToServer,
+    saveDataToLocal,
+    saveDataToServer,
   },
 
   // setup

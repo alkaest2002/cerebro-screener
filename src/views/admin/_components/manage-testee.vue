@@ -1,22 +1,26 @@
 <template>
-  <p class="is-size-5 has-text-weight-bold mb-0 mt-2">
+  <h2 class="is-size-5 has-text-weight-bold mb-0">
     {{ i18n.testee }}
-  </p>
-  <div id="testee">
-    <span v-for="(value, key) in currentTestee" :key="key">
+  </h2>
+  <div id="testee" class="columns is-gapless mb-0">
+    <div 
+      v-for="(value, key) in currentTestee" 
+      :key="key"
+      class="column is-one-quarter"
+    >
       <b class="has-text-grey">
         {{ i18n.data[key] }}
       </b>
       {{ value }}
-    </span>
-    <router-link 
-      :to="{ name: 'route-battery-bio' }" 
-      class="is-block mt-2"
-      replace
-    >
-      {{ i18n.links.bio }}
-    </router-link>
+    </div>
   </div>
+  <router-link 
+    :to="{ name: 'route-battery-bio' }" 
+    class="is-block mt-2"
+    replace
+  >
+    {{ i18n.links.bio }}
+  </router-link>
 </template>
 
 <script>
@@ -42,15 +46,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-#testee {
-  padding: 10px 2px;
-  border-top: 1px solid #ddd;
-
-  & span {
-    display: inline-block;
-    margin-right: 15px;
-  }
-}
-</style>

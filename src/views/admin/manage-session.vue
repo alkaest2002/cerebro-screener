@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { batteryManage as i18n } from "@/i18n/it/views/admin";
+import { manageSession as i18n } from "@/i18n/it/views/admin";
 import manageTask from "./_components/manage-task";
 import manageTestee from "./_components/manage-testee";
 import manageBattery from "./_components/manage-battery";

@@ -19,7 +19,7 @@ export const login = {
 // -------------------------------------------------
 // battery create
 // -------------------------------------------------
-export const batteryCreate = {
+export const createBattery = {
   title: "Batteria",
   administerHeader: "1. task da somministrare",
   randomizeHeader: " 2. Randomizzazione dei task",
@@ -43,7 +43,7 @@ export const batteryTable = {
 // -------------------------------------------------
 // battery manage
 // -------------------------------------------------
-export const batteryManage = {
+export const manageSession = {
   title: "Sessione in corso",
   buttons: {
     reset: "reset sessione",
@@ -86,13 +86,13 @@ export const manageTestee = {
 // -------------------------------------------------
 // data save
 // -------------------------------------------------
-export const dataSave = {
+export const saveData = {
   title: "Salva dati",
   protocolsHeader: "Protocolli in archivio",
   protocolsQuantity: "Numero di protocolli in archivio",
 };
 
-export const dataSaveToLocal = {
+export const saveDataToLocal = {
   title: "Scarica dati in locale",
   message:
     "Per scaricare i dati in locale non hai bisogno di alcuna connessione a internet. Una volta scaricati i dati, dovrai inviare il file al seguente indirizzo di posta elettronica",
@@ -104,7 +104,7 @@ export const dataSaveToLocal = {
   },
 };
 
-export const dataSaveToServer = {
+export const saveDataToServer = {
   title: "Carica dati sul server",
   messageOne:
     "Per caricare i dati sul sever, il computer deve disporre di una connessione a internet che renda possibile l'accesso a",

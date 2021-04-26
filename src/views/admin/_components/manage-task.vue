@@ -1,23 +1,23 @@
 <template>
-  <p class="is-size-5 has-text-weight-bold mb-0">
+  <h2 class="is-size-5 has-text-weight-bold mb-0">
     {{ i18n.task }} {{ currentTaskIndex }}:
     {{ currentTask?.description || "-" }}
-  </p>
-  <div id="task">
-    <span>
+  </h2>
+  <div id="task" class="columns is-gapless mb-0">
+    <div class="column is-one-quarter">
       <b class="has-text-grey">{{ i18n.block }}</b>
       {{ currentBlock?.id || "-" }} {{ currentBlock?.type }}
-    </span>
-    <span>
+    </div>
+    <div class="column is-one-quarter">
       <b class="has-text-grey">{{ i18n.item }}</b>
       {{ currentPresenter?.id || "-" }}
-    </span>
-    <span>
+    </div>
+    <div class="column is-one-quarter">
       <b class="has-text-grey">{{ i18n.timer }}</b>
       {{ currentTimeLeft }}
-    </span>
+    </div>
   </div>
-  <div v-if="!batteryHasEnded">
+  <div v-if="!batteryHasEnded" class="mt-2">
     <a
       v-if="currentBlock?.type == 'items'"
       href="#"
@@ -44,7 +44,7 @@
       {{ i18n.links.currentTask }}
     </router-link>
   </div>
-  <div v-else>
+  <div v-else class="mt-2">
     <span class="has-text-grey-light">
       {{ i18n.links.resetBlock }}
     </span>
@@ -145,15 +145,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-#task {
-  padding: 10px 2px;
-  border-top: 1px solid #ddd;
-
-  & span {
-    display: inline-block;
-    margin-right: 15px;
-  }
-}
-</style>

@@ -18,23 +18,23 @@ export default [
         name: "route-admin-create-battery",
         component: () =>
           import(
-            /* webpackChunkName: "admin" */ "@/views/admin/battery-create"
+            /* webpackChunkName: "admin" */ "@/views/admin/create-battery"
           ),
         beforeEnter: (to, from, next) => {
           // if testee is present
           if (store.state.testee.testee.id)
             // go to running battery route
-            return next({ name: "route-admin-manage-battery" });
+            return next({ name: "route-admin-manage-session" });
           // go to requested route
           return next();
         },
       },
       {
-        path: "manage/battery",
-        name: "route-admin-manage-battery",
+        path: "manage/session",
+        name: "route-admin-manage-session",
         component: () =>
           import(
-            /* webpackChunkName: "admin" */ "@/views/admin/battery-manage"
+            /* webpackChunkName: "admin" */ "@/views/admin/manage-session"
           ),
         beforeEnter: (to, from, next) => {
           // if testee is not present
@@ -47,9 +47,9 @@ export default [
       },
       {
         path: "save/data",
-        name: "route-admin-save-battery",
+        name: "route-admin-save-data",
         component: () =>
-          import(/* webpackChunkName: "admin" */ "@/views/admin/data-save"),
+          import(/* webpackChunkName: "admin" */ "@/views/admin/save-data"),
       },
       {
         path: "reset/battery",

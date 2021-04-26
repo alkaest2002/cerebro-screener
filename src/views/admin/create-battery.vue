@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import { batteryCreate as i18n } from "@/i18n/it/views/admin";
+import { createBattery as i18n } from "@/i18n/it/views/admin";
 import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
 import { clone } from "@/utils/utilityFns";

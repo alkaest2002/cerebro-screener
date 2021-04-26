@@ -74,7 +74,7 @@ export const jsonCatalogue = [
   {
     id: 9,
     key: "srv",
-    description: "Questionario fine batteria",
+    description: "Quest. fine batteria",
     type: "insight",
     items: 3,
     duration: 0,
@@ -83,7 +83,7 @@ export const jsonCatalogue = [
   {
     id: 10,
     key: "fak",
-    description: "Questionario fake",
+    description: "Quest. fake",
     type: "task app",
     items: 9,
     duration: 0,

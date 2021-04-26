@@ -1,30 +1,32 @@
 <template>
-  <p class="is-size-5 has-text-weight-bold mb-0">
+  <h2 class="is-size-5 has-text-weight-bold mb-0">
     {{ i18n.battery }}
-  </p>
-  <div id="battery">
-    <span v-for="(task, index) in currentBattery" :key="task.id">
+  </h2>
+  <div id="battery" class="columns is-multiline is-gapless mb-0">
+    <div 
+      v-for="(task, index) in currentBattery" 
+      :key="task.id" 
+      class="column is-one-quarter"
+    >
       <b class="has-text-grey">
         {{ index + 1 }}
       </b>
       {{ task.description }}
-    </span>
+    </div>
   </div>
-  <div>
-    <div v-if="!(batteryHasEnded || isLastTask)">
-      <router-link :to="{ name: 'route-battery-next-task' }" replace>
-        {{ i18n.links.next }}
-      </router-link>
-    </div>
-    <div v-else>
-      <span class="is-block has-text-grey-light">
-        {{ i18n.links.next }}
-      </span>
-    </div>
-    <router-link :to="{ name: 'route-battery-end' }" replace>
-      {{ i18n.links.end }}
+  <div v-if="!(batteryHasEnded || isLastTask)">
+    <router-link :to="{ name: 'route-battery-next-task' }" replace>
+      {{ i18n.links.next }}
     </router-link>
   </div>
+  <div v-else>
+    <span class="is-block has-text-grey-light">
+      {{ i18n.links.next }}
+    </span>
+  </div>
+  <router-link :to="{ name: 'route-battery-end' }" replace>
+    {{ i18n.links.end }}
+  </router-link>
 </template>
 
 <script>
@@ -61,15 +63,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-#battery {
-  padding: 10px 2px;
-  border-top: 1px solid #ddd;
-
-  & span {
-    display: inline-block;
-    margin-right: 15px;
-  }
-}
-</style>

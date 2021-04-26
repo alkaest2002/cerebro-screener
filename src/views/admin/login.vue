@@ -25,7 +25,7 @@
               :is-loading="isLoading"
               class="button is-success is-fullwidth"
               button-type="submit"
-              @click.prevent="onClickLogin('route-admin-save-battery')"
+              @click.prevent="onClickLogin('route-admin-save-data')"
             >
               <span v-html="i18n.buttons.data" />
             </loading-button>
