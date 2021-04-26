@@ -17,43 +17,45 @@
       {{ currentTimeLeft }}
     </div>
   </div>
-  <div v-if="!batteryHasEnded" class="mt-2">
-    <a
-      v-if="currentBlock?.type == 'items'"
-      href="#"
-      class="is-block"
-      @click.prevent="onClickResetBlock"
-    >
-      {{ i18n.links.resetBlock }}
-    </a>
-    <span v-else class="has-text-grey-light is-block">
-      {{ i18n.links.resetBlock }}
-    </span>
-    <a
-      v-if="nextInstructionsBlock > 0"
-      href="#"
-      class="is-block"
-      @click.prevent="onClickNextInstructionsBlock"
-    >
-      {{ i18n.links.nextBlock }}
-    </a>
-    <span v-else class="has-text-grey-light is-block">
-      {{ i18n.links.nextBlock }}
-    </span>
-    <router-link :to="{ name: 'route-battery-tasks' }" replace>
-      {{ i18n.links.currentTask }}
-    </router-link>
-  </div>
-  <div v-else class="mt-2">
-    <span class="has-text-grey-light">
-      {{ i18n.links.resetBlock }}
-    </span>
-    <span class="has-text-grey-light">
-      {{ i18n.links.nextBlock }}
-    </span>
-    <span class="has-text-grey-light">
-      {{ i18n.links.currentTask }}
-    </span>
+  <div class="links">
+    <div v-if="!batteryHasEnded" class="mt-2">
+      <a
+        v-if="currentBlock?.type == 'items'"
+        href="#"
+        class="is-block"
+        @click.prevent="onClickResetBlock"
+      >
+        {{ i18n.links.resetBlock }}
+      </a>
+      <span v-else class="has-text-grey-light is-block">
+        {{ i18n.links.resetBlock }}
+      </span>
+      <a
+        v-if="nextInstructionsBlock > 0"
+        href="#"
+        class="is-block"
+        @click.prevent="onClickNextInstructionsBlock"
+      >
+        {{ i18n.links.nextBlock }}
+      </a>
+      <span v-else class="has-text-grey-light is-block">
+        {{ i18n.links.nextBlock }}
+      </span>
+      <router-link :to="{ name: 'route-battery-tasks' }" replace>
+        {{ i18n.links.currentTask }}
+      </router-link>
+    </div>
+    <div v-else class="mt-2">
+      <span class="has-text-grey-light">
+        {{ i18n.links.resetBlock }}
+      </span>
+      <span class="has-text-grey-light">
+        {{ i18n.links.nextBlock }}
+      </span>
+      <span class="has-text-grey-light">
+        {{ i18n.links.currentTask }}
+      </span>
+    </div>
   </div>
 </template>
 

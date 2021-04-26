@@ -14,13 +14,15 @@
       {{ value }}
     </div>
   </div>
-  <router-link 
-    :to="{ name: 'route-battery-bio' }" 
-    class="is-block mt-2"
-    replace
-  >
-    {{ i18n.links.bio }}
-  </router-link>
+  <div class="links">
+    <router-link 
+      :to="{ name: 'route-battery-bio' }" 
+      class="is-block"
+      replace
+    >
+      {{ i18n.links.bio }}
+    </router-link>
+  </div>
 </template>
 
 <script>

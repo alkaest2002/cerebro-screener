@@ -9,24 +9,26 @@
       class="column is-one-quarter"
     >
       <b class="has-text-grey">
-        {{ index + 1 }}
+        {{ (index + 1).toString().padStart(2, '0') }}
       </b>
       {{ task.description }}
     </div>
   </div>
-  <div v-if="!(batteryHasEnded || isLastTask)">
-    <router-link :to="{ name: 'route-battery-next-task' }" replace>
-      {{ i18n.links.next }}
+  <div class="links">
+    <div v-if="!(batteryHasEnded || isLastTask)">
+      <router-link :to="{ name: 'route-battery-next-task' }" replace>
+        {{ i18n.links.next }}
+      </router-link>
+    </div>
+    <div v-else>
+      <span class="is-block has-text-grey-light">
+        {{ i18n.links.next }}
+      </span>
+    </div>
+    <router-link :to="{ name: 'route-battery-end' }" replace>
+      {{ i18n.links.end }}
     </router-link>
   </div>
-  <div v-else>
-    <span class="is-block has-text-grey-light">
-      {{ i18n.links.next }}
-    </span>
-  </div>
-  <router-link :to="{ name: 'route-battery-end' }" replace>
-    {{ i18n.links.end }}
-  </router-link>
 </template>
 
 <script>

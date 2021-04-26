@@ -55,3 +55,20 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+::v-deep h2 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+  
+  & + div {
+    padding-top: 5px;
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+}
+
+::v-deep .links {
+  margin-top: 10px;
+}
+</style>
