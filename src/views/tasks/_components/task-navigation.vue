@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { navigation as i18n } from "@/i18n/it/views/tasks";
+import { taskNavigation as i18n } from "@/i18n/it/views/tasks";
 import { computed } from "vue";
 
 export default {

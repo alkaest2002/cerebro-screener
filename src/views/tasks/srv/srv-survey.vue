@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { srv as i18n } from "@/i18n/it/views/tasks";
+import { srvSurvey as i18n } from "@/i18n/it/views/tasks";
 import survey from "@/views/tasks/task-survey";
 
 export default {

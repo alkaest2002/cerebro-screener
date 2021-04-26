@@ -82,7 +82,7 @@ export default (indexDbExecute) => {
     try {
       // add document to indexDB
       await indexDbExecute({ action: "add", document: batteryData });
-      // update localoP
+      // update localOp
       localOp.value = {
         isOk: true,
         status: "finished",

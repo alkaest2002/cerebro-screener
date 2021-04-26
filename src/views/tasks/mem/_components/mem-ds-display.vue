@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { memDs as i18n } from "@/i18n/it/views/tasks";
+import { memDsItem as i18n } from "@/i18n/it/views/tasks";
 import setupShowSequenceAnimation from "./_composables/setupSequenceAnimation";
 import memStarter from "./mem-starter";
 

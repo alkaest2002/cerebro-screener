@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { iow as i18n } from "@/i18n/it/views/tasks";
+import { iowItem as i18n } from "@/i18n/it/views/tasks";
 import { ref, computed, watch } from "vue";
 import { useStore } from "vuex";
 import { clone } from "@/utils/utilityFns";

@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { instructions as i18n } from "@/i18n/it/views/tasks";
+import { taskInstructions as i18n } from "@/i18n/it/views/tasks";
 import { useStore } from "vuex";
 import { onMounted } from "vue";
 import { formatTime, clone } from "@/utils/utilityFns";

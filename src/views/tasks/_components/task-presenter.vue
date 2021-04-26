@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { lockBlock as i18n } from "@/i18n/it/views/tasks";
+import { taskPresenter as i18n } from "@/i18n/it/views/tasks";
 import { computed } from "vue";
 import { useStore } from "vuex";
 import taskNavigation from "@/views/tasks/_components/task-navigation";

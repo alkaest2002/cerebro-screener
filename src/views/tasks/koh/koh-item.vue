@@ -71,7 +71,7 @@
 </template>
 
 <script>
-import { koh as i18n } from "@/i18n/it/views/tasks";
+import { kohItem as i18n } from "@/i18n/it/views/tasks";
 import { ref, computed } from "vue";
 import { clone } from "@/utils/utilityFns";
 import initItem from "@/views/tasks/_composables/initItem";

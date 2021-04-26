@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { wcs as i18n } from "@/i18n/it/views/tasks";
+import { wcsItem as i18n } from "@/i18n/it/views/tasks";
 import { computed, watch } from "vue";
 import { useStore } from "vuex";
 import { clone } from "@/utils/utilityFns";

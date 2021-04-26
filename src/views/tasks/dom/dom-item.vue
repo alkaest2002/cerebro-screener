@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import { dom as i18n } from "@/i18n/it/views/tasks";
+import { domItem as i18n } from "@/i18n/it/views/tasks";
 import { ref } from "vue";
 import initItem from "@/views/tasks/_composables/initItem";
 import itemContainer from "@/views/tasks/_components/item-container";

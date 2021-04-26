@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { tol as i18n } from "@/i18n/it/views/tasks";
+import { tolItem as i18n } from "@/i18n/it/views/tasks";
 import { computed } from "vue";
 import { clone } from "@/utils/utilityFns";
 import initItem from "@/views/tasks/_composables/initItem";

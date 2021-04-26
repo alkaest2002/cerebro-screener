@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import { survey as i18n } from "@/i18n/it/views/tasks";
+import { taskSurvey as i18n } from "@/i18n/it/views/tasks";
 import { reactive } from "vue";
 import { useStore } from "vuex";
 import { clone } from "@/utils/utilityFns";

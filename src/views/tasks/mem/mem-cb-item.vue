@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { mem as i18n } from "@/i18n/it/views/tasks";
+import { memCbItem as i18n } from "@/i18n/it/views/tasks";
 import initItem from "@/views/tasks/_composables/initItem";
 import ItemContainer from "../_components/item-container.vue";
 import cbGrid from "./_components/mem-cb-grid";

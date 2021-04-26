@@ -1,7 +1,7 @@
 // -------------------------------------------------
 // navigation
 // -------------------------------------------------
-export const navigation = {
+export const taskNavigation = {
   buttons: {
     next: "succ",
     prev: "prec",
@@ -10,20 +10,9 @@ export const navigation = {
 };
 
 // -------------------------------------------------
-// lock block
-// -------------------------------------------------
-export const lockBlock = {
-  title: "tempo scaduto",
-  message: "Premi continua per procedere oltre.",
-  buttons: {
-    continue: "continua",
-  },
-};
-
-// -------------------------------------------------
 // lock item
 // -------------------------------------------------
-export const lockItem = {
+export const itemLock = {
   title: "Quesito bloccato",
   message: "Non puoi modifiare questo quesito",
 };
@@ -39,9 +28,20 @@ export const imagesCarousel = {
 };
 
 // -------------------------------------------------
-// instructions
+// task presenter
 // -------------------------------------------------
-export const instructions = {
+export const taskPresenter = {
+  title: "tempo scaduto",
+  message: "Premi continua per procedere oltre.",
+  buttons: {
+    continue: "continua",
+  },
+};
+
+// -------------------------------------------------
+// task instructions
+// -------------------------------------------------
+export const taskInstructions = {
   title: "Istruzioni",
   items: "Numero di quesiti",
   duration: "Tempo a disposizione",
@@ -59,7 +59,7 @@ export const demo = {
 // -------------------------------------------------
 // att
 // -------------------------------------------------
-export const att = {
+export const attItem = {
   task: "Quesito",
 };
 
@@ -70,7 +70,7 @@ export const attGrid = {
 // -------------------------------------------------
 // col
 // -------------------------------------------------
-export const col = {
+export const colItem = {
   task: "Quesito",
 };
 
@@ -91,7 +91,7 @@ export const colTableInfo = {
 // -------------------------------------------------
 // dom
 // -------------------------------------------------
-export const dom = {
+export const domItem = {
   task: "Quesito",
 };
 
@@ -103,7 +103,7 @@ export const domTileFaces = {
 // -------------------------------------------------
 // fak
 // -------------------------------------------------
-export const fak = {
+export const fakItem = {
   task: "Quesito",
   buttons: {
     simulateAction: "simula azione",
@@ -113,7 +113,7 @@ export const fak = {
 // -------------------------------------------------
 // iow
 // -------------------------------------------------
-export const iow = {
+export const iowItem = {
   task: "Quesito",
   remainingCards: "carte rimamanenti",
 };
@@ -127,7 +127,7 @@ export const iowInfo = {
 // -------------------------------------------------
 // koh
 // -------------------------------------------------
-export const koh = {
+export const kohItem = {
   task: "Quesito",
   legend:
     "<em>ruota in senso orario</em> click sinistro su tessera<br /><em>ruota in senso anti-orario</em> click destro su tessera<br /><em>rimuovi</em> trascina tessera fuori dal riquadro",
@@ -142,16 +142,13 @@ export const kohReferenceTiles = {
 // -------------------------------------------------
 // mem
 // -------------------------------------------------
-export const mem = {
-  task: "Quesito",
-};
-
 export const memStarter = {
   startAnimation: "clicca per avviare l'animazione",
   animationStarted: "animazione avviata",
 };
 
-export const memDs = {
+export const memDsItem = {
+  task: "Quesito",
   clickNumbersOne: "clicca in sequenza i",
   clickNumberTwo: "numeri",
   buttons: {
@@ -159,7 +156,8 @@ export const memDs = {
   },
 };
 
-export const memCb = {
+export const memCbItem = {
+  task: "Quesito",
   clickCirclesOne: "clicca in sequenza i",
   clickCirclesTwo: "circoletti",
 };
@@ -167,7 +165,7 @@ export const memCb = {
 // -------------------------------------------------
 // srv
 // -------------------------------------------------
-export const srv = {
+export const srvSurvey = {
   task: "Quesito",
   message:
     " Rifletti con calma su <b>Tutte le prove che hai svolto</b> e suoi tuoi stati d'animo. Ti chiediamo di rispondere alle seguenti domande, trascinando con il mouse il circoletto centrale nella direzione voluta.",
@@ -176,7 +174,7 @@ export const srv = {
 // -------------------------------------------------
 // tol
 // -------------------------------------------------
-export const tol = {
+export const tolItem = {
   task: "Quesito",
   figureA: "Forma bersaglio A",
   figureB: "Forma B",
@@ -186,7 +184,7 @@ export const tol = {
 // -------------------------------------------------
 // wcs
 // -------------------------------------------------
-export const wcs = {
+export const wcsItem = {
   task: "Quesito",
   cards: "carte",
   feedback: {
@@ -198,7 +196,7 @@ export const wcs = {
 // -------------------------------------------------
 // survey
 // -------------------------------------------------
-export const survey = {
+export const taskSurvey = {
   task: "Quesito",
   title: "Questionario",
   message:

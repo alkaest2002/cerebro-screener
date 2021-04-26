@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import { memDs as i18n } from "@/i18n/it/views/tasks";
+import { memDsItem as i18n } from "@/i18n/it/views/tasks";
 import { ref } from "vue";
 import { clone } from "@/utils/utilityFns";
 

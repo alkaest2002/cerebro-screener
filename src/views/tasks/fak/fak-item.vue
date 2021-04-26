@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import { fak as i18n } from "@/i18n/it/views/tasks";
+import { fakItem as i18n } from "@/i18n/it/views/tasks";
 import initItem from "@/views/tasks/_composables/initItem";
 import itemContainer from "@/views/tasks/_components/item-container";
 

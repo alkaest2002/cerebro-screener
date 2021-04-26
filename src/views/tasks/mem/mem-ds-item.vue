@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { mem as i18n } from "@/i18n/it/views/tasks";
+import { memDsItem as i18n } from "@/i18n/it/views/tasks";
 import initItem from "@/views/tasks/_composables/initItem";
 import itemContainer from "../_components/item-container.vue";
 import dsDisplay from "./_components/mem-ds-display";

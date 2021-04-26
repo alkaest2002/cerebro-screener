@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { col as i18n } from "@/i18n/it/views/tasks";
+import { colItem as i18n } from "@/i18n/it/views/tasks";
 import { computed } from "vue";
 import { shuffle, clone } from "@/utils/utilityFns";
 import initItem from "@/views/tasks/_composables/initItem";

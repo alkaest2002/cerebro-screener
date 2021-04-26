@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { mem as i18n } from "@/i18n/it/views/tasks";
+import { demo as i18n } from "@/i18n/it/views/tasks";
 import memItem from "./mem-ds-item";
 
 export default {
