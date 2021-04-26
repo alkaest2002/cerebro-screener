@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { saveToServer as i18n } from "@/i18n/it/views/admin";
+import { dataSaveToServer as i18n } from "@/i18n/it/views/admin";
 import { computed } from "vue";
 import { useStore } from "vuex";
 import manageIndexDb from "@/views/_composables/manageIndexDb";

@@ -92,7 +92,7 @@ export const dataSave = {
   protocolsQuantity: "Numero di protocolli in archivio",
 };
 
-export const saveToLocal = {
+export const dataSaveToLocal = {
   title: "Scarica dati in locale",
   message:
     "Per scaricare i dati in locale non hai bisogno di alcuna connessione a internet. Una volta scaricati i dati, dovrai inviare il file al seguente indirizzo di posta elettronica",
@@ -104,7 +104,7 @@ export const saveToLocal = {
   },
 };
 
-export const saveToServer = {
+export const dataSaveToServer = {
   title: "Carica dati sul server",
   messageOne:
     "Per caricare i dati sul sever, il computer deve disporre di una connessione a internet che renda possibile l'accesso a",
