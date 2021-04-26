@@ -21,25 +21,25 @@
     <a
       v-if="currentBlock?.type == 'items'"
       href="#"
+      class="is-block"
       @click.prevent="onClickResetBlock"
     >
       {{ i18n.links.resetBlock }}
     </a>
-    <span v-else class="has-text-grey-light">
+    <span v-else class="has-text-grey-light is-block">
       {{ i18n.links.resetBlock }}
     </span>
-    <br />
     <a
       v-if="nextInstructionsBlock > 0"
       href="#"
+      class="is-block"
       @click.prevent="onClickNextInstructionsBlock"
     >
       {{ i18n.links.nextBlock }}
     </a>
-    <span v-else class="has-text-grey-light">
+    <span v-else class="has-text-grey-light is-block">
       {{ i18n.links.nextBlock }}
     </span>
-    <br />
     <router-link :to="{ name: 'route-battery-tasks' }" replace>
       {{ i18n.links.currentTask }}
     </router-link>
@@ -48,11 +48,9 @@
     <span class="has-text-grey-light">
       {{ i18n.links.resetBlock }}
     </span>
-    <br />
     <span class="has-text-grey-light">
       {{ i18n.links.nextBlock }}
     </span>
-    <br />
     <span class="has-text-grey-light">
       {{ i18n.links.currentTask }}
     </span>

@@ -4,9 +4,10 @@
       {{ i18n.title }}
     </p>
     <p>
-      <span>{{ i18n.messageOne }}: </span>
-      <em> {{ firebaseEndpoint }} </em>.
-      <br />
+      <span clss="is-block">
+        {{ i18n.messageOne }}: 
+        <em> {{ firebaseEndpoint }} </em>.
+      </span>
       <span>{{ i18n.messagetwo }}</span>
     </p>
     <div class="mt-5 mb-0">

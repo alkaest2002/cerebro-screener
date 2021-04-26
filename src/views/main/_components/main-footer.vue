@@ -4,11 +4,10 @@
       <small>
         <router-link
           :to="{ name: 'route-main-about' }"
-          class="has-text-grey-light"
+          class="has-text-grey-light is-block"
         >
           {{ i18n.commitee }}
         </router-link>
-        <br />
         <span>{{ i18n.freepik }}</span>
       </small>
     </div>

@@ -9,12 +9,13 @@
       </b>
       {{ value }}
     </span>
-  </div>
-  <div>
-    <router-link :to="{ name: 'route-battery-bio' }" replace>
+    <router-link 
+      :to="{ name: 'route-battery-bio' }" 
+      class="is-block mt-2"
+      replace
+    >
       {{ i18n.links.bio }}
     </router-link>
-    <br />
   </div>
 </template>
 

@@ -25,11 +25,10 @@
               @disc-dropped="onDiscDropped"
             />
             <div class="mt-3 ml-3 has-text-grey has-text-centered">
-              <span class="has-text-weight-bold">
+              <span class="has-text-weight-bold is-block">
                 {{ i18n.figureB }}
               </span>
-              <br />
-              <span>
+              <span class="is-block">
                 {{ i18n.figureHint }}
               </span>
             </div>
