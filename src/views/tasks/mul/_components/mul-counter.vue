@@ -23,9 +23,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$background-color: #ff0053;
 #mul-counter {
   font-size: 3em;
-  border: 1px solid #ddd;
+  background-color: $background-color;
+  border: 1px solid darken($background-color, 10%);
+  color: lighten($background-color, 50%);
   border-radius: 6px;;
 }
 </style>

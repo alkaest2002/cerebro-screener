@@ -1,9 +1,9 @@
 <template>
-  <svg :percent="percent">
+  <svg :percent="gagueValue">
     <circle cx="70" cy="70" r="64"></circle>
     <circle cx="70" cy="70" r="64"></circle>
     <text class="value" x="70" y="75" text-anchor="middle">
-      <tspan>{{ percent }}%</tspan>
+      <tspan>{{ gagueValue }}%</tspan>
     </text>
     <text class="caption" x="70" y="100" text-anchor="middle">
       <tspan>{{ name }}</tspan>
@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { ref, computed, onMounted, onUnmounted } from "vue";
 export default {
   // name
   name: "mul-gague",
@@ -28,6 +29,40 @@ export default {
       required: true,
     },
   },
+
+  // setup
+  setup(props) {
+
+    // interval
+    const interval = ref(null);
+
+    // randomOffset
+    const randomOffset = ref(0);
+
+    // gagueValue
+    const gagueValue = computed(
+      () => {
+        const offset = props.percent < 50
+          ? -randomOffset.value
+          : randomOffset.value
+        console.log(offset);
+        return props.percent + offset
+      }
+    );
+
+    // on mounted, set interval
+    onMounted(() => interval.value = setInterval(
+      () => randomOffset.value = parseInt(Math.random()*10), 1000)
+    );
+
+    // on unmounted, clear interval
+    onUnmounted(() => clearInterval(interval.value));
+
+    // return setup object
+    return {
+      gagueValue
+    }
+  }
 };
 </script>
 
