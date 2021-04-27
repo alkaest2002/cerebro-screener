@@ -93,6 +93,15 @@ export default [
         beforeEnter: taskGuard,
       },
       {
+        path: "mul",
+        name: "route-tasks-mul",
+        component: () =>
+          import(
+            /* webpackChunkName: "mul-task" */ "@/views/tasks/mul/mul-task"
+          ),
+        beforeEnter: taskGuard,
+      },
+      {
         path: "srv",
         name: "route-tasks-srv",
         component: () =>

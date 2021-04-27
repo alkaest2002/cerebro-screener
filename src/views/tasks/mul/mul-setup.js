@@ -5,38 +5,14 @@ import processAnswers from "../_composables/processAnswers";
 
 // items
 let items = [
-  
+  {
+    gauges: [
+      [10,30,20,60,40,30],
+      [10,40,10,70,50,30]
+    ],
+    counter: [2, -2]
+  }
 ];
-
-items = items.map((item) => {
-  let currentItem = {};
-  currentItem.userFigure = {
-    isLocked: false,
-    figureType: `tiles-${item.tiles.length}`,
-    figureTiles: ((numTiles) => {
-      const tiles = [];
-      for (let i = 0; i < numTiles; i++) {
-        tiles.push({
-          tileIndex: i,
-          tileType: "figure",
-          tileColor: "void",
-          tileRotation: "clock-0",
-        });
-      }
-      return [...tiles];
-    })(item.tiles.length),
-  };
-  currentItem.endFigure = {
-    isLocked: true,
-    figureType: `tiles-${item.tiles.length}`,
-    figureTiles: item.tiles.map((i) =>
-      Object.assign({}, i, { tileType: "figure" })
-    ),
-  };
-  currentItem.timer = item.timer;
-
-  return { ...currentItem };
-});
 
 const blocks = [
   {
@@ -53,7 +29,7 @@ const blocks = [
         itemData: {
           description: i18n["instruction.001"].itemData.description,
           scoring: i18n["instruction.001"].itemData.scoring,
-          duration: i18n["instruction.001"].duration,
+          duration: 0,
           items: 10,
           images: [
             {
@@ -80,66 +56,10 @@ const blocks = [
         canGoForth: false,
         isLocked: false,
         itemData: {
-          userFigure: {
-            isLocked: false,
-            figureType: "tiles-4",
-            figureTiles: [
-              {
-                tileIndex: 0,
-                tileType: "figure",
-                tileColor: "void",
-                tileRotation: "clock-0",
-              },
-              {
-                tileIndex: 1,
-                tileType: "figure",
-                tileColor: "void",
-                tileRotation: "clock-0",
-              },
-              {
-                tileIndex: 2,
-                tileType: "figure",
-                tileColor: "void",
-                tileRotation: "clock-0",
-              },
-              {
-                tileIndex: 3,
-                tileType: "figure",
-                tileColor: "void",
-                tileRotation: "clock-0",
-              },
-            ],
-          },
-          endFigure: {
-            isLocked: true,
-            figureType: "tiles-4",
-            figureTiles: [
-              {
-                tileIndex: 0,
-                tileType: "figure",
-                tileColor: "yellow-blue",
-                tileRotation: "clock-90",
-              },
-              {
-                tileIndex: 1,
-                tileType: "figure",
-                tileColor: "yellow",
-                tileRotation: "clock-0",
-              },
-              {
-                tileIndex: 2,
-                tileType: "figure",
-                tileColor: "yellow",
-                tileRotation: "clock-0",
-              },
-              {
-                tileIndex: 3,
-                tileType: "figure",
-                tileColor: "yellow",
-                tileRotation: "clock-0",
-              },
-            ],
-          },
+          gauges: [
+            [10,30,20,60,40,30]
+          ],
+          counter: [2, -2],
           isCorrect: false,
           actions: 0,
           hint: i18n["demo.001"].itemData.hint,
@@ -160,8 +80,7 @@ const blocks = [
       itemObject.canGoForth = false;
       itemObject.isLocked = false;
       itemObject.itemData = {
-        endFigure: item.endFigure,
-        userFigure: item.userFigure,
+        ...item,
         isCorrect: false,
         actions: 0,
       };

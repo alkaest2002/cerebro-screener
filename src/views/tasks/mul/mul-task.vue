@@ -1,0 +1,43 @@
+<template>
+  <task-presenter>
+    <template #presenter="{ presenter }">
+      <transition name="fade" mode="out-in" appear>
+        <div id="presenter-cointainer" :key="presenter.id" class="is-relative">
+          <component :is="presenter.component" :presenter="presenter" />
+        </div>
+      </transition>
+    </template>
+  </task-presenter>
+</template>
+
+<script>
+import { getTaskData } from "./mul-setup";
+import initTask from "@/views/tasks/_composables/initTask";
+import taskPresenter from "@/views/tasks/_components/task-presenter";
+import instructions from "@/views/tasks/task-instructions";
+import survey from "@/views/tasks/task-survey";
+import end from "@/views/tasks/task-end";
+import demo from "./mul-demo";
+import item from "./mul-item";
+
+export default {
+  // name
+  name: "wcs-task",
+
+  // components
+  components: {
+    taskPresenter,
+    instructions,
+    demo,
+    item,
+    survey,
+    end,
+  },
+
+  // setup
+  setup() {
+    // init task
+    initTask(getTaskData());
+  },
+};
+</script>

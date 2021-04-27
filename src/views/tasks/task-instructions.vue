@@ -13,7 +13,7 @@
         </tr>
         <tr>
           <td>{{ block.items }}</td>
-          <td>{{ formatTime(block.duration) }}</td>
+          <td>{{ formatTime(block.duration) }} {{ block }}</td>
         </tr>
         <tr class="has-text-weight-bold">
           <td colspan="2">{{ i18n.description }}</td>

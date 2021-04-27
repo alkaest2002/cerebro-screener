@@ -134,7 +134,7 @@ const blocks = [
         itemData: {
           description: i18n["instruction.001"].itemData.description,
           scoring: i18n["instruction.001"].itemData.scoring,
-          duration: i18n["instruction.001"].itemData.duration,
+          duration: 0,
           items: 16,
           images: [
             {
