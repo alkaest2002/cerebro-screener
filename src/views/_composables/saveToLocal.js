@@ -61,7 +61,7 @@ export default (indexDbExecute) => {
       localOp.value = {
         isOk: true,
         status: "finished",
-        message:  i18n.download.finihsed,
+        message: i18n.download.finihsed,
       };
       // on error
     } catch (err) {
@@ -86,7 +86,7 @@ export default (indexDbExecute) => {
       localOp.value = {
         isOk: true,
         status: "finished",
-        message:  i18n.archive.finished,
+        message: i18n.archive.finished,
       };
       // on error
     } catch (err) {

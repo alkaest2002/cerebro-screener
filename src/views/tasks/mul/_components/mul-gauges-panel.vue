@@ -1,10 +1,10 @@
 <template>
-  <div id="gagues-panel" class="is-flex is-flex-wrap-wrap is-justify-content-center">
-    <div 
-      v-for="(percent, idx) of currentGauges"
-      :key="idx"
-    >
-      <mul-gauge :percent="percent" :name="`g${idx+1}`" />
+  <div
+    id="gagues-panel"
+    class="is-flex is-flex-wrap-wrap is-justify-content-center"
+  >
+    <div v-for="(percent, idx) in currentGauges" :key="idx">
+      <mul-gauge :percent="percent" :name="`g${idx + 1}`" />
     </div>
   </div>
 </template>
@@ -19,7 +19,7 @@ export default {
 
   // components
   components: {
-    mulGauge
+    mulGauge,
   },
 
   // props
@@ -27,20 +27,18 @@ export default {
     gaugesData: {
       type: Array,
       required: true,
-    }
+    },
   },
 
   // setup
   setup(props) {
-     // current gauges
-    const currentGauges = computed(
-      () => props.gaugesData[0] 
-    );
+    // current gauges
+    const currentGauges = computed(() => props.gaugesData[0]);
 
     // return setup object
-    return  {
-      currentGauges
-    }
-  }
-}
+    return {
+      currentGauges,
+    };
+  },
+};
 </script>

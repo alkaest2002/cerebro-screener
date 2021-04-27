@@ -101,13 +101,13 @@ export default {
       // cache likert
       const { q1, q2, q3 } = surveyData;
       // update surveyData
-      const data = Object.assign(
-        {}, surveyData, { enableNext: [q1, q2, q3].every((e) => typeof e == "number")}
-      );
+      const data = Object.assign({}, surveyData, {
+        enableNext: [q1, q2, q3].every((e) => typeof e == "number"),
+      });
       // persist survey data to vuex
       store.dispatch("presenters/updatePresenterByKey", {
         key: "itemData",
-        value: data
+        value: data,
       });
     };
 

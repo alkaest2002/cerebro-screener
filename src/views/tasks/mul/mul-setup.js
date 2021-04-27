@@ -7,11 +7,11 @@ import processAnswers from "../_composables/processAnswers";
 let items = [
   {
     gauges: [
-      [10,30,20,60,40,30],
-      [10,40,10,70,50,30]
+      [10, 30, 20, 60, 40, 30],
+      [10, 40, 10, 70, 50, 30],
     ],
-    counter: [2, -2]
-  }
+    counter: [2, -2],
+  },
 ];
 
 const blocks = [
@@ -56,9 +56,7 @@ const blocks = [
         canGoForth: false,
         isLocked: false,
         itemData: {
-          gauges: [
-            [10,30,20,60,40,30]
-          ],
+          gauges: [[10, 30, 20, 60, 40, 30]],
           counter: [2, -2],
           isCorrect: false,
           actions: 0,

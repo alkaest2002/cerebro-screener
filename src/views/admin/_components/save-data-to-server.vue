@@ -5,8 +5,7 @@
     </p>
     <p>
       <span clss="is-block">
-        {{ i18n.messageOne }}: 
-        <em> {{ firebaseEndpoint }} </em>.
+        {{ i18n.messageOne }}: <em> {{ firebaseEndpoint }} </em>.
       </span>
       <span>{{ i18n.messagetwo }}</span>
     </p>

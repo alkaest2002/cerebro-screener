@@ -59,14 +59,13 @@ export default {
 <style lang="scss" scoped>
 ::v-deep h2 {
   padding-bottom: 5px;
-  
+
   & + div {
     padding-top: 5px;
     background-color: #f0f0f0;
     padding: 10px;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
-
   }
 }
 

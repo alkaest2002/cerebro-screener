@@ -14,7 +14,7 @@
           class="column"
           :class="{
             'is-one-third': battery.length < 10,
-            'is-one-quarter': battery.length > 9
+            'is-one-quarter': battery.length > 9,
           }"
           @click.prevent="onClickGo({ taskIndex: index, taskKey: task.key })"
         />

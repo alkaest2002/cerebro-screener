@@ -3,9 +3,7 @@
     <span v-if="batteryHasStarted">
       {{ i18n.task }}: {{ currentTask?.description }}
     </span>
-    <span v-else>
-      {{ i18n.task }}: -
-    </span>
+    <span v-else> {{ i18n.task }}: - </span>
   </h2>
   <div id="task" class="columns is-gapless mb-0">
     <div class="column is-one-third">
@@ -89,13 +87,15 @@ export default {
     // current task (no need to be reactive)
     const currentTask = store.getters["battery/getCurrentTask"];
 
-     // batteryHasEnded (no need to be reactive)
-    const batteryHasStarted = store.state.presenters.currentPresenterIndex != null;
+    // batteryHasEnded (no need to be reactive)
+    const batteryHasStarted =
+      store.state.presenters.currentPresenterIndex != null;
 
     // current task  (no need to be reactive)
-    const currentTaskRoute = computed(() =>  batteryHasStarted 
-      ? `route-tasks-${currentTask?.key}`
-      : "route-battery-tasks"
+    const currentTaskRoute = computed(() =>
+      batteryHasStarted
+        ? `route-tasks-${currentTask?.key}`
+        : "route-battery-tasks"
     );
 
     // current block

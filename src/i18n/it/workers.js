@@ -4,12 +4,12 @@ export const localOpMessages = {
     finished: "dati correttamente scaricati",
   },
   archive: {
-    finished: "dati correttamente registrati"
+    finished: "dati correttamente registrati",
   },
 };
 
 export const serverOpMessages = {
   running: "avvio operazione di upload",
   uploadingDocuments: "upload documenti",
-  finished: "upload concluso con successo"
-}
+  finished: "upload concluso con successo",
+};

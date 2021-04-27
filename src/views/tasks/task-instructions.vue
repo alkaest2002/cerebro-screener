@@ -14,7 +14,9 @@
         <tr>
           <td>{{ block.items }}</td>
           <td>
-            <span v-if="block.duration >0">{{ formatTime(block.duration) }}</span>
+            <span v-if="block.duration > 0">{{
+              formatTime(block.duration)
+            }}</span>
             <span v-else>Senza limiti di tempo</span>
           </td>
         </tr>

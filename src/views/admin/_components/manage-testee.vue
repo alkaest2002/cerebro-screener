@@ -3,8 +3,8 @@
     {{ i18n.testee }}
   </h2>
   <div id="testee" class="columns is-multiline is-gapless mb-0">
-    <div 
-      v-for="(value, key) in currentTestee" 
+    <div
+      v-for="(value, key) in currentTestee"
       :key="key"
       class="column is-one-third"
     >
@@ -15,11 +15,7 @@
     </div>
   </div>
   <div class="links">
-    <router-link 
-      :to="{ name: 'route-battery-bio' }" 
-      class="is-block"
-      replace
-    >
+    <router-link :to="{ name: 'route-battery-bio' }" class="is-block" replace>
       {{ i18n.links.bio }}
     </router-link>
   </div>

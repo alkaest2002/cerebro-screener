@@ -116,7 +116,7 @@ export const mem = {
         description: "Lorem...",
         scoring:
           "correttezza della risposta, numero di mosse compiute, tempo impiegato.",
-          images: [
+        images: [
           {
             src: "it/mem/ds/fig1.png",
             description: "Descrizione immagine",
@@ -136,7 +136,7 @@ export const mem = {
         description: "Lorem...",
         scoring:
           "correttezza della risposta, numero di mosse compiute, tempo impiegato.",
-          images: [
+        images: [
           {
             src: "it/mem/cb/fig1.png",
             description: "Descrizione immagine",
