@@ -1,7 +1,7 @@
 <template>
   <div id="gagues-panel" class="is-flex is-flex-wrap-wrap is-justify-content-center">
     <div 
-      v-for="(percent, idx) of gauges"
+      v-for="(percent, idx) of currentGauges"
       :key="idx"
     >
       <mul-gauge :percent="percent" :name="`g${idx+1}`" />
@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { computed } from "vue";
 import mulGauge from "./mul-gauge";
 
 export default {
@@ -23,11 +24,23 @@ export default {
 
   // props
   props: {
-    gauges: {
+    gaugesData: {
       type: Array,
       required: true,
-      validator: (value) => value.every((e) => typeof e == "number" && e>=0 && e<=100 )
     }
   },
+
+  // setup
+  setup(props) {
+     // current gauges
+    const currentGauges = computed(
+      () => props.gaugesData[0] 
+    );
+
+    // return setup object
+    return  {
+      currentGauges
+    }
+  }
 }
 </script>

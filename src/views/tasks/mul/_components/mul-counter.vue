@@ -3,20 +3,36 @@
     id="mul-counter" 
     class="is-flex is-justify-content-center is-align-items-center"
   >
-    {{ counterValue }}
+    {{ currenCounterValue }}
   </div>
 </template>
 
 <script>
+import { computed } from "vue";
+
 export default {
   // name
   name: "mul-counter",
 
   // props
   props: {
-    counterValue: {
-      type: Number,
+    counterData: {
+      type: Array,
       required: true
+    }
+  },
+
+  // setup
+  setup(props) {
+    
+    // current counter
+    const currenCounterValue = computed(
+      () => props.counterData[0]
+    );
+
+    // return setup object
+    return {
+      currenCounterValue
     }
   }
 }
