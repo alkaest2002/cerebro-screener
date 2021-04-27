@@ -1,14 +1,17 @@
 <template>
-  <svg :percent="percent">
-    <circle cx="70" cy="70" r="64"></circle>
-    <circle cx="70" cy="70" r="64"></circle>
-    <text class="value" x="70" y="75" text-anchor="middle">
-      <tspan>{{ percent }}%</tspan>
-    </text>
-    <text class="caption" x="70" y="100" text-anchor="middle">
-      <tspan>{{ name }}</tspan>
-    </text>
-  </svg>
+  <div class="is-relative">
+    <div v-if="animationHasEnded" class="lid is-overlay" />
+    <svg :percent="percent">
+      <circle cx="70" cy="70" r="64"></circle>
+      <circle cx="70" cy="70" r="64"></circle>
+      <text class="value" x="70" y="75" text-anchor="middle">
+        <tspan>{{ percent }}%</tspan>
+      </text>
+      <text class="caption" x="70" y="100" text-anchor="middle">
+        <tspan>{{ name }}</tspan>
+      </text>
+    </svg>
+  </div>
 </template>
 
 <script>
@@ -27,12 +30,33 @@ export default {
       type: String,
       required: true,
     },
+
+    animationHasEnded: {
+      type: Boolean,
+      required: true
+    }
   },
 };
 </script>
 
 <style lang="scss" scoped>
 $w: 140px;
+$lid-background-color: #ddd;
+$lid-background-pattern: repeating-linear-gradient(
+  45deg,
+  #e5e5e5,
+  #e5e5e5 10px,
+  #eee 10px,
+  #eee 20px
+);
+$gauge-color-stroke: #ff9500;
+$gauge-color-text: #aaa;
+
+.lid {
+  border-radius: 50%;
+  border: 6px solid $lid-background-color;
+  background: $lid-background-pattern;
+}
 
 svg {
   display: block;
@@ -50,7 +74,7 @@ svg {
       stroke: rgba(black, 0.2);
     }
     &:nth-child(2) {
-      stroke: #7fc146;
+      stroke: $gauge-color-stroke;
       stroke-dasharray: 402.124;
       stroke-dashoffset: 402.124;
       transition: all 0.5s ease-out;
@@ -62,14 +86,14 @@ svg {
       circle {
         &:nth-child(2) {
           stroke-dashoffset: #{402.124 - (402.124 * ($i/100))};
-          stroke: #ff9500;
+          stroke: $gauge-color-stroke;
         }
       }
     }
   }
 
   text {
-    fill: rgb(136, 136, 136);
+    fill: $gauge-color-text;
 
     &.value {
       font-size: 36px;

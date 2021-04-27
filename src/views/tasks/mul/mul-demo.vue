@@ -15,7 +15,7 @@ import mulItem from "./mul-item";
 
 export default {
   // name
-  name: "wcs-demo",
+  name: "mul-demo",
 
   // components
   components: {

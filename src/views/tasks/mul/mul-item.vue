@@ -14,15 +14,19 @@
             <div
               class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
             >
-              <mul-gauges-panel :gauges-data="itemData.gauges[currentIndex]" />
+              <mul-gauges-panel 
+                :gauges-data="itemData.gauges[currentIndex]" 
+                :animation-has-ended="animationHasEnded"
+              />
             </div>
           </div>
           <div class="is-flex is-flex-direction-column" style="width: 35%">
-            <mul-counter :counter-data="itemData.counter" style="height: 50%" />
-            <mul-inputs 
-              class="mt-4" style="height: 50%"
-              @click="onStartAnimation"
-            />
+            <div>
+              <mul-counter :counter-data="itemData.counter" />
+            </div>
+            <div class="mt-4">
+              <mul-inputs @click="onStartAnimation" />
+            </div>
           </div>
         </div>
         <slot name="explanation" :item-data="itemData" />
@@ -34,7 +38,7 @@
 
 <script>
 import { mulItem as i18n } from "@/i18n/it/views/tasks";
-import { ref, onUnmounted } from "vue";
+import { ref, computed, onUnmounted } from "vue";
 import initItem from "@/views/tasks/_composables/initItem";
 import itemContainer from "@/views/tasks/_components/item-container";
 import mulGaugesPanel from "./_components/mul-gauges-panel";
@@ -70,15 +74,23 @@ export default {
     const interval = ref(null);
 
     // current index
-    const currentIndex = ref(0)
+    const currentIndex = ref(0);
+
+    // animation has ended flag
+    const animationHasEnded = computed(() =>
+      currentIndex.value == itemData.gauges.length -1
+    );
 
     // handle on start animation
     const onStartAnimation = () => {
+      // start animation
       interval.value = setInterval(() => {
-        if (currentIndex.value, itemData.gauges.length)
-          clearInterval(interval.value)
+        // if we reached the end of the gauges array
+        if (currentIndex.value == itemData.gauges.length -1)
+          // clear interval
+          return clearInterval(interval.value);
+        // update currentIndex
         currentIndex.value++;
-        console.log(currentIndex.value)
       }, 5000)
     };
 
@@ -91,6 +103,7 @@ export default {
       totalItems,
       itemData,
       currentIndex,
+      animationHasEnded,
       onStartAnimation
     };
   },
