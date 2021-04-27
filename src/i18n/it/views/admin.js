@@ -51,7 +51,7 @@ export const manageSession = {
 };
 
 export const manageTask = {
-  task: "task",
+  task: "Task",
   block: "blocco",
   item: "quesito",
   timer: "timer",
@@ -59,6 +59,7 @@ export const manageTask = {
     resetBlock: "reset blocco corrente",
     nextBlock: "blocco successivo",
     currentTask: "riprendi task",
+    listTasks: "riprendi lista task",
   },
 };
 

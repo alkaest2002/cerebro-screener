@@ -1,6 +1,11 @@
 <template>
   <h2 class="is-size-5 has-text-weight-bold mb-0">
-    {{ currentTask?.description || "-" }}
+    <span v-if="batteryHasStarted">
+      {{ i18n.task }}: {{ currentTask?.description }}
+    </span>
+    <span v-else>
+      {{ i18n.task }}: -
+    </span>
   </h2>
   <div id="task" class="columns is-gapless mb-0">
     <div class="column is-one-third">
@@ -40,8 +45,13 @@
       <span v-else class="has-text-grey-light is-block">
         {{ i18n.links.nextBlock }}
       </span>
-      <router-link :to="{ name: 'route-battery-tasks' }" replace>
-        {{ i18n.links.currentTask }}
+      <router-link :to="{ name: currentTaskRoute }" replace>
+        <span v-if="batteryHasStarted">
+          {{ i18n.links.currentTask }}
+        </span>
+        <span v-else>
+          {{ i18n.links.listTasks }}
+        </span>
       </router-link>
     </div>
     <div v-else class="mt-2">
@@ -73,31 +83,43 @@ export default {
     // use store
     const store = useStore();
 
-    // get current battery (no need to be reactive)
+    // current battery (no need to be reactive)
     const currentBattery = store.state.battery.battery;
 
-    // get batteryHasEnded (no need to be reactive)
+    // batteryHasEnded (no need to be reactive)
     const batteryHasEnded = store.state.battery.hasEnded;
 
-    // get current task
+    // batteryHasEnded (no need to be reactive)
+    const batteryHasStarted = computed(
+      () => store.state.presenters.currentPresenterIndex != null 
+    );
+
+    // current task
     const currentTask = computed(() => store.getters["battery/getCurrentTask"]);
 
-    // get current task index
+    // current task index
     const currentTaskIndex = computed(
       () => currentBattery.findIndex((e) => e.id == currentTask.value?.id) + 1
     );
 
-    // get current block
+    // current task
+    const currentTaskRoute = computed(() => 
+      batteryHasStarted.value 
+        ? `route-tasks-${currentTask.value?.key}`
+        : "route-battery-tasks"
+    );
+
+    // current block
     const currentBlock = computed(
       () => store.getters["blocks/getCurrentBlock"]
     );
 
-    // get current presenter
+    // current presenter
     const currentPresenter = computed(
       () => store.getters["presenters/getCurrentPresenter"]
     );
 
-    // get current timer
+    // current timer
     const currentTimeLeft = computed(() =>
       store.state.timer.id == null
         ? "-"
@@ -106,7 +128,7 @@ export default {
           )
     );
 
-    // get next instructions block (no need to be reactive)
+    // next instructions block (no need to be reactive)
     const nextInstructionsBlock = computed(() =>
       store.state.blocks.currentBlockIndex == null
         ? 0
@@ -133,9 +155,11 @@ export default {
     // return setup object
     return {
       i18n,
+      batteryHasStarted,
       batteryHasEnded,
       currentTask,
       currentTaskIndex,
+      currentTaskRoute,
       currentBlock,
       currentPresenter,
       currentTimeLeft,
