@@ -1,5 +1,5 @@
 <template>
-  <div id="gagues-panel" class="is-flex is-flex-wrap-wrap">
+  <div id="gagues-panel" class="is-flex is-flex-wrap-wrap is-justify-content-center">
     <div 
       v-for="(percent, idx) of gauges"
       :key="idx"

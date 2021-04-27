@@ -9,14 +9,15 @@
     </div>
     <div id="presenter" class="is-relative is-clipped box">
       <item-container>
-        <div class="columns is-gapless">
-          <div class="column is-two-thirds">
-            <div class="is-flex is-flex-direction-column is-justify-content-center">
+        <div class="is-flex is-justify-content-center">
+          <div style="width:55%">
+            <div class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center">
               <mul-gauges-panel :gauges="currentGauges" />
             </div>
           </div>
-          <div class="column is-auto">
-           <mul-counter />
+          <div  class="is-flex is-flex-direction-column" style="width:35%">
+            <mul-counter :counter-value="currenCounter" style="height:50%" />
+            <mul-inputs class="mt-4" style="height:50%" />
           </div>
         </div>
         <slot name="explanation" :item-data="itemData" />
@@ -32,7 +33,7 @@ import initItem from "@/views/tasks/_composables/initItem";
 import itemContainer from "@/views/tasks/_components/item-container";
 import mulGaugesPanel from "./_components/mul-gauges-panel"
 import mulCounter from "./_components/mul-counter";
-
+import mulInputs from "./_components/mul-inputs";
 
 export default {
   // name
@@ -43,6 +44,7 @@ export default {
     itemContainer,
     mulCounter,
     mulGaugesPanel,
+    mulInputs
   },
 
   // props
