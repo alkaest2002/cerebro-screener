@@ -13,7 +13,10 @@
         </tr>
         <tr>
           <td>{{ block.items }}</td>
-          <td>{{ formatTime(block.duration) }} {{ block }}</td>
+          <td>
+            <span v-if="block.duration >0">{{ formatTime(block.duration) }}</span>
+            <span v-else>Senza limiti di tempo</span>
+          </td>
         </tr>
         <tr class="has-text-weight-bold">
           <td colspan="2">{{ i18n.description }}</td>

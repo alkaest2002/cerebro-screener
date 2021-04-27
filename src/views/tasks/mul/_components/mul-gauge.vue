@@ -47,7 +47,7 @@ svg {
     transform: rotate(270deg);
 
     &:nth-child(1) {
-      stroke: rgba(white, 0.2);
+      stroke: rgba(black, 0.2);
     }
     &:nth-child(2) {
       stroke: #7fc146;
@@ -69,7 +69,7 @@ svg {
   }
 
   text {
-    fill: #eee;
+    fill: rgb(136, 136, 136);
 
     &.value {
       font-size: 36px;
