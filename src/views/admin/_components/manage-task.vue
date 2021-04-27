@@ -83,30 +83,19 @@ export default {
     // use store
     const store = useStore();
 
-    // current battery (no need to be reactive)
-    const currentBattery = store.state.battery.battery;
-
     // batteryHasEnded (no need to be reactive)
     const batteryHasEnded = store.state.battery.hasEnded;
 
-    // batteryHasEnded (no need to be reactive)
-    const batteryHasStarted = computed(
-      () => store.state.presenters.currentPresenterIndex != null 
-    );
+    // current task (no need to be reactive)
+    const currentTask = store.getters["battery/getCurrentTask"];
 
-    // current task
-    const currentTask = computed(() => store.getters["battery/getCurrentTask"]);
+     // batteryHasEnded (no need to be reactive)
+    const batteryHasStarted = store.state.presenters.currentPresenterIndex != null;
 
-    // current task index
-    const currentTaskIndex = computed(
-      () => currentBattery.findIndex((e) => e.id == currentTask.value?.id) + 1
-    );
-
-    // current task
-    const currentTaskRoute = computed(() => 
-      batteryHasStarted.value 
-        ? `route-tasks-${currentTask.value?.key}`
-        : "route-battery-tasks"
+    // current task  (no need to be reactive)
+    const currentTaskRoute = computed(() =>  batteryHasStarted 
+      ? `route-tasks-${currentTask?.key}`
+      : "route-battery-tasks"
     );
 
     // current block
@@ -128,7 +117,7 @@ export default {
           )
     );
 
-    // next instructions block (no need to be reactive)
+    // next instructions block
     const nextInstructionsBlock = computed(() =>
       store.state.blocks.currentBlockIndex == null
         ? 0
@@ -158,7 +147,6 @@ export default {
       batteryHasStarted,
       batteryHasEnded,
       currentTask,
-      currentTaskIndex,
       currentTaskRoute,
       currentBlock,
       currentPresenter,
