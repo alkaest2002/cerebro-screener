@@ -6,7 +6,7 @@
     <div 
       v-for="(task, index) in currentBattery" 
       :key="task.id" 
-      class="column is-one-quarter"
+      class="column is-one-third"
     >
       <b class="has-text-grey">
         {{ (index + 1).toString().padStart(2, '0') }}

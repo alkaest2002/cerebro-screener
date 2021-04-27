@@ -1,18 +1,17 @@
 <template>
   <h2 class="is-size-5 has-text-weight-bold mb-0">
-    {{ i18n.task }} {{ currentTaskIndex }}:
     {{ currentTask?.description || "-" }}
   </h2>
   <div id="task" class="columns is-gapless mb-0">
-    <div class="column is-one-quarter">
+    <div class="column is-one-third">
       <b class="has-text-grey">{{ i18n.block }}</b>
       {{ currentBlock?.id || "-" }} {{ currentBlock?.type }}
     </div>
-    <div class="column is-one-quarter">
+    <div class="column is-one-third">
       <b class="has-text-grey">{{ i18n.item }}</b>
       {{ currentPresenter?.id || "-" }}
     </div>
-    <div class="column is-one-quarter">
+    <div class="column is-one-third">
       <b class="has-text-grey">{{ i18n.timer }}</b>
       {{ currentTimeLeft }}
     </div>

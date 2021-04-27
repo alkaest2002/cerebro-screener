@@ -2,11 +2,11 @@
   <h2 class="is-size-5 has-text-weight-bold mb-0">
     {{ i18n.testee }}
   </h2>
-  <div id="testee" class="columns is-gapless mb-0">
+  <div id="testee" class="columns is-multiline is-gapless mb-0">
     <div 
       v-for="(value, key) in currentTestee" 
       :key="key"
-      class="column is-one-quarter"
+      class="column is-one-third"
     >
       <b class="has-text-grey">
         {{ i18n.data[key] }}
