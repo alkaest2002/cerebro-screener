@@ -4,14 +4,24 @@
     class="is-flex is-justify-content-center is-align-items-center"
     style="height: 50%"
   >
-    <span class="has-text-gray">avvia animazione</span>
+    <span class="has-text-gray">{{ i18n.startAnimation }}</span>
   </div>
 </template>
 
 <script>
+import { mulInputs as i18n } from "@/i18n/it/views/tasks";
+
 export default {
   // name
   name: "nul-inputs",
+
+  // setup
+  setup() {
+    // return setup object
+    return {
+      i18n,
+    };
+  },
 };
 </script>
 

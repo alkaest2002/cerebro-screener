@@ -45,6 +45,7 @@ export const taskInstructions = {
   title: "Istruzioni",
   items: "Numero di quesiti",
   duration: "Tempo a disposizione",
+  noTimeLimit: "Senza limiti di tempo",
   description: "Descrizione",
   scoring: "Variabili considerate nel calcolo del punteggio",
 };
@@ -167,6 +168,10 @@ export const memCbItem = {
 // -------------------------------------------------
 export const mulItem = {
   task: "Quesito",
+};
+
+export const mulInputs = {
+  startAnimation: "avvia animazione",
 };
 
 // -------------------------------------------------

@@ -17,7 +17,7 @@
             <span v-if="block.duration > 0">{{
               formatTime(block.duration)
             }}</span>
-            <span v-else>Senza limiti di tempo</span>
+            <span v-else>{{ i18n.noTimeLimit }}</span>
           </td>
         </tr>
         <tr class="has-text-weight-bold">
