@@ -4,7 +4,12 @@
     class="is-flex is-justify-content-center is-align-items-center"
     style="height: 50%"
   >
-    <span class="has-text-gray">{{ i18n.startAnimation }}</span>
+    <span 
+      class="has-text-gray is-clickable"
+      @click="$attrs.onClick"
+    >
+      {{ i18n.startAnimation }}
+    </span>
   </div>
 </template>
 
@@ -15,8 +20,12 @@ export default {
   // name
   name: "nul-inputs",
 
+  // do not inherit attrs
+  inheritAttrs: false,
+
   // setup
   setup() {
+    
     // return setup object
     return {
       i18n,

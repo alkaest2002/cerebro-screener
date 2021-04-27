@@ -14,15 +14,19 @@
             <div
               class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
             >
-              <mul-gauges-panel :gauges-data="itemData.gauges" />
+              <mul-gauges-panel :gauges-data="itemData.gauges[currentIndex]" />
             </div>
           </div>
           <div class="is-flex is-flex-direction-column" style="width: 35%">
             <mul-counter :counter-data="itemData.counter" style="height: 50%" />
-            <mul-inputs class="mt-4" style="height: 50%" />
+            <mul-inputs 
+              class="mt-4" style="height: 50%"
+              @click="onStartAnimation"
+            />
           </div>
         </div>
         <slot name="explanation" :item-data="itemData" />
+        {{ itemData.gauges }}  {{ currentIndex }}
       </item-container>
     </div>
   </div>
@@ -30,6 +34,7 @@
 
 <script>
 import { mulItem as i18n } from "@/i18n/it/views/tasks";
+import { ref, onUnmounted } from "vue";
 import initItem from "@/views/tasks/_composables/initItem";
 import itemContainer from "@/views/tasks/_components/item-container";
 import mulGaugesPanel from "./_components/mul-gauges-panel";
@@ -61,11 +66,32 @@ export default {
     // init presenter
     const { totalItems, itemData } = initItem(props.presenter.itemData);
 
+    // interval
+    const interval = ref(null);
+
+    // current index
+    const currentIndex = ref(0)
+
+    // handle on start animation
+    const onStartAnimation = () => {
+      interval.value = setInterval(() => {
+        if (currentIndex.value, itemData.gauges.length)
+          clearInterval(interval.value)
+        currentIndex.value++;
+        console.log(currentIndex.value)
+      }, 5000)
+    };
+
+    // on unmounted
+    onUnmounted(() => clearInterval(interval.value));
+
     // return setup object
     return {
       i18n,
       totalItems,
       itemData,
+      currentIndex,
+      onStartAnimation
     };
   },
 };
