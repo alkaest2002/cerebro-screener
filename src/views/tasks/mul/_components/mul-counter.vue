@@ -5,8 +5,8 @@
     style="height: 100%"
   >
     <transition name="fade" mode="out-in" appear>
-      <div v-if="!animationHasEnded" :key="currenCounterValue">
-        {{ formatCounterValue(currenCounterValue) }}
+      <div v-if="!animationHasEnded" :key="counterValue">
+        {{ formatCounterValue(counterValue) }}
       </div>
     </transition>
   </div>
@@ -35,15 +35,15 @@ export default {
   // setup
   setup(props) {
     // current counter
-    const currenCounterValue = ref("");
+    const counterValue = ref("");
 
     // watch
     watch(
       () => props.counterData,
       (value) => {
-        // update counter in a random fashion
+        // update gauges with random firing times
         setTimeout(
-          () => (currenCounterValue.value = value),
+          () => (counterValue.value = value),
           parseInt(Math.random() * 700)
         );
       },
@@ -58,7 +58,7 @@ export default {
 
     // return setup object
     return {
-      currenCounterValue,
+      counterValue,
       formatCounterValue,
     };
   },

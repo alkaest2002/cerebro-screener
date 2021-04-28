@@ -173,8 +173,8 @@ export const mulItem = {
 export const mulInputs = {
   startAnimation: "avvia animazione",
   animationStarted: "animazione avviata",
-  howManyGauges: "Quanti indicatori segnavano un valore superiore al 50%?",
-  whatIsCounterSum: "Qual è la somma finale dei numeri apparsi?",
+  howManyGauges: "Quanti indicatori circolari segnavano un valore superiore al 50%?",
+  whatIsCounterSum: "Qual è la somma finale dei numeri apparsi nel riquadro blu?",
 };
 
 // -------------------------------------------------

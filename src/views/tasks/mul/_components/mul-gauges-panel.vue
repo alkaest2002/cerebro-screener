@@ -37,7 +37,7 @@ export default {
 
   // setup
   setup(props) {
-    // gauges
+    // gauges with initial values
     const gauges = ref([0, 0, 0, 0, 0, 0]);
 
     // watch
@@ -46,9 +46,9 @@ export default {
       (value) => {
         // shuffle firing periods
         const fireAt = shuffle([300, 500, 1000, 1400, 2000, 3500]);
-        // loop through value array elements
+        // loop through elements
         value.forEach((e, idx) => {
-          // update gauges values in a random fashion
+          // update gauges with random firing times
           setTimeout(() => (gauges.value[idx] = e), fireAt[idx]);
         });
       },
