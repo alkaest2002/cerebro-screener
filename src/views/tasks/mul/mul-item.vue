@@ -15,22 +15,24 @@
               class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
             >
               <mul-gauges-panel 
-                :gauges-data="itemData.gauges[currentIndex]" 
+                :gauges-data="itemData.gauges[currentIndex]"
                 :animation-has-ended="animationHasEnded"
               />
             </div>
           </div>
           <div class="is-flex is-flex-direction-column" style="width: 35%">
-            <div>
+            <div style="height:50%">
               <mul-counter :counter-data="itemData.counter" />
             </div>
-            <div class="mt-4">
-              <mul-inputs @click="onStartAnimation" />
+            <div class="mt-4" style="height:50%">
+              <mul-inputs
+                :animation-has-ended="animationHasEnded"
+                @click="onStartAnimation" 
+              />
             </div>
           </div>
         </div>
         <slot name="explanation" :item-data="itemData" />
-        {{ itemData.gauges }}  {{ currentIndex }}
       </item-container>
     </div>
   </div>
@@ -83,15 +85,17 @@ export default {
 
     // handle on start animation
     const onStartAnimation = () => {
+      // show initial gauges
+      currentIndex.value++;
       // start animation
-      interval.value = setInterval(() => {
-        // if we reached the end of the gauges array
-        if (currentIndex.value == itemData.gauges.length -1)
-          // clear interval
-          return clearInterval(interval.value);
-        // update currentIndex
-        currentIndex.value++;
-      }, 5000)
+      interval.value = setInterval(
+        () => {
+          // if we reached the end of the gauges array
+          if (currentIndex.value == itemData.gauges.length -1)
+            // clear interval
+            return clearInterval(interval.value);
+          currentIndex.value++; 
+        }, 5000)
     };
 
     // on unmounted

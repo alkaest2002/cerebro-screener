@@ -2,6 +2,7 @@
   <div
     id="gagues-panel"
     class="is-flex is-flex-wrap-wrap is-justify-content-center"
+    style="height:100%"
   >
     <div v-for="(percent, idx) in gauges" :key="idx">
       <mul-gauge 
@@ -15,6 +16,7 @@
 
 <script>
 import { ref, watch } from "vue";
+import { shuffle } from "@/utils/utilityFns";
 import mulGauge from "./mul-gauge";
 
 export default {
@@ -46,17 +48,19 @@ export default {
 
     // watch
     watch(() => props.gaugesData, value => {
+      // shuffle firing periods
+      const fireAt = shuffle([300, 500, 1000, 1400, 2000, 3500]);
       // if value is a populated array
       if (value?.length > 0) {
         // loop through value
         value.forEach((e, idx) => {
           // update gauges values in a random fashiom
-          setTimeout(() => gauges.value[idx] = e, parseInt(Math.random()*1000)+100)
+          setTimeout(() => gauges.value[idx] = e, fireAt[idx])
         });
       }
     }, { deep: true });
 
-    // return setup object
+    // return setup objects
     return {
       gauges
     }

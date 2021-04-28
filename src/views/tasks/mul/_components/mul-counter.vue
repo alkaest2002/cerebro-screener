@@ -2,6 +2,7 @@
   <div
     id="mul-counter"
     class="is-flex is-justify-content-center is-align-items-center"
+    style="height:100%"
   >
     {{ currenCounterValue }}
   </div>
