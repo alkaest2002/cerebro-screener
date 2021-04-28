@@ -25,11 +25,20 @@
             </div>
           </div>
           <div class="mt-3">
-            <a href="#" @click.prevent="onStartAnimation">{{ i18n.startAnimation }}</a>
+            <a 
+              v-if="currentIndex == 0" 
+              href="#" 
+              @click.prevent="onStartAnimation"
+            >
+              {{ i18n.startAnimation }}
+            </a>
+            <span v-else>
+              {{ i18n.animationStarted }}
+            </span>
           </div>
         </div>
         <div v-else>
-         <mul-inputs />
+          <mul-inputs />
         </div>
         <slot name="explanation" :item-data="itemData" />
       </item-container>
@@ -88,9 +97,9 @@ export default {
       // to reduce starting time of delayed animations
       // of gauges and counter
       currentIndex.value++;
-      // start delayed animation
+      // start delayed animations
       interval.value = setInterval(() => {
-        // if we reached the end of animation
+        // if we reached the end of animations
         if (currentIndex.value == itemData.gauges.length - 1)
           // clear interval
           return clearInterval(interval.value);

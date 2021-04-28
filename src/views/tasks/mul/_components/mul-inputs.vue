@@ -19,10 +19,32 @@
         </div>
       </div>
       <div>
-        <div class="p-2 pt-0">
+        <div class="p-3">
         {{ i18n.whatIsCounterSum }}
         </div>
-        <div class="buttons has-addons is-flex is-flex-direction-column is-align-items-top">
+        <div class="buttons has-addons">
+          <div>
+            <button 
+              v-for="n of [0,1,2,3,4,5,6,7,8,9]" 
+              :key="n"
+              class="button" 
+            >
+              {{ n }}
+            </button>
+          </div>
+        </div>
+        <div class="buttons has-addons">
+          <div>
+            <button 
+              v-for="n of [0,1,2,3,4,5,6,7,8,9]" 
+              :key="n"
+              class="button" 
+            >
+              {{ n }}
+            </button>
+          </div>
+        </div>
+        <div class="buttons has-addons">
           <div>
             <button 
               v-for="n of [0,1,2,3,4,5,6,7,8,9]" 

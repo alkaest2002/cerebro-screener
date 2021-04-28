@@ -168,8 +168,8 @@ export const memCbItem = {
 // -------------------------------------------------
 export const mulItem = {
   task: "Quesito",
-  startAnimation: "avvia animazione",
-  animationStarted: "animazione avviata",
+  startAnimation: "clicca qui per avviare l'animazione",
+  animationStarted: "animazione in corso...",
 };
 
 export const mulInputs = {
