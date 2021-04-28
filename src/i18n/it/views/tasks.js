@@ -172,6 +172,7 @@ export const mulItem = {
 
 export const mulInputs = {
   startAnimation: "avvia animazione",
+  animationStarted: "animazione avviata"
 };
 
 // -------------------------------------------------

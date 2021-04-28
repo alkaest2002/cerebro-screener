@@ -22,7 +22,9 @@
           </div>
           <div class="is-flex is-flex-direction-column" style="width: 35%">
             <div style="height:50%">
-              <mul-counter :counter-data="itemData.counter" />
+              <mul-counter 
+                :counter-data="itemData.counter[currentIndex]" 
+              />
             </div>
             <div class="mt-4" style="height:50%">
               <mul-inputs
@@ -85,15 +87,18 @@ export default {
 
     // handle on start animation
     const onStartAnimation = () => {
-      // show initial gauges
+      // increment immediately current index
+      // to reduce starting time of delayed animations
+      // of gauges and counter
       currentIndex.value++;
-      // start animation
+      // start delayed animation
       interval.value = setInterval(
         () => {
-          // if we reached the end of the gauges array
+          // if we reached the end of animation
           if (currentIndex.value == itemData.gauges.length -1)
             // clear interval
             return clearInterval(interval.value);
+          // increment current index
           currentIndex.value++; 
         }, 5000)
     };

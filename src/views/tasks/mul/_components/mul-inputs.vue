@@ -6,11 +6,15 @@
   >
     <div v-if="!animationHasEnded">
       <a 
+        v-if="steps == 'start animation'"
         class="is-clickable"
-        @click.prevent="$attrs.onClick"
+        @click.prevent="onClick"
       >
         {{ i18n.startAnimation }}
       </a>
+      <span v-else>
+        {{ i18n.animationStarted }}
+      </span>
     </div>
     <div v-else>
       :
@@ -38,15 +42,23 @@ export default {
   },
 
   // setup
-  setup() {
+  setup(props, { attrs }) {
 
     // steps
     const steps = ref("start animation");
+
+    // handle on click
+    const onClick = () => {
+      console.log("click")
+      steps.value = "animation started";
+      attrs.onClick();
+    };
     
     // return setup object
     return {
-      steps,
       i18n,
+      steps,
+      onClick
     };
   },
 };

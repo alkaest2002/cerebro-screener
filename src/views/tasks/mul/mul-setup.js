@@ -69,7 +69,7 @@ const blocks = [
             [10, 30, 40, 60, 40, 60],
             [20, 40, 10, 70, 50, 70],
           ],
-          counter: [2, -2],
+          counter: ["", 2.1, 2.2, 2.1, 3.2, 0.1, -1.2, 2.1, 3.2, 3.1 , 3.2],
           isCorrect: false,
           actions: 0,
           hint: i18n["demo.001"].itemData.hint,

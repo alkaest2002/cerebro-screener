@@ -1,15 +1,19 @@
 <template>
-  <div
-    id="mul-counter"
-    class="is-flex is-justify-content-center is-align-items-center"
-    style="height:100%"
-  >
-    {{ currenCounterValue }}
-  </div>
+    <div
+      id="mul-counter"
+      class="is-flex is-justify-content-center is-align-items-center"
+      style="height:100%"
+    >
+      <transition name="fade" mode="out-in" appear>
+        <div :key="currenCounterValue">
+          {{ formatCounterValue(currenCounterValue) }}
+        </div>
+      </transition>
+    </div>
 </template>
 
 <script>
-import { computed } from "vue";
+import { ref, watch } from "vue";
 
 export default {
   // name
@@ -18,19 +22,39 @@ export default {
   // props
   props: {
     counterData: {
-      type: Array,
+      type: [String, Number],
       required: true,
     },
   },
 
   // setup
   setup(props) {
+
     // current counter
-    const currenCounterValue = computed(() => props.counterData[0]);
+    const currenCounterValue = ref("");
+
+    const alternativeColor = ref(false);
+    
+    // watch
+    watch(() => props.counterData, value => {
+      // update counter in a random fashion
+      setTimeout(() => currenCounterValue.value = value, parseInt(Math.random()*700));
+      // alternate background color
+      alternativeColor.value = !alternativeColor.value;
+    }, { deep: true });
+
+    // format counter value
+    const formatCounterValue = (value) => {
+      if (typeof value == "string")
+        return value;
+      return `${value > 0 ? '+' : ''}${Math.floor(value)}` 
+    };
 
     // return setup object
     return {
       currenCounterValue,
+      alternativeColor,
+      formatCounterValue
     };
   },
 };
@@ -38,11 +62,23 @@ export default {
 
 <style lang="scss" scoped>
 $background-color: #ff0053;
+
 #mul-counter {
-  font-size: 3em;
-  background-color: $background-color;
-  border: 1px solid darken($background-color, 10%);
-  color: lighten($background-color, 50%);
+  font-size: 5em;
+  color: #000;
   border-radius: 6px;
+  background-color: $background-color;
+  color: lighten($background-color, 50%);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transition: opacity 0, 0.5s;
 }
 </style>
