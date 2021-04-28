@@ -52,9 +52,9 @@ export default {
       const fireAt = shuffle([300, 500, 1000, 1400, 2000, 3500]);
       // if value is a populated array
       if (value?.length > 0) {
-        // loop through value
+        // loop through value array elements
         value.forEach((e, idx) => {
-          // update gauges values in a random fashiom
+          // update gauges values in a random fashion
           setTimeout(() => gauges.value[idx] = e, fireAt[idx])
         });
       }
