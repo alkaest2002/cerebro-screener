@@ -2,67 +2,59 @@
   <div
     id="mul-inputs"
     class="is-flex is-flex-wrap-wrap is-justify-content-center is-align-items-center"
-    style="height: 100%"
   >
-    <div v-if="!animationHasEnded">
-      <a
-        v-if="steps == 'start animation'"
-        class="is-clickable"
-        @click.prevent="onClick"
-      >
-        {{ i18n.startAnimation }}
-      </a>
-      <span v-else>
-        {{ i18n.animationStarted }}
-      </span>
-    </div>
-    <div v-else class="is-flex is-flex-wrap-wrap is-flex-direction-column">
+    <div class="is-flex is-flex-wrap-wrap is-flex-direction-column is-align-items-top">
       <div class="p-3">
-        {{ i18n.howManyGauges }}
+        <div>
+          {{ i18n.howManyGauges }}
+        </div>
+        <div class="buttons has-addons">
+          <button 
+            v-for="n of [0,1,2,3,4,5,6]" 
+            :key="n"
+            class="button" 
+          >
+            {{ n }}
+          </button>
+        </div>
       </div>
-      <div class="p-3">
+      <div>
+        <div class="p-2 pt-0">
         {{ i18n.whatIsCounterSum }}
+        </div>
+        <div class="buttons has-addons is-flex is-flex-direction-column is-align-items-top">
+          <div>
+            <button 
+              v-for="n of [0,1,2,3,4,5,6,7,8,9]" 
+              :key="n"
+              class="button" 
+            >
+              {{ n }}
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
 import { mulInputs as i18n } from "@/i18n/it/views/tasks";
 
 export default {
   // name
-  name: "nul-inputs",
+  name: "mul-inputs",
 
   // do not inherit attrs
   inheritAttrs: false,
 
-  // props
-  props: {
-    animationHasEnded: {
-      type: Boolean,
-      required: true,
-    },
-  },
 
   // setup
-  setup(props, { attrs }) {
-    // steps
-    const steps = ref("start animation");
-
-    // handle on click
-    const onClick = () => {
-      console.log("click");
-      steps.value = "animation started";
-      attrs.onClick();
-    };
-
+  setup() {
+   
     // return setup object
     return {
       i18n,
-      steps,
-      onClick,
     };
   },
 };
@@ -70,7 +62,6 @@ export default {
 
 <style lang="scss" scoped>
 #mul-inputs {
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  margin-top: 10px;
 }
 </style>

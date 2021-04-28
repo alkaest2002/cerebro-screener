@@ -168,11 +168,11 @@ export const memCbItem = {
 // -------------------------------------------------
 export const mulItem = {
   task: "Quesito",
+  startAnimation: "avvia animazione",
+  animationStarted: "animazione avviata",
 };
 
 export const mulInputs = {
-  startAnimation: "avvia animazione",
-  animationStarted: "animazione avviata",
   howManyGauges: "Quanti indicatori circolari segnavano un valore superiore al 50%?",
   whatIsCounterSum: "Qual è la somma finale dei numeri apparsi nel riquadro blu?",
 };

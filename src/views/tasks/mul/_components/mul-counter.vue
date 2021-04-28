@@ -2,7 +2,6 @@
   <div
     id="mul-counter"
     class="is-flex is-justify-content-center is-align-items-center"
-    style="height: 100%"
   >
     <transition name="fade" mode="out-in" appear>
       <div v-if="!animationHasEnded" :key="counterValue">
@@ -69,7 +68,9 @@ export default {
 $background-color: #3273dc;
 
 #mul-counter {
-  font-size: 5em;
+  height: 280px;
+  width: 280px;
+  font-size: 9em;
   color: #000;
   border-radius: 6px;
   background-color: $background-color;

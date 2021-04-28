@@ -17,7 +17,7 @@
 <script>
 export default {
   // name
-  name: "mul-gague",
+  name: "mul-gauge",
 
   // props
   props: {

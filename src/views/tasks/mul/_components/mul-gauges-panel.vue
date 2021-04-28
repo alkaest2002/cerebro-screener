@@ -1,8 +1,7 @@
 <template>
   <div
-    id="gagues-panel"
+    id="gauges-panel"
     class="is-flex is-flex-wrap-wrap is-justify-content-center"
-    style="height: 100%"
   >
     <div v-for="(percent, idx) in gauges" :key="idx">
       <mul-gauge :percent="percent" :name="`g${idx + 1}`" v-bind="$attrs" />
@@ -19,13 +18,13 @@ export default {
   // name
   name: "mul-gauges-panel",
 
+  // do not inherit attrs
+  inheritAttrs: false,
+
   // components
   components: {
     mulGauge,
   },
-
-  // do not inherit attrs
-  inheritAttrs: false,
 
   // props
   props: {
@@ -45,7 +44,7 @@ export default {
       () => props.gaugesData,
       (value) => {
         // shuffle firing periods
-        const fireAt = shuffle([300, 500, 1000, 1400, 2000, 3500]);
+        const fireAt = shuffle([300, 500, 1000, 1400, 2000, 3000]);
         // loop through elements
         value.forEach((e, idx) => {
           // update gauges with random firing times
@@ -62,3 +61,10 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+#gauges-panel {
+  height: 300px;
+  width: 450px;
+}
+</style>

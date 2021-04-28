@@ -9,31 +9,27 @@
     </div>
     <div id="presenter" class="is-relative is-clipped box">
       <item-container>
-        <div class="is-flex is-justify-content-center">
-          <div style="width: 55%">
-            <div
-              class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
-            >
+        <div v-if="!animationHasEnded" class="is-flex is-flex-direction-column is-align-items-center">
+          <div  class="is-flex is-justify-content-center">
+            <div class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mr-5">
               <mul-gauges-panel
                 :animation-has-ended="animationHasEnded"
                 :gauges-data="itemData.gauges[currentIndex]"
               />
             </div>
-          </div>
-          <div class="is-flex is-flex-direction-column" style="width: 40%">
-            <div style="height: 50%">
+            <div class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center">
               <mul-counter
                 :animation-has-ended="animationHasEnded"
                 :counter-data="itemData.counter[currentIndex]"
               />
             </div>
-            <div class="mt-4" style="height: 50%">
-              <mul-inputs
-                :animation-has-ended="animationHasEnded"
-                @click="onStartAnimation"
-              />
-            </div>
           </div>
+          <div class="mt-3">
+            <a href="#" @click.prevent="onStartAnimation">{{ i18n.startAnimation }}</a>
+          </div>
+        </div>
+        <div v-else>
+         <mul-inputs />
         </div>
         <slot name="explanation" :item-data="itemData" />
       </item-container>
@@ -100,7 +96,7 @@ export default {
           return clearInterval(interval.value);
         // increment current index
         currentIndex.value++;
-      }, 5000);
+      }, 4000);
     };
 
     // on unmounted
