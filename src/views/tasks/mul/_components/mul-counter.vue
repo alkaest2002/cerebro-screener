@@ -25,6 +25,11 @@ export default {
       type: [String, Number],
       required: true,
     },
+    
+    animationHasEnded: {
+      type: Boolean,
+      required: true
+    }
   },
 
   // setup
@@ -33,14 +38,10 @@ export default {
     // current counter
     const currenCounterValue = ref("");
 
-    const alternativeColor = ref(false);
-    
     // watch
     watch(() => props.counterData, value => {
       // update counter in a random fashion
       setTimeout(() => currenCounterValue.value = value, parseInt(Math.random()*700));
-      // alternate background color
-      alternativeColor.value = !alternativeColor.value;
     }, { deep: true });
 
     // format counter value
@@ -53,7 +54,6 @@ export default {
     // return setup object
     return {
       currenCounterValue,
-      alternativeColor,
       formatCounterValue
     };
   },

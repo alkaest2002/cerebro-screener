@@ -22,7 +22,8 @@
           </div>
           <div class="is-flex is-flex-direction-column" style="width: 35%">
             <div style="height:50%">
-              <mul-counter 
+              <mul-counter
+                :animation-has-ended="animationHasEnded"
                 :counter-data="itemData.counter[currentIndex]" 
               />
             </div>
