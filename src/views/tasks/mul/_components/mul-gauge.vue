@@ -49,7 +49,7 @@ $lid-background-pattern: repeating-linear-gradient(
   #eee 10px,
   #eee 20px
 );
-$gauge-color-stroke: #ff0053;
+$gauge-color-stroke: #3273dc;
 $gauge-color-text: #aaa;
 
 .lid {

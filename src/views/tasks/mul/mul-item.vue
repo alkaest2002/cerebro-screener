@@ -15,12 +15,12 @@
               class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
             >
               <mul-gauges-panel 
-                :gauges-data="itemData.gauges[currentIndex]"
                 :animation-has-ended="animationHasEnded"
+                :gauges-data="itemData.gauges[currentIndex]"
               />
             </div>
           </div>
-          <div class="is-flex is-flex-direction-column" style="width: 35%">
+          <div class="is-flex is-flex-direction-column" style="width: 40%">
             <div style="height:50%">
               <mul-counter
                 :animation-has-ended="animationHasEnded"

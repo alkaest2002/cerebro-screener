@@ -5,7 +5,7 @@
       style="height:100%"
     >
       <transition name="fade" mode="out-in" appear>
-        <div :key="currenCounterValue">
+        <div v-if="!animationHasEnded" :key="currenCounterValue">
           {{ formatCounterValue(currenCounterValue) }}
         </div>
       </transition>
@@ -61,7 +61,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$background-color: #ff0053;
+$background-color: #3273dc;
 
 #mul-counter {
   font-size: 5em;

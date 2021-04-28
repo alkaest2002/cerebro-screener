@@ -16,8 +16,13 @@
         {{ i18n.animationStarted }}
       </span>
     </div>
-    <div v-else>
-      :
+    <div v-else class="is-flex is-flex-wrap-wrap is-flex-direction-column">
+      <div class="p-3">
+        {{ i18n.howManyGauges }}
+      </div>
+      <div class="p-3">
+        {{ i18n.whatIsCounterSum }}
+      </div>
     </div>
   </div>
 </template>
