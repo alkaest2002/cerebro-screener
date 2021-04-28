@@ -1,15 +1,15 @@
 <template>
-    <div
-      id="mul-counter"
-      class="is-flex is-justify-content-center is-align-items-center"
-      style="height:100%"
-    >
-      <transition name="fade" mode="out-in" appear>
-        <div v-if="!animationHasEnded" :key="currenCounterValue">
-          {{ formatCounterValue(currenCounterValue) }}
-        </div>
-      </transition>
-    </div>
+  <div
+    id="mul-counter"
+    class="is-flex is-justify-content-center is-align-items-center"
+    style="height: 100%"
+  >
+    <transition name="fade" mode="out-in" appear>
+      <div v-if="!animationHasEnded" :key="currenCounterValue">
+        {{ formatCounterValue(currenCounterValue) }}
+      </div>
+    </transition>
+  </div>
 </template>
 
 <script>
@@ -25,36 +25,41 @@ export default {
       type: [String, Number],
       required: true,
     },
-    
+
     animationHasEnded: {
       type: Boolean,
-      required: true
-    }
+      required: true,
+    },
   },
 
   // setup
   setup(props) {
-
     // current counter
     const currenCounterValue = ref("");
 
     // watch
-    watch(() => props.counterData, value => {
-      // update counter in a random fashion
-      setTimeout(() => currenCounterValue.value = value, parseInt(Math.random()*700));
-    }, { deep: true });
+    watch(
+      () => props.counterData,
+      (value) => {
+        // update counter in a random fashion
+        setTimeout(
+          () => (currenCounterValue.value = value),
+          parseInt(Math.random() * 700)
+        );
+      },
+      { deep: true }
+    );
 
     // format counter value
     const formatCounterValue = (value) => {
-      if (typeof value == "string")
-        return value;
-      return `${value > 0 ? '+' : ''}${Math.floor(value)}` 
+      if (typeof value == "string") return value;
+      return `${value > 0 ? "+" : ""}${Math.floor(value)}`;
     };
 
     // return setup object
     return {
       currenCounterValue,
-      formatCounterValue
+      formatCounterValue,
     };
   },
 };

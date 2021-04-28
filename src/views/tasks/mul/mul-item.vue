@@ -14,23 +14,23 @@
             <div
               class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
             >
-              <mul-gauges-panel 
+              <mul-gauges-panel
                 :animation-has-ended="animationHasEnded"
                 :gauges-data="itemData.gauges[currentIndex]"
               />
             </div>
           </div>
           <div class="is-flex is-flex-direction-column" style="width: 40%">
-            <div style="height:50%">
+            <div style="height: 50%">
               <mul-counter
                 :animation-has-ended="animationHasEnded"
-                :counter-data="itemData.counter[currentIndex]" 
+                :counter-data="itemData.counter[currentIndex]"
               />
             </div>
-            <div class="mt-4" style="height:50%">
+            <div class="mt-4" style="height: 50%">
               <mul-inputs
                 :animation-has-ended="animationHasEnded"
-                @click="onStartAnimation" 
+                @click="onStartAnimation"
               />
             </div>
           </div>
@@ -82,8 +82,8 @@ export default {
     const currentIndex = ref(0);
 
     // animation has ended flag
-    const animationHasEnded = computed(() =>
-      currentIndex.value == itemData.gauges.length -1
+    const animationHasEnded = computed(
+      () => currentIndex.value == itemData.gauges.length - 1
     );
 
     // handle on start animation
@@ -93,15 +93,14 @@ export default {
       // of gauges and counter
       currentIndex.value++;
       // start delayed animation
-      interval.value = setInterval(
-        () => {
-          // if we reached the end of animation
-          if (currentIndex.value == itemData.gauges.length -1)
-            // clear interval
-            return clearInterval(interval.value);
-          // increment current index
-          currentIndex.value++; 
-        }, 5000)
+      interval.value = setInterval(() => {
+        // if we reached the end of animation
+        if (currentIndex.value == itemData.gauges.length - 1)
+          // clear interval
+          return clearInterval(interval.value);
+        // increment current index
+        currentIndex.value++;
+      }, 5000);
     };
 
     // on unmounted
@@ -114,7 +113,7 @@ export default {
       itemData,
       currentIndex,
       animationHasEnded,
-      onStartAnimation
+      onStartAnimation,
     };
   },
 };

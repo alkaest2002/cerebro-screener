@@ -33,8 +33,8 @@ export default {
 
     animationHasEnded: {
       type: Boolean,
-      required: true
-    }
+      required: true,
+    },
   },
 };
 </script>

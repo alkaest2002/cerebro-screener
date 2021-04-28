@@ -174,7 +174,7 @@ export const mulInputs = {
   startAnimation: "avvia animazione",
   animationStarted: "animazione avviata",
   howManyGauges: "Quanti indicatori segnavano un valore superiore al 50%?",
-  whatIsCounterSum: "Qual è la somma finale dei numeri apparsi?"
+  whatIsCounterSum: "Qual è la somma finale dei numeri apparsi?",
 };
 
 // -------------------------------------------------

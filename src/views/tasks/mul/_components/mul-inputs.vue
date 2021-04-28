@@ -2,10 +2,10 @@
   <div
     id="mul-inputs"
     class="is-flex is-flex-wrap-wrap is-justify-content-center is-align-items-center"
-    style="height:100%"
+    style="height: 100%"
   >
     <div v-if="!animationHasEnded">
-      <a 
+      <a
         v-if="steps == 'start animation'"
         class="is-clickable"
         @click.prevent="onClick"
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { ref } from "vue"; 
+import { ref } from "vue";
 import { mulInputs as i18n } from "@/i18n/it/views/tasks";
 
 export default {
@@ -42,28 +42,27 @@ export default {
   props: {
     animationHasEnded: {
       type: Boolean,
-      required: true
+      required: true,
     },
   },
 
   // setup
   setup(props, { attrs }) {
-
     // steps
     const steps = ref("start animation");
 
     // handle on click
     const onClick = () => {
-      console.log("click")
+      console.log("click");
       steps.value = "animation started";
       attrs.onClick();
     };
-    
+
     // return setup object
     return {
       i18n,
       steps,
-      onClick
+      onClick,
     };
   },
 };
