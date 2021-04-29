@@ -9,11 +9,19 @@
       <div class="p-3">
         <div>
           {{ i18n.howManyGauges }}
+          <div class="mt-3">
+            <mul-input v-model="gaugesValue" />
+            <mul-keyboard v-model="gaugesValue" :text="gaugesValue" type="numbers" />
+          </div>
         </div>
       </div>
-      <div>
+      <div class="mt-5">
         <div class="p-3">
           {{ i18n.whatIsCounterSum }}
+          <div class="mt-3">
+            <mul-input v-model="counterValue" />
+            <mul-keyboard v-model="counterValue" :text="counterValue" type="numbers" />
+          </div>
         </div>
       </div>
     </div>
@@ -22,6 +30,9 @@
 
 <script>
 import { mulInputs as i18n } from "@/i18n/it/views/tasks";
+import { ref } from "vue";
+import mulInput from "@/views/_components/form/form-input";
+import mulKeyboard from "@/views/_components/form/form-keyboard";
 
 export default {
   // name
@@ -30,11 +41,24 @@ export default {
   // do not inherit attrs
   inheritAttrs: false,
 
+  // components
+  components: {
+    mulInput,
+    mulKeyboard,
+  },
+
   // setup
   setup() {
+
+    // gagues value
+    const gaugesValue = ref(null);
+    const counterValue = ref(null);
+
     // return setup object
     return {
       i18n,
+      gaugesValue,
+      counterValue
     };
   },
 };
