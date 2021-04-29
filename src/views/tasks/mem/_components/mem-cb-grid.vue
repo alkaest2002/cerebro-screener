@@ -27,7 +27,6 @@
 </template>
 
 <script>
-import { memDs as i18n } from "@/i18n/it/views/tasks";
 import { computed } from "vue";
 
 export default {
@@ -69,7 +68,6 @@ export default {
 
     // return setup object
     return {
-      i18n,
       numberToShow,
     };
   },
