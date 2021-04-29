@@ -54,7 +54,7 @@ export default {
     itemContainer,
     dsDisplay,
     dsCalc,
-    memStarter
+    memStarter,
   },
 
   // props
@@ -69,9 +69,13 @@ export default {
   setup(props) {
     // init presenter
     const { totalItems, itemData } = initItem(props.presenter.itemData);
-    
+
     // mem setup
-    const { sequenceToPlay, cssState, onClickPlay } = setupShowSequenceAnimation(itemData);
+    const {
+      sequenceToPlay,
+      cssState,
+      onClickPlay,
+    } = setupShowSequenceAnimation(itemData);
 
     // handle number added to user sequence
     const onAddNumberToUserSequence = (value) => {
@@ -93,7 +97,7 @@ export default {
       i18n,
       totalItems,
       itemData,
-      cssState, 
+      cssState,
       sequenceToPlay,
       onClickPlay,
       onAddNumberToUserSequence,

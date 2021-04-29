@@ -50,7 +50,7 @@ export default {
   components: {
     ItemContainer,
     cbGrid,
-    memStarter
+    memStarter,
   },
 
   // props
@@ -67,7 +67,11 @@ export default {
     const { totalItems, itemData } = initItem(props.presenter.itemData);
 
     // mem setup
-    const { sequenceToPlay, cssState, onClickPlay } = setupShowSequenceAnimation(itemData);
+    const {
+      sequenceToPlay,
+      cssState,
+      onClickPlay,
+    } = setupShowSequenceAnimation(itemData);
 
     // handle on click number
     const onClickNumber = (number) => {
@@ -78,7 +82,10 @@ export default {
           // increment actions
           itemData.actions++;
           // remove number from sequence
-          itemData.userSequence.splice(itemData.userSequence.indexOf(number), 1);
+          itemData.userSequence.splice(
+            itemData.userSequence.indexOf(number),
+            1
+          );
         }
       } else {
         // increment actions
@@ -96,8 +103,8 @@ export default {
       i18n,
       totalItems,
       itemData,
-      sequenceToPlay, 
-      cssState, 
+      sequenceToPlay,
+      cssState,
       onClickPlay,
       onClickNumber,
     };

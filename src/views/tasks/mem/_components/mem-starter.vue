@@ -2,7 +2,7 @@
   <div id="starter">
     <div v-if="!sequenceHasPlayed">
       <div v-if="!sequenceIsPlaying">
-        <a href="#" @click.prevent="onClick" >{{ i18n.startAnimation }}</a>
+        <a href="#" @click.prevent="onClick">{{ i18n.startAnimation }}</a>
       </div>
       <div v-else>
         <span class="has-text-grey">{{ i18n.animationStarted }}</span>
@@ -10,7 +10,7 @@
     </div>
     <div v-else>
       <span class="has-text-grey">
-          <slot />
+        <slot />
       </span>
     </div>
   </div>
@@ -29,11 +29,10 @@ export default {
 
   // props
   props: {
-
     sequenceHasPlayed: {
       type: Boolean,
-      required: true
-    }
+      required: true,
+    },
   },
 
   // setup
@@ -44,10 +43,10 @@ export default {
     const onClick = () => {
       // set sequence is playing flag
       sequenceIsPlaying.value = true;
-      
+
       // call parent click method
       attrs.onClick();
-    }
+    };
 
     // return setup object
     return {

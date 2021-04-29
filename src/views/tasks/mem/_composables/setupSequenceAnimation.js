@@ -2,7 +2,6 @@ import { ref } from "vue";
 import { clone } from "@/utils/utilityFns";
 
 export default (itemData) => {
-  
   // sequence of numbers to show
   const sequenceToPlay = ref(clone([...itemData.sequence]));
 

@@ -34,13 +34,12 @@ export default {
 
     cssState: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
 
   // setup
   setup(props) {
-    
     // number to show
     const numberToShow = computed(() => {
       if (props.cssState == "idle") return "";
@@ -51,7 +50,7 @@ export default {
     // return setup object
     return {
       i18n,
-      numberToShow
+      numberToShow,
     };
   },
 };

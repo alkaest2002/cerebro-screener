@@ -50,8 +50,8 @@ export default {
 
     cssState: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
 
   // emitted events
@@ -61,7 +61,6 @@ export default {
 
   // setup
   setup(props) {
-   
     // number to show
     const numberToShow = computed(() => {
       if (props.cssState == "idle") return "";
