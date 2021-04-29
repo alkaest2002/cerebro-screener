@@ -13,9 +13,16 @@
           class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
         >
           <ds-display
-            :sequence="itemData.sequence"
-            @sequence-has-played="onSequenceHasPlayed"
+            :sequence-to-play="sequenceToPlay"
+            :css-state="cssState"
           />
+          <mem-starter
+            :sequence-has-played="itemData.sequenceHasPlayed"
+            @click="onClickPlay"
+          >
+            {{ i18n.clickNumbersOne }} {{ itemData.sequence.length }}
+            {{ i18n.clickNumbersTwo }}
+          </mem-starter>
           <ds-calc
             :user-sequence="itemData.userSequence"
             :sequence-has-played="itemData.sequenceHasPlayed"
@@ -33,8 +40,10 @@
 import { memDsItem as i18n } from "@/i18n/it/views/tasks";
 import initItem from "@/views/tasks/_composables/initItem";
 import itemContainer from "../_components/item-container.vue";
+import setupShowSequenceAnimation from "./_composables/setupSequenceAnimation";
 import dsDisplay from "./_components/mem-ds-display";
 import dsCalc from "./_components/mem-ds-calc";
+import memStarter from "./_components/mem-starter";
 
 export default {
   // name
@@ -45,6 +54,7 @@ export default {
     itemContainer,
     dsDisplay,
     dsCalc,
+    memStarter
   },
 
   // props
@@ -59,11 +69,9 @@ export default {
   setup(props) {
     // init presenter
     const { totalItems, itemData } = initItem(props.presenter.itemData);
-
-    // handle on sequnce has played
-    const onSequenceHasPlayed = () => {
-      itemData.sequenceHasPlayed = true;
-    };
+    
+    // mem setup
+    const { sequenceToPlay, cssState, onClickPlay } = setupShowSequenceAnimation(itemData);
 
     // handle number added to user sequence
     const onAddNumberToUserSequence = (value) => {
@@ -85,7 +93,9 @@ export default {
       i18n,
       totalItems,
       itemData,
-      onSequenceHasPlayed,
+      cssState, 
+      sequenceToPlay,
+      onClickPlay,
       onAddNumberToUserSequence,
       onResetUserSequence,
     };

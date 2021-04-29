@@ -1,18 +1,23 @@
 <template>
-  <div id="starter" class="has-text-grey">
-    <div v-show="cssState == 'idle'" v-bind="$attrs">
-      {{ i18n.startAnimation }}
+  <div id="starter">
+    <div v-if="!sequenceHasPlayed">
+      <div v-if="!sequenceIsPlaying">
+        <a href="#" @click.prevent="onClick" >{{ i18n.startAnimation }}</a>
+      </div>
+      <div v-else>
+        <span class="has-text-grey">{{ i18n.animationStarted }}</span>
+      </div>
     </div>
-    <div v-show="['started', 'playing'].includes(cssState)">
-      {{ i18n.animationStarted }}
-    </div>
-    <div v-show="cssState == 'finished'">
-      <slot />
+    <div v-else>
+      <span class="has-text-grey">
+          <slot />
+      </span>
     </div>
   </div>
 </template>
 
 <script>
+import { ref } from "vue";
 import { memStarter as i18n } from "@/i18n/it/views/tasks";
 
 export default {
@@ -24,17 +29,28 @@ export default {
 
   // props
   props: {
-    cssState: {
-      type: String,
-      required: true,
-    },
+
+    sequenceHasPlayed: {
+      type: Boolean,
+      required: true
+    }
   },
 
   // setup
-  setup() {
+  setup(props, { attrs }) {
+    // animation is running flag
+    const sequenceIsPlaying = ref(false);
+
+    const onClick = () => {
+      sequenceIsPlaying.value = true;
+      attrs.onClick();
+    }
+
     // return setup object
     return {
       i18n,
+      sequenceIsPlaying,
+      onClick,
     };
   },
 };

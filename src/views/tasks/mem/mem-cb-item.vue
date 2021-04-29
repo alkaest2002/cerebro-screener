@@ -13,11 +13,20 @@
           class="is-flex is-align-content-space-around is-justify-content-center"
         >
           <cb-grid
-            :sequence="itemData.sequence"
+            :sequence-to-play="sequenceToPlay"
+            :css-state="cssState"
             :user-sequence="itemData.userSequence"
-            @sequence-has-played="onSequenceHasPlayed"
             @click-number="onClickNumber"
           />
+        </div>
+        <div class="is-flex is-justify-content-center">
+          <mem-starter
+            :sequence-has-played="itemData.sequenceHasPlayed"
+            @click="onClickPlay"
+          >
+            {{ i18n.clickCirclesOne }} {{ itemData.sequence.length }}
+            {{ i18n.clickCirclesTwo }}
+          </mem-starter>
         </div>
         <slot name="explanation" :item-data="itemData" />
       </item-container>
@@ -29,7 +38,9 @@
 import { memCbItem as i18n } from "@/i18n/it/views/tasks";
 import initItem from "@/views/tasks/_composables/initItem";
 import ItemContainer from "../_components/item-container.vue";
+import setupShowSequenceAnimation from "./_composables/setupSequenceAnimation";
 import cbGrid from "./_components/mem-cb-grid";
+import memStarter from "./_components/mem-starter";
 
 export default {
   // name
@@ -39,6 +50,7 @@ export default {
   components: {
     ItemContainer,
     cbGrid,
+    memStarter
   },
 
   // props
@@ -54,11 +66,8 @@ export default {
     // init presenter
     const { totalItems, itemData } = initItem(props.presenter.itemData);
 
-    // handle on sequence has played
-    const onSequenceHasPlayed = () => {
-      // update itemData
-      itemData.sequenceHasPlayed = true;
-    };
+    // mem setup
+    const { sequenceToPlay, cssState, onClickPlay } = setupShowSequenceAnimation(itemData);
 
     // handle on click number
     const onClickNumber = (number) => {
@@ -86,7 +95,9 @@ export default {
       i18n,
       totalItems,
       itemData,
-      onSequenceHasPlayed,
+      sequenceToPlay, 
+      cssState, 
+      onClickPlay,
       onClickNumber,
     };
   },

@@ -23,30 +23,20 @@
         </div>
       </div>
     </div>
-    <mem-starter :css-state="cssState" @click="onClickPlay">
-      {{ i18n.clickCirclesOne }} {{ sequence.length }}
-      {{ i18n.clickCirclesTwo }}
-    </mem-starter>
   </div>
 </template>
 
 <script>
 import { memDs as i18n } from "@/i18n/it/views/tasks";
-import setupShowSequenceAnimation from "./_composables/setupSequenceAnimation";
-import memStarter from "./mem-starter";
+import { computed } from "vue";
 
 export default {
   // name
   name: "mem-cb-grid",
 
-  // components
-  components: {
-    memStarter,
-  },
-
   // props
   props: {
-    sequence: {
+    sequenceToPlay: {
       type: Array,
       required: true,
       validator: (value) => value.every((e) => "123456789".indexOf(e) > -1),
@@ -57,28 +47,32 @@ export default {
       required: true,
       validator: (value) => value.every((e) => "123456789".indexOf(e) > -1),
     },
+
+    cssState: {
+      type: String,
+      required: true
+    }
   },
 
   // emitted events
   emits: {
-    "sequence-has-played": (value) => typeof value == "boolean",
     "click-number": (value) => [1, 2, 3, 4, 5, 6, 7, 8, 9].includes(value),
   },
 
   // setup
-  setup(props, { emit }) {
-    // set up sequence animation
-    const { cssState, numberToShow, onClickPlay } = setupShowSequenceAnimation(
-      props,
-      emit
-    );
+  setup(props) {
+   
+    // number to show
+    const numberToShow = computed(() => {
+      if (props.cssState == "idle") return "";
+      if (props.cssState == "finished") return "fine";
+      return props.sequenceToPlay[0];
+    });
 
     // return setup object
     return {
       i18n,
-      cssState,
       numberToShow,
-      onClickPlay,
     };
   },
 };

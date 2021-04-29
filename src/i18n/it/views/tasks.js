@@ -144,14 +144,14 @@ export const kohReferenceTiles = {
 // mem
 // -------------------------------------------------
 export const memStarter = {
-  startAnimation: "clicca per avviare l'animazione",
-  animationStarted: "animazione avviata",
+  startAnimation: "clicca qui per avviare l'animazione",
+  animationStarted: "animazione in corso...",
 };
 
 export const memDsItem = {
   task: "Quesito",
-  clickNumbersOne: "clicca in sequenza i",
-  clickNumberTwo: "numeri",
+  clickNumbersOne: "clicca sul tastierino i",
+  clickNumbersTwo: "numeri apparsi",
   buttons: {
     reset: "reset",
   },
@@ -160,7 +160,7 @@ export const memDsItem = {
 export const memCbItem = {
   task: "Quesito",
   clickCirclesOne: "clicca in sequenza i",
-  clickCirclesTwo: "circoletti",
+  clickCirclesTwo: "circoletti apparsi",
 };
 
 // -------------------------------------------------

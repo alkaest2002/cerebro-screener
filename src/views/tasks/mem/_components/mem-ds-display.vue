@@ -3,64 +3,55 @@
     class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
   >
     <div
-      id="circle"
+      id="display"
       :class="cssState"
       class="mb-2 is-size-2 is-flex is-justify-content-center is-align-items-center"
     >
       <transition name="fade" mode="out-in">
-        <span :key="numberToShow" @click="onClickPlay">
+        <span :key="numberToShow">
           {{ numberToShow }}
         </span>
       </transition>
     </div>
-    <mem-starter :css-state="cssState" @click="onClickPlay">
-      {{ i18n.clickNumbersOne }} {{ sequence.length }}
-      {{ i18n.clickNumbersTwo }}
-    </mem-starter>
   </div>
 </template>
 
 <script>
 import { memDsItem as i18n } from "@/i18n/it/views/tasks";
-import setupShowSequenceAnimation from "./_composables/setupSequenceAnimation";
-import memStarter from "./mem-starter";
+import { computed } from "vue";
 
 export default {
   // name
   name: "mem-ds-display",
 
-  // components
-  components: {
-    memStarter,
-  },
-
   // props
   props: {
-    sequence: {
+    sequenceToPlay: {
       type: Array,
       required: true,
       validator: (value) => value.every((e) => "123456789".indexOf(e) > -1),
     },
-  },
 
-  // emitted events
-  emits: {
-    "sequence-has-played": (value) => typeof value == "boolean",
+    cssState: {
+      type: String,
+      required: true
+    }
   },
 
   // setup
-  setup(props, { emit }) {
-    // set up sequence animation
-    const { cssState, numberToShow, onClickPlay } = setupShowSequenceAnimation(
-      props,
-      emit
-    );
+  setup(props) {
+    
+    // number to show
+    const numberToShow = computed(() => {
+      if (props.cssState == "idle") return "";
+      if (props.cssState == "finished") return "fine";
+      return props.sequenceToPlay[0];
+    });
+
     // return setup object
     return {
       i18n,
-      cssState,
-      numberToShow,
-      onClickPlay,
+      numberToShow
     };
   },
 };
@@ -70,7 +61,7 @@ export default {
 $number-color: #7a7a7a;
 $background-color: #eee;
 
-#circle {
+#display {
   height: 75px;
   width: 120px;
   border-radius: 10px;
@@ -90,13 +81,13 @@ $background-color: #eee;
 
   .fade-enter-active,
   .fade-leave-active {
-    transition: opacity 0.1s linear;
+    transition: opacity 0.3s linear;
   }
 
   .fade-enter-from,
   .fade-leave-to {
     opacity: 0;
-    transition: opacity 0, 0.1s linear;
+    transition: opacity 0, 0.3s linear;
   }
 }
 </style>

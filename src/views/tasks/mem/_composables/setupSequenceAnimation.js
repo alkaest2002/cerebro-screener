@@ -1,30 +1,22 @@
-import { ref, computed } from "vue";
+import { ref } from "vue";
 import { clone } from "@/utils/utilityFns";
 
-export default (props, emit) => {
+export default (itemData) => {
+  
   // sequence of numbers to show
-  const sequenceToPlay = ref(clone([" ", ...props.sequence]));
+  const sequenceToPlay = ref(clone([...itemData.sequence]));
 
   // css state
-  const cssState = ref(props.sequenceHasPlayed ? "finished" : "idle");
-
-  // number to show
-  const numberToShow = computed(() => {
-    if (cssState.value == "idle") return "";
-    if (cssState.value == "finished") return "fine";
-    return sequenceToPlay.value[0];
-  });
+  const cssState = ref(itemData.sequenceHasPlayed ? "finished" : "idle");
 
   // handle on click play
   const onClickPlay = async () => {
     // do nothing if sequence is not idle
     if (cssState.value != "idle") return;
     // update css state
-    cssState.value = "started";
+    cssState.value = "playing";
     // play animation
     const intervalID = setInterval(() => {
-      // update css state
-      cssState.value = "playing";
       // remove first element of sequence to play
       sequenceToPlay.value.splice(0, 1);
       // when sequence is exhausted
@@ -33,16 +25,16 @@ export default (props, emit) => {
         clearInterval(intervalID);
         // update css state
         cssState.value = "finished";
-        // emit event
-        emit("sequence-has-played", true);
+        // update sequence has played
+        itemData.sequenceHasPlayed = true;
       }
     }, 2000);
   };
 
   // return setup object
   return {
+    sequenceToPlay,
     cssState,
-    numberToShow,
     onClickPlay,
   };
 };

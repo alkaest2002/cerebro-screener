@@ -26,6 +26,8 @@ const corsiItems = numericalForward.map((item) => {
   let currentItem = {};
   currentItem.sequence = item;
   currentItem.userSequence = [];
+  currentItem.sequenceHasPlayed = false;
+  currentItem.actions = 0;
   return { ...currentItem };
 });
 
@@ -142,6 +144,8 @@ const blocks = [
         itemData: {
           sequence: [6, 9, 4],
           userSequence: [],
+          sequenceHasPlayed: false,
+          actions: 0,
           hint: i18n["cb"]["demo.001"].itemData.hint,
         },
         timer: {},
