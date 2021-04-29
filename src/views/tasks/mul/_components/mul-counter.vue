@@ -3,11 +3,20 @@
     id="mul-counter"
     class="is-flex is-justify-content-center is-align-items-center"
   >
-    <transition name="fade" mode="out-in" appear>
-      <div v-if="!animationHasEnded" :key="counterValue">
-        {{ formatCounterValue(counterValue) }}
-      </div>
-    </transition>
+    <div v-if="!animationHasEnded" class="is-flex is-justify-content-center is-align-items-center">
+      <transition name="fade" mode="out-in" appear>
+        <span v-show="counterValue>0" :key="counterValue">
+          {{ formatCounterValue(counterValue) }}
+        </span>
+      </transition>
+    </div>
+    <div v-if="!animationHasEnded" class="is-flex is-justify-content-center is-align-items-center">
+      <transition name="fade" mode="out-in" appear>
+        <span v-show="counterValue<0" :key="counterValue">
+          {{ formatCounterValue(counterValue) }}
+        </span>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -52,7 +61,7 @@ export default {
     // format counter value
     const formatCounterValue = (value) => {
       if (typeof value == "string") return value;
-      return `${value > 0 ? "+" : ""}${Math.floor(value)}`;
+      return Math.abs(Math.floor(value));
     };
 
     // return setup object
@@ -65,16 +74,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$background-color: #3273dc;
+$background-color-1: #32dcc4;
+$background-color-2: #dc3295;
 
 #mul-counter {
-  height: 280px;
+  height: 180px;
   width: 280px;
-  font-size: 9em;
+  font-size: 6em;
   color: #000;
-  border-radius: 6px;
-  background-color: $background-color;
-  color: lighten($background-color, 50%);
+
+  div {
+    height: 100%;
+    width: 50%;
+  }
+ 
+  div:first-child {
+    background-color: $background-color-1;
+    color: lighten($background-color-1, 50%);
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+
+  div:last-child {
+    background-color: $background-color-2;
+    color: lighten($background-color-2, 50%);
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
 }
 
 .fade-enter-active,

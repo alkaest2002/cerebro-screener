@@ -9,38 +9,40 @@
     </div>
     <div id="presenter" class="is-relative is-clipped box">
       <item-container>
-        <div
-          v-if="!animationHasEnded"
-          class="is-flex is-flex-direction-column is-align-items-center"
-        >
-          <div class="is-flex is-justify-content-center">
-            <div
-              class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mr-5"
-            >
-              <mul-gauges-panel
-                :animation-has-ended="animationHasEnded"
-                :gauges-data="itemData.gauges[currentIndex]"
-              />
+        <transition name="fade" mode="out-in" appear>
+          <div
+            v-if="!animationHasEnded"
+            class="is-flex is-flex-direction-column is-align-items-center"
+          >
+            <div class="is-flex is-justify-content-center">
+              <div
+                class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mr-5"
+              >
+                <mul-gauges-panel
+                  :animation-has-ended="animationHasEnded"
+                  :gauges-data="itemData.gauges[currentIndex]"
+                />
+              </div>
+              <div
+                class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
+              >
+                <mul-counter
+                  :animation-has-ended="animationHasEnded"
+                  :counter-data="itemData.counter[currentIndex]"
+                />
+              </div>
             </div>
-            <div
-              class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
-            >
-              <mul-counter
-                :animation-has-ended="animationHasEnded"
-                :counter-data="itemData.counter[currentIndex]"
+            <div class="mt-3">
+              <mul-starter
+                :current-index="currentIndex"
+                @click="onStartAnimation"
               />
             </div>
           </div>
-          <div class="mt-3">
-            <mul-starter
-              :current-index="currentIndex"
-              @click="onStartAnimation"
-            />
+          <div v-else>
+            <mul-inputs @user-response="onUserResponse" />
           </div>
-        </div>
-        <div v-else>
-          <mul-inputs @user-response="onUserResponse" />
-        </div>
+        </transition>
         <slot name="explanation" :item-data="itemData" />
       </item-container>
     </div>
@@ -137,3 +139,17 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transition: opacity 0, 0.25s;
+}
+</style>
