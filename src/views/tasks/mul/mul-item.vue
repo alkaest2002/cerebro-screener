@@ -32,16 +32,7 @@
             </div>
           </div>
           <div class="mt-3">
-            <a
-              v-if="currentIndex == 0"
-              href="#"
-              @click.prevent="onStartAnimation"
-            >
-              {{ i18n.startAnimation }}
-            </a>
-            <span v-else class="has-text-grey">
-              {{ i18n.animationStarted }}
-            </span>
+            <mul-starter :current-index="currentIndex" @click="onStartAnimation" />
           </div>
         </div>
         <div v-else>
@@ -61,6 +52,7 @@ import itemContainer from "@/views/tasks/_components/item-container";
 import mulGaugesPanel from "./_components/mul-gauges-panel";
 import mulCounter from "./_components/mul-counter";
 import mulInputs from "./_components/mul-inputs";
+import mulStarter from "./_components/mul-starter";
 
 export default {
   // name
@@ -72,6 +64,7 @@ export default {
     mulCounter,
     mulGaugesPanel,
     mulInputs,
+    mulStarter
   },
 
   // props

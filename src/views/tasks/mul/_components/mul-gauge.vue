@@ -67,6 +67,7 @@ svg {
   circle {
     fill: none;
     stroke-width: 12px;
+    stroke-linecap: round;
     transform-origin: $w/2 $w/2 0;
     transform: rotate(270deg);
 
