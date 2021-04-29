@@ -65,7 +65,6 @@ export default {
     // number to show
     const numberToShow = computed(() => {
       if (props.cssState == "idle") return "";
-      if (props.cssState == "finished") return "fine";
       return props.sequenceToPlay[0];
     });
 

@@ -73,12 +73,13 @@ export default {
     const onClickNumber = (number) => {
       // if number is already in sequence
       if (itemData.userSequence.includes(number)) {
-        // if number is the last one in sequence
-        if (itemData.userSequence.slice(-1)[0] == number)
+        // and number is the last one in sequence
+        if (itemData.userSequence.slice(-1)[0] == number) {
           // increment actions
           itemData.actions++;
-        // remove number
-        itemData.userSequence.splice(itemData.userSequence.indexOf(number), 1);
+          // remove number from sequence
+          itemData.userSequence.splice(itemData.userSequence.indexOf(number), 1);
+        }
       } else {
         // increment actions
         itemData.actions++;
