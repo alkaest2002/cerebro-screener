@@ -38,7 +38,7 @@ export default {
 
     placeholder: {
       type: String,
-      default: ""
+      default: "",
     },
 
     inputType: {

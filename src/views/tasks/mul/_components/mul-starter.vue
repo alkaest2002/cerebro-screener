@@ -1,9 +1,5 @@
 <template>
-  <a
-    v-if="currentIndex == 0"
-    href="#"
-    @click.prevent="$attrs.onClick"
-  >
+  <a v-if="currentIndex == 0" href="#" @click.prevent="$attrs.onClick">
     {{ i18n.startAnimation }}
   </a>
   <span v-else class="has-text-grey">
@@ -25,8 +21,8 @@ export default {
   props: {
     currentIndex: {
       type: Number,
-      required: true
-    }
+      required: true,
+    },
   },
 
   // setup
@@ -34,8 +30,7 @@ export default {
     // return setup object
     return {
       i18n,
-    }
-  }
-
-}
+    };
+  },
+};
 </script>

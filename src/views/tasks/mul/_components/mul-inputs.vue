@@ -11,7 +11,11 @@
           {{ i18n.howManyGauges }}
           <div class="mt-3">
             <mul-input v-model="userResponse[0]" />
-            <mul-keyboard v-model="userResponse[0]" :text="userResponse[0]" type="numbers" />
+            <mul-keyboard
+              v-model="userResponse[0]"
+              :text="userResponse[0]"
+              type="numbers"
+            />
           </div>
         </div>
       </div>
@@ -20,7 +24,11 @@
           {{ i18n.whatIsCounterSum }}
           <div class="mt-3">
             <mul-input v-model="userResponse[1]" />
-            <mul-keyboard v-model="userResponse[1]" :text="userResponse[1]" type="numbers" />
+            <mul-keyboard
+              v-model="userResponse[1]"
+              :text="userResponse[1]"
+              type="numbers"
+            />
           </div>
         </div>
       </div>
@@ -38,32 +46,31 @@ export default {
   // name
   name: "mul-inputs",
 
-  // do not inherit attrs
-  inheritAttrs: false,
-
   // components
   components: {
     mulInput,
     mulKeyboard,
   },
 
+  // do not inherit attrs
+  inheritAttrs: false,
+
   // emitted events
   emits: {
-    "user-response": value => Array.isArray(value)
+    "user-response": (value) => Array.isArray(value),
   },
 
   // setup
   setup(props, { emit }) {
-
     // usert response data
-    const userResponse = reactive([
-      null,
-      null,
-    ]);
+    const userResponse = reactive([null, null]);
 
     // watch
     watchEffect(() => {
-      emit("user-response", userResponse.filter((e) => e));
+      emit(
+        "user-response",
+        userResponse.filter((e) => e)
+      );
     });
 
     // return setup object

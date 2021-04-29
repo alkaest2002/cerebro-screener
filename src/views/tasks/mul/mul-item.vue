@@ -32,9 +32,9 @@
             </div>
           </div>
           <div class="mt-3">
-            <mul-starter 
-              :current-index="currentIndex" 
-              @click="onStartAnimation" 
+            <mul-starter
+              :current-index="currentIndex"
+              @click="onStartAnimation"
             />
           </div>
         </div>
@@ -67,7 +67,7 @@ export default {
     mulCounter,
     mulGaugesPanel,
     mulInputs,
-    mulStarter
+    mulStarter,
   },
 
   // props
@@ -114,7 +114,7 @@ export default {
     // handle user response
     const onUserResponse = (data) => {
       // get data
-      const [ gauges, counter ] = data;
+      const [gauges, counter] = data;
       console.log(data);
       // update itemData
       itemData.userGauges = gauges;
