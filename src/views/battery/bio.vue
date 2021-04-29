@@ -53,7 +53,7 @@ import { required, numRange } from "@/utils/validators";
 import { clone } from "@/utils/utilityFns";
 import formInput from "@/views/_components/form/form-input";
 import formRadioGroup from "@/views/_components/form/form-radio-group";
-import bioKeyboard from "./_components/bio-keyboard";
+import bioKeyboard from "@/views/_components/form/form-keyboard";
 
 export default {
   // name

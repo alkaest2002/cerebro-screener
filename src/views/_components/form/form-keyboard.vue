@@ -19,7 +19,7 @@ const checkLegalKey = (value) =>
 
 export default {
   // name
-  name: "bio-keyboard",
+  name: "form-keyboard",
 
   // props
   props: {
