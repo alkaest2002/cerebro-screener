@@ -173,8 +173,10 @@ export const mulItem = {
 };
 
 export const mulInputs = {
-  howManyGauges: "Quanti indicatori circolari segnavano un valore superiore al 50%?",
-  whatIsCounterSum: "Qual è la somma finale dei numeri apparsi nel riquadro blu?",
+  howManyGauges:
+    "Quanti indicatori circolari segnavano un valore superiore al 50%?",
+  whatIsCounterSum:
+    "Qual è la somma finale dei numeri apparsi nel riquadro blu?",
 };
 
 // -------------------------------------------------

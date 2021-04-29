@@ -9,15 +9,22 @@
     </div>
     <div id="presenter" class="is-relative is-clipped box">
       <item-container>
-        <div v-if="!animationHasEnded" class="is-flex is-flex-direction-column is-align-items-center">
-          <div  class="is-flex is-justify-content-center">
-            <div class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mr-5">
+        <div
+          v-if="!animationHasEnded"
+          class="is-flex is-flex-direction-column is-align-items-center"
+        >
+          <div class="is-flex is-justify-content-center">
+            <div
+              class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mr-5"
+            >
               <mul-gauges-panel
                 :animation-has-ended="animationHasEnded"
                 :gauges-data="itemData.gauges[currentIndex]"
               />
             </div>
-            <div class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center">
+            <div
+              class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
+            >
               <mul-counter
                 :animation-has-ended="animationHasEnded"
                 :counter-data="itemData.counter[currentIndex]"
@@ -25,9 +32,9 @@
             </div>
           </div>
           <div class="mt-3">
-            <a 
-              v-if="currentIndex == 0" 
-              href="#" 
+            <a
+              v-if="currentIndex == 0"
+              href="#"
               @click.prevent="onStartAnimation"
             >
               {{ i18n.startAnimation }}

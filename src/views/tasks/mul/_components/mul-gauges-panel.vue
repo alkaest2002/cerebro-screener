@@ -18,13 +18,13 @@ export default {
   // name
   name: "mul-gauges-panel",
 
-  // do not inherit attrs
-  inheritAttrs: false,
-
   // components
   components: {
     mulGauge,
   },
+
+  // do not inherit attrs
+  inheritAttrs: false,
 
   // props
   props: {
