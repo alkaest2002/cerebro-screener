@@ -117,10 +117,11 @@ export default {
     const onUserResponse = (data) => {
       // get data
       const [gauges, counter] = data;
-      console.log(data);
       // update itemData
       itemData.userGauges = gauges;
       itemData.userCounter = counter;
+      itemData.enableNext =
+        data.filter((e) => typeof e == "number").length == 2;
     };
 
     // on unmounted
@@ -141,7 +142,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.25s;

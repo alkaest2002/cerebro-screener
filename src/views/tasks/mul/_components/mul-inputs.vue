@@ -69,7 +69,7 @@ export default {
     watchEffect(() => {
       emit(
         "user-response",
-        userResponse.filter((e) => e)
+        userResponse.filter((e) => e).map((e) => parseInt(e))
       );
     });
 

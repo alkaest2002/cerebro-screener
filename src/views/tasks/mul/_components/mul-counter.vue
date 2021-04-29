@@ -3,16 +3,22 @@
     id="mul-counter"
     class="is-flex is-justify-content-center is-align-items-center"
   >
-    <div v-if="!animationHasEnded" class="is-flex is-justify-content-center is-align-items-center">
+    <div
+      v-if="!animationHasEnded"
+      class="is-flex is-justify-content-center is-align-items-center"
+    >
       <transition name="fade" mode="out-in" appear>
-        <span v-show="counterValue>0" :key="counterValue">
+        <span v-show="counterValue > 0" :key="counterValue">
           {{ formatCounterValue(counterValue) }}
         </span>
       </transition>
     </div>
-    <div v-if="!animationHasEnded" class="is-flex is-justify-content-center is-align-items-center">
+    <div
+      v-if="!animationHasEnded"
+      class="is-flex is-justify-content-center is-align-items-center"
+    >
       <transition name="fade" mode="out-in" appear>
-        <span v-show="counterValue<0" :key="counterValue">
+        <span v-show="counterValue < 0" :key="counterValue">
           {{ formatCounterValue(counterValue) }}
         </span>
       </transition>
@@ -20,7 +26,7 @@
   </div>
   <div class="mt-3">
     <span id="legend-add" class="is-block" v-html="i18n.legendAdd" />
-    <span id="legend-subtract" class="is-block"  v-html="i18n.legendSubtract" />
+    <span id="legend-subtract" class="is-block" v-html="i18n.legendSubtract" />
   </div>
 </template>
 
@@ -93,7 +99,7 @@ $background-color-2: #dc3295;
     height: 100%;
     width: 50%;
   }
- 
+
   div:first-child {
     background-color: $background-color-1;
     color: lighten($background-color-1, 50%);
@@ -109,11 +115,11 @@ $background-color-2: #dc3295;
   }
 }
 
-#legend-add{
+#legend-add {
   color: $background-color-1;
 }
 
-#legend-subtract{
+#legend-subtract {
   color: $background-color-2;
 }
 
