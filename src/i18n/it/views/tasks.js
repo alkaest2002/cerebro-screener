@@ -175,11 +175,16 @@ export const mulStarter = {
   animationStarted: "animazione in corso...",
 };
 
+export const mulCounter = {
+  legendAdd: "&#11035; aggiungi",
+  legendSubtract: "&#11035; sottrai",
+};
+
 export const mulInputs = {
   howManyGauges:
     "Quanti indicatori circolari segnavano un valore superiore al 50%?",
   whatIsCounterSum:
-    "Qual è la somma finale dei numeri apparsi nel riquadro blu?",
+    "Qual è la somma finale dei numeri apparsi nei riquadri colorati?",
 };
 
 // -------------------------------------------------

@@ -18,9 +18,14 @@
       </transition>
     </div>
   </div>
+  <div class="mt-3">
+    <span id="legend-add" class="is-block" v-html="i18n.legendAdd" />
+    <span id="legend-subtract" class="is-block"  v-html="i18n.legendSubtract" />
+  </div>
 </template>
 
 <script>
+import { mulCounter as i18n } from "@/i18n/it/views/tasks";
 import { ref, watch } from "vue";
 
 export default {
@@ -66,6 +71,7 @@ export default {
 
     // return setup object
     return {
+      i18n,
       counterValue,
       formatCounterValue,
     };
@@ -74,7 +80,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$background-color-1: #32dcc4;
+$background-color-1: #fe8c00;
 $background-color-2: #dc3295;
 
 #mul-counter {
@@ -101,6 +107,14 @@ $background-color-2: #dc3295;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
   }
+}
+
+#legend-add{
+  color: $background-color-1;
+}
+
+#legend-subtract{
+  color: $background-color-2;
 }
 
 .fade-enter-active,
