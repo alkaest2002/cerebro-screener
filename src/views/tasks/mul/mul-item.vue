@@ -32,7 +32,10 @@
             </div>
           </div>
           <div class="mt-3">
-            <mul-starter :current-index="currentIndex" @click="onStartAnimation" />
+            <mul-starter 
+              :current-index="currentIndex" 
+              @click="onStartAnimation" 
+            />
           </div>
         </div>
         <div v-else>
