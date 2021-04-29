@@ -32,7 +32,7 @@
             >
               {{ i18n.startAnimation }}
             </a>
-            <span v-else>
+            <span v-else class="has-text-grey">
               {{ i18n.animationStarted }}
             </span>
           </div>
