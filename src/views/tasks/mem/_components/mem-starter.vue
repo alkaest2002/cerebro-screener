@@ -42,7 +42,10 @@ export default {
     const sequenceIsPlaying = ref(false);
 
     const onClick = () => {
+      // set sequence is playing flag
       sequenceIsPlaying.value = true;
+      
+      // call parent click method
       attrs.onClick();
     }
 
@@ -55,9 +58,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-#starter > div:first-child {
-  cursor: pointer;
-}
-</style>

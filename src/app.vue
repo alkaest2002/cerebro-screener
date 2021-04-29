@@ -75,6 +75,10 @@ body {
   width: 0px;
 }
 
+a {
+  color: #628fd7;
+}
+
 #app {
   user-select: none;
   -webkit-user-select: none;
