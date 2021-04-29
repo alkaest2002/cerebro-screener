@@ -39,7 +39,7 @@
           </div>
         </div>
         <div v-else>
-          <mul-inputs />
+          <mul-inputs @user-response="onUserResponse" />
         </div>
         <slot name="explanation" :item-data="itemData" />
       </item-container>
@@ -111,6 +111,16 @@ export default {
       }, 4000);
     };
 
+    // handle user response
+    const onUserResponse = (data) => {
+      // get data
+      const [ gauges, counter ] = data;
+      console.log(data);
+      // update itemData
+      itemData.userGauges = gauges;
+      itemData.userCounter = counter;
+    };
+
     // on unmounted
     onUnmounted(() => clearInterval(interval.value));
 
@@ -122,6 +132,7 @@ export default {
       currentIndex,
       animationHasEnded,
       onStartAnimation,
+      onUserResponse,
     };
   },
 };

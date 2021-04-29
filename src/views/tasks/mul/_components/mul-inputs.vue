@@ -10,8 +10,8 @@
         <div>
           {{ i18n.howManyGauges }}
           <div class="mt-3">
-            <mul-input v-model="gaugesValue" />
-            <mul-keyboard v-model="gaugesValue" :text="gaugesValue" type="numbers" />
+            <mul-input v-model="userResponse[0]" />
+            <mul-keyboard v-model="userResponse[0]" :text="userResponse[0]" type="numbers" />
           </div>
         </div>
       </div>
@@ -19,8 +19,8 @@
         <div class="p-3">
           {{ i18n.whatIsCounterSum }}
           <div class="mt-3">
-            <mul-input v-model="counterValue" />
-            <mul-keyboard v-model="counterValue" :text="counterValue" type="numbers" />
+            <mul-input v-model="userResponse[1]" />
+            <mul-keyboard v-model="userResponse[1]" :text="userResponse[1]" type="numbers" />
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@
 
 <script>
 import { mulInputs as i18n } from "@/i18n/it/views/tasks";
-import { ref } from "vue";
+import { reactive, watchEffect } from "vue";
 import mulInput from "@/views/_components/form/form-input";
 import mulKeyboard from "@/views/_components/form/form-keyboard";
 
@@ -47,18 +47,29 @@ export default {
     mulKeyboard,
   },
 
-  // setup
-  setup() {
+  // emitted events
+  emits: {
+    "user-response": value => Array.isArray(value)
+  },
 
-    // gagues value
-    const gaugesValue = ref(null);
-    const counterValue = ref(null);
+  // setup
+  setup(props, { emit }) {
+
+    // usert response data
+    const userResponse = reactive([
+      null,
+      null,
+    ]);
+
+    // watch
+    watchEffect(() => {
+      emit("user-response", userResponse.filter((e) => e));
+    });
 
     // return setup object
     return {
       i18n,
-      gaugesValue,
-      counterValue
+      userResponse,
     };
   },
 };
