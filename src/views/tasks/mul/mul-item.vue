@@ -105,7 +105,7 @@ export default {
       // start delayed animations
       interval.value = setInterval(() => {
         // if we reached the end of animations
-        if (currentIndex.value == itemData.gauges.length - 1)
+        if (animationHasEnded.value)
           // clear interval
           return clearInterval(interval.value);
         // increment current index
