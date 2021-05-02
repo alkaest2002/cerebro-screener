@@ -175,18 +175,18 @@ const actions = {
   resetBlockPresenters({ commit, dispatch, state, rootState }) {
     // get fresh blocks
     const presenters = makePresenters(clone(rootState.blocks.blocks));
-    // find instructions blocks for current items block, get last one
+    // find instructions for current items block, then get last one
     const targetPresenter = presenters
       .slice(0, state.currentPresenterIndex)
       .reverse()
       .filter((e) => e.blockType == "instructions")[0];
-    // find index of target presenter
+    // find first instruction of current items block
     const targetPresenterIndex = presenters.findIndex(
       (e) =>
         e.blockType == "instructions" &&
         e.blockIndex == targetPresenter.blockIndex
     );
-    // get presenters to be replaced
+    // set presenters to be replaced
     const newPresenters = presenters.filter(
       (e) =>
         e.blockIndex >= targetPresenter.blockIndex &&
