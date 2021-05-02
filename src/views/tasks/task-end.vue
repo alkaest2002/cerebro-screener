@@ -26,6 +26,14 @@ export default {
   // name
   name: "task-end",
 
+  // props
+  props: {
+    presenter: {
+      type: Object,
+      required: true,
+    },
+  },
+
   // setup
   setup() {
     // use store
