@@ -46,14 +46,15 @@ export default {
   // name
   name: "mul-inputs",
 
+  // do not inherit attrs
+  inheritAttrs: false,
+  
   // components
   components: {
     mulInput,
     mulKeyboard,
   },
 
-  // do not inherit attrs
-  inheritAttrs: false,
 
   // emitted events
   emits: {
