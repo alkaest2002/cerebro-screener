@@ -54,7 +54,7 @@ export default {
 
   // do not inherit attrs
   inheritAttrs: false,
-  
+
   // emitted events
   emits: {
     "user-response": (value) => Array.isArray(value),
