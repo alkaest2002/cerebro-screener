@@ -1,7 +1,7 @@
 <template>
-  <div 
-    v-if="showTimer" 
-    id="timer" 
+  <div
+    v-if="showTimer"
+    id="timer"
     class="is-flex is-justify-content-center"
     :class="cssClass"
   >
