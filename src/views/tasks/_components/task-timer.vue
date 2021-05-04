@@ -23,22 +23,31 @@ export default {
     // use store
     const store = useStore();
 
-    // define refs
+    // timerInterval
     let timerInterval = ref(null);
 
-    // define computed props
+    // timer object
     const timer = computed(() => store.state.timer);
+    
+    // show timer flag
     const showTimer = computed(() => timer.value.id && timer.value.status);
+    
+    // time left
     const timeLeft = computed(
       () => timer.value.timeLimit - timer.value.timeElapsed
     );
+
+    // time left formatted
     const timeLeftFormatted = computed(() => formatTimerTime(timeLeft.value));
+    
+    // timer css class
     const cssClass = computed(() =>
       timeLeft.value <= timer.value.alertThreshold
         ? "has-background-danger has-text-danger-light"
         : "has-background-success has-text-success-light"
     );
-    // watchers
+
+    // watch
     watch(
       timer,
       (newTimer, oldTimer) => {
