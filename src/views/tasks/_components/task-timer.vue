@@ -69,9 +69,9 @@ export default {
         // stop timer and emit "timeIsUp" event under these conditions
         if (
           [
-            newTimer.timeElapsed == newTimer.timeLimit,
+            oldTimer?.status != "stopped",
             newTimer.timeElapsed > 0,
-            oldTimer != undefined && oldTimer.status != "stopped",
+            newTimer.timeElapsed == newTimer.timeLimit,
           ].every((e) => e)
         ) {
           // persist stopped status to vuex
