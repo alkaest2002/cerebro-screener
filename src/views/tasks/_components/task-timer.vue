@@ -28,7 +28,7 @@ export default {
     // use store
     const store = useStore();
 
-    // timerInterval
+    // will hold timerInterval
     let timerInterval = ref(null);
 
     // timer object
