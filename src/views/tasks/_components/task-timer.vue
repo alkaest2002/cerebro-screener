@@ -28,10 +28,10 @@ export default {
 
     // timer object
     const timer = computed(() => store.state.timer);
-    
+
     // show timer flag
     const showTimer = computed(() => timer.value.id && timer.value.status);
-    
+
     // time left
     const timeLeft = computed(
       () => timer.value.timeLimit - timer.value.timeElapsed
@@ -39,7 +39,7 @@ export default {
 
     // time left formatted
     const timeLeftFormatted = computed(() => formatTimerTime(timeLeft.value));
-    
+
     // timer css class
     const cssClass = computed(() =>
       timeLeft.value <= timer.value.alertThreshold
