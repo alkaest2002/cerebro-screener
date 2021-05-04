@@ -125,7 +125,7 @@ export default {
   #description-text {
     width: 90%;
 
-    &::v-deep p {
+    &:deep p {
       margin-bottom: 0.5em;
     }
   }

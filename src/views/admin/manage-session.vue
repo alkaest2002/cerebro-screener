@@ -57,19 +57,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-::v-deep h2 {
+$border-color: #ddd;
+$background-color: #f0f0f0;
+
+:deep h2 {
   padding-bottom: 5px;
 
   & + div {
-    padding-top: 5px;
-    background-color: #f0f0f0;
+    background-color: $background-color;
     padding: 10px;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
   }
 }
 
-::v-deep .links {
+:deep .links {
   margin-top: 10px;
 }
 </style>
