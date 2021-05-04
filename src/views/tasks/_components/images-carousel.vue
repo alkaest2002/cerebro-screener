@@ -72,10 +72,10 @@ export default {
     const modalOpen = ref(false);
 
     // clicked image
-    const clickedImg = ref(null);
+    const clickedImg = ref(0);
 
     // modal data
-    const modalData = computed(() => props.images[clickedImg.value || 0]);
+    const modalData = computed(() => props.images[clickedImg.value]);
 
     // handle on click figure
     const onClickFigure = (index) => {
