@@ -47,7 +47,9 @@ export default {
 
     // determine whether to show lock
     const showLockBasedOnCondition = computed(() => {
+      // get current presenter
       const currentPresenter = store.getters["presenters/getCurrentPresenter"];
+      // show lock under these conditions
       return [
         currentPresenter.isLocked,
         store.state.timer.status === "stopped",
