@@ -1,5 +1,10 @@
 <template>
-  <div v-if="showTimer" id="timer" :class="cssClass">
+  <div 
+    v-if="showTimer" 
+    id="timer" 
+    class="is-flex is-justify-content-center"
+    :class="cssClass"
+  >
     <span id="timer-text">
       {{ timeLeftFormatted }}
     </span>
@@ -103,6 +108,7 @@ export default {
 
 <style scoped lang="scss">
 #timer {
+  width: 100px;
   padding: 3px 5px;
   border-radius: 5px;
   transition: all 0.7s;
