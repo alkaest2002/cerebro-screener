@@ -77,8 +77,8 @@ export default {
         // stop spinning, if it's the case
         isLoading.value = false;
         // do nothing
-        return 
-      };
+        return;
+      }
       // set is loading to true
       isLoading.value = true;
       // try to authenticate

@@ -39,15 +39,16 @@ export default {
     },
   },
 
+  // emitted events
   emits: {
-    "update:modelValue": value => typeof value == "boolean"
+    "update:modelValue": (value) => typeof value == "boolean",
   },
 
   // setup
   setup(props, { emit }) {
     // button css class
     const buttonCSSClass = computed(() => {
-      return `${props.buttonCss} ${props.modelValue ? "is-loading" : null}` 
+      return `${props.buttonCss} ${props.modelValue ? "is-loading" : null}`;
     });
 
     // handle on click
