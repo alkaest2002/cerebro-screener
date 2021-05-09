@@ -44,7 +44,6 @@ import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import { authenticate } from "@/services/authenticate";
 import formInput from "@/views/_components/form/form-input";
-import loadingButton from "@/views/_components/loading-button";
 import mainHero from "@/views/main/_components/main-hero";
 import mainFooter from "@/views/main/_components/main-footer";
 
@@ -53,18 +52,22 @@ export default {
 
   components: {
     formInput,
-    loadingButton,
     mainHero,
     mainFooter,
   },
 
   setup() {
-    const router = useRouter();
+    // use store and router
     const store = useStore();
+    const router = useRouter();
 
-    // define refs and reactives
+    // isLoading flag
     const isLoading = ref(false);
+
+    // password
     const password = ref("");
+
+    // password errors
     const errors = reactive({ password: new Map() });
 
     // get app version (no need to be reactive)
@@ -72,14 +75,14 @@ export default {
 
     // handle on login
     const onClickLogin = async (routeName) => {
-      // do nothing if password is void
+      // if password is void
       if (password.value == "") {
-        // stop spinning, if it's the case
+        // set isLoading to false
         isLoading.value = false;
         // do nothing
         return;
       }
-      // set is loading to true
+      // set isLoading to true
       isLoading.value = true;
       // try to authenticate
       try {

@@ -1,8 +1,8 @@
 <template>
   <button
+    class="button"
     :class="buttonCSSClass"
     :disabled="disabled"
-    class="button"
     :type="buttonType"
     @click="onClick"
   >

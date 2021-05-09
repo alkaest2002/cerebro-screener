@@ -13,7 +13,7 @@
           <p v-html="i18n.message" />
           <div>
             <loading-button
-              :is-loading="localOp.status == 'running'"
+              v-model="isLoading"
               :disabled="disableArchive"
               class="is-link mt-5"
               @click="onClickArchive"
@@ -41,7 +41,7 @@
 
 <script>
 import { end as i18n } from "@/i18n/it/views/battery";
-import { computed, watch } from "vue";
+import { ref, computed, watch } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import { clone } from "@/utils/utilityFns";
@@ -64,6 +64,7 @@ export default {
     const { indexDbExecute } = manageIndexDb();
     const { localOp, onArchive } = saveToLocal(indexDbExecute);
 
+    console.log(localOp)
     // disable archive button
     const disableArchive = computed(() =>
       ["running", "finished"].includes(localOp.value.status)
@@ -92,6 +93,12 @@ export default {
       { deep: true }
     );
 
+    // isLoading
+    const isLoading = ref(false);
+
+    // watch
+    watch(() => localOp.status, value => isLoading.value = value == "running");
+
     // handle on click arhive
     const onClickArchive = () => {
       // archive battery data
@@ -102,6 +109,7 @@ export default {
     return {
       i18n,
       localOp,
+      isLoading,
       disableArchive,
       onClickArchive,
     };

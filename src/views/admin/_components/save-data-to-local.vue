@@ -10,7 +10,7 @@
     <div class="mt-5 mb-0">
       <div>
         <loading-button
-          :is-loading="localOp.status == 'running'"
+          v-model="isLoading"
           :disabled="localOp.status == 'running' || indexDbCount == 0"
           class="is-link"
           @click="onClickDownload"
@@ -30,7 +30,7 @@
 
 <script>
 import { saveDataToLocal as i18n } from "@/i18n/it/views/admin";
-import { computed } from "vue";
+import { ref, computed, watch } from "vue";
 import { useStore } from "vuex";
 import manageIndexDb from "@/views/_composables/manageIndexDb";
 import saveToLocal from "@/views/_composables/saveToLocal";
@@ -44,19 +44,26 @@ export default {
     // use store
     const store = useStore();
 
+    // emailTo (no need to be reactive)
+    const emailTo = store.state.main.email;
+    
     // from composables
     const { indexDbExecute } = manageIndexDb();
 
-    // emailTo (no need to be reactive)
-    const emailTo = store.state.main.email;
-
     // from composables
-    const { localOp, onDownload: onClickDownload } = saveToLocal(
-      indexDbExecute
-    );
-
+    const { 
+      localOp, 
+      onDownload: onClickDownload 
+    } = saveToLocal(indexDbExecute);
+    
     // index db count
     const indexDbCount = computed(() => store.state.answers.indexDbCount);
+
+    // isLoading
+    const isLoading = ref(false);
+
+    // watch
+    watch(() => localOp.status, value => isLoading.value = value == "running");
 
     // return setup object
     return {
@@ -64,6 +71,7 @@ export default {
       emailTo,
       localOp,
       indexDbCount,
+      isLoading,
       onClickDownload,
     };
   },

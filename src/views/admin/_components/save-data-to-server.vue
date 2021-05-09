@@ -11,7 +11,7 @@
     </p>
     <div class="mt-5 mb-0">
       <loading-button
-        :is-loading="serverOp.status == 'running'"
+        v-model="isLoading"
         :disabled="serverOp.status == 'running' || indexDbCount == 0"
         class="is-link"
         @click="onClickUpload"
@@ -35,7 +35,7 @@
 
 <script>
 import { saveDataToServer as i18n } from "@/i18n/it/views/admin";
-import { computed } from "vue";
+import { ref, computed, watch } from "vue";
 import { useStore } from "vuex";
 import manageIndexDb from "@/views/_composables/manageIndexDb";
 import saveToServer from "@/views/_composables/saveToServer";
@@ -48,20 +48,28 @@ export default {
   setup() {
     // use store
     const store = useStore();
+    
+    // firebase endpoit (no need to be reactive)
+    const firebaseEndpoint = store.state.main.firebaseEndpoint;
 
     // from composables
     const { indexDbExecute } = manageIndexDb();
 
     // from composables
-    const { isOnline, serverOp, onUpload: onClickUpload } = saveToServer(
-      indexDbExecute
-    );
+    const { 
+      isOnline, 
+      serverOp, 
+      onUpload: onClickUpload 
+    } = saveToServer(indexDbExecute);
 
     // index db count
     const indexDbCount = computed(() => store.state.answers.indexDbCount);
 
-    // firebase endpoit (no need to be reactive)
-    const firebaseEndpoint = store.state.main.firebaseEndpoint;
+    // isLoading
+    const isLoading = ref(false);
+   
+    // watch
+    watch(() => serverOp.status, value => isLoading.value = value == "running");
 
     // return setup object
     return {
@@ -70,6 +78,7 @@ export default {
       serverOp,
       indexDbCount,
       firebaseEndpoint,
+      isLoading,
       onClickUpload,
     };
   },
