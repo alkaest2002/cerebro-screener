@@ -14,7 +14,7 @@
           />
           <div class="buttons">
             <loading-button
-              :is-loading="isLoading"
+              v-model="isLoading"
               class="button is-link is-fullwidth"
               button-type="submit"
               @click.prevent="onClickLogin('route-admin-create-battery')"
@@ -22,7 +22,7 @@
               <span v-html="i18n.buttons.battery" />
             </loading-button>
             <loading-button
-              :is-loading="isLoading"
+              v-model="isLoading"
               class="button is-success is-fullwidth"
               button-type="submit"
               @click.prevent="onClickLogin('route-admin-save-data')"
@@ -63,8 +63,8 @@ export default {
     const store = useStore();
 
     // define refs and reactives
-    const password = ref("");
     const isLoading = ref(false);
+    const password = ref("");
     const errors = reactive({ password: new Map() });
 
     // get app version (no need to be reactive)
@@ -73,7 +73,12 @@ export default {
     // handle on login
     const onClickLogin = async (routeName) => {
       // do nothing if password is void
-      if (password.value == "") return;
+      if (password.value == "") {
+        // stop spinning, if it's the case
+        isLoading.value = false;
+        // do nothing
+        return 
+      };
       // set is loading to true
       isLoading.value = true;
       // try to authenticate
