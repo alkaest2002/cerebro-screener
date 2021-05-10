@@ -48,7 +48,7 @@ export default {
   setup() {
     // use store
     const store = useStore();
-    
+
     // firebase endpoit (no need to be reactive)
     const firebaseEndpoint = store.state.main.firebaseEndpoint;
 
@@ -56,20 +56,21 @@ export default {
     const { indexDbExecute } = manageIndexDb();
 
     // from composables
-    const { 
-      isOnline, 
-      serverOp, 
-      onUpload: onClickUpload 
-    } = saveToServer(indexDbExecute);
+    const { isOnline, serverOp, onUpload: onClickUpload } = saveToServer(
+      indexDbExecute
+    );
 
     // index db count
     const indexDbCount = computed(() => store.state.answers.indexDbCount);
 
     // isLoading
     const isLoading = ref(false);
-   
+
     // watch
-    watch(() => serverOp.status, value => isLoading.value = value == "running");
+    watch(
+      () => serverOp.status,
+      (value) => (isLoading.value = value == "running")
+    );
 
     // return setup object
     return {

@@ -46,16 +46,15 @@ export default {
 
     // emailTo (no need to be reactive)
     const emailTo = store.state.main.email;
-    
+
     // from composables
     const { indexDbExecute } = manageIndexDb();
 
     // from composables
-    const { 
-      localOp, 
-      onDownload: onClickDownload 
-    } = saveToLocal(indexDbExecute);
-    
+    const { localOp, onDownload: onClickDownload } = saveToLocal(
+      indexDbExecute
+    );
+
     // index db count
     const indexDbCount = computed(() => store.state.answers.indexDbCount);
 
@@ -63,7 +62,10 @@ export default {
     const isLoading = ref(false);
 
     // watch
-    watch(() => localOp.status, value => isLoading.value = value == "running");
+    watch(
+      () => localOp.status,
+      (value) => (isLoading.value = value == "running")
+    );
 
     // return setup object
     return {

@@ -64,7 +64,7 @@ export default {
     const { indexDbExecute } = manageIndexDb();
     const { localOp, onArchive } = saveToLocal(indexDbExecute);
 
-    console.log(localOp)
+    console.log(localOp);
     // disable archive button
     const disableArchive = computed(() =>
       ["running", "finished"].includes(localOp.value.status)
@@ -97,7 +97,10 @@ export default {
     const isLoading = ref(false);
 
     // watch
-    watch(() => localOp.status, value => isLoading.value = value == "running");
+    watch(
+      () => localOp.status,
+      (value) => (isLoading.value = value == "running")
+    );
 
     // handle on click arhive
     const onClickArchive = () => {
