@@ -79,7 +79,6 @@ export default {
         };
       },
       (value) => {
-
         // on proper archival of battery data
         if (value.localStatus == "finished" && value.localIsOk) {
           // increment indexDb count

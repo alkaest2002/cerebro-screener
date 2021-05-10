@@ -62,11 +62,9 @@ export default {
     const isLoading = ref(false);
 
     // watch
-    watch(
-      localOp,
-      (value) => isLoading.value = value.status == "running",
-      { deep: true }
-    );
+    watch(localOp, (value) => (isLoading.value = value.status == "running"), {
+      deep: true,
+    });
 
     // return setup object
     return {

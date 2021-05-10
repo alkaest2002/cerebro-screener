@@ -10,7 +10,7 @@ export default (indexDbExecute) => {
   const localOp = computed({
     get: () => store.state.answers.saveOp.local,
     set: (value) => {
-      store.dispatch("answers/setSaveOp", { key: "local", data: value })
+      store.dispatch("answers/setSaveOp", { key: "local", data: value });
     },
   });
 
@@ -74,7 +74,6 @@ export default (indexDbExecute) => {
       };
     }
   };
-
 
   // handle on archive data
   const onArchive = async (batteryData) => {
