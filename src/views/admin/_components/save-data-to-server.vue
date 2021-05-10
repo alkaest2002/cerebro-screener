@@ -49,7 +49,7 @@ export default {
     // use store
     const store = useStore();
 
-    // firebase endpoit (no need to be reactive)
+    // firebase endpoint (no need to be reactive)
     const firebaseEndpoint = store.state.main.firebaseEndpoint;
 
     // from composables
