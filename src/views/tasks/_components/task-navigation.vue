@@ -1,6 +1,6 @@
 <template>
   <div id="navigation" class="is-flex is-justify-content-space-between">
-    <div class="buttons mb-0">
+    <div class="buttons">
       <button
         :disabled="!canGoBack"
         class="button is-link"

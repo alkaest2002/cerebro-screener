@@ -68,8 +68,9 @@ export default {
 
     // watch
     watch(
-      () => serverOp.status,
-      (value) => (isLoading.value = value == "running")
+      serverOp,
+      (value) => (isLoading.value = value.status == "running"),
+      { deep: true }
     );
 
     // return setup object
