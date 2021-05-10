@@ -62,6 +62,8 @@ export default {
 
     // from composables
     const { indexDbExecute } = manageIndexDb();
+    
+    // from composables
     const { localOp, onArchive } = saveToLocal(indexDbExecute);
 
     console.log(localOp);
