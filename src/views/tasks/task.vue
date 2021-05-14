@@ -3,7 +3,7 @@
     <router-view v-slot="{ Component }">
       <transition name="fade" mode="out-in" appear>
         <template #default>
-          <component :is="Component" @end-of-items="onEndOfItems" />
+          <component :is="Component" @end-of-task="onEndOfTask" />
         </template>
       </transition>
     </router-view>
@@ -28,7 +28,7 @@ export default {
     const router = useRouter();
 
     // handle end of items event
-    const onEndOfItems = async () => {
+    const onEndOfTask = async () => {
       // update timeout of last item
       store.dispatch("presenters/updatePresenterEpoch", { type: "timeOut" });
       // get current task key
@@ -47,7 +47,7 @@ export default {
 
     // return setup object
     return {
-      onEndOfItems,
+      onEndOfTask,
     };
   },
 };
