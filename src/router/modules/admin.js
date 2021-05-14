@@ -21,7 +21,10 @@ export default [
                 store.state.answers.saveOp.server.isOk,
             ].every((e) => e)
           )
-            return next({ name: "route-admin-reset-battery", params: { next: "route-admin-login" }});
+            return next({
+              name: "route-admin-reset-battery",
+              params: { next: "route-admin-login" },
+            });
           // next
           return next();
         },
@@ -75,7 +78,7 @@ export default [
           store.dispatch("presenters/wipe");
           store.dispatch("answers/wipe");
           store.dispatch("timer/wipe");
-          const name = to.params?.next || "route-main-home"
+          const name = to.params?.next || "route-main-home";
           // redirect
           return { name };
         },
