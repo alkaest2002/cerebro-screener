@@ -27,7 +27,7 @@ const taskItemsSubtaskOne = baseItems.map((item, index) => {
 });
 
 // task items - subtask two
-const taskItemsSubtaskTwo = [ ...taskItemsSubtaskOne ];
+const taskItemsSubtaskTwo = [...taskItemsSubtaskOne];
 
 // task items - subtask three
 const taskItemsSubtaskThree = baseItems.map((item, index) => {
@@ -66,10 +66,10 @@ const demoItemsSubtaskOne = [
 ];
 
 // demo items - subtasks two
-const demoItemsSubtaskTwo = [ ...demoItemsSubtaskOne ];
+const demoItemsSubtaskTwo = [...demoItemsSubtaskOne];
 
 // demo items - subtasks three
-const demoItemsSubtaskThree = [ ...demoItemsSubtaskOne ];
+const demoItemsSubtaskThree = [...demoItemsSubtaskOne];
 
 // blocks
 const blocks = [

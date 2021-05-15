@@ -42,7 +42,7 @@ const cards = cardsCleanedShuffled.map((c) => {
 });
 
 // task items
-const taskItems =  [1].map((item, index) => {
+const taskItems = [1].map((item, index) => {
   let itemObject = {};
   itemObject.id = `item.${leftPadValue(index + 1, 3, 0)}`;
   itemObject.component = "item";
