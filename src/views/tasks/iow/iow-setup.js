@@ -1,8 +1,8 @@
 import { iow as i18n } from "@/i18n/it/tasks";
 import { leftPadValue, shuffle, clone } from "@/utils/utilityFns";
 import {
-  computeTaskTotalItems,
-  computeTaskTotalDuration,
+  computeTotalItems,
+  computeTotalDuration,
 } from "@/views/tasks/_composables/taskSetupUtilityFunctions";
 import makePresenters from "../_composables/makePresenters";
 import processAnswers from "../_composables/processAnswers";
@@ -350,14 +350,14 @@ const blocks = [
 ];
 
 // export total number of items
-export const totalItems = computeTaskTotalItems(
+export const totalItems = computeTotalItems(
   blocks,
   ["items"],
   (e) => e.items[0].itemData.decks[0].cards.length
 );
 
 // export total duration
-export const totalDurantion = computeTaskTotalDuration(blocks);
+export const totalDurantion = computeTotalDuration(blocks);
 
 // export getTaskData function
 export const getTaskData = () => {

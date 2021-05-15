@@ -3,7 +3,7 @@ const getItemsBlocks = (blocks, typeOfBlocks) =>
 
 const isBlocksArray = (blocks) => Array.isArray(blocks);
 
-export const computeTaskTotalItems = (
+export const computeTotalItems = (
   blocks,
   typeOfBlocks = ["items"],
   countFn = (e) => e.items?.length || 0
@@ -18,7 +18,7 @@ export const computeTaskTotalItems = (
   return itemsBlocks.reduce((acc, itr) => (acc += countFn(itr)), 0);
 };
 
-export const computeTaskTotalDuration = (blocks, typeOfBlocks = ["items"]) => {
+export const computeTotalDuration = (blocks, typeOfBlocks = ["items"]) => {
   // ensure block is an array
   if (!isBlocksArray(blocks)) return 0;
   // get blocks
@@ -28,7 +28,7 @@ export const computeTaskTotalDuration = (blocks, typeOfBlocks = ["items"]) => {
   // compute total time
   return itemsBlocks.reduce((acc, itr) => {
     acc += itr?.timer?.timeLimit || 0;
-    acc += computeTaskTotalDuration(itr?.items || []);
+    acc += computeTotalDuration(itr?.items || []);
     return acc;
   }, 0);
 };
