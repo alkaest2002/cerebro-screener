@@ -1,15 +1,47 @@
-import { totalItems as domTotalItems, totalDurantion as domTotalDuration } from "@/views/tasks/dom/dom-setup";
-import { totalItems as tolTotalItems, totalDurantion as tolTotalDuration } from "@/views/tasks/tol/tol-setup";
-import { totalItems as kohTotalItems, totalDurantion as kohTotalDuration } from "@/views/tasks/koh/koh-setup";
-import { totalItems as wcsTotalItems, totalDurantion as wcsTotalDuration } from "@/views/tasks/wcs/wcs-setup";
-import { totalItems as mulTotalItems, totalDurantion as mulTotalDuration } from "@/views/tasks/mul/mul-setup";
-import { totalItems as colTotalItems, totalDurantion as colTotalDuration } from "@/views/tasks/col/col-setup";
-import { totalItems as memTotalItems, totalDurantion as memTotalDuration } from "@/views/tasks/mem/mem-setup";
-import { totalItems as iowTotalItems, totalDurantion as iowTotalDuration } from "@/views/tasks/iow/iow-setup";
-import { totalItems as attTotalItems, totalDurantion as attTotalDuration } from "@/views/tasks/att/att-setup";
-import { totalItems as srvTotalItems, totalDurantion as srvTotalDuration } from "@/views/tasks/srv/srv-setup";
-import { totalItems as fakTotalItems, totalDurantion as fakTotalDuration } from "@/views/tasks/fak/fak-setup";
-
+import {
+  totalItems as domTotalItems,
+  totalDurantion as domTotalDuration,
+} from "@/views/tasks/dom/dom-setup";
+import {
+  totalItems as tolTotalItems,
+  totalDurantion as tolTotalDuration,
+} from "@/views/tasks/tol/tol-setup";
+import {
+  totalItems as kohTotalItems,
+  totalDurantion as kohTotalDuration,
+} from "@/views/tasks/koh/koh-setup";
+import {
+  totalItems as wcsTotalItems,
+  totalDurantion as wcsTotalDuration,
+} from "@/views/tasks/wcs/wcs-setup";
+import {
+  totalItems as mulTotalItems,
+  totalDurantion as mulTotalDuration,
+} from "@/views/tasks/mul/mul-setup";
+import {
+  totalItems as colTotalItems,
+  totalDurantion as colTotalDuration,
+} from "@/views/tasks/col/col-setup";
+import {
+  totalItems as memTotalItems,
+  totalDurantion as memTotalDuration,
+} from "@/views/tasks/mem/mem-setup";
+import {
+  totalItems as iowTotalItems,
+  totalDurantion as iowTotalDuration,
+} from "@/views/tasks/iow/iow-setup";
+import {
+  totalItems as attTotalItems,
+  totalDurantion as attTotalDuration,
+} from "@/views/tasks/att/att-setup";
+import {
+  totalItems as srvTotalItems,
+  totalDurantion as srvTotalDuration,
+} from "@/views/tasks/srv/srv-setup";
+import {
+  totalItems as fakTotalItems,
+  totalDurantion as fakTotalDuration,
+} from "@/views/tasks/fak/fak-setup";
 
 export const jsonCatalogue = [
   {

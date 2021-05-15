@@ -1,6 +1,9 @@
 import { srv as i18n } from "@/i18n/it/tasks";
 import { clone } from "@/utils/utilityFns";
-import { computeTaskTotalItems, computeTaskTotalDuration} from "@/views/tasks/_composables/taskSetupUtilityFunctions";
+import {
+  computeTaskTotalItems,
+  computeTaskTotalDuration,
+} from "@/views/tasks/_composables/taskSetupUtilityFunctions";
 import makePresenters from "../_composables/makePresenters";
 import processAnswers from "../_composables/processAnswers";
 
