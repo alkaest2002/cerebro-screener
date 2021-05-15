@@ -55,7 +55,9 @@ const blocks = [
 
 // export total number of items
 export const totalItems = computeTaskTotalItems(
-  blocks, "survey", (e) => Object.keys(e.items[0].itemData).length
+  blocks,
+  "survey",
+  (e) => Object.keys(e.items[0].itemData).length
 );
 
 // export total duration

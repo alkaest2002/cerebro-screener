@@ -171,7 +171,9 @@ const blocks = [
 
 // export total number of items
 export const totalItems = computeTaskTotalItems(
-  blocks, ["items"], (e) => e.items[0].itemData.cards.length
+  blocks,
+  ["items"],
+  (e) => e.items[0].itemData.cards.length
 );
 // export total duration
 export const totalDurantion = computeTaskTotalDuration(blocks);
