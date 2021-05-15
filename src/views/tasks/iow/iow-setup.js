@@ -343,8 +343,7 @@ const blocks = [
 
 // export total number of items
 export const totalItems = computeTaskTotalItems(
-  blocks,
-  (e) => e.items[0].itemData.decks[0].cards.length
+  blocks, ["items"], (e) => e.items[0].itemData.decks[0].cards.length
 );
 
 // export total duration
