@@ -239,6 +239,7 @@ export const totalItems = computeTaskTotalItems(blocks);
 // export total duration
 export const totalDurantion = computeTaskTotalDuration(blocks);
 
+// export getTaskData function
 export const getTaskData = () => {
   // clone blocks
   const clonedBlocks = clone(blocks);
@@ -248,6 +249,7 @@ export const getTaskData = () => {
   return { blocks: clonedBlocks, presenters };
 };
 
+// export build answers data function
 export const buildAnswersFn = (answers) => {
   // process answers
   const processedAnswers = processAnswers
