@@ -360,8 +360,8 @@ export const getTaskData = () => {
   return { blocks: clonedBlocks, presenters };
 };
 
-// export build answers data function
-export const buildAnswersFn = (answers) => {
+// export get task answers function
+export const getTaskAnswers = (answers) => {
   // function to process itemData
   const itemDataFn = (block, index) => {
     return {

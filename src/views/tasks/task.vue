@@ -36,9 +36,9 @@ export default {
       // clone presenters
       const presenters = clone(store.state.presenters.presenters);
       // import function to process presenters
-      const { buildAnswersFn } = await import(`./${taskKey}/${taskKey}-setup`);
+      const { getTaskAnswers } = await import(`./${taskKey}/${taskKey}-setup`);
       // process presenters and get answers
-      const answers = buildAnswersFn(presenters);
+      const answers = getTaskAnswers(presenters);
       // persist answers to vuex
       store.dispatch("answers/setTaskAnswers", answers);
       // go to tasks battery

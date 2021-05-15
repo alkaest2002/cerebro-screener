@@ -232,8 +232,8 @@ export const getTaskData = () => {
   return { blocks: clonedBlocks, presenters };
 };
 
-// export build answers data function
-export const buildAnswersFn = (answers) => {
+// export get task answers function
+export const getTaskAnswers = (answers) => {
   // process answers
   const processedAnswers = processAnswers
     .chain(answers)
