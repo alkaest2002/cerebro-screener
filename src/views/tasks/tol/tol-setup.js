@@ -7,7 +7,7 @@ import {
 import makePresenters from "../_composables/makePresenters";
 import processAnswers from "../_composables/processAnswers";
 
-// items
+// base items
 const items = [
   {
     towers: [
@@ -123,6 +123,46 @@ const items = [
   },
 ];
 
+// task items
+const taskItems = items.map((item, index) => {
+  let itemObject = {};
+  itemObject.id = `item.${leftPadValue(index + 1, 3, 0)}`;
+  itemObject.component = "item";
+  itemObject.canGoBack = false;
+  itemObject.canGoForth = false;
+  itemObject.isLocked = false;
+  itemObject.itemData = {
+    startTower: item.towers[0],
+    endTower: item.towers[1],
+    userTower: [[], [], []],
+    actions: 0,
+    isCorrect: false,
+  };
+  itemObject.timer = item.timer;
+  return { ...itemObject };
+});
+
+// demo items
+const demoItems = [
+  {
+    id: "demo.001",
+    component: "demo",
+    canGoBack: true,
+    canGoForth: false,
+    isLocked: false,
+    itemData: {
+      startTower: [["blue", "red"], [], ["green"]],
+      endTower: [["red"], ["blue"], ["green"]],
+      userTower: [[], [], []],
+      actions: 0,
+      isCorrect: false,
+      hint: i18n["demo.001"].itemData.hint,
+    },
+    timer: {},
+  },
+];
+
+// blocks
 const blocks = [
   {
     id: "block.001",
@@ -139,7 +179,7 @@ const blocks = [
           description: i18n["instruction.001"].itemData.description,
           scoring: i18n["instruction.001"].itemData.scoring,
           duration: 0,
-          items: 16,
+          items: taskItems.length,
           images: [
             {
               src: i18n["instruction.001"].itemData.images[0].src,
@@ -157,46 +197,13 @@ const blocks = [
     id: "block.002",
     type: "demo",
     timer: {},
-    items: [
-      {
-        id: "demo.001",
-        component: "demo",
-        canGoBack: true,
-        canGoForth: false,
-        isLocked: false,
-        itemData: {
-          startTower: [["blue", "red"], [], ["green"]],
-          endTower: [["red"], ["blue"], ["green"]],
-          userTower: [[], [], []],
-          actions: 0,
-          isCorrect: false,
-          hint: i18n["demo.001"].itemData.hint,
-        },
-        timer: {},
-      },
-    ],
+    items: demoItems,
   },
   {
     id: "block.003",
     type: "items",
     timer: {},
-    items: items.map((item, index) => {
-      let itemObject = {};
-      itemObject.id = `item.${leftPadValue(index + 1, 3, 0)}`;
-      itemObject.component = "item";
-      itemObject.canGoBack = false;
-      itemObject.canGoForth = false;
-      itemObject.isLocked = false;
-      itemObject.itemData = {
-        startTower: item.towers[0],
-        endTower: item.towers[1],
-        userTower: [[], [], []],
-        actions: 0,
-        isCorrect: false,
-      };
-      itemObject.timer = item.timer;
-      return { ...itemObject };
-    }),
+    items: taskItems,
   },
   {
     id: "block.004",

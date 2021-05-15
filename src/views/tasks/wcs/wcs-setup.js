@@ -41,6 +41,61 @@ const cards = cardsCleanedShuffled.map((c) => {
   return { ...item };
 });
 
+// task items
+const taskItems =  [1].map((item, index) => {
+  let itemObject = {};
+  itemObject.id = `item.${leftPadValue(index + 1, 3, 0)}`;
+  itemObject.component = "item";
+  itemObject.canGoBack = true;
+  itemObject.canGoForth = false;
+  itemObject.isLocked = false;
+  itemObject.itemData = {
+    cards,
+    droppedCards: [],
+    decks: [],
+    initialRule: shuffle(["color", "figure", "number"])[0],
+    rules: [],
+    feedback: {
+      index: null,
+      message: null,
+    },
+  };
+  itemObject.timer = {};
+  return { ...itemObject };
+});
+
+// demo items
+const demoItems = [
+  {
+    id: "demo.001",
+    component: "demo",
+    canGoBack: true,
+    canGoForth: false,
+    isLocked: false,
+    itemData: {
+      cards: [
+        { color: "red", figure: "diamond", number: "two" },
+        { color: "green", figure: "cross", number: "three" },
+        { color: "blue", figure: "circle", number: "one" },
+        { color: "yellow", figure: "circle", number: "two" },
+        { color: "blue", figure: "cross", number: "two" },
+        { color: "red", figure: "diamond", number: "four" },
+      ],
+      droppedCards: [],
+      decks: [],
+      initialRule: shuffle(["color", "figure", "number"])[0],
+      rules: [],
+      feedback: {
+        index: null,
+        message: null,
+      },
+      hint: i18n["demo.001"].itemData.hint,
+    },
+    timer: {},
+  },
+];
+
+// blocks
 const blocks = [
   {
     id: "block.001",
@@ -57,7 +112,7 @@ const blocks = [
           description: i18n["instruction.001"].itemData.description,
           scoring: i18n["instruction.001"].itemData.scoring,
           duration: 0,
-          items: 60,
+          items: taskItems[0].itemData.cards.length,
           images: [
             {
               src: i18n["instruction.001"].itemData.images[0].src,
@@ -75,61 +130,13 @@ const blocks = [
     id: "block.002",
     type: "demo",
     timer: {},
-    items: [
-      {
-        id: "demo.001",
-        component: "demo",
-        canGoBack: true,
-        canGoForth: false,
-        isLocked: false,
-        itemData: {
-          cards: [
-            { color: "red", figure: "diamond", number: "two" },
-            { color: "green", figure: "cross", number: "three" },
-            { color: "blue", figure: "circle", number: "one" },
-            { color: "yellow", figure: "circle", number: "two" },
-            { color: "blue", figure: "cross", number: "two" },
-            { color: "red", figure: "diamond", number: "four" },
-          ],
-          droppedCards: [],
-          decks: [],
-          initialRule: shuffle(["color", "figure", "number"])[0],
-          rules: [],
-          feedback: {
-            index: null,
-            message: null,
-          },
-          hint: i18n["demo.001"].itemData.hint,
-        },
-        timer: {},
-      },
-    ],
+    items: demoItems,
   },
   {
     id: "block.003",
     type: "items",
     timer: {},
-    items: [1].map((item, index) => {
-      let itemObject = {};
-      itemObject.id = `item.${leftPadValue(index + 1, 3, 0)}`;
-      itemObject.component = "item";
-      itemObject.canGoBack = true;
-      itemObject.canGoForth = false;
-      itemObject.isLocked = false;
-      itemObject.itemData = {
-        cards,
-        droppedCards: [],
-        decks: [],
-        initialRule: shuffle(["color", "figure", "number"])[0],
-        rules: [],
-        feedback: {
-          index: null,
-          message: null,
-        },
-      };
-      itemObject.timer = {};
-      return { ...itemObject };
-    }),
+    items: taskItems,
   },
   {
     id: "block.004",

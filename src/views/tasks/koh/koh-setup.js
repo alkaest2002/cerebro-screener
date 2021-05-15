@@ -7,8 +7,8 @@ import {
 import makePresenters from "../_composables/makePresenters";
 import processAnswers from "../_composables/processAnswers";
 
-// items
-let items = [
+// base items
+let baseItems = [
   {
     tiles: [
       { tileIndex: 0, tileColor: "yellow", tileRotation: "clock-0" },
@@ -147,7 +147,8 @@ let items = [
   },
 ];
 
-items = items.map((item) => {
+// update base items
+baseItems = baseItems.map((item) => {
   let currentItem = {};
   currentItem.userFigure = {
     isLocked: false,
@@ -177,6 +178,102 @@ items = items.map((item) => {
   return { ...currentItem };
 });
 
+// task items
+const taskItems = baseItems.map((item, index) => {
+  let itemObject = {};
+  itemObject.id = `item.${leftPadValue(index + 1, 3, 0)}`;
+  itemObject.component = "item";
+  itemObject.canGoBack = false;
+  itemObject.canGoForth = false;
+  itemObject.isLocked = false;
+  itemObject.itemData = {
+    endFigure: item.endFigure,
+    userFigure: item.userFigure,
+    isCorrect: false,
+    actions: 0,
+  };
+  itemObject.timer = item.timer;
+  return { ...itemObject };
+});
+
+// demo items
+const demoItems = [
+  {
+    id: "demo.001",
+    component: "demo",
+    canGoBack: true,
+    canGoForth: false,
+    isLocked: false,
+    itemData: {
+      userFigure: {
+        isLocked: false,
+        figureType: "tiles-4",
+        figureTiles: [
+          {
+            tileIndex: 0,
+            tileType: "figure",
+            tileColor: "void",
+            tileRotation: "clock-0",
+          },
+          {
+            tileIndex: 1,
+            tileType: "figure",
+            tileColor: "void",
+            tileRotation: "clock-0",
+          },
+          {
+            tileIndex: 2,
+            tileType: "figure",
+            tileColor: "void",
+            tileRotation: "clock-0",
+          },
+          {
+            tileIndex: 3,
+            tileType: "figure",
+            tileColor: "void",
+            tileRotation: "clock-0",
+          },
+        ],
+      },
+      endFigure: {
+        isLocked: true,
+        figureType: "tiles-4",
+        figureTiles: [
+          {
+            tileIndex: 0,
+            tileType: "figure",
+            tileColor: "yellow-blue",
+            tileRotation: "clock-90",
+          },
+          {
+            tileIndex: 1,
+            tileType: "figure",
+            tileColor: "yellow",
+            tileRotation: "clock-0",
+          },
+          {
+            tileIndex: 2,
+            tileType: "figure",
+            tileColor: "yellow",
+            tileRotation: "clock-0",
+          },
+          {
+            tileIndex: 3,
+            tileType: "figure",
+            tileColor: "yellow",
+            tileRotation: "clock-0",
+          },
+        ],
+      },
+      isCorrect: false,
+      actions: 0,
+      hint: i18n["demo.001"].itemData.hint,
+    },
+    timer: {},
+  },
+];
+
+// blocks
 const blocks = [
   {
     id: "block.001",
@@ -192,8 +289,8 @@ const blocks = [
         itemData: {
           description: i18n["instruction.001"].itemData.description,
           scoring: i18n["instruction.001"].itemData.scoring,
-          duration: i18n["instruction.001"].duration,
-          items: 10,
+          duration: 0,
+          items: taskItems.length,
           images: [
             {
               src: i18n["instruction.001"].itemData.images[0].src,
@@ -211,102 +308,13 @@ const blocks = [
     id: "block.002",
     type: "demo",
     timer: {},
-    items: [
-      {
-        id: "demo.001",
-        component: "demo",
-        canGoBack: true,
-        canGoForth: false,
-        isLocked: false,
-        itemData: {
-          userFigure: {
-            isLocked: false,
-            figureType: "tiles-4",
-            figureTiles: [
-              {
-                tileIndex: 0,
-                tileType: "figure",
-                tileColor: "void",
-                tileRotation: "clock-0",
-              },
-              {
-                tileIndex: 1,
-                tileType: "figure",
-                tileColor: "void",
-                tileRotation: "clock-0",
-              },
-              {
-                tileIndex: 2,
-                tileType: "figure",
-                tileColor: "void",
-                tileRotation: "clock-0",
-              },
-              {
-                tileIndex: 3,
-                tileType: "figure",
-                tileColor: "void",
-                tileRotation: "clock-0",
-              },
-            ],
-          },
-          endFigure: {
-            isLocked: true,
-            figureType: "tiles-4",
-            figureTiles: [
-              {
-                tileIndex: 0,
-                tileType: "figure",
-                tileColor: "yellow-blue",
-                tileRotation: "clock-90",
-              },
-              {
-                tileIndex: 1,
-                tileType: "figure",
-                tileColor: "yellow",
-                tileRotation: "clock-0",
-              },
-              {
-                tileIndex: 2,
-                tileType: "figure",
-                tileColor: "yellow",
-                tileRotation: "clock-0",
-              },
-              {
-                tileIndex: 3,
-                tileType: "figure",
-                tileColor: "yellow",
-                tileRotation: "clock-0",
-              },
-            ],
-          },
-          isCorrect: false,
-          actions: 0,
-          hint: i18n["demo.001"].itemData.hint,
-        },
-        timer: {},
-      },
-    ],
+    items: demoItems,
   },
   {
     id: "block.003",
     type: "items",
     timer: {},
-    items: items.map((item, index) => {
-      let itemObject = {};
-      itemObject.id = `item.${leftPadValue(index + 1, 3, 0)}`;
-      itemObject.component = "item";
-      itemObject.canGoBack = false;
-      itemObject.canGoForth = false;
-      itemObject.isLocked = false;
-      itemObject.itemData = {
-        endFigure: item.endFigure,
-        userFigure: item.userFigure,
-        isCorrect: false,
-        actions: 0,
-      };
-      itemObject.timer = item.timer;
-      return { ...itemObject };
-    }),
+    items: taskItems,
   },
   {
     id: "block.004",

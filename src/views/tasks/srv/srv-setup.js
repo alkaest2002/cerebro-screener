@@ -7,6 +7,14 @@ import {
 import makePresenters from "../_composables/makePresenters";
 import processAnswers from "../_composables/processAnswers";
 
+// base items
+const questions = {
+  q1: null,
+  q2: null,
+  q3: null,
+};
+
+// blocks
 const blocks = [
   {
     id: "block.001",
@@ -23,7 +31,7 @@ const blocks = [
           description: i18n["instruction.001"].itemData.description,
           scoring: i18n["instruction.001"].itemData.scoring,
           duration: 0,
-          items: 3,
+          items: Object.keys(questions).length,
           images: [],
           actions: 0,
         },
@@ -42,11 +50,7 @@ const blocks = [
         canGoBack: false,
         canGoForth: false,
         isLocked: false,
-        itemData: {
-          q1: null,
-          q2: null,
-          q3: null,
-        },
+        itemData: questions,
         timer: {},
       },
     ],

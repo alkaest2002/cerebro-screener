@@ -11,8 +11,8 @@ import processAnswers from "../_composables/processAnswers";
 const gridSizes = [16 * 3, 25 * 2, 36 * 2];
 const baseSequence = Array.from(new Array(150), (val, index) => index + 1);
 
-// items
-const items = gridSizes.map((gridSize) => {
+// base items
+const baseItems = gridSizes.map((gridSize) => {
   let currentItem = {};
   let numbers = [...baseSequence].slice(0, gridSize);
   const sliceSize =
@@ -28,6 +28,59 @@ const items = gridSizes.map((gridSize) => {
   return { ...currentItem };
 });
 
+// task items
+const taskItems = baseItems.map((item, index) => {
+  let itemObject = {};
+  itemObject.id = `item.${leftPadValue(index + 1, 3, 0)}`;
+  itemObject.component = "item";
+  itemObject.canGoBack = false;
+  itemObject.canGoForth = false;
+  itemObject.isLocked = false;
+  itemObject.itemData = {
+    ...item,
+  };
+  itemObject.timer = {};
+  return { ...itemObject };
+});
+
+// demo items
+const demoItems = [
+  {
+    id: "demo.001",
+    component: "demo",
+    canGoBack: true,
+    canGoForth: false,
+    isLocked: false,
+    itemData: {
+      numbers: [
+        1,
+        3,
+        4,
+        2,
+        8,
+        5,
+        7,
+        6,
+        9,
+        15,
+        14,
+        17,
+        18,
+        16,
+        10,
+        11,
+        13,
+        12,
+      ],
+      errors: 0,
+      isCorrect: false,
+      hint: i18n["demo.001"].itemData.hint,
+    },
+    timer: {},
+  },
+];
+
+// blocks
 const blocks = [
   {
     id: "block.001",
@@ -44,7 +97,7 @@ const blocks = [
           description: i18n["instruction.001"].itemData.description,
           scoring: i18n["instruction.001"].itemData.scoring,
           duration: 0,
-          items: 3,
+          items: taskItems.length,
           images: [
             {
               src: i18n["instruction.001"].itemData.images[0].src,
@@ -62,59 +115,13 @@ const blocks = [
     id: "block.002",
     type: "demo",
     timer: {},
-    items: [
-      {
-        id: "demo.001",
-        component: "demo",
-        canGoBack: true,
-        canGoForth: false,
-        isLocked: false,
-        itemData: {
-          numbers: [
-            1,
-            3,
-            4,
-            2,
-            8,
-            5,
-            7,
-            6,
-            9,
-            15,
-            14,
-            17,
-            18,
-            16,
-            10,
-            11,
-            13,
-            12,
-          ],
-          errors: 0,
-          isCorrect: false,
-          hint: i18n["demo.001"].itemData.hint,
-        },
-        timer: {},
-      },
-    ],
+    items: demoItems,
   },
   {
     id: "block.003",
     type: "items",
     timer: {},
-    items: items.map((item, index) => {
-      let itemObject = {};
-      itemObject.id = `item.${leftPadValue(index + 1, 3, 0)}`;
-      itemObject.component = "item";
-      itemObject.canGoBack = false;
-      itemObject.canGoForth = false;
-      itemObject.isLocked = false;
-      itemObject.itemData = {
-        ...item,
-      };
-      itemObject.timer = {};
-      return { ...itemObject };
-    }),
+    items: taskItems,
   },
   {
     id: "block.004",
