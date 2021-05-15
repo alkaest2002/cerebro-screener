@@ -223,6 +223,9 @@ const blocks = [
   },
 ];
 
+// update instrunctions data
+blocks[0].items.forEach((e) => e.itemData.duration = computeTotalDuration([blocks[2]]));
+
 // export total number of items
 export const totalItems = computeTotalItems(blocks);
 
