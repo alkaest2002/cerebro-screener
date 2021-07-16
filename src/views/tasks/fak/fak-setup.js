@@ -1,10 +1,77 @@
 import { leftPadValue, clone } from "@/utils/utilityFns";
+import {
+  computeTotalItems,
+  computeTotalDuration,
+} from "@/views/tasks/_composables/taskSetupUtilityFunctions";
 import makePresenters from "../_composables/makePresenters";
 import processAnswers from "../_composables/processAnswers";
 
-// items
-const items = [[1], [2], [3]];
+// base items
+const baseItems = [[1], [2], [3]];
 
+// task items - subtask one
+const taskItemsSubtaskOne = baseItems.map((item, index) => {
+  let itemObject = {};
+  itemObject.id = `item.${leftPadValue(index + 1, 3, 0)}`;
+  itemObject.component = "item";
+  itemObject.canGoBack = true;
+  itemObject.canGoForth = true;
+  itemObject.isLocked = false;
+  itemObject.itemData = {
+    fakeProp: item,
+    actions: 0,
+    isCorrect: false,
+  };
+  itemObject.timer = {};
+  return { ...itemObject };
+});
+
+// task items - subtask two
+const taskItemsSubtaskTwo = [...taskItemsSubtaskOne];
+
+// task items - subtask three
+const taskItemsSubtaskThree = baseItems.map((item, index) => {
+  let itemObject = {};
+  itemObject.id = `item.${leftPadValue(index + 1, 3, 0)}`;
+  itemObject.component = "item";
+  itemObject.canGoBack = false;
+  itemObject.canGoForth = false;
+  itemObject.isLocked = false;
+  itemObject.itemData = {
+    fakeProp: item,
+    isCorrect: false,
+    actions: 0,
+  };
+  itemObject.timer = {
+    timeLimit: 5,
+    alertThreshold: 3,
+  };
+  return { ...itemObject };
+});
+
+// demo items - subtask one
+const demoItemsSubtaskOne = [
+  {
+    id: "demo.001",
+    component: "demo",
+    canGoBack: true,
+    canGoForth: true,
+    isLocked: false,
+    itemData: {
+      actions: 0,
+      hint: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    },
+    timer: {},
+  },
+];
+
+// demo items - subtasks two
+const demoItemsSubtaskTwo = [...demoItemsSubtaskOne];
+
+// demo items - subtasks three
+const demoItemsSubtaskThree = [...demoItemsSubtaskOne];
+
+// blocks
 const blocks = [
   {
     id: "block.001",
@@ -21,8 +88,8 @@ const blocks = [
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           scoring: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          duration: 60,
-          items: 3,
+          duration: 0,
+          items: taskItemsSubtaskOne.length,
           images: [],
           actions: 0,
         },
@@ -34,20 +101,7 @@ const blocks = [
     id: "block.002",
     type: "demo",
     timer: {},
-    items: [
-      {
-        id: "demo.001",
-        component: "demo",
-        canGoBack: true,
-        canGoForth: true,
-        isLocked: false,
-        itemData: {
-          actions: 0,
-          hint: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        },
-        timer: {},
-      },
-    ],
+    items: demoItemsSubtaskOne,
   },
   {
     id: "block.003",
@@ -56,21 +110,7 @@ const blocks = [
       timeLimit: 60,
       alertThreshold: 3,
     },
-    items: items.map((item, index) => {
-      let itemObject = {};
-      itemObject.id = `item.${leftPadValue(index + 1, 3, 0)}`;
-      itemObject.component = "item";
-      itemObject.canGoBack = true;
-      itemObject.canGoForth = true;
-      itemObject.isLocked = false;
-      itemObject.itemData = {
-        fakeProp: item,
-        actions: 0,
-        isCorrect: false,
-      };
-      itemObject.timer = {};
-      return { ...itemObject };
-    }),
+    items: taskItemsSubtaskOne,
   },
   {
     id: "block.004",
@@ -87,8 +127,8 @@ const blocks = [
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           scoring: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          duration: 30,
-          items: 3,
+          duration: 0,
+          items: taskItemsSubtaskTwo.length,
           images: [],
           actions: 0,
         },
@@ -100,20 +140,7 @@ const blocks = [
     id: "block.005",
     type: "demo",
     timer: {},
-    items: [
-      {
-        id: "demo.001",
-        component: "demo",
-        canGoBack: true,
-        canGoForth: true,
-        isLocked: false,
-        itemData: {
-          actions: 0,
-          hint: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        },
-        timer: {},
-      },
-    ],
+    items: demoItemsSubtaskTwo,
   },
   {
     id: "block.006",
@@ -122,21 +149,7 @@ const blocks = [
       timeLimit: 10,
       alertThreshold: 3,
     },
-    items: items.map((item, index) => {
-      let itemObject = {};
-      itemObject.id = `item.${leftPadValue(index + 1, 3, 0)}`;
-      itemObject.component = "item";
-      itemObject.canGoBack = true;
-      itemObject.canGoForth = true;
-      itemObject.isLocked = false;
-      itemObject.itemData = {
-        fakeProp: item,
-        actions: 0,
-        isCorrect: false,
-      };
-      itemObject.timer = {};
-      return { ...itemObject };
-    }),
+    items: taskItemsSubtaskTwo,
   },
   {
     id: "block.007",
@@ -153,8 +166,8 @@ const blocks = [
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           scoring: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          duration: 15,
-          items: 3,
+          duration: 0,
+          items: taskItemsSubtaskThree.length,
           images: [],
           actions: 0,
         },
@@ -166,43 +179,13 @@ const blocks = [
     id: "block.008",
     type: "demo",
     timer: {},
-    items: [
-      {
-        id: "demo.001",
-        component: "demo",
-        canGoBack: true,
-        canGoForth: true,
-        isLocked: false,
-        itemData: {
-          actions: 0,
-          hint: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        },
-        timer: {},
-      },
-    ],
+    items: demoItemsSubtaskThree,
   },
   {
     id: "block.009",
     type: "items",
     timer: {},
-    items: items.map((item, index) => {
-      let itemObject = {};
-      itemObject.id = `item.${leftPadValue(index + 1, 3, 0)}`;
-      itemObject.component = "item";
-      itemObject.canGoBack = false;
-      itemObject.canGoForth = false;
-      itemObject.isLocked = false;
-      itemObject.itemData = {
-        fakeProp: item,
-        isCorrect: false,
-        actions: 0,
-      };
-      itemObject.timer = {
-        timeLimit: 5,
-        alertThreshold: 3,
-      };
-      return { ...itemObject };
-    }),
+    items: taskItemsSubtaskThree,
   },
   {
     id: "block.010",
@@ -242,6 +225,24 @@ const blocks = [
   },
 ];
 
+// update instrunctions data
+blocks[0].items.forEach(
+  (e) => (e.itemData.duration = computeTotalDuration([blocks[2]]))
+);
+blocks[3].items.forEach(
+  (e) => (e.itemData.duration = computeTotalDuration([blocks[5]]))
+);
+blocks[6].items.forEach(
+  (e) => (e.itemData.duration = computeTotalDuration([blocks[8]]))
+);
+
+// export total number of items
+export const totalItems = computeTotalItems(blocks);
+
+// export total duration
+export const totalDurantion = computeTotalDuration(blocks);
+
+// export getTaskData function
 export const getTaskData = () => {
   // clone blocks
   const clonedBlocks = clone(blocks);
@@ -251,7 +252,8 @@ export const getTaskData = () => {
   return { blocks: clonedBlocks, presenters };
 };
 
-export const buildAnswersFn = (answers) => {
+// export get task answers function
+export const getTaskAnswers = (answers) => {
   // process answers
   const processedAnswers = processAnswers
     .chain(answers)

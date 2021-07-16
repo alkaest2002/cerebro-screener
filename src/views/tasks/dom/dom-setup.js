@@ -1,10 +1,14 @@
 import { dom as i18n } from "@/i18n/it/tasks";
 import { leftPadValue, clone } from "@/utils/utilityFns";
+import {
+  computeTotalItems,
+  computeTotalDuration,
+} from "@/views/tasks/_composables/taskSetupUtilityFunctions";
 import makePresenters from "../_composables/makePresenters";
 import processAnswers from "../_composables/processAnswers";
 
-// items
-const items = [
+// base items
+const baseItems = [
   {
     tiles: [
       [3, 2],
@@ -172,6 +176,51 @@ const items = [
   },
 ];
 
+// task items
+const taskItems = baseItems.map((item, index) => {
+  let itemObject = {};
+  itemObject.id = `item.${leftPadValue(index + 1, 3, 0)}`;
+  itemObject.component = "item";
+  itemObject.canGoBack = true;
+  itemObject.canGoForth = true;
+  itemObject.isLocked = false;
+  itemObject.itemData = {
+    ...item,
+  };
+  itemObject.itemData.userTile = [-1, -1];
+  itemObject.itemData.isCorrect = false;
+  itemObject.itemData.actions = 0;
+  itemObject.timer = {};
+  return { ...itemObject };
+});
+
+// demo items
+const demoItems = [
+  {
+    id: "demo.001",
+    component: "demo",
+    canGoBack: true,
+    canGoForth: false,
+    isLocked: false,
+    itemData: {
+      tiles: [
+        [3, 0],
+        [2, 1],
+        [3, 0],
+        [2, 1],
+        [3, 0],
+      ],
+      userTile: [-1, -1],
+      targetTile: [2, 1],
+      isCorrect: false,
+      actions: 0,
+      hint: i18n["demo.001"].itemData.hint,
+    },
+    timer: {},
+  },
+];
+
+// blocks
 const blocks = [
   {
     id: "block.001",
@@ -188,7 +237,7 @@ const blocks = [
           description: i18n["instruction.001"].itemData.description,
           scoring: i18n["instruction.001"].itemData.scoring,
           duration: 0,
-          items: 15,
+          items: taskItems.length,
           images: [
             {
               src: i18n["instruction.001"].itemData.images[0].src,
@@ -206,51 +255,13 @@ const blocks = [
     id: "block.002",
     type: "demo",
     timer: {},
-    items: [
-      {
-        id: "demo.001",
-        component: "demo",
-        canGoBack: true,
-        canGoForth: false,
-        isLocked: false,
-        itemData: {
-          tiles: [
-            [3, 0],
-            [2, 1],
-            [3, 0],
-            [2, 1],
-            [3, 0],
-          ],
-          userTile: [-1, -1],
-          targetTile: [2, 1],
-          isCorrect: false,
-          actions: 0,
-          hint: i18n["demo.001"].itemData.hint,
-        },
-        timer: {},
-      },
-    ],
+    items: demoItems,
   },
   {
     id: "block.003",
     type: "items",
     timer: {},
-    items: items.map((item, index) => {
-      let itemObject = {};
-      itemObject.id = `item.${leftPadValue(index + 1, 3, 0)}`;
-      itemObject.component = "item";
-      itemObject.canGoBack = true;
-      itemObject.canGoForth = true;
-      itemObject.isLocked = false;
-      itemObject.itemData = {
-        ...item,
-      };
-      itemObject.itemData.userTile = [-1, -1];
-      itemObject.itemData.isCorrect = false;
-      itemObject.itemData.actions = 0;
-      itemObject.timer = {};
-      return { ...itemObject };
-    }),
+    items: taskItems,
   },
   {
     id: "block.004",
@@ -290,6 +301,18 @@ const blocks = [
   },
 ];
 
+// update instrunctions data
+blocks[0].items.forEach(
+  (e) => (e.itemData.duration = computeTotalDuration([blocks[2]]))
+);
+
+// export total number of items
+export const totalItems = computeTotalItems(blocks);
+
+// export total duration
+export const totalDurantion = computeTotalDuration(blocks);
+
+// export getTaskData function
 export const getTaskData = () => {
   // clone blocks
   const clonedBlocks = clone(blocks);
@@ -299,7 +322,8 @@ export const getTaskData = () => {
   return { blocks: clonedBlocks, presenters };
 };
 
-export const buildAnswersFn = (answers) => {
+// export get task answers function
+export const getTaskAnswers = (answers) => {
   // process answers
   const processedAnswers = processAnswers
     .chain(answers)

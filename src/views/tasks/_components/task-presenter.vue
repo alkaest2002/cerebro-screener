@@ -30,7 +30,7 @@
       :can-go-back="canGoBack"
       :can-go-forth="currentPresenter.canGoForth"
       @navigate-current="onNavigateCurrent"
-      @navigate-beyond-last="$emit('end-of-items')"
+      @navigate-beyond-last="$emit('end-of-task')"
     >
       <template #timer>
         <task-timer @time-is-up="onTimeIsUp" />
@@ -60,7 +60,7 @@ export default {
 
   // emitted events
   emits: {
-    "end-of-items": null,
+    "end-of-task": null,
   },
 
   setup() {

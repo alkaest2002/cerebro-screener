@@ -1,8 +1,20 @@
 import { srv as i18n } from "@/i18n/it/tasks";
 import { clone } from "@/utils/utilityFns";
+import {
+  computeTotalItems,
+  computeTotalDuration,
+} from "@/views/tasks/_composables/taskSetupUtilityFunctions";
 import makePresenters from "../_composables/makePresenters";
 import processAnswers from "../_composables/processAnswers";
 
+// base items
+const questions = {
+  q1: null,
+  q2: null,
+  q3: null,
+};
+
+// blocks
 const blocks = [
   {
     id: "block.001",
@@ -19,7 +31,7 @@ const blocks = [
           description: i18n["instruction.001"].itemData.description,
           scoring: i18n["instruction.001"].itemData.scoring,
           duration: 0,
-          items: 3,
+          items: Object.keys(questions).length,
           images: [],
           actions: 0,
         },
@@ -38,17 +50,24 @@ const blocks = [
         canGoBack: false,
         canGoForth: false,
         isLocked: false,
-        itemData: {
-          q1: null,
-          q2: null,
-          q3: null,
-        },
+        itemData: questions,
         timer: {},
       },
     ],
   },
 ];
 
+// export total number of items
+export const totalItems = computeTotalItems(
+  blocks,
+  "survey",
+  (e) => Object.keys(e.items[0].itemData).length
+);
+
+// export total duration
+export const totalDurantion = computeTotalDuration(blocks);
+
+// export getTaskData function
 export const getTaskData = () => {
   // clone blocks
   const clonedBlocks = clone(blocks);
@@ -58,7 +77,8 @@ export const getTaskData = () => {
   return { blocks: clonedBlocks, presenters };
 };
 
-export const buildAnswersFn = (answers) => {
+// export get task answers function
+export const getTaskAnswers = (answers) => {
   // process answers
   const processedAnswers = processAnswers
     .chain(answers)

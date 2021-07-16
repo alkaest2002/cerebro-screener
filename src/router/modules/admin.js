@@ -12,6 +12,22 @@ export default [
         name: "route-admin-login",
         component: () =>
           import(/* webpackChunkName: "admin" */ "@/views/admin/login"),
+        beforeEnter: (to, from, next) => {
+          // reset test data under these conditions
+          if (
+            [
+              from.name == "route-admin-save-data",
+              store.state.answers.saveOp.local.isOk ||
+                store.state.answers.saveOp.server.isOk,
+            ].every((e) => e)
+          )
+            return next({
+              name: "route-admin-reset-battery",
+              params: { next: "route-admin-login" },
+            });
+          // next
+          return next();
+        },
       },
       {
         path: "create/battery",
@@ -52,9 +68,9 @@ export default [
           import(/* webpackChunkName: "admin" */ "@/views/admin/save-data"),
       },
       {
-        path: "reset/battery",
+        path: "reset/battery/next/:next?",
         name: "route-admin-reset-battery",
-        redirect: () => {
+        redirect: (to) => {
           // reset battery
           store.dispatch("testee/wipe");
           store.dispatch("battery/wipe");
@@ -62,8 +78,9 @@ export default [
           store.dispatch("presenters/wipe");
           store.dispatch("answers/wipe");
           store.dispatch("timer/wipe");
+          const name = to.params?.next || "route-main-home";
           // redirect
-          return { name: "route-main-home" };
+          return { name };
         },
       },
     ],

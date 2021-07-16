@@ -57,7 +57,7 @@ export const taskCard = {
   items: "Quesiti",
   duration: "Durata",
   noTimeLimit: "illimitata",
-  minutes: "minuti",
+  minutes: "min.",
   buttons: {
     completed: "completato",
     waiting: "in attesa",

@@ -1,8 +1,8 @@
 <template>
   <button
-    :class="buttonCSSClass"
-    :disabled="disabled || buttonWasClicked"
     class="button"
+    :class="buttonCSSClass"
+    :disabled="disabled"
     :type="buttonType"
     @click="onClick"
   >
@@ -11,16 +11,16 @@
 </template>
 
 <script>
-import { ref, computed, watch } from "vue";
+import { computed } from "vue";
 export default {
   // name
   name: "loading-button",
 
   // props:
   props: {
-    isLoading: {
+    modelValue: {
       type: Boolean,
-      default: false,
+      required: true,
     },
 
     buttonCss: {
@@ -39,30 +39,26 @@ export default {
     },
   },
 
-  // setup
-  setup(props) {
-    // buttonWasClicked ref
-    const buttonWasClicked = ref(false);
+  // emitted events
+  emits: {
+    "update:modelValue": (value) => typeof value == "boolean",
+  },
 
+  // setup
+  setup(props, { emit }) {
     // button css class
     const buttonCSSClass = computed(() => {
-      const shouldSpin = buttonWasClicked.value || props.isLoading;
-      return `${props.buttonCss} ${shouldSpin ? "is-loading" : null}`;
+      return `${props.buttonCss} ${props.modelValue ? "is-loading" : null}`;
     });
 
-    // watch isLoding prop
-    watch(
-      () => props.isLoading,
-      (value) => (buttonWasClicked.value = value)
-    );
-
     // handle on click
-    const onClick = () => (buttonWasClicked.value = true);
+    const onClick = () => {
+      emit("update:modelValue", true);
+    };
 
     // return setup object
     return {
       buttonCSSClass,
-      buttonWasClicked,
       onClick,
     };
   },

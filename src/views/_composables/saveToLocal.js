@@ -9,8 +9,9 @@ export default (indexDbExecute) => {
   // localOp
   const localOp = computed({
     get: () => store.state.answers.saveOp.local,
-    set: (value) =>
-      store.dispatch("answers/setSaveOp", { key: "local", data: value }),
+    set: (value) => {
+      store.dispatch("answers/setSaveOp", { key: "local", data: value });
+    },
   });
 
   // create temporary link with data:uri
@@ -61,7 +62,7 @@ export default (indexDbExecute) => {
       localOp.value = {
         isOk: true,
         status: "finished",
-        message: i18n.download.finihsed,
+        message: i18n.download.finished,
       };
       // on error
     } catch (err) {

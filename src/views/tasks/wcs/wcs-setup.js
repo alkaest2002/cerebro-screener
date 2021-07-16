@@ -1,5 +1,9 @@
 import { wcs as i18n } from "@/i18n/it/tasks";
 import { leftPadValue, shuffle, clone } from "@/utils/utilityFns";
+import {
+  computeTotalItems,
+  computeTotalDuration,
+} from "@/views/tasks/_composables/taskSetupUtilityFunctions";
 import makePresenters from "../_composables/makePresenters";
 import processAnswers from "../_composables/processAnswers";
 
@@ -37,6 +41,61 @@ const cards = cardsCleanedShuffled.map((c) => {
   return { ...item };
 });
 
+// task items
+const taskItems = [1].map((item, index) => {
+  let itemObject = {};
+  itemObject.id = `item.${leftPadValue(index + 1, 3, 0)}`;
+  itemObject.component = "item";
+  itemObject.canGoBack = true;
+  itemObject.canGoForth = false;
+  itemObject.isLocked = false;
+  itemObject.itemData = {
+    cards,
+    droppedCards: [],
+    decks: [],
+    initialRule: shuffle(["color", "figure", "number"])[0],
+    rules: [],
+    feedback: {
+      index: null,
+      message: null,
+    },
+  };
+  itemObject.timer = {};
+  return { ...itemObject };
+});
+
+// demo items
+const demoItems = [
+  {
+    id: "demo.001",
+    component: "demo",
+    canGoBack: true,
+    canGoForth: false,
+    isLocked: false,
+    itemData: {
+      cards: [
+        { color: "red", figure: "diamond", number: "two" },
+        { color: "green", figure: "cross", number: "three" },
+        { color: "blue", figure: "circle", number: "one" },
+        { color: "yellow", figure: "circle", number: "two" },
+        { color: "blue", figure: "cross", number: "two" },
+        { color: "red", figure: "diamond", number: "four" },
+      ],
+      droppedCards: [],
+      decks: [],
+      initialRule: shuffle(["color", "figure", "number"])[0],
+      rules: [],
+      feedback: {
+        index: null,
+        message: null,
+      },
+      hint: i18n["demo.001"].itemData.hint,
+    },
+    timer: {},
+  },
+];
+
+// blocks
 const blocks = [
   {
     id: "block.001",
@@ -53,7 +112,7 @@ const blocks = [
           description: i18n["instruction.001"].itemData.description,
           scoring: i18n["instruction.001"].itemData.scoring,
           duration: 0,
-          items: 60,
+          items: taskItems[0].itemData.cards.length,
           images: [
             {
               src: i18n["instruction.001"].itemData.images[0].src,
@@ -71,61 +130,13 @@ const blocks = [
     id: "block.002",
     type: "demo",
     timer: {},
-    items: [
-      {
-        id: "demo.001",
-        component: "demo",
-        canGoBack: true,
-        canGoForth: false,
-        isLocked: false,
-        itemData: {
-          cards: [
-            { color: "red", figure: "diamond", number: "two" },
-            { color: "green", figure: "cross", number: "three" },
-            { color: "blue", figure: "circle", number: "one" },
-            { color: "yellow", figure: "circle", number: "two" },
-            { color: "blue", figure: "cross", number: "two" },
-            { color: "red", figure: "diamond", number: "four" },
-          ],
-          droppedCards: [],
-          decks: [],
-          initialRule: shuffle(["color", "figure", "number"])[0],
-          rules: [],
-          feedback: {
-            index: null,
-            message: null,
-          },
-          hint: i18n["demo.001"].itemData.hint,
-        },
-        timer: {},
-      },
-    ],
+    items: demoItems,
   },
   {
     id: "block.003",
     type: "items",
     timer: {},
-    items: [1].map((item, index) => {
-      let itemObject = {};
-      itemObject.id = `item.${leftPadValue(index + 1, 3, 0)}`;
-      itemObject.component = "item";
-      itemObject.canGoBack = true;
-      itemObject.canGoForth = false;
-      itemObject.isLocked = false;
-      itemObject.itemData = {
-        cards,
-        droppedCards: [],
-        decks: [],
-        initialRule: shuffle(["color", "figure", "number"])[0],
-        rules: [],
-        feedback: {
-          index: null,
-          message: null,
-        },
-      };
-      itemObject.timer = {};
-      return { ...itemObject };
-    }),
+    items: taskItems,
   },
   {
     id: "block.004",
@@ -165,6 +176,16 @@ const blocks = [
   },
 ];
 
+// export total number of items
+export const totalItems = computeTotalItems(
+  blocks,
+  ["items"],
+  (e) => e.items[0].itemData.cards.length
+);
+// export total duration
+export const totalDurantion = computeTotalDuration(blocks);
+
+// export getTaskData function
 export const getTaskData = () => {
   // clone blocks
   const clonedBlocks = clone(blocks);
@@ -174,7 +195,8 @@ export const getTaskData = () => {
   return { blocks: clonedBlocks, presenters };
 };
 
-export const buildAnswersFn = (answers) => {
+// export get task answers function
+export const getTaskAnswers = (answers) => {
   // function to process itemData
   const itemDataFn = (block, index) => {
     return {
@@ -182,7 +204,6 @@ export const buildAnswersFn = (answers) => {
       rule: block.itemData.rules[index] || block.itemData.initialRule,
     };
   };
-
   // process answers
   const processedAnswers = processAnswers
     .chain(answers)
