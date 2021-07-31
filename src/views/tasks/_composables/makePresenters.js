@@ -3,7 +3,7 @@ import { clone } from "@/utils/utilityFns";
 export default (blocks) => {
   // clone blocks
   const clonedBlocks = clone(blocks);
-  // loop thorugh cloned blocks
+  // loop through cloned blocks
   return clonedBlocks.reduce((accOuter, itrOuter, indexOuter) => {
     // loop through current block items
     const presenters = itrOuter.items.reduce(
