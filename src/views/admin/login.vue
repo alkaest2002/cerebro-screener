@@ -82,8 +82,7 @@ export default {
         // do nothing
         return;
       }
-      // set isLoading to true
-      isLoading.value = true;
+
       // try to authenticate
       try {
         // check credentials
