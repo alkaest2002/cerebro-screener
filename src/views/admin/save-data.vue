@@ -26,7 +26,6 @@
 </template>
 
 <script>
-/* eslint-disable no-unused-vars */
 import { saveData as i18n } from "@/i18n/it/views/admin";
 import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
@@ -49,7 +48,7 @@ export default {
     // use store
     const store = useStore();
 
-    // get indexdb executer
+    // from composables
     const { indexDbExecute } = manageIndexDb();
 
     // index db count
@@ -57,7 +56,7 @@ export default {
 
     // handle on mounted
     onMounted(async () => {
-      // count number of recores in indexDb
+      // count number of records in indexDb
       const { result: indexDbCount } = await indexDbExecute({
         action: "count",
       });
