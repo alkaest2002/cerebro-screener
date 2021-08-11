@@ -2,7 +2,7 @@ import { clone } from "@/utils/utilityFns";
 
 const initState = {
   answers: {},
-  indexDbCount: 0,
+  indexDbCount: null,
   saveOp: {
     local: {
       isOk: null,
@@ -37,7 +37,8 @@ const mutations = {
     state.saveOp[key] = data;
   },
 
-  mutateIndexDbCount(state, { type }) {
+  mutateIndexDbCount(state, { type, value }) {
+    if (type == "set") state.indexDbCount = value;
     if (type == "reset") state.indexDbCount = 0;
     if (type == "increment") state.indexDbCount += 1;
   },
@@ -61,8 +62,8 @@ const actions = {
     commit("mutateSaveOp", saveOp);
   },
 
-  setIndexDbCount({ commit }, { type }) {
-    commit("mutateIndexDbCount", { type });
+  setIndexDbCount({ commit }, payload) {
+    commit("mutateIndexDbCount", payload);
   },
 
   // wipe

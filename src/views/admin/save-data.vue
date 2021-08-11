@@ -26,9 +26,11 @@
 </template>
 
 <script>
+/* eslint-disable no-unused-vars */
 import { saveData as i18n } from "@/i18n/it/views/admin";
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
+import manageIndexDb from "@/views/_composables/manageIndexDb";
 import saveDataToLocal from "./_components/save-data-to-local";
 import saveDataToServer from "./_components/save-data-to-server";
 
@@ -47,8 +49,24 @@ export default {
     // use store
     const store = useStore();
 
+    // get indexdb executer
+    const { indexDbExecute } = manageIndexDb();
+
     // index db count
-    const indexDbCount = computed(() => store.state.answers.indexDbCount);
+    const indexDbCount = computed(() => store.state.answers.indexDbCount || 0);
+
+    // handle on mounted
+    onMounted(async () => {
+      // count number of recores in indexDb
+      const { result: indexDbCount } = await indexDbExecute({
+        action: "count",
+      });
+      // persist number of records in vuex
+      store.dispatch("answers/setIndexDbCount", {
+        type: "set",
+        value: indexDbCount,
+      });
+    });
 
     // return setup object
     return {
