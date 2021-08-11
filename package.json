@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "bulma": "^0.9.3",
-    "core-js": "^3.16.0",
+    "core-js": "^3.16.1",
     "lodash.clonedeep": "^4.5.0",
     "vue": "^3.2.2",
     "vue-router": "^4.0.11",
