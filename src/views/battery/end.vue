@@ -66,7 +66,6 @@ export default {
     // from composables
     const { localOp, onArchive } = saveToLocal(indexDbExecute);
 
-    console.log(localOp);
     // disable archive button
     const disableArchive = computed(() =>
       ["running", "finished"].includes(localOp.value.status)
