@@ -57,7 +57,7 @@ export default (indexDbExecute) => {
       // clear indexDb collection
       await indexDbExecute({ action: "clear" });
       // reset indexDbCount
-      store.dispatch("answers/setIndexDbCount", { type: "reset" });
+      store.dispatch("answers/resetIndexDbCount");
       // update localOp
       localOp.value = {
         isOk: true,

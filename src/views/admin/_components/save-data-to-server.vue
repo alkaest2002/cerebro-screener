@@ -35,7 +35,7 @@
 
 <script>
 import { saveDataToServer as i18n } from "@/i18n/it/views/admin";
-import { ref, computed, watch } from "vue";
+import { ref, watch } from "vue";
 import { useStore } from "vuex";
 import manageIndexDb from "@/views/_composables/manageIndexDb";
 import saveToServer from "@/views/_composables/saveToServer";
@@ -44,8 +44,17 @@ export default {
   // name
   name: "data-save-to-server",
 
+  // props
+  props: {
+    indexDbCount: {
+      type: Number,
+      default: 0
+    }
+  },
+
   // setup
   setup() {
+
     // use store
     const store = useStore();
 
@@ -60,9 +69,6 @@ export default {
       indexDbExecute
     );
 
-    // index db count
-    const indexDbCount = computed(() => store.state.answers.indexDbCount);
-
     // isLoading
     const isLoading = ref(false);
 
@@ -76,7 +82,6 @@ export default {
       i18n,
       isOnline,
       serverOp,
-      indexDbCount,
       firebaseEndpoint,
       isLoading,
       onClickUpload,

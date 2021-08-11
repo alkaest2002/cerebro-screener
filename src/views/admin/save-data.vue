@@ -16,10 +16,10 @@
         </p>
       </div>
       <div class="mt-5">
-        <save-data-to-local />
+        <save-data-to-local :index-db-count="indexDbCount" />
       </div>
       <div class="mt-5">
-        <save-data-to-server />
+        <save-data-to-server :index-db-count="indexDbCount" />
       </div>
     </div>
   </div>
@@ -57,14 +57,11 @@ export default {
     // handle on mounted
     onMounted(async () => {
       // count number of records in indexDb
-      const { result: indexDbCount } = await indexDbExecute({
+      const { result: count } = await indexDbExecute({
         action: "count",
       });
       // persist number of records in vuex
-      store.dispatch("answers/setIndexDbCount", {
-        type: "set",
-        value: indexDbCount,
-      });
+      store.dispatch("answers/setIndexDbCount", count);
     });
 
     // return setup object

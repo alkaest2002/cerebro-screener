@@ -30,7 +30,7 @@
 
 <script>
 import { saveDataToLocal as i18n } from "@/i18n/it/views/admin";
-import { ref, computed, watch } from "vue";
+import { ref, watch } from "vue";
 import { useStore } from "vuex";
 import manageIndexDb from "@/views/_composables/manageIndexDb";
 import saveToLocal from "@/views/_composables/saveToLocal";
@@ -38,6 +38,14 @@ import saveToLocal from "@/views/_composables/saveToLocal";
 export default {
   // name
   name: "data-save-to-local",
+
+ // props
+  props: {
+    indexDbCount: {
+      type: Number,
+      default: 0
+    }
+  },
 
   // setup
   setup() {
@@ -55,9 +63,6 @@ export default {
       indexDbExecute
     );
 
-    // index db count
-    const indexDbCount = computed(() => store.state.answers.indexDbCount);
-
     // isLoading
     const isLoading = ref(false);
 
@@ -71,7 +76,6 @@ export default {
       i18n,
       emailTo,
       localOp,
-      indexDbCount,
       isLoading,
       onClickDownload,
     };

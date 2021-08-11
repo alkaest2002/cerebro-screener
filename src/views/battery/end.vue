@@ -83,8 +83,6 @@ export default {
       (value) => {
         // on proper archival of battery data
         if (value.localStatus == "finished" && value.localIsOk) {
-          // increment indexDb count
-          store.dispatch("answers/setIndexDbCount", { type: "increment" });
           // go to main (after a bit)
           setTimeout(
             () => router.replace({ name: "route-admin-reset-battery" }),

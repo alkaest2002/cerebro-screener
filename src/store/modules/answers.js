@@ -37,10 +37,8 @@ const mutations = {
     state.saveOp[key] = data;
   },
 
-  mutateIndexDbCount(state, { type, value }) {
-    if (type == "set") state.indexDbCount = value;
-    if (type == "reset") state.indexDbCount = 0;
-    if (type == "increment") state.indexDbCount += 1;
+  mutateIndexDbCount(state, count) {
+    state.indexDbCount = count;
   },
 
   // wipe
@@ -62,8 +60,12 @@ const actions = {
     commit("mutateSaveOp", saveOp);
   },
 
-  setIndexDbCount({ commit }, payload) {
-    commit("mutateIndexDbCount", payload);
+  setIndexDbCount({ commit }, count) {
+    commit("mutateIndexDbCount", count);
+  },
+
+  resetIndexDbCount({ dispatch }) {
+    dispatch("setIndexDbCount", 0);
   },
 
   // wipe
