@@ -32,21 +32,18 @@ export default {
       });
       // add keystroke event listener
       window.addEventListener("keydown", (event) => {
-        // if pressed key is F2
-        if (event.key == "F2")
+        // if pressed key is F2 and no testee data is present
+        if (event.key == "F2" && !store.state.testee.testee.id)
           // go to main
           router.replace({ name: "route-main-home" });
         // if pressed key is F4
         if (event.key == "F4")
           // go to login
           router.replace({ name: "route-admin-login" });
-        // if pressed key is F4
-        if (event.key == "Enter") {
-          // if page cointains an element with the id "enter-click"
-          const $el = document.getElementById("enter-click");
-          // simulate click
-          if ($el) $el.click();
-        }
+        // if pressed key is Enter
+        if (event.key == "Enter") 
+          // simulate click on element with id "enter-click" (if present)
+          document.getElementById("enter-click")?.click();
       });
       // store current online status
       store.dispatch("main/setIsOnline", window.navigator.onLine);
