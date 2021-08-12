@@ -129,13 +129,8 @@ export default {
     // loop through presenters
     this.data = this.data.map((e) => {
       // get props
-      const {
-        id,
-        blockIndex,
-        itemDuration,
-        itemFirstReactionAfter,
-        itemData,
-      } = e;
+      const { id, blockIndex, itemDuration, itemFirstReactionAfter, itemData } =
+        e;
       // flatten pbject
       const flattended = {
         id,

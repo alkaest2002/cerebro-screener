@@ -16,7 +16,13 @@
           >
             <div class="is-flex is-justify-content-center">
               <div
-                class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mr-5"
+                class="
+                  is-flex
+                  is-flex-direction-column
+                  is-justify-content-center
+                  is-align-items-center
+                  mr-5
+                "
               >
                 <mul-gauges-panel
                   :animation-has-ended="animationHasEnded"
@@ -24,7 +30,12 @@
                 />
               </div>
               <div
-                class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
+                class="
+                  is-flex
+                  is-flex-direction-column
+                  is-justify-content-center
+                  is-align-items-center
+                "
               >
                 <mul-counter
                   :animation-has-ended="animationHasEnded"

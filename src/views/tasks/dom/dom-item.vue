@@ -10,7 +10,9 @@
     <div id="presenter" class="is-relative is-clipped box">
       <item-container>
         <div
-          class="is-flex is-align-content-space-around is-justify-content-center"
+          class="
+            is-flex is-align-content-space-around is-justify-content-center
+          "
         >
           <dom-tile
             v-for="(tile, index) in itemData.tiles"

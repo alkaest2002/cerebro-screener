@@ -39,12 +39,12 @@ export default {
   // name
   name: "data-save-to-local",
 
- // props
+  // props
   props: {
     indexDbCount: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
 
   // setup
@@ -56,9 +56,8 @@ export default {
     const emailTo = store.state.main.email;
 
     // from composables
-    const { localOp, onDownload: onClickDownload } = saveToLocal(
-      indexDbExecuter
-    );
+    const { localOp, onDownload: onClickDownload } =
+      saveToLocal(indexDbExecuter);
 
     // isLoading
     const isLoading = ref(false);

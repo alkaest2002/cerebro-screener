@@ -1,11 +1,19 @@
 <template>
   <div
-    class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
+    class="
+      is-flex
+      is-flex-direction-column
+      is-justify-content-center
+      is-align-items-center
+    "
   >
     <div
       id="display"
       :class="cssState"
-      class="mb-2 is-size-2 is-flex is-justify-content-center is-align-items-center"
+      class="
+        mb-2
+        is-size-2 is-flex is-justify-content-center is-align-items-center
+      "
     >
       <transition name="fade" mode="out-in">
         <span :key="numberToShow">

@@ -6,7 +6,12 @@
     />
     <div
       style="width: 200px; margin: auto"
-      class="is-flex is-align-content-space-around is-justify-content-center is-flex-wrap-wrap"
+      class="
+        is-flex
+        is-align-content-space-around
+        is-justify-content-center
+        is-flex-wrap-wrap
+      "
     >
       <dom-tile-face
         v-for="dots in [1, 2, 3, 4, 5, 6, 0]"

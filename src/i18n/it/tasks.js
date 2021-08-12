@@ -58,8 +58,7 @@ export const dom = {
   },
   "demo.001": {
     itemData: {
-      hint:
-        "<b>Come devi procedere</b>: individua il criterio che lega tra loro le tessere in alto e completa la tessera mancante. Trascina e rilascia sulle facce dell'ultima tessera (quella con i punti interrogativi), i numeri che ritieni completino la serie. Se sbagli, puoi trascinare nuovi numeri su quelli che intendi cambiare",
+      hint: "<b>Come devi procedere</b>: individua il criterio che lega tra loro le tessere in alto e completa la tessera mancante. Trascina e rilascia sulle facce dell'ultima tessera (quella con i punti interrogativi), i numeri che ritieni completino la serie. Se sbagli, puoi trascinare nuovi numeri su quelli che intendi cambiare",
     },
   },
 };
@@ -103,8 +102,7 @@ export const koh = {
   },
   "demo.001": {
     itemData: {
-      hint:
-        "<b>Come devi procedere</b>: il riquadro B deve esser uguale al riquadro A. Per ottenere questo risultato, trascina nel riquadro B le tessere che hai a disposizione e ruotale in modo opportuno.",
+      hint: "<b>Come devi procedere</b>: il riquadro B deve esser uguale al riquadro A. Per ottenere questo risultato, trascina nel riquadro B le tessere che hai a disposizione e ruotale in modo opportuno.",
     },
   },
 };
@@ -201,8 +199,7 @@ export const tol = {
   },
   "demo.001": {
     itemData: {
-      hint:
-        "<b>Come devi procedere</b>: sposta i dischi tra le torri della forma B per ottenere la forma bersaglio A. Tieni presente che puoi spostare solo i dischi che si trovano in cima a ogni torre. Cerca di ottenere la forma bersaglio A compiendo il minor numero di mosse.",
+      hint: "<b>Come devi procedere</b>: sposta i dischi tra le torri della forma B per ottenere la forma bersaglio A. Tieni presente che puoi spostare solo i dischi che si trovano in cima a ogni torre. Cerca di ottenere la forma bersaglio A compiendo il minor numero di mosse.",
     },
   },
 };

@@ -48,13 +48,12 @@ export default {
   props: {
     indexDbCount: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
 
   // setup
   setup() {
-
     // use store
     const store = useStore();
 
@@ -62,9 +61,11 @@ export default {
     const firebaseEndpoint = store.state.main.firebaseEndpoint;
 
     // from composables
-    const { isOnline, serverOp, onUpload: onClickUpload } = saveToServer(
-      indexDbExecuter
-    );
+    const {
+      isOnline,
+      serverOp,
+      onUpload: onClickUpload,
+    } = saveToServer(indexDbExecuter);
 
     // isLoading
     const isLoading = ref(false);

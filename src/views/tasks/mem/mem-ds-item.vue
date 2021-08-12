@@ -10,7 +10,12 @@
     <div id="presenter" class="is-relative is-clipped box">
       <item-container>
         <div
-          class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
+          class="
+            is-flex
+            is-flex-direction-column
+            is-justify-content-center
+            is-align-items-center
+          "
         >
           <ds-display
             :sequence-to-play="sequenceToPlay"
@@ -71,11 +76,8 @@ export default {
     const { totalItems, itemData } = initItem(props.presenter.itemData);
 
     // mem setup
-    const {
-      sequenceToPlay,
-      cssState,
-      onClickPlay,
-    } = setupShowSequenceAnimation(itemData);
+    const { sequenceToPlay, cssState, onClickPlay } =
+      setupShowSequenceAnimation(itemData);
 
     // handle number added to user sequence
     const onAddNumberToUserSequence = (value) => {

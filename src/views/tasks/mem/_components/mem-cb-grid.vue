@@ -2,21 +2,34 @@
   <div
     id="blocks"
     :class="cssState"
-    class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
+    class="
+      is-flex
+      is-flex-direction-column
+      is-justify-content-center
+      is-align-items-center
+    "
   >
     <div class="is-flex is-flex-wrap-wrap mb-5">
       <div v-for="number in [1, 2, 3, 4, 5, 6, 7, 8, 9]" :key="number">
         <div
           v-if="cssState != 'finished'"
           :class="{ glow: cssState == 'playing' && numberToShow == number }"
-          class="block is-size-2 is-flex is-justify-content-center is-align-items-center m-1"
+          class="
+            block
+            is-size-2 is-flex is-justify-content-center is-align-items-center
+            m-1
+          "
         >
           {{ number }}
         </div>
         <div
           v-else
           :class="{ clicked: userSequence.includes(number) }"
-          class="block is-size-2 is-flex is-justify-content-center is-align-items-center m-1"
+          class="
+            block
+            is-size-2 is-flex is-justify-content-center is-align-items-center
+            m-1
+          "
           @click="$emit('click-number', number)"
         >
           {{ userSequence.indexOf(number) + 1 }}

@@ -1,7 +1,12 @@
 <template>
   <base-layout>
     <div
-      class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
+      class="
+        is-flex
+        is-flex-direction-column
+        is-justify-content-center
+        is-align-items-center
+      "
     >
       <img src="@/assets/images/404-error.svg" style="height: 256px" />
       <div class="has-text-centered block">

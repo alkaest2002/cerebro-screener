@@ -34,7 +34,10 @@
                 />
               </div>
               <p
-                class="mt-3 has-text-grey has-text-weight-bold has-text-centered"
+                class="
+                  mt-3
+                  has-text-grey has-text-weight-bold has-text-centered
+                "
               >
                 {{ i18n.boxA }}
               </p>
@@ -51,7 +54,10 @@
                 />
               </div>
               <p
-                class="mt-3 has-text-grey has-text-weight-bold has-text-centered"
+                class="
+                  mt-3
+                  has-text-grey has-text-weight-bold has-text-centered
+                "
               >
                 {{ i18n.boxB }}
               </p>

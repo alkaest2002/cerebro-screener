@@ -11,7 +11,11 @@
     <div id="presenter" class="is-relative is-clipped box">
       <item-container>
         <div
-          class="mb-4 has-text-grey is-size-5 is-flex is-align-items-center is-justify-content-center"
+          class="
+            mb-4
+            has-text-grey
+            is-size-5 is-flex is-align-items-center is-justify-content-center
+          "
         >
           <span class="mr-3">{{ i18n.remainingCards }}</span>
           <span class="has-text-weight-bold number">{{

@@ -2,7 +2,10 @@
   <div class="col-card is-relative">
     <div
       :class="{ 'is-overlay': card.isCovered }"
-      class="face is-covered is-fkex is-justify-content-center is-align-items-center"
+      class="
+        face
+        is-covered is-fkex is-justify-content-center is-align-items-center
+      "
     >
       <span class="is-size-3">?</span>
     </div>

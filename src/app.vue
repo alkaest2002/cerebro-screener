@@ -41,7 +41,7 @@ export default {
           // go to login
           router.replace({ name: "route-admin-login" });
         // if pressed key is Enter
-        if (event.key == "Enter") 
+        if (event.key == "Enter")
           // simulate click on element with id "enter-click" (if present)
           document.getElementById("enter-click")?.click();
       });

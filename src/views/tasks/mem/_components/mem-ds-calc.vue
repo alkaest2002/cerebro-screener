@@ -2,7 +2,10 @@
   <div id="calc" class="is-relative is-flex is-flex-direction-column p-1 mt-5">
     <div
       v-if="!sequenceHasPlayed"
-      class="cover is-overlay is-flex is-justify-content-center is-align-items-center"
+      class="
+        cover
+        is-overlay is-flex is-justify-content-center is-align-items-center
+      "
     >
       <img src="@/assets/images/lock.svg" style="height: 60px" />
     </div>

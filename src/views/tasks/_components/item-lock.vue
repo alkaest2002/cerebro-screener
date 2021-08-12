@@ -1,7 +1,10 @@
 <template>
   <div
     v-if="show && showLockBasedOnCondition"
-    class="lock is-overlay is-flex is-align-items-center is-justify-content-center"
+    class="
+      lock
+      is-overlay is-flex is-align-items-center is-justify-content-center
+    "
   >
     <div class="has-text-centered">
       <slot>

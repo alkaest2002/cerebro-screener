@@ -29,7 +29,11 @@
         <tr>
           <td>{{ i18n.winAmount }}</td>
           <td
-            class="has-text-centered has-text-success-dark has-background-success-light"
+            class="
+              has-text-centered
+              has-text-success-dark
+              has-background-success-light
+            "
           >
             +{{ itemData.win }}
           </td>
@@ -37,7 +41,9 @@
         <tr>
           <td>{{ i18n.loseAmount }}</td>
           <td
-            class="has-text-centered has-text-danger-dark has-background-danger-light"
+            class="
+              has-text-centered has-text-danger-dark has-background-danger-light
+            "
           >
             {{ itemData.lose }}
           </td>
@@ -45,7 +51,9 @@
         <tr>
           <td>{{ i18n.loseCards }}</td>
           <td
-            class="has-text-centered has-text-danger-dark has-background-danger-light"
+            class="
+              has-text-centered has-text-danger-dark has-background-danger-light
+            "
           >
             {{ itemData.loseCards }}
           </td>

@@ -4,7 +4,15 @@
       v-for="(discs, outerIndex) in tower"
       :key="outerIndex"
       :style="`height: ${240 - outerIndex * 77}px`"
-      class="peg mx-1 is-flex is-flex-wrap-wrap is-flex-direction-column is-justify-content-flex-end is-align-self-flex-end"
+      class="
+        peg
+        mx-1
+        is-flex
+        is-flex-wrap-wrap
+        is-flex-direction-column
+        is-justify-content-flex-end
+        is-align-self-flex-end
+      "
       @dragenter.prevent="void 0"
       @dragover.prevent="void 0"
       @dragstart="onDiscDragged(outerIndex)"

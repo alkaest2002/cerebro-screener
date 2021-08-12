@@ -2,7 +2,12 @@
   <div id="presenter-wrapper">
     <div id="presenter" class="box">
       <div
-        class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
+        class="
+          is-flex
+          is-flex-direction-column
+          is-justify-content-center
+          is-align-items-center
+        "
         style="height: 100%"
       >
         <img src="@/assets/images/fireworks.svg" style="height: 150px" />

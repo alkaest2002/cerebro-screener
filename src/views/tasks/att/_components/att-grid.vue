@@ -1,6 +1,11 @@
 <template>
   <div
-    class="is-flex is-flex-direction-column is-align-items-center is-justify-content-center"
+    class="
+      is-flex
+      is-flex-direction-column
+      is-align-items-center
+      is-justify-content-center
+    "
   >
     <div
       id="grid"
@@ -12,7 +17,10 @@
           :class="{
             'has-background-danger-light': n[0] && n[0] == clickedNumber,
           }"
-          class="grid-number is-flex is-justify-content-center is-align-items-center"
+          class="
+            grid-number
+            is-flex is-justify-content-center is-align-items-center
+          "
           @click="onClickNumber({ number: n[0] })"
         >
           <span

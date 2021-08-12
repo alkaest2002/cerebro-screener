@@ -4,12 +4,20 @@
     class="card is-flex is-flex-direction-column is-justify-content-center"
   >
     <div
-      class="card-row lower is-flex is-justify-content-center is-align-items-center"
+      class="
+        card-row
+        lower
+        is-flex is-justify-content-center is-align-items-center
+      "
     >
       <div class="card-figure" />
     </div>
     <div
-      class="card-row upper is-flex is-justify-content-center is-align-items-center"
+      class="
+        card-row
+        upper
+        is-flex is-justify-content-center is-align-items-center
+      "
     >
       <div v-for="n in [1, 2, 3, 4]" :key="n" class="card-number">
         {{ n }}

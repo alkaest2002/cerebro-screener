@@ -1,10 +1,14 @@
 <template>
   <div
     id="mul-inputs"
-    class="is-flex is-flex-wrap-wrap is-justify-content-center is-align-items-center"
+    class="
+      is-flex is-flex-wrap-wrap is-justify-content-center is-align-items-center
+    "
   >
     <div
-      class="is-flex is-flex-wrap-wrap is-flex-direction-column is-align-items-top"
+      class="
+        is-flex is-flex-wrap-wrap is-flex-direction-column is-align-items-top
+      "
     >
       <div class="p-3">
         <div>

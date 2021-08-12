@@ -10,7 +10,12 @@
     <div id="presenter" class="is-relative is-clipped box">
       <item-container>
         <div
-          class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
+          class="
+            is-flex
+            is-flex-direction-column
+            is-justify-content-center
+            is-align-items-center
+          "
         >
           <div class="block">
             {{ presenter }}

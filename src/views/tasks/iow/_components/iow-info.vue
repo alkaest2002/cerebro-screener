@@ -10,7 +10,12 @@
             2000 + itemData.netAmount >= 0 ? 'success' : 'danger'
           }-light`]: true,
         }"
-        class="is-flex is-flex-direction-column is-align-items-center is-justify-content-center"
+        class="
+          is-flex
+          is-flex-direction-column
+          is-align-items-center
+          is-justify-content-center
+        "
       >
         <span>{{ i18n.netAmount }}</span>
         <span class="has-text-weight-bold">{{

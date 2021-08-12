@@ -3,7 +3,13 @@
     <div
       v-for="(img, index) in images"
       :key="index"
-      class="is-flex is-flex-direction-column is-justify-content-flex-start is-align-items-center mb-3"
+      class="
+        is-flex
+        is-flex-direction-column
+        is-justify-content-flex-start
+        is-align-items-center
+        mb-3
+      "
     >
       <a
         v-bind="$attrs"

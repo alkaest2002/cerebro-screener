@@ -4,7 +4,13 @@
       <p class="is-size-5 has-text-weight-bold">{{ i18n.commitee }}</p>
     </main-hero>
     <div
-      class="mt-5 is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
+      class="
+        mt-5
+        is-flex
+        is-flex-direction-column
+        is-justify-content-center
+        is-align-items-center
+      "
     >
       <div id="commitee" class="has-text-centered">
         <div class="is-flex is-flex-wrap-wrap is-justify-content-center">
