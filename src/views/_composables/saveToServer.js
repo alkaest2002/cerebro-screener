@@ -2,7 +2,7 @@ import { computed } from "vue";
 import { useStore } from "vuex";
 import Worker from "worker-loader!@/workers/firebaseUploadWorker.js";
 
-export default (indexDbExecute) => {
+export default (indexDbExecuter) => {
   // use store
   const store = useStore();
 
@@ -23,7 +23,7 @@ export default (indexDbExecute) => {
     // try
     try {
       // get indexDbData records
-      const { result: data } = await indexDbExecute({
+      const { result: data } = await indexDbExecuter({
         action: "getAll",
         data: null,
       });
@@ -41,7 +41,7 @@ export default (indexDbExecute) => {
         // if server oP was ok
         if (serverOp.value.status == "finished" && serverOp.value.isOk) {
           // clear indexDb collection
-          await indexDbExecute({ action: "clear" });
+          await indexDbExecuter({ action: "clear" });
           // reset indexDbCount
           store.dispatch("answers/resetIndexDbCount");
         }

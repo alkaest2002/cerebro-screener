@@ -2,7 +2,7 @@ import { localOpMessages as i18n } from "@/i18n/it/workers";
 import { computed } from "vue";
 import { useStore } from "vuex";
 
-export default (indexDbExecute) => {
+export default (indexDbExecuter) => {
   // use store
   const store = useStore();
 
@@ -49,13 +49,13 @@ export default (indexDbExecute) => {
         message: i18n.download.running,
       };
       // get indexDB documents
-      const { result: jsonToWrite } = await indexDbExecute({
+      const { result: jsonToWrite } = await indexDbExecuter({
         action: "getAll",
       });
       // download json file
       _onSaveFile("dati.json", JSON.stringify(jsonToWrite));
       // clear indexDb collection
-      await indexDbExecute({ action: "clear" });
+      await indexDbExecuter({ action: "clear" });
       // reset indexDbCount
       store.dispatch("answers/resetIndexDbCount");
       // update localOp
@@ -82,7 +82,7 @@ export default (indexDbExecute) => {
     // try
     try {
       // add document to indexDB
-      await indexDbExecute({ action: "add", document: batteryData });
+      await indexDbExecuter({ action: "add", document: batteryData });
       // update localOp
       localOp.value = {
         isOk: true,

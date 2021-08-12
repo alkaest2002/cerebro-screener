@@ -37,7 +37,7 @@
 import { saveDataToServer as i18n } from "@/i18n/it/views/admin";
 import { ref, watch } from "vue";
 import { useStore } from "vuex";
-import manageIndexDb from "@/views/_composables/manageIndexDb";
+import indexDbExecuter from "@/views/_composables/indexDbExecuter";
 import saveToServer from "@/views/_composables/saveToServer";
 
 export default {
@@ -62,11 +62,8 @@ export default {
     const firebaseEndpoint = store.state.main.firebaseEndpoint;
 
     // from composables
-    const { indexDbExecute } = manageIndexDb();
-
-    // from composables
     const { isOnline, serverOp, onUpload: onClickUpload } = saveToServer(
-      indexDbExecute
+      indexDbExecuter
     );
 
     // isLoading

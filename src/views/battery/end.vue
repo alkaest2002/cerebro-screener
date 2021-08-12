@@ -45,7 +45,7 @@ import { ref, computed, watch } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import { clone } from "@/utils/utilityFns";
-import manageIndexDb from "@/views/_composables/manageIndexDb";
+import indexDbExecuter from "@/views/_composables/indexDbExecuter";
 import saveToLocal from "@/views/_composables/saveToLocal";
 
 export default {
@@ -61,10 +61,7 @@ export default {
     const router = useRouter();
 
     // from composables
-    const { indexDbExecute } = manageIndexDb();
-
-    // from composables
-    const { localOp, onArchive } = saveToLocal(indexDbExecute);
+    const { localOp, onArchive } = saveToLocal(indexDbExecuter);
 
     // disable archive button
     const disableArchive = computed(() =>
