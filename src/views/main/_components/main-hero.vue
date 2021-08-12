@@ -1,6 +1,6 @@
 <template>
   <div class="has-text-centered">
-    <img src="@/assets/images/am.svg" style="height: 350px" />
+    <img src="@/assets/images/am.svg" style="height: 320px" />
     <div class="block">
       <h1 class="is-size-3 has-text-weight-bold">
         {{ i18n.title }} - {{ $store.state.main.version }}
