@@ -12,20 +12,13 @@ const fisherYatesShuffle = (a) => {
 
 // shuffle with possibility of fixing some position
 // a = array
-// b = array of trues (position is fixes) and falses (position is unfixed)
+// b = array of trues (element is fixed) and falses (element is free to be shuffled)
 export const shuffle = (a, f = Array.from({ length: a }, () => false)) => {
-  const list = a.reduce(
-    (acc, e, i) => {
-      if (!f[i]) {
-        acc.pos.push(i);
-        acc.unfixed.push(e);
-      }
-      return acc;
-    },
-    { pos: [], unfixed: [] }
+  let elements = a.reduce(
+    (acc, e, i) => !f[i] ? [...acc, e] : acc, []
   );
-  list.pos = fisherYatesShuffle(list.pos);
-  return a.map((e, i) => (f[i] ? e : list.unfixed[list.pos.indexOf(i)]));
+  elements = fisherYatesShuffle(elements);
+  return a.map((e, i) => (f[i] ? e : elements.splice(0,1)[0]));
 };
 
 // left pad numbers: 1 --> 001
