@@ -2,9 +2,9 @@
 
 import { serverOpMessages as i18n } from "@/i18n/it/workers";
 
-importScripts("https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js");
-importScripts("https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js");
-importScripts("https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js");
+importScripts("https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js");
+importScripts("https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js");
+importScripts("https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js");
 
 // firebase configuration object
 const firebaseConfig = {
