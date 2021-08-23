@@ -105,7 +105,7 @@ export default {
     );
 
     // show block-level lock under these conditions
-    const showBlockLock = computed(() => store.state.timer.type != "item");
+    const showBlockLock = computed(() => store.state.timer.type == "block");
 
     // handle navigate current presenter index
     const onNavigateCurrent = (targetPresenterIndex) => {

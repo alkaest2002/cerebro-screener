@@ -33,7 +33,7 @@ export default {
     const showItemLock = computed(() => {
       return [
         store.getters["presenters/getCurrentPresenter"].isLocked,
-        store.state.timer.type != "block",
+        store.state.timer.type == "item",
       ].every((e) => e);
     });
 
