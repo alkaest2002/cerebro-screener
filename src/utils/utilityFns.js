@@ -14,11 +14,12 @@ const fisherYatesShuffle = (a) => {
 // a = array
 // b = array of trues (element is fixed) and falses (element is free to be shuffled)
 export const shuffle = (a, f = Array.from({ length: a }, () => false)) => {
-  let elements = a.reduce(
-    (acc, e, i) => !f[i] ? [...acc, e] : acc, []
+  const elementsTobeShuffled = a.reduce(
+    (acc, e, i) => (!f[i] ? [...acc, e] : acc),
+    []
   );
-  elements = fisherYatesShuffle(elements);
-  return a.map((e, i) => (f[i] ? e : elements.splice(0,1)[0]));
+  const shuffledElments = fisherYatesShuffle(elementsTobeShuffled);
+  return a.map((e, i) => (f[i] ? e : shuffledElments.splice(0, 1)[0]));
 };
 
 // left pad numbers: 1 --> 001
