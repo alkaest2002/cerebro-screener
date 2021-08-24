@@ -6,9 +6,9 @@
         ref="inputRef"
         class="input"
         :class="inputClass"
-        :type="inputType"
         :placeholder="placeholder"
         :value="modelValue"
+        :type="$attrs.type || 'text'"
         v-bind="$attrs"
         @input="$emit('update:modelValue', $event.target.value)"
       />
@@ -39,11 +39,6 @@ export default {
     placeholder: {
       type: String,
       default: "",
-    },
-
-    inputType: {
-      type: String,
-      default: "text",
     },
 
     modelValue: {
