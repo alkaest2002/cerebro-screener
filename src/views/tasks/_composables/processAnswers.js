@@ -45,17 +45,17 @@ export default {
     this.data = this.data.map((e) => {
       // zip timeIn and timeOut ARRAYS
       const zipped = this._zip(e.timeOut[e.id], e.timeIn[e.id]);
-      // compute duration
+      // compute duration in seconds
       e.itemDuration =
         zipped.reduce((acc, itr) => (acc += itr[0] - itr[1]), 0) / 1000;
-      // transform duration in seconds
+      // round duration with one decimal (e.g., 1.4 seconds)
       e.itemDuration = Math.round(e.itemDuration * 10) / 10;
       // if timeFirstReaction is set
       if (e.timeFirstReaction[e.id]) {
-        // compute itemFirstReaction
+        // compute itemFirstReaction in seconds
         e.itemFirstReactionAfter =
           (e.timeFirstReaction[e.id][0] - e.timeIn[e.id][0]) / 1000;
-        // transform itemFirstReactionAfter in seconds
+        // round duration with one decimal (e.g., 1.4 seconds)
         e.itemFirstReactionAfter =
           Math.round(e.itemFirstReactionAfter * 10) / 10;
       } else {
