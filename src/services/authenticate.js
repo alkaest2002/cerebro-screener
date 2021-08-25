@@ -8,7 +8,7 @@ export const authenticate = async ({ userId, password }) => {
     // return promise
     return new Promise((resolve) => {
       // return resolve or reject
-      return resolve(userId == null && password.toString() == "111")
+      return resolve(userId == null && password.toString() == "111");
     });
   }
 };

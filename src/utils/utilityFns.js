@@ -14,7 +14,7 @@ const fisherYatesShuffle = (a) => {
 // a = array of elements to be shuffled
 // b = array of booleans; true = element is fixed, false = element is free to be shuffled
 export const shuffle = (a, f = Array.from({ length: a }, () => false)) => {
-  const elementsTobeShuffled = a.filter((e,i) => !f[i]);
+  const elementsTobeShuffled = a.filter((e, i) => !f[i]);
   const shuffledElements = fisherYatesShuffle(elementsTobeShuffled);
   return a.map((e, i) => (f[i] ? e : shuffledElements.pop()));
 };

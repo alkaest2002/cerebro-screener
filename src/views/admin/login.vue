@@ -73,7 +73,10 @@ export default {
     // handle on login
     const onClickLogin = async (routeName) => {
       // check credentials
-      const credentialsCheck = await authenticate({ userId: null, password: password.value });
+      const credentialsCheck = await authenticate({
+        userId: null,
+        password: password.value,
+      });
       // set is loading to false
       isLoading.value = false;
       // if credentials are ok
