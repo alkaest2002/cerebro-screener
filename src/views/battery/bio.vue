@@ -141,7 +141,7 @@ export default {
       if (
         Object.keys(errors).reduce(
           (acc, itr) =>
-            acc + Array.from(errors[itr].values()).filter((e) => e).length,
+            acc + Array.from(errors[itr].keys()).filter((e) => e).length,
           0
         ) == 0
       ) {

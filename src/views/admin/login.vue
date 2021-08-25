@@ -15,6 +15,7 @@
           <div class="buttons">
             <loading-button
               v-model="isLoading"
+              :disabled="!password.length"
               class="button is-link is-fullwidth"
               button-type="submit"
               @click.prevent="onClickLogin('route-admin-create-battery')"
@@ -23,6 +24,7 @@
             </loading-button>
             <loading-button
               v-model="isLoading"
+              :disabled="!password.length"
               class="button is-success is-fullwidth"
               button-type="submit"
               @click.prevent="onClickLogin('route-admin-save-data')"
@@ -40,7 +42,6 @@
 <script>
 import { login as i18n } from "@/i18n/it/views/admin";
 import { ref, reactive } from "vue";
-import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import { authenticate } from "@/services/authenticate";
 import formInput from "@/views/_components/form/form-input";
@@ -57,8 +58,7 @@ export default {
   },
 
   setup() {
-    // use store and router
-    const store = useStore();
+    // use router
     const router = useRouter();
 
     // isLoading flag
@@ -67,35 +67,21 @@ export default {
     // password
     const password = ref("");
 
-    // password errors
+    // form inputs errors
     const errors = reactive({ password: new Map() });
-
-    // get app version (no need to be reactive)
-    const version = store.state.main.version;
 
     // handle on login
     const onClickLogin = async (routeName) => {
-      // if password is void
-      if (password.value == "") {
-        // set isLoading to false
-        isLoading.value = false;
-        // do nothing
-        return;
-      }
-
-      // try to authenticate
-      try {
-        // check credentials
-        await authenticate({ userId: null, password: password.value });
+      // check credentials
+      const credentialsCheck = await authenticate({ userId: null, password: password.value });
+      // set is loading to false
+      isLoading.value = false;
+      // if credentials are ok
+      if (credentialsCheck)
         // go to specified route
-        router.replace({ name: routeName });
-      } catch (err) {
-        // set password error value
-        errors.password.set("mismatch", i18n.fields.password.errors.mismatch);
-      } finally {
-        // set is loading to false
-        isLoading.value = false;
-      }
+        return router.replace({ name: routeName });
+      // otherwise set password error value
+      errors.password.set("mismatch", i18n.fields.password.errors.mismatch);
     };
 
     // return setup object
@@ -104,7 +90,6 @@ export default {
       password,
       errors,
       isLoading,
-      version,
       onClickLogin,
     };
   },

@@ -6,11 +6,9 @@ export const authenticate = async ({ userId, password }) => {
   // if current authentication is local
   if (currentAurhentication == "local") {
     // return promise
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       // return resolve or reject
-      return userId == null && password.toString() == "111"
-        ? resolve(true)
-        : reject();
+      return resolve(userId == null && password.toString() == "111")
     });
   }
 };
