@@ -132,7 +132,7 @@ export default [
         path: "end",
         name: "route-task-end",
         component: () =>
-          import(/* webpackChunkName: "task-en" */ "@/views/tasks/task-end"),
+          import(/* webpackChunkName: "end-task" */ "@/views/tasks/task-end"),
       },
     ],
   },
