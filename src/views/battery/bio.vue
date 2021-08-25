@@ -9,6 +9,7 @@
         :errors="errors.id"
         :label="i18n.fields.id.label"
         :placeholder="i18n.fields.id.placeholder"
+        type="text"
       />
       <bio-keyboard v-model="testee.id" :text="testee.id" type="full" />
       <form-input

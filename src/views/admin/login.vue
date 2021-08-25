@@ -7,9 +7,9 @@
           <form-input
             v-model="password"
             :errors="errors.password"
-            auto-focus
-            type="password"
+            :auto-focus="true"
             :placeholder="i18n.fields.password.placeholder"
+            type="password"
             @input="errors.password.clear()"
           />
           <div class="buttons">
