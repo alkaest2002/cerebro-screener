@@ -27,14 +27,11 @@
             </loading-button>
             <p class="mt-2">
               <small
-                v-if="localOp.message"
+                v-show="localOp.message"
                 class="has-text-grey"
                 style="text-transform: lowercase"
               >
                 {{ localOp.message }}
-              </small>
-              <small v-else class="has-text-grey">
-                {{ i18n.waitingStatus }}
               </small>
             </p>
           </div>
