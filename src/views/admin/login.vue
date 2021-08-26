@@ -43,7 +43,7 @@
 import { login as i18n } from "@/i18n/it/views/admin";
 import { ref, reactive } from "vue";
 import { useRouter } from "vue-router";
-import { authenticate } from "@/services/authenticate";
+import { authenticate } from "@/services/auth";
 import formInput from "@/views/_components/form/form-input";
 import mainHero from "@/views/main/_components/main-hero";
 import mainFooter from "@/views/main/_components/main-footer";

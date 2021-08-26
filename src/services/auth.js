@@ -5,7 +5,6 @@ import { store } from "@/store";
 const authentication = computed(() => store.state.admin.currentAuthentication);
 
 const _authenticateLocal = ({ userId, password }) => {
-  console.log(userId == null && password.toString() == "111")
   // return promise
   return new Promise((resolve) => {
     // return resolve or reject
