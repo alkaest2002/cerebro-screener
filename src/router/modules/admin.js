@@ -37,6 +37,9 @@ export default [
             /* webpackChunkName: "admin" */ "@/views/admin/create-battery"
           ),
         beforeEnter: (to, from, next) => {
+          // must come from login page
+          if(from.name != "route-admin-login")
+            return next({ name: "route-admin-login" })
           // if testee is present
           if (store.state.testee.testee.id)
             // go to running battery route
@@ -53,6 +56,9 @@ export default [
             /* webpackChunkName: "admin" */ "@/views/admin/manage-session"
           ),
         beforeEnter: (to, from, next) => {
+          // must come from login page
+          if(from.name != "route-admin-login")
+            return next({ name: "route-admin-login" })
           // if testee is not present
           if (!store.state.testee.testee.id)
             // go to create battery
@@ -66,6 +72,13 @@ export default [
         name: "route-admin-save-data",
         component: () =>
           import(/* webpackChunkName: "admin" */ "@/views/admin/save-data"),
+        beforeEnter: (to, from, next) => {
+          // must come from login page
+          if(from.name != "route-admin-login")
+            return next({ name: "route-admin-login" })
+          // go to route
+          return next();
+        }
       },
       {
         path: "reset/battery/next/:next?",
