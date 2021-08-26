@@ -10,6 +10,7 @@
         :label="i18n.fields.id.label"
         :placeholder="i18n.fields.id.placeholder"
         type="text"
+        readonly="true"
       />
       <bio-keyboard v-model="testee.id" :text="testee.id" type="full" />
       <form-input
@@ -18,6 +19,7 @@
         :label="i18n.fields.age.label"
         :placeholder="i18n.fields.age.placeholder"
         type="number"
+        readonly="true"
       />
       <bio-keyboard v-model="testee.age" :text="testee.age" type="numbers" />
       <form-radio-group
