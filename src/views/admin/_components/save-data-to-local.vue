@@ -56,8 +56,7 @@ export default {
     const emailTo = store.state.main.email;
 
     // from composables
-    const { localOp, onDownload: onClickDownload } =
-      saveToLocal(indexDb);
+    const { localOp, onDownload: onClickDownload } = saveToLocal(indexDb);
 
     // isLoading
     const isLoading = ref(false);

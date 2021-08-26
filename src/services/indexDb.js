@@ -38,7 +38,7 @@ const _query = (command, resolve, reject) => {
     txn.onerror = (evt) => {
       reject({ message: evt.target.error });
     };
-  } else  {
+  } else {
     // reject
     reject({ message: "unrecognized command" });
   }
@@ -78,7 +78,7 @@ export default async (payload) => {
   try {
     // init db
     db = await _init();
-  // on error
+    // on error
   } catch ({ message }) {
     // reject with error
     Promise.reject({ message });

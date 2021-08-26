@@ -69,7 +69,7 @@ export default {
     // handle onMounted
     onMounted(() => {
       // if testee data is present
-      if(!store.state.testee.testee.id)
+      if (!store.state.testee.testee.id)
         return router.replace({ name: "route-battery-bio" });
       //reset task data if query reset is set
       if (route.query.reset) {

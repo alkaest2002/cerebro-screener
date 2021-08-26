@@ -10,10 +10,9 @@ const _authenticateLocal = ({ userId, password }) => {
     // return resolve or reject
     return resolve(userId == null && password.toString() == "111");
   });
-}
+};
 
 export const authenticate = async (payload) => {
   // if current authentication is local
-  if (authentication.value == "local") 
-    return _authenticateLocal(payload)
+  if (authentication.value == "local") return _authenticateLocal(payload);
 };
