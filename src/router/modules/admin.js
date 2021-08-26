@@ -6,6 +6,7 @@ export default [
     path: "/admin",
     name: "route-admin",
     component: admin,
+    redirect: { name: "route-admin-login" },
     children: [
       {
         path: "login",
