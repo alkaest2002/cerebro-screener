@@ -35,7 +35,6 @@
         </form>
       </div>
     </div>
-    <main-footer />
   </div>
 </template>
 
@@ -46,7 +45,6 @@ import { useRouter } from "vue-router";
 import { authenticate } from "@/services/auth";
 import formInput from "@/views/_components/form/form-input";
 import mainHero from "@/views/main/_components/main-hero";
-import mainFooter from "@/views/main/_components/main-footer";
 
 export default {
   name: "login",
@@ -54,7 +52,6 @@ export default {
   components: {
     formInput,
     mainHero,
-    mainFooter,
   },
 
   setup() {

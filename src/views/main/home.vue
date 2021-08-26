@@ -13,7 +13,6 @@
         </button>
       </div>
     </div>
-    <main-footer />
   </base-layout>
 </template>
 
@@ -22,14 +21,12 @@ import { home as i18n } from "@/i18n/it/views/main";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 import mainHero from "./_components/main-hero";
-import mainFooter from "./_components/main-footer";
 
 export default {
   name: "home",
 
   components: {
     mainHero,
-    mainFooter,
   },
 
   // setup
