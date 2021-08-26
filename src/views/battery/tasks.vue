@@ -66,8 +66,12 @@ export default {
       router.replace({ name: `route-tasks-${taskKey}` });
     };
 
-    // on mounted component, reset task data if query reset is set
+    // handle onMounted
     onMounted(() => {
+      // if testee data is present
+      if(!store.state.testee.testee.id)
+        return router.replace({ name: "route-battery-bio" });
+      //reset task data if query reset is set
       if (route.query.reset) {
         store.dispatch("blocks/wipe");
         store.dispatch("presenters/wipe");

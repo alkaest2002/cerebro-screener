@@ -7,6 +7,7 @@ export default [
     path: "/battery",
     name: "route-battery-battery",
     component: battery,
+    redirect: { name: "route-admin-login" },
     children: [
       {
         path: "bio",
