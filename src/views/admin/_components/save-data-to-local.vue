@@ -32,7 +32,7 @@
 import { saveDataToLocal as i18n } from "@/i18n/it/views/admin";
 import { ref, watch } from "vue";
 import { useStore } from "vuex";
-import indexDbExecuter from "@/views/_composables/indexDbExecuter";
+import indexDb from "@/services/indexDb";
 import saveToLocal from "@/views/_composables/saveToLocal";
 
 export default {
@@ -57,7 +57,7 @@ export default {
 
     // from composables
     const { localOp, onDownload: onClickDownload } =
-      saveToLocal(indexDbExecuter);
+      saveToLocal(indexDb);
 
     // isLoading
     const isLoading = ref(false);

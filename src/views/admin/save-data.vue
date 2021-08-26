@@ -29,7 +29,7 @@
 import { saveData as i18n } from "@/i18n/it/views/admin";
 import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
-import indexDbExecuter from "@/views/_composables/indexDbExecuter";
+import indexDb from "@/services/indexDb";
 import saveDataToLocal from "./_components/save-data-to-local";
 import saveDataToServer from "./_components/save-data-to-server";
 
@@ -54,7 +54,7 @@ export default {
     // handle on mounted
     onMounted(async () => {
       // count number of records in indexDb
-      const { result: count } = await indexDbExecuter({
+      const { result: count } = await indexDb({
         action: "count",
       });
       // persist number of records in vuex

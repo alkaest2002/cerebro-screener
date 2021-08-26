@@ -37,7 +37,7 @@
 import { saveDataToServer as i18n } from "@/i18n/it/views/admin";
 import { ref, watch } from "vue";
 import { useStore } from "vuex";
-import indexDbExecuter from "@/views/_composables/indexDbExecuter";
+import indexDb from "@/services/indexDb";
 import saveToServer from "@/views/_composables/saveToServer";
 
 export default {
@@ -65,7 +65,7 @@ export default {
       isOnline,
       serverOp,
       onUpload: onClickUpload,
-    } = saveToServer(indexDbExecuter);
+    } = saveToServer(indexDb);
 
     // isLoading
     const isLoading = ref(false);
