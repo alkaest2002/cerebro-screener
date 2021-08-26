@@ -3,6 +3,6 @@ export const admin = {
 
   state: {
     aunthentications: ["local"],
-    currentAurhentication: "local",
+    currentAuthentication: "local",
   },
 };
