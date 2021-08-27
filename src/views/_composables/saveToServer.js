@@ -24,7 +24,7 @@ export default (indexDb) => {
         action: "getAll",
         data: null,
       });
-      // upload records to firebase
+      // upload records to server
       await uploadData(documents, serverOp);
       // if upload was successful
       if (serverOp.value.isOk) {
