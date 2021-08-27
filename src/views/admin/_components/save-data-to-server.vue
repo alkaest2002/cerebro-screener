@@ -38,7 +38,7 @@ import { saveDataToServer as i18n } from "@/i18n/it/views/admin";
 import { ref, watch } from "vue";
 import { useStore } from "vuex";
 import indexDb from "@/services/indexDb";
-import saveToServer from "@/views/_composables/saveToServer";
+import saveToFirebase from "@/views/_composables/saveToFirebase";
 
 export default {
   // name
@@ -65,7 +65,7 @@ export default {
       isOnline,
       serverOp,
       onUpload: onClickUpload,
-    } = saveToServer(indexDb);
+    } = saveToFirebase(indexDb);
 
     // isLoading
     const isLoading = ref(false);

@@ -1,6 +1,6 @@
-import { localOpMessages as i18n } from "@/i18n/it/workers";
 import { computed } from "vue";
 import { useStore } from "vuex";
+import { localOpMessages as i18n } from "@/i18n/it/views/admin";
 
 export default (indexDb) => {
   // use store
