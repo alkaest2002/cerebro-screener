@@ -21,41 +21,19 @@
         <span>{{ i18n.fig }} {{ index + 1 }}</span>
       </a>
     </div>
-    <teleport to="#modal">
-      <div class="modal" :class="{ 'is-active': modalOpen }">
-        <div class="modal-background" />
-        <div class="modal-content">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <img :src="`/img/tasks/${modalData.src}`" />
-              </figure>
-            </div>
-            <div class="card-content">
-              <div
-                class="content has-text-grey"
-                v-html="modalData.description"
-              />
-              <div class="buttons is-flex is-justify-content-center">
-                <button
-                  class="button is-link"
-                  type="button"
-                  @click="modalOpen = false"
-                >
-                  {{ i18n.buttons.close }}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </teleport>
+    <image-teleport
+      :image-class="{ 'is-active': modalOpen }"
+      :image-src="`/img/tasks/${modalData.src}`"
+      :image-description="modalData.description"
+      @click="modalOpen = false" 
+    />
   </div>
 </template>
 
 <script>
-import { imagesCarousel as i18n } from "@/i18n/it/views/tasks";
 import { ref, computed } from "vue";
+import { imagesCarousel as i18n } from "@/i18n/it/views/tasks";
+import imageTeleport from "./image-teleport.vue";
 
 export default {
   // name
@@ -63,6 +41,11 @@ export default {
 
   // do not inherit attrs
   inheritAttrs: false,
+
+  // components
+  components: {
+    imageTeleport
+  },
 
   // props
   props: {
