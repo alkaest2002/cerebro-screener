@@ -73,12 +73,12 @@ const _uploadData = async (documents, serverOp) => {
       message: i18n.finished,
     };
     // on error
-  } catch (error) {
+  } catch (err) {
     // update serverOp
     return (serverOp.value = {
       isOk: false,
       status: "finished",
-      message: error.message,
+      message: err.message,
     });
     // finally
   } finally {
@@ -121,7 +121,11 @@ export default (indexDb) => {
       // on error
     } catch (err) {
       // update serverOp
-      serverOp.value = err;
+      serverOp.value = {
+        isOk: false,
+        status: "finished",
+        message: err.message,
+      };
     }
   };
   // return setup object
