@@ -91,9 +91,6 @@ export default (indexDb) => {
   // use store
   const store = useStore();
 
-  // isOnline
-  const isOnline = computed(() => store.state.main.isOnline);
-
   // serverOp
   const serverOp = computed({
     get: () => store.state.answers.saveOp.server,
@@ -129,7 +126,6 @@ export default (indexDb) => {
   };
   // return setup object
   return {
-    isOnline,
     serverOp,
     onUpload,
   };
