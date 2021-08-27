@@ -68,6 +68,7 @@ export default {
 
     // disable upload
     const disableUpload = computed(() =>
+      // disable under at least one of the following conditions
       [
         !isOnline.value,
         serverOp.value.status == "running",
