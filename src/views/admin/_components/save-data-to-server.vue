@@ -5,7 +5,7 @@
     </p>
     <p>
       <span clss="is-block">
-        {{ i18n.messageOne }}: <em> {{ firebaseEndpoint }} </em>.
+        {{ i18n.messageOne }}: <em> {{ serverEndPoint }} </em>.
       </span>
       <span>{{ i18n.messagetwo }}</span>
     </p>
@@ -38,7 +38,7 @@ import { saveDataToServer as i18n } from "@/i18n/it/views/admin";
 import { ref, watch, computed } from "vue";
 import { useStore } from "vuex";
 import indexDb from "@/services/indexDb";
-import saveToFirebase from "@/views/_composables/saveToServer";
+import saveToServer from "@/views/_composables/saveToServer";
 
 export default {
   // name
@@ -58,10 +58,10 @@ export default {
     const store = useStore();
 
     // from composables
-    const { serverOp, onUpload: onClickUpload } = saveToFirebase(indexDb);
+    const { serverOp, onUpload: onClickUpload } = saveToServer(indexDb);
 
-    // firebase endpoint (no need to be reactive)
-    const firebaseEndpoint = store.state.main.firebaseEndpoint;
+    // server endpoint (no need to be reactive)
+    const serverEndPoint = store.state.main.serverEndPoint;
 
     // isOnline
     const isOnline = computed(() => store.state.main.isOnline);
@@ -89,7 +89,7 @@ export default {
       isOnline,
       disableUpload,
       serverOp,
-      firebaseEndpoint,
+      serverEndPoint,
       isLoading,
       onClickUpload,
     };
