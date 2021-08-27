@@ -18,14 +18,14 @@ const firebaseConfig = {
   appId: "1:818846195885:web:29a7f7d2ae41b13cdd6624",
 };
 
-// initialize firebase app
+// init firebase app
 const firebaseApp = initializeApp(firebaseConfig);
 
-// export firebase auth
-export const firebaseAuth = getAuth(firebaseApp);
+// init firebase auth
+const firebaseAuth = getAuth(firebaseApp);
 
-// export firestore db
-export const firestoreDb = getFirestore();
+// init firestore
+const firestoreDb = getFirestore();
 
 // build document to put into firestore
 const _buildDocument = (data) => {
