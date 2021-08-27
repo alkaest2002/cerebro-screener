@@ -1,9 +1,8 @@
 import { computed } from "vue";
 import { useStore } from "vuex";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { writeBatch, collection, doc } from "firebase/firestore";
 import { firebaseAuth, firestoreDb } from "@/services/firebase";
-import { signOut } from "@firebase/auth";
 import { serverOpMessages as i18n } from "@/i18n/it/views/admin";
 
 // import firebase user
