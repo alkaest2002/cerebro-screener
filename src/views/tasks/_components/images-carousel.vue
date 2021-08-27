@@ -25,7 +25,7 @@
       :image-class="{ 'is-active': modalOpen }"
       :image-src="`/img/tasks/${modalData.src}`"
       :image-description="modalData.description"
-      @click="modalOpen = false" 
+      @click="modalOpen = false"
     />
   </div>
 </template>
@@ -39,13 +39,13 @@ export default {
   // name
   name: "images-carousel",
 
-  // do not inherit attrs
-  inheritAttrs: false,
-
   // components
   components: {
-    imageTeleport
+    imageTeleport,
   },
+
+  // do not inherit attrs
+  inheritAttrs: false,
 
   // props
   props: {

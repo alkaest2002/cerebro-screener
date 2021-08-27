@@ -57,24 +57,23 @@ export default {
     // use store
     const store = useStore();
 
-     // from composables
-    const {
-      serverOp,
-      onUpload: onClickUpload,
-    } = saveToFirebase(indexDb);
+    // from composables
+    const { serverOp, onUpload: onClickUpload } = saveToFirebase(indexDb);
 
     // firebase endpoint (no need to be reactive)
     const firebaseEndpoint = store.state.main.firebaseEndpoint;
 
     // isOnline
     const isOnline = computed(() => store.state.main.isOnline);
-    
+
     // disable upload
-    const disableUpload = computed(() => [
-      !isOnline.value,
-      serverOp.value.status == 'running',
-      props.indexDbCount == 0,
-    ].some((e) => e));
+    const disableUpload = computed(() =>
+      [
+        !isOnline.value,
+        serverOp.value.status == "running",
+        props.indexDbCount == 0,
+      ].some((e) => e)
+    );
 
     // isLoading
     const isLoading = ref(false);

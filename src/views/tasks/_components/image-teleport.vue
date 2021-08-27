@@ -10,16 +10,9 @@
             </figure>
           </div>
           <div class="card-content">
-            <div
-              class="content has-text-grey"
-              v-html="imageDescription"
-            />
+            <div class="content has-text-grey" v-html="imageDescription" />
             <div class="buttons is-flex is-justify-content-center">
-              <button
-                class="button is-link"
-                type="button"
-                v-bind="$attrs"
-              >
+              <button class="button is-link" type="button" v-bind="$attrs">
                 {{ i18n.buttons.close }}
               </button>
             </div>
@@ -43,25 +36,25 @@ export default {
   props: {
     imageClass: {
       type: Object,
-      required: false
+      required: true,
     },
 
     imageSrc: {
       type: String,
-      required: true
+      required: true,
     },
 
     imageDescription: {
-       type: String,
-      required: true
+      type: String,
+      required: true,
     },
   },
 
   // setup
   setup() {
     return {
-      i18n
-    }
-  }
-}
+      i18n,
+    };
+  },
+};
 </script>
