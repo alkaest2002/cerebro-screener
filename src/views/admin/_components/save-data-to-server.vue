@@ -38,7 +38,7 @@ import { saveDataToServer as i18n } from "@/i18n/it/views/admin";
 import { ref, watch, computed } from "vue";
 import { useStore } from "vuex";
 import indexDb from "@/services/indexDb";
-import saveToFirebase from "@/views/_composables/saveToFirebase";
+import saveToFirebase from "@/views/_composables/saveToServer";
 
 export default {
   // name
