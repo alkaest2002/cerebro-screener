@@ -25,7 +25,7 @@ export const createBattery = {
   randomizeHeader: " 2. Randomizzazione dei task",
   randomizeNote: "nota: clicca sui task che vuoi mantenere in posizione",
   buttons: {
-    reset: "reset",
+    reset: "reset batteria",
     administer: "somministra",
   },
   fields: {
