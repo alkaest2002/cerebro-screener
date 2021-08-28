@@ -38,14 +38,20 @@ export default [
             /* webpackChunkName: "admin" */ "@/views/admin/create-battery"
           ),
         beforeEnter: (to, from, next) => {
-          // must come from login page
-          if (from.name != "route-admin-login")
+          // must come from login page or from manage session
+           if (![
+            "route-admin-login",
+            "route-admin-manage-session",
+          ].some((e) => from.name == e))
             return next({ name: "route-admin-login" });
-          // if testee is present
-          if (store.state.testee.testee.id)
-            // go to running battery route
+          // under these conditions
+          if ([
+            store.state.testee.testee.id,
+            from.name != "route-admin-manage-session",
+          ].every((e) => e))
+            // go to manage session route
             return next({ name: "route-admin-manage-session" });
-          // go to requested route
+          // otherwise go to route
           return next();
         },
       },
