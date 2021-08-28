@@ -5,7 +5,10 @@
       <div class="column is-one-third">
         <router-link
           class="button is-link is-fullwidth"
-          :to="{ name: 'route-admin-reset-battery', params: { next: 'route-battery-bio'}}"
+          :to="{
+            name: 'route-admin-reset-battery',
+            params: { next: 'route-battery-bio' },
+          }"
         >
           {{ i18n.buttons.enter }}
         </router-link>

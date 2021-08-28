@@ -19,7 +19,10 @@
     <div id="navigation" class="buttons">
       <router-link
         id="enter-click"
-        :to="{ name: 'route-admin-reset-battery', params: { next: 'route-admin-create-battery' }}"
+        :to="{
+          name: 'route-admin-reset-battery',
+          params: { next: 'route-admin-create-battery' },
+        }"
         replace
         class="button is-danger"
       >
@@ -48,8 +51,6 @@ export default {
 
   // setup
   setup() {
-    
-
     // return setup object
     return {
       i18n,
