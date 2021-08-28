@@ -31,17 +31,17 @@ export default {
         history.go(1);
       });
       // add keystroke event listener
-      window.addEventListener("keydown", (event) => {
+      window.addEventListener("keydown", ({ key, shiftKey }) => {
         // if pressed key is F2 and no testee data is present
-        if (event.key == "F2" && !store.state.testee.testee.id)
+        if (key == "F2" && !store.state.testee.testee.id)
           // go to main
           router.replace({ name: "route-main-home" });
-        // if pressed key is F4
-        if (event.key == "F4")
-          // go to login
+        // if  pressed key is F" with SHIFT
+        if (key == "F2" && shiftKey)
+          // go to admin
           router.replace({ name: "route-admin-login" });
         // if pressed key is Enter
-        if (event.key == "Enter")
+        if (key == "Enter")
           // simulate click on element with id "enter-click" (if present)
           document.getElementById("enter-click")?.click();
       });
