@@ -14,14 +14,15 @@ export default [
         component: () =>
           import(/* webpackChunkName: "admin" */ "@/views/admin/login"),
         beforeEnter: (to, from, next) => {
-          // reset test data under these conditions
+          // under these conditions
           if (
             [
               from.name == "route-admin-save-data",
               store.state.answers.saveOp.local.isOk ||
-                store.state.answers.saveOp.server.isOk,
+              store.state.answers.saveOp.server.isOk,
             ].every((e) => e)
-          )
+            )
+            // reset test data, then go to admin
             return next({
               name: "route-admin-reset-battery",
               params: { next: "route-admin-login" },
@@ -44,6 +45,7 @@ export default [
               (e) => from.name == e
             )
           )
+            // go to admin
             return next({ name: "route-admin-login" });
           // under these conditions
           if (
