@@ -74,14 +74,17 @@ const _clear = (resolve, reject) => {
 export default async (payload) => {
   // destructure payload
   const { action, document } = payload;
-  // try to
-  try {
-    // init db
-    db = await _init();
-    // on error
-  } catch ({ message }) {
-    // reject with error
-    Promise.reject({ message });
+  // if db is not already initiated
+  if (typeof db === "undefined") {
+    // try to
+    try {
+      // init db
+      db = await _init();
+      // on error
+    } catch ({ message }) {
+      // reject with error
+      return Promise.reject({ message });
+    }
   }
   // return promise
   return new Promise((...promise) => {
