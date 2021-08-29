@@ -32,17 +32,17 @@ export default {
       });
       // add keystroke event listener
       window.addEventListener("keydown", ({ key, shiftKey }) => {
-        // if pressed key is F2 and no testee data is present
+        // if key is F2 and no testee data is present
         if (key == "F2" && !store.state.testee.testee.id)
           // go to main
           router.replace({ name: "route-main-home" });
-        // if  pressed key is F" with SHIFT
+        // if key is F2 with SHIFT
         if (key == "F2" && shiftKey)
           // go to admin
           router.replace({ name: "route-admin-login" });
-        // if pressed key is Enter
+        // if key is Enter
         if (key == "Enter")
-          // simulate click on element with id "enter-click" (if present)
+          // simulate click on element with id "enter-click" (if any)
           document.getElementById("enter-click")?.click();
       });
       // store current online status
