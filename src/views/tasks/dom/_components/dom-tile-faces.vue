@@ -39,9 +39,6 @@ export default {
     domTileFace,
   },
 
-  // do not inherit attrs
-  inheritAttrs: false,
-
   // emitted event
   emits: {
     i18n,
