@@ -4,7 +4,7 @@
       <div class="card-content">
         <div class="content">
           <p class="is-size-4 has-text-weight-bold mb-2">
-            {{ i18n.task }} {{ hashedTaskKey }}
+            {{ i18n.task }} {{ uppercaseTaskKey }}
           </p>
           <p class="mb-0 has-text-grey">
             <b>{{ i18n.items }}:</b> {{ task.items }}
@@ -41,7 +41,6 @@
 
 <script>
 import { taskCard as i18n } from "@/i18n/it/views/battery";
-import { computed } from "vue";
 import { formatTime } from "@/utils/utilityFns";
 
 export default {
@@ -71,13 +70,13 @@ export default {
 
   // setup
   setup(props) {
-    // hashed task key
-    const hashedTaskKey = computed(() => `#${props.task.key.toUpperCase()}`);
+    // hashed task key (no need to be reactive)
+    const uppercaseTaskKey = `#${props.task.key.toUpperCase()}`;
 
     // return setup object
     return {
       i18n,
-      hashedTaskKey,
+      uppercaseTaskKey,
       formatTime,
     };
   },
