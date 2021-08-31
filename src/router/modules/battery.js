@@ -46,7 +46,7 @@ export default [
           // go to battery end under these conditions
           if (
             [
-              from.name == `route-tasks-${lastTask.key}`,
+              from.name == `route-tasks-${lastTask?.key}`,
               store.state.battery.hasEnded,
             ].some((e) => e)
           )

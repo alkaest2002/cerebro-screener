@@ -9,7 +9,7 @@
 <script>
 import { onMounted } from "vue";
 import { useStore } from "vuex";
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 
 export default {
   // name
@@ -23,6 +23,9 @@ export default {
     // use router
     const router = useRouter();
 
+    // use route
+    const route = useRoute();
+
     // on mounted app
     onMounted(() => {
       // disable backbutton
@@ -32,8 +35,11 @@ export default {
       });
       // add keystroke event listener
       window.addEventListener("keydown", ({ key, shiftKey }) => {
-        // if key is F2 and no testee data is present
-        if (key == "F2" && !store.state.testee.testee.id)
+        // if key is F2
+        if ([
+          key == "F2" && !store.state.testee.testee.id,
+          key == "F2" && store.state.testee.testee.id && route.name.indexOf("admin-save") > -1
+        ].some((e) => e))
           // go to main
           router.replace({ name: "route-main-home" });
         // if key is F2 with SHIFT
