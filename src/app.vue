@@ -36,10 +36,14 @@ export default {
       // add keystroke event listener
       window.addEventListener("keydown", ({ key, shiftKey }) => {
         // if key is F2
-        if ([
-          key == "F2" && !store.state.testee.testee.id,
-          key == "F2" && store.state.testee.testee.id && route.name.indexOf("admin-save") > -1
-        ].some((e) => e))
+        if (
+          [
+            key == "F2" && !store.state.testee.testee.id,
+            key == "F2" &&
+              store.state.testee.testee.id &&
+              route.name.indexOf("admin-save") > -1,
+          ].some((e) => e)
+        )
           // go to main
           router.replace({ name: "route-main-home" });
         // if key is F2 with SHIFT

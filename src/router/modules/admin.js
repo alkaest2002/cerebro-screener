@@ -19,9 +19,9 @@ export default [
             [
               from.name == "route-admin-save-data",
               store.state.answers.saveOp.local.isOk ||
-              store.state.answers.saveOp.server.isOk,
+                store.state.answers.saveOp.server.isOk,
             ].every((e) => e)
-            )
+          )
             // reset test data, then go to admin
             return next({
               name: "route-admin-reset-battery",

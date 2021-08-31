@@ -3,10 +3,7 @@
     <main-hero />
     <div class="mt-5 columns is-tablet is-centered">
       <div class="column is-one-third">
-        <router-link
-          class="button is-link is-fullwidth"
-          :to="to"
-        >
+        <router-link class="button is-link is-fullwidth" :to="to">
           {{ i18n.buttons.enter }}
         </router-link>
       </div>
@@ -32,9 +29,9 @@ export default {
     const store = useStore();
 
     // determine next route
-    const to = store.state.testee.testee.id 
-    ? { name: "route-battery-tasks" } 
-    : { name: "route-battery-bio" }; 
+    const to = store.state.testee.testee.id
+      ? { name: "route-battery-tasks" }
+      : { name: "route-battery-bio" };
 
     // return setup object
     return {

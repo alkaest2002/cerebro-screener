@@ -7,7 +7,7 @@ const authentication = computed(() => store.state.admin.currentAuthentication);
 const _authenticateLocal = ({ userId, password }) => {
   // return promise
   return new Promise((resolve) => {
-    // resolve with credentials check boolean 
+    // resolve with credentials check boolean
     return resolve(userId == null && password.toString() == "111");
   });
 };
