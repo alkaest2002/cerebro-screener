@@ -49,21 +49,21 @@ export default {
 
   // setup object
   setup(props, { emit }) {
-    // randomization map
+    // define randomization map
     const randomizationMap = ref(new Map());
 
-    // shuffled task mapper
+    // define shuffledTasksMap
     const shuffledTasksMap = computed({
       get: () => {
         // if randomizationMap is already populated just return it
         if (randomizationMap.value.size > 0) return randomizationMap.value;
-        // clone tasks
-        const clonedTasks = clone(props.templateBattery);
         // get shuffle schema
         const shuffleSchema =
           props.shuffleSchema.length > 0
             ? props.shuffleSchema
             : Array.from({ length: props.templateBattery.length }, () => false);
+        // clone tasks
+        const clonedTasks = clone(props.templateBattery);
         // loop through each task and update randomizationMap
         clonedTasks.forEach((e, i) =>
           randomizationMap.value.set(e, shuffleSchema[i])
@@ -86,8 +86,8 @@ export default {
 
     // handle on click task
     const onClickTask = (task) => {
-      // toggle task in randomizationMap (if task parameter is defined)
-      if (task) shuffledTasksMap.value = task;
+      // toggle task in randomizationMap
+      shuffledTasksMap.value = task;
       // emit event
       emit("update:shuffleSchema", [...shuffledTasksMap.value.values()]);
     };
