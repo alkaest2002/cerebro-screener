@@ -22,10 +22,11 @@
       </a>
     </div>
     <image-teleport
-      :image-class="{ 'is-active': modalOpen }"
+      :modal-is-open="modalIsOpen"
+      :image-class="{ 'is-active': modalIsOpen }"
       :image-src="`/img/tasks/${modalData.src}`"
       :image-description="modalData.description"
-      @click="modalOpen = false"
+      @click="modalIsOpen = false"
     />
   </div>
 </template>
@@ -58,7 +59,7 @@ export default {
   // setup
   setup(props) {
     // modal open flag
-    const modalOpen = ref(false);
+    const modalIsOpen = ref(false);
 
     // clicked image
     const clickedImg = ref(0);
@@ -71,13 +72,13 @@ export default {
       // store index
       clickedImg.value = index;
       // show modal
-      modalOpen.value = true;
+      modalIsOpen.value = true;
     };
 
     // return setup object
     return {
       i18n,
-      modalOpen,
+      modalIsOpen,
       modalData,
       onClickFigure,
     };
