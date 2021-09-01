@@ -11,14 +11,14 @@
         class="is-flex is-align-content-center"
         @dragenter.prevent=""
         @dragover.prevent=""
-        @dragstart="onDragStart(index)"
-        @drop="onDragDrop(index)"
+        @dragstart="onDragTask(index)"
+        @drop="onDropTask(index)"
       >
         <span class="task-cell has-text-centered">
           <span
             v-if="tasks.length > 1"
             class="is-clickable has-text-danger"
-            @click="onClickDeleteTask(index)"
+            @click="onDeleteTask(index)"
           >
             <img src="@/assets/images/trash.svg" />
           </span>
@@ -75,8 +75,8 @@ export default {
 
   // setup
   setup(props, { emit }) {
-    // define refs
-    const draggedIndex = ref(null);
+    // define draggedTaskIndex
+    const draggedTaskIndex = ref(null);
 
     // battery tasks
     const tasks = computed({
@@ -88,25 +88,25 @@ export default {
     });
 
     // handle on drag task
-    const onDragStart = (index) => {
+    const onDragTask = (index) => {
       // store index of task being dragged
-      draggedIndex.value = index;
+      draggedTaskIndex.value = index;
     };
 
-    // handle on drop dragged task
-    const onDragDrop = (index) => {
+    // handle on drop task
+    const onDropTask = (index) => {
       // clone tasks
       const clonedTasks = clone(tasks.value);
-      // remove dragged task from its original position
-      clonedTasks.splice(draggedIndex.value, 1);
-      // place dragged task into its new position
-      clonedTasks.splice(index, 0, tasks.value[draggedIndex.value]);
+      // remove dropped task from its original position
+      const droppedTask = clonedTasks.splice(draggedTaskIndex.value, 1);
+      // place dropped task into its new position
+      clonedTasks.splice(index, 0, ...droppedTask);
       // update tasks
       tasks.value = clonedTasks;
     };
 
     // handle on delete task
-    const onClickDeleteTask = (index) => {
+    const onDeleteTask = (index) => {
       // clone tasks
       const clonedTasks = clone(tasks.value);
       // remove task to be deleted
@@ -119,9 +119,9 @@ export default {
     return {
       i18n,
       tasks,
-      onDragStart,
-      onDragDrop,
-      onClickDeleteTask,
+      onDragTask,
+      onDropTask,
+      onDeleteTask,
       formatTime,
     };
   },

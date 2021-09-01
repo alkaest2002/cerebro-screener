@@ -4,7 +4,7 @@
       <div class="card-content">
         <div class="content">
           <p class="is-size-4 has-text-weight-bold mb-2">
-            {{ i18n.task }} {{ uppercaseTaskKey }}
+            {{ i18n.task }} #{{ task.key.toUpperCase() }}
           </p>
           <p class="mb-0 has-text-grey">
             <b>{{ i18n.items }}:</b> {{ task.items }}
@@ -69,14 +69,11 @@ export default {
   },
 
   // setup
-  setup(props) {
-    // hashed task key (no need to be reactive)
-    const uppercaseTaskKey = `#${props.task.key.toUpperCase()}`;
+  setup() {
 
     // return setup object
     return {
       i18n,
-      uppercaseTaskKey,
       formatTime,
     };
   },
