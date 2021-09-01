@@ -12,16 +12,16 @@
         type="text"
         readonly="true"
       />
-      <bio-keyboard v-model="testee.id" :text="testee.id" type="full" />
+      <bio-keyboard v-model.trim="testee.id" :text="testee.id" type="full" />
       <form-input
-        v-model="testee.age"
+        v-model.trim="testee.age"
         :errors="errors.age"
         :label="i18n.fields.age.label"
         :placeholder="i18n.fields.age.placeholder"
         type="number"
         readonly="true"
       />
-      <bio-keyboard v-model="testee.age" :text="testee.age" type="numbers" />
+      <bio-keyboard v-model.trim="testee.age" :text="testee.age" type="numbers" />
       <form-radio-group
         v-model="testee.gender"
         :options="genderOptions"
