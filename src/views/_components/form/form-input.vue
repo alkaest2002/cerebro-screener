@@ -44,12 +44,12 @@ export default {
 
     modelValue: {
       type: [String, Number, null],
-      default: null,
+      default: "",
     },
 
     cssClass: {
       type: String,
-      default: null,
+      default: "",
     },
 
     errors: {
