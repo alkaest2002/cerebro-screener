@@ -4,7 +4,6 @@
       type="radio"
       :checked="modelValue === value"
       :value="value"
-      v-bind="$attrs"
       @change="$emit('update:modelValue', value)"
     />
     {{ label }}
@@ -15,9 +14,6 @@
 export default {
   // name
   name: "form-radio",
-
-  // do not inherit attrs
-  inheritAttrs: false,
 
   // props
   props: {

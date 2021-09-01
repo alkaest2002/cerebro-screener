@@ -9,12 +9,11 @@
         :class="{ horizontal: !vertical }"
       >
         <form-radio
-          :label="option.label"
           :name="name"
           :value="option.value"
-          :model-value="modelValue"
+          :label="option.label"
           :disabled="disabled"
-          @update:model-value="$emit('update:modelValue', $event)"
+          v-bind="$attrs"
         />
       </component>
     </div>
@@ -31,6 +30,9 @@ import formRadio from "./form-radio";
 export default {
   // name
   name: "form-radio-group",
+
+  // do not inherit attrs
+  inheritAttrs: false,
 
   // components
   components: {
@@ -54,11 +56,6 @@ export default {
       default: "",
     },
 
-    modelValue: {
-      type: [String, Number],
-      required: true,
-    },
-
     vertical: {
       type: Boolean,
       default: false,
@@ -75,12 +72,7 @@ export default {
     },
   },
 
-  // emitted events
-  emits: {
-    "update:modelValue": (value) => ["string", "number"].includes(typeof value),
-  },
-
-  // setup
+   // setup
   setup(props) {
     // local errors
     const localErrors = computed(() => {
