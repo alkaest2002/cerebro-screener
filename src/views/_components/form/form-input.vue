@@ -7,9 +7,8 @@
         class="input"
         :class="inputClass"
         :placeholder="placeholder"
+        :type="type || 'text'"
         :value="modelValue"
-        :type="$attrs.type || 'text'"
-        v-bind="$attrs"
         @input="$emit('update:modelValue', $event.target.value)"
       />
     </div>
@@ -26,9 +25,6 @@ export default {
   // name
   name: "form-input",
 
-  // do not inherit attrs
-  inheritAttrs: false,
-
   // props
   props: {
     label: {
@@ -41,14 +37,19 @@ export default {
       default: "",
     },
 
+    type: {
+      type: String,
+      required: true,
+    },
+
     modelValue: {
       type: [String, Number, null],
-      default: "",
+      default: null,
     },
 
     cssClass: {
       type: String,
-      default: "",
+      default: null,
     },
 
     errors: {
@@ -69,32 +70,31 @@ export default {
 
   // setup
   setup(props) {
-    // define refs
+    // define inputRef
     const inputRef = ref(null);
 
-    // define computed props
+    // define localErrors
     const localErrors = computed(() => {
       // if there is a required error, disregard the rest
       if (props.errors.has("required")) return [props.errors.get("required")];
-
       // filter out map entries in the form of null => null
       // such entries comes from successful validations
       return Array.from(props.errors.values()).filter((e) => e);
     });
 
-    // input css class
+    // define input css class
     const inputClass = computed(() => {
       // on validation error
       if (localErrors.value.length > 0) {
         return [...props.cssClass, "is-danger"];
       }
-
       // no error css
       return props.cssClass;
     });
 
-    // if autofocus, focus
+    // handle on mounted
     onMounted(() => {
+      // autofocus if it's the case
       if (props.autoFocus) inputRef.value.focus();
     });
 

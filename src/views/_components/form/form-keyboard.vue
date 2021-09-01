@@ -11,11 +11,14 @@
 </template>
 
 <script>
-import { computed } from "vue";
 
-// legal keys
-const checkLegalKey = (value) =>
-  "0123456789abcdefghijklmnopqrstuvwxyz".toUpperCase().indexOf(value) > -1;
+// init numbers and letters
+const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const letters = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
+const backspace = "&#8612;"
+
+// check legal keys function
+const checkLegalKey = (value) => [...numbers, ...letters].indexOf(value) > -1;
 
 export default {
   // name
@@ -31,38 +34,35 @@ export default {
 
     text: {
       type: String,
-      default: "",
+      default: null,
     },
   },
 
   // emitted events
   emits: {
-    "update:modelValue": (value) =>
-      value.split("").every((e) => checkLegalKey(e)),
+    "update:modelValue": null
   },
 
   // setup
   setup(props, { emit }) {
-    // build keys
-    let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    let letters = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
-    let keys = [];
-    if (props.type == "full") keys = [...numbers, ...letters];
+    // set full keyboard (letters + numbers)
+    let keys = [...numbers, ...letters];
+    // set keyboard to only letters if it's the case
+    if (props.type == "letters") keys = letters;
+    // set keyboard to only nymber if it's the case
     if (props.type == "numbers") keys = numbers;
-    keys = ["&#8612;", ...keys];
-
-    // input text
-    const inputText = computed(() => props.text || "");
+    // add backspace to keyboard
+    keys = [backspace, ...keys];
 
     // on handle clickKey
     const onClickKey = (key) => {
-      // if key is cancel
-      if (key == "&#8612;")
-        return emit("update:modelValue", inputText.value.slice(0, -1));
+      // if key is backspace
+      if (key == backspace)
+        return emit("update:modelValue", (props.text || "").slice(0, -1));
       // if key is legal
       if (checkLegalKey(key))
         // emit event
-        emit("update:modelValue", inputText.value + key.toString());
+        emit("update:modelValue", (props.text || "") + key);
     };
 
     // return setup object
