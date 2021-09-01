@@ -4,7 +4,7 @@
     :class="buttonCSSClass"
     :disabled="disabled"
     :type="buttonType"
-    @click="onClick"
+    @click="$emit('update:modelValue', true)"
   >
     <slot />
   </button>
@@ -45,21 +45,15 @@ export default {
   },
 
   // setup
-  setup(props, { emit }) {
-    // button css class
+  setup(props) {
+    // define button css class
     const buttonCSSClass = computed(() => {
       return `${props.buttonCss} ${props.modelValue ? "is-loading" : null}`;
     });
 
-    // handle on click
-    const onClick = () => {
-      emit("update:modelValue", true);
-    };
-
     // return setup object
     return {
       buttonCSSClass,
-      onClick,
     };
   },
 };

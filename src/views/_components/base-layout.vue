@@ -8,7 +8,6 @@
 
 <script>
 export default {
-  // name
   name: "base-layout",
 };
 </script>
