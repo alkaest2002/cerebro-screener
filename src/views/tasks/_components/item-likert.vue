@@ -43,10 +43,11 @@ export default {
   },
 
   setup(props) {
-    // create likert
+    // define likert
     const likert = Array.apply(null, { length: props.maxValue + 1 })
       .map(Number.call, Number)
       .slice(props.minValue);
+    
     // return setup object
     return {
       likert,
@@ -56,6 +57,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$likert-text-color: #777;
+$likert-active-text-color: #fff;
+$likert-background-color: #eee;
+$likert-active-background-color: #3273dc;
+
 .likert {
   cursor: pointer;
 
@@ -63,16 +69,16 @@ export default {
     height: 33px;
     width: 33px;
     padding: 3px;
-    background-color: #eee;
-    border: 2px solid darken(#eee, 10%);
+    background-color: $likert-background-color;
+    border: 2px solid darken($likert-background-color, 10%);
     border-radius: 50%;
-    color: #777;
+    color: $likert-text-color;
     margin-right: 2px;
 
     &.active {
-      background-color: #3273dc;
-      border: 2px solid darken(#3273dc, 10%);
-      color: #fff !important;
+      background-color: $likert-active-background-color;
+      border: 2px solid darken($likert-active-background-color, 10%);
+      color: $likert-active-text-color;
     }
 
     &:hover {

@@ -29,8 +29,10 @@ export default {
     // use store
     const store = useStore();
 
-    // show item lock flag
+    // define showItemLock flag
     const showItemLock = computed(() => {
+      // item-level lock should be visible
+      // under these circumstances
       return [
         store.getters["presenters/getCurrentPresenter"].isLocked,
         store.state.timer.type == "item",

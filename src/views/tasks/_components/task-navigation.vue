@@ -5,7 +5,7 @@
         :disabled="!canGoBack"
         class="button is-link"
         type="button"
-        @click="onClickNavigation(-1)"
+        @click="onNavigate(-1)"
       >
         <span>{{ i18n.buttons.prev }}</span>
       </button>
@@ -14,7 +14,7 @@
         :disabled="!canGoForth"
         class="button is-link"
         type="button"
-        @click="onClickNavigation(+1)"
+        @click="onNavigate(+1)"
       >
         <span>{{ i18n.buttons.next }}</span>
       </button>
@@ -23,7 +23,7 @@
         :disabled="!canGoForth"
         class="button is-danger"
         type="button"
-        @click="onClickNavigation(+1)"
+        @click="onNavigate(+1)"
       >
         <span>{{ i18n.buttons.end }}</span>
       </button>
@@ -78,11 +78,11 @@ export default {
 
   // set up
   setup(props, { emit }) {
-    // define computed props
+    // define isLastIndex
     const isLastIndex = computed(() => props.currentIndex == props.lastIndex);
 
-    // handle navigation
-    const onClickNavigation = (offset) => {
+    // handle on navigation
+    const onNavigate = (offset) => {
       // notify on reaching end
       if (isLastIndex.value && offset == 1) return emit("navigate-beyond-last");
       // notify entity current
@@ -94,7 +94,7 @@ export default {
     // return setup object
     return {
       i18n,
-      onClickNavigation,
+      onNavigate,
     };
   },
 };
