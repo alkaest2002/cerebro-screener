@@ -47,7 +47,7 @@ export default {
     const likert = Array.apply(null, { length: props.maxValue + 1 })
       .map(Number.call, Number)
       .slice(props.minValue);
-    
+
     // return setup object
     return {
       likert,

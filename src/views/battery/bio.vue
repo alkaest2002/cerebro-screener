@@ -21,7 +21,11 @@
         type="number"
         readonly="true"
       />
-      <bio-keyboard v-model.trim="testee.age" :text="testee.age" type="numbers" />
+      <bio-keyboard
+        v-model.trim="testee.age"
+        :text="testee.age"
+        type="numbers"
+      />
       <form-radio-group
         v-model="testee.gender"
         :options="genderOptions"

@@ -31,13 +31,13 @@ export default {
   // name
   name: "form-radio-group",
 
-  // do not inherit attrs
-  inheritAttrs: false,
-
   // components
   components: {
     formRadio,
   },
+
+  // do not inherit attrs
+  inheritAttrs: false,
 
   // props
   props: {
@@ -72,7 +72,7 @@ export default {
     },
   },
 
-   // setup
+  // setup
   setup(props) {
     // define local errors
     const localErrors = computed(() => {

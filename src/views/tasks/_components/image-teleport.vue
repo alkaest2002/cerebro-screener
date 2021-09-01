@@ -1,7 +1,7 @@
 <template>
   <teleport to="#modal">
     <transition name="fade-modal">
-      <div class="modal" :class="imageClass" :key="'modal' +!modalIsOpen">
+      <div :key="'modal' + !modalIsOpen" class="modal" :class="imageClass">
         <div class="modal-background" />
         <div class="modal-content">
           <div class="card">
@@ -38,7 +38,7 @@ export default {
   props: {
     modalIsOpen: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     imageClass: {
@@ -67,15 +67,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .modal {
   transition: all 5s;
 }
 
-.fade-modal-enter-active, .fade-modal-leave-active {
-  transition: opacity .5s;
+.fade-modal-enter-active,
+.fade-modal-leave-active {
+  transition: opacity 0.5s;
 }
-.fade-modal-enter, .fade-modal-leave-to {
+.fade-modal-enter,
+.fade-modal-leave-to {
   opacity: 0;
 }
 </style>

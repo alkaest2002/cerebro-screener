@@ -11,11 +11,10 @@
 </template>
 
 <script>
-
 // init numbers and letters
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const letters = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
-const backspace = "&#8612;"
+const backspace = "&#8612;";
 
 // check legal keys function
 const checkLegalKey = (value) => [...numbers, ...letters].indexOf(value) > -1;
@@ -40,7 +39,7 @@ export default {
 
   // emitted events
   emits: {
-    "update:modelValue": null
+    "update:modelValue": null,
   },
 
   // setup

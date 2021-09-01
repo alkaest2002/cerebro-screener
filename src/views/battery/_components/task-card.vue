@@ -70,7 +70,6 @@ export default {
 
   // setup
   setup() {
-
     // return setup object
     return {
       i18n,
