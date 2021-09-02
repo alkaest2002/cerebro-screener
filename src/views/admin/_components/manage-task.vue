@@ -25,7 +25,7 @@
         v-if="currentBlock?.type == 'items'"
         href="#"
         class="is-block"
-        @click.prevent="onClickResetBlock"
+        @click.prevent="onResetBlock"
       >
         {{ i18n.links.resetBlock }}
       </a>
@@ -36,7 +36,7 @@
         v-if="nextInstructionsBlock > 0"
         href="#"
         class="is-block"
-        @click.prevent="onClickNextInstructionsBlock"
+        @click.prevent="onNextInstructionsBlock"
       >
         {{ i18n.links.nextBlock }}
       </a>
@@ -81,34 +81,34 @@ export default {
     // use store
     const store = useStore();
 
-    // batteryHasEnded (no need to be reactive)
+    // define batteryHasEnded (no need to be reactive)
     const batteryHasEnded = store.state.battery.hasEnded;
 
-    // current task (no need to be reactive)
+    // define currentTask (no need to be reactive)
     const currentTask = store.getters["battery/getCurrentTask"];
 
-    // batteryHasEnded (no need to be reactive)
+    // define batteryHasEnded (no need to be reactive)
     const batteryHasStarted =
       store.state.presenters.currentPresenterIndex != null;
 
-    // current task  (no need to be reactive)
+    // define currentTaskRoute (no need to be reactive)
     const currentTaskRoute = computed(() =>
       batteryHasStarted
         ? `route-tasks-${currentTask?.key}`
         : "route-battery-tasks"
     );
 
-    // current block
+    // define currentBlock
     const currentBlock = computed(
       () => store.getters["blocks/getCurrentBlock"]
     );
 
-    // current presenter
+    // define currentPresenter
     const currentPresenter = computed(
       () => store.getters["presenters/getCurrentPresenter"]
     );
 
-    // current timer
+    // define currentTimeLeft
     const currentTimeLeft = computed(() =>
       store.state.timer.id == null
         ? "-"
@@ -117,7 +117,7 @@ export default {
           )
     );
 
-    // next instructions block
+    // define nextInstructionsBlock
     const nextInstructionsBlock = computed(() =>
       store.state.blocks.currentBlockIndex == null
         ? 0
@@ -129,12 +129,12 @@ export default {
     );
 
     // handle on reset current block
-    const onClickResetBlock = () => {
+    const onResetBlock = () => {
       store.dispatch("presenters/resetBlockPresenters");
     };
 
     // handle on next instructions block
-    const onClickNextInstructionsBlock = () => {
+    const onNextInstructionsBlock = () => {
       store.dispatch(
         "presenters/setCurrentPresenterIndex",
         nextInstructionsBlock.value
@@ -152,8 +152,8 @@ export default {
       currentPresenter,
       currentTimeLeft,
       nextInstructionsBlock,
-      onClickResetBlock,
-      onClickNextInstructionsBlock,
+      onResetBlock,
+      onNextInstructionsBlock,
     };
   },
 };
