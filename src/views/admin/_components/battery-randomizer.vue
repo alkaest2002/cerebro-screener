@@ -70,8 +70,8 @@ export default {
         // return randomizationMap
         return randomizationMap.value;
       },
-      set: (value) => 
-        shuffledTasksMap.value.set(value, !shuffledTasksMap.value.get(value)), 
+      set: (value) =>
+        shuffledTasksMap.value.set(value, !shuffledTasksMap.value.get(value)),
     });
 
     // watch
