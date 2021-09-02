@@ -12,7 +12,10 @@
         type="text"
         readonly="true"
       />
-      <bio-keyboard v-model.trim="testee.id" :text="testee.id" type="full" />
+      <bio-keyboard 
+        v-model.trim="testee.id" 
+        type="full" 
+      />
       <form-input
         v-model.trim="testee.age"
         :errors="errors.age"
@@ -23,7 +26,6 @@
       />
       <bio-keyboard
         v-model.trim="testee.age"
-        :text="testee.age"
         type="numbers"
       />
       <form-radio-group

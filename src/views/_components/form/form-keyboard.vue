@@ -31,7 +31,7 @@ export default {
       validator: (value) => ["full", "letters", "numbers"].includes(value),
     },
 
-    text: {
+    modelValue: {
       type: String,
       default: null,
     },
@@ -57,11 +57,11 @@ export default {
     const onClickKey = (key) => {
       // if key is backspace
       if (key == backspace)
-        return emit("update:modelValue", (props.text || "").slice(0, -1));
+        return emit("update:modelValue", (props.modelValue || "").slice(0, -1));
       // if key is legal
       if (checkLegalKey(key))
         // emit event
-        emit("update:modelValue", (props.text || "") + key);
+        emit("update:modelValue", (props.modelValue || "") + key);
     };
 
     // return setup object
