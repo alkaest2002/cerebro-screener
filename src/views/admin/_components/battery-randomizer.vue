@@ -47,17 +47,16 @@ export default {
     "update:shuffleSchema": (value) => Array.isArray(value),
   },
 
-  // setup object
+  // setup
   setup(props, { emit }) {
     // define randomization map
     const randomizationMap = ref(new Map());
-
     // define shuffledTasksMap
     const shuffledTasksMap = computed({
       get: () => {
         // if randomizationMap is already populated just return it
         if (randomizationMap.value.size > 0) return randomizationMap.value;
-        // get shuffle schema
+        // set shuffle schema
         const shuffleSchema =
           props.shuffleSchema.length > 0
             ? props.shuffleSchema
@@ -71,8 +70,8 @@ export default {
         // return randomizationMap
         return randomizationMap.value;
       },
-      set: (value) =>
-        shuffledTasksMap.value.set(value, !shuffledTasksMap.value.get(value)),
+      set: (value) => 
+        shuffledTasksMap.value.set(value, !shuffledTasksMap.value.get(value)), 
     });
 
     // watch
