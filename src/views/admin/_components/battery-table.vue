@@ -7,8 +7,8 @@
       class="task-row"
     >
       <div
-        :draggable="tasks.length > 1"
         class="is-flex is-align-content-center"
+        :draggable="tasks.length > 1"
         @dragenter.prevent=""
         @dragover.prevent=""
         @dragstart="onDragTask(index)"
@@ -78,7 +78,7 @@ export default {
     // define draggedTaskIndex
     const draggedTaskIndex = ref(null);
 
-    // battery tasks
+    // define battery tasks
     const tasks = computed({
       get: () => props.templateBattery,
       set: (value) => {
