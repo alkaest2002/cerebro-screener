@@ -2,7 +2,7 @@
   <div id="task-table">
     <div
       v-for="(task, index) in tasks"
-      :key="task.id"
+      :key="task.key"
       :class="tasks.length == 1 ? 'disable-hover' : null"
       class="task-row"
     >

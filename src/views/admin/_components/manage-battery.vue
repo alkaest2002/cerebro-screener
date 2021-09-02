@@ -5,7 +5,7 @@
   <div id="battery" class="columns is-multiline is-gapless mb-0">
     <div
       v-for="(task, index) in currentBattery"
-      :key="task.id"
+      :key="task.key"
       class="column is-one-third"
     >
       <b class="has-text-grey">
@@ -44,10 +44,10 @@ export default {
     // use store
     const store = useStore();
 
-    // get current battery (no need to be reactive)
+    // define current battery (no need to be reactive)
     const currentBattery = store.state.battery.battery;
 
-    // is last task (no need to be reactive)
+    // define isLastTask (no need to be reactive)
     const isLastTask =
       store.getters["battery/getCurrentTask"].key ==
       store.getters["battery/getLastTask"].key;

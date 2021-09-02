@@ -45,7 +45,6 @@ import {
 
 export const jsonCatalogue = [
   {
-    id: 1,
     key: "dom",
     description: "Domino",
     type: "intelligenza (logica deduttiva)",
@@ -54,7 +53,6 @@ export const jsonCatalogue = [
     isAvailable: true,
   },
   {
-    id: 2,
     key: "tol",
     description: "Torri",
     type: "intelligenza (pianificazione)",
@@ -63,7 +61,6 @@ export const jsonCatalogue = [
     isAvailable: true,
   },
   {
-    id: 3,
     key: "koh",
     description: "Schemi di Kohs",
     type: "intelligenza (visuo-spaziale)",
@@ -72,7 +69,6 @@ export const jsonCatalogue = [
     isAvailable: true,
   },
   {
-    id: 4,
     key: "wcs",
     description: "Ordina le carte",
     type: "intelligenza (flessibilità)",
@@ -81,7 +77,6 @@ export const jsonCatalogue = [
     isAvailable: true,
   },
   {
-    id: 5,
     key: "mul",
     description: "Task Multipli",
     type: "multitrasking",
@@ -90,7 +85,6 @@ export const jsonCatalogue = [
     isAvailable: true,
   },
   {
-    id: 6,
     key: "col",
     description: "Gira le carte",
     type: "propensione al rischio",
@@ -99,7 +93,6 @@ export const jsonCatalogue = [
     isAvailable: true,
   },
   {
-    id: 7,
     key: "mem",
     description: "Memoria",
     type: "memoria",
@@ -108,7 +101,6 @@ export const jsonCatalogue = [
     isAvailable: true,
   },
   {
-    id: 8,
     key: "iow",
     description: "Individua mazzi",
     type: "apprendimento",
@@ -117,7 +109,6 @@ export const jsonCatalogue = [
     isAvailable: true,
   },
   {
-    id: 9,
     key: "att",
     description: "Cerca numeri",
     type: "attenzione",
@@ -126,7 +117,6 @@ export const jsonCatalogue = [
     isAvailable: true,
   },
   {
-    id: 10,
     key: "srv",
     description: "Questionario fine batteria",
     type: "insight",
@@ -135,7 +125,6 @@ export const jsonCatalogue = [
     isAvailable: true,
   },
   {
-    id: 11,
     key: "fak",
     description: "Questionario fake",
     type: "task app",
