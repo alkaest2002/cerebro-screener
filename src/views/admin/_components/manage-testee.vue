@@ -29,11 +29,12 @@ export default {
   // name
   name: "manage-testee",
 
+  // setup
   setup() {
     // use store
     const store = useStore();
 
-    // get current testee (no need to be reactive)
+    // define currentTestee (no need to be reactive)
     const currentTestee = store.state.testee.testee;
 
     // return setup object

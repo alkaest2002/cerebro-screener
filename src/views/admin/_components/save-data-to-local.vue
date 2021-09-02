@@ -51,15 +51,15 @@ export default {
   setup() {
     // use store
     const store = useStore();
-
-    // emailTo (no need to be reactive)
-    const emailTo = store.state.main.email;
-
+    
     // from composables
     const { localOp, onDownload: onClickDownload } = saveToLocal(indexDb);
-
-    // isLoading
+    
+    // define isLoading
     const isLoading = ref(false);
+
+    // define emailTo (no need to be reactive)
+    const emailTo = store.state.main.email;
 
     // watch
     watch(localOp, (value) => (isLoading.value = value.status == "running"), {

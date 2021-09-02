@@ -59,14 +59,17 @@ export default {
 
     // from composables
     const { serverOp, onUpload: onClickUpload } = saveToServer(indexDb);
+        
+    // define isLoading
+    const isLoading = ref(false);
 
-    // server endpoint (no need to be reactive)
+    // define serverEndPoint (no need to be reactive)
     const serverEndPoint = store.state.main.serverEndPoint;
 
-    // isOnline
+    // define isOnline
     const isOnline = computed(() => store.state.main.isOnline);
 
-    // disable upload
+    // define disableUpload
     const disableUpload = computed(() =>
       // disable under at least one of the following conditions
       [
@@ -75,9 +78,6 @@ export default {
         props.indexDbCount == 0,
       ].some((e) => e)
     );
-
-    // isLoading
-    const isLoading = ref(false);
 
     // watch
     watch(serverOp, (value) => (isLoading.value = value.status == "running"), {
